@@ -1,0 +1,14 @@
+.. _exhale_variable_namespaceconstants_1ac46ad396847a4e15973762f39350eaf0:
+
+Variable constants::kPi
+=======================
+
+- Defined in :ref:`file_include_core_constants.hpp`
+
+
+Variable Documentation
+----------------------
+
+
+.. doxygenvariable:: constants::kPi
+   :project: MPULS

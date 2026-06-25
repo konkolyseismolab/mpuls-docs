@@ -1,0 +1,14 @@
+.. _exhale_enum_namespacesolver__params_1abd53625bda2fa8124b0f37652e3340d1:
+
+Enum Reconstructor
+==================
+
+- Defined in :ref:`file_include_core_config_params.hpp`
+
+
+Enum Documentation
+------------------
+
+
+.. doxygenenum:: solver_params::Reconstructor
+   :project: MPULS

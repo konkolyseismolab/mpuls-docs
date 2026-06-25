@@ -1,0 +1,14 @@
+.. _exhale_variable_version_8hpp_1a069e767c98d300d7a55a28e40e0c0d8a:
+
+Variable mpuls::version
+=======================
+
+- Defined in :ref:`file_include_core_version.hpp`
+
+
+Variable Documentation
+----------------------
+
+
+.. doxygenvariable:: mpuls::version
+   :project: MPULS

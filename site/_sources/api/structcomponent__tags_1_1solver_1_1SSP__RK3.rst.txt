@@ -1,0 +1,18 @@
+.. _exhale_struct_structcomponent__tags_1_1solver_1_1SSP__RK3:
+
+Struct SSP_RK3
+==============
+
+- Defined in :ref:`file_include_core_simulation2d.hpp`
+
+
+Struct Documentation
+--------------------
+
+
+.. doxygenstruct:: component_tags::solver::SSP_RK3
+   :project: MPULS
+   :members:
+   :protected-members:
+   :private-members:
+   :undoc-members:

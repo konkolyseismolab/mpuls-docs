@@ -1,0 +1,14 @@
+.. _exhale_function_compile__time__dispatcher_8hpp_1a7684c0cd12126ed58ee7bbe793fa95f4:
+
+Template Function createEquationTag
+===================================
+
+- Defined in :ref:`file_include_core_compile_time_dispatcher.hpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: createEquationTag(Equation, T&&)
+   :project: MPULS

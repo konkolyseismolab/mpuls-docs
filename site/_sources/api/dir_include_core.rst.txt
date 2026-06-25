@@ -1,0 +1,28 @@
+.. _dir_include_core:
+
+
+Directory core
+==============
+
+
+|exhale_lsh| :ref:`Parent directory <dir_include>` (``include``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+
+*Directory path:* ``include/core``
+
+
+Files
+-----
+
+- :ref:`file_include_core_common.hpp`
+- :ref:`file_include_core_compile_time_dispatcher.hpp`
+- :ref:`file_include_core_config_params.hpp`
+- :ref:`file_include_core_config_parser.hpp`
+- :ref:`file_include_core_constants.hpp`
+- :ref:`file_include_core_custom_exceptions.hpp`
+- :ref:`file_include_core_simulation2d.hpp`
+- :ref:`file_include_core_version.hpp`
+
+

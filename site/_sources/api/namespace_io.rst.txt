@@ -1,0 +1,26 @@
+
+.. _namespace_io:
+
+Namespace io
+============
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+
+
+
+
+Functions
+---------
+
+
+- :ref:`exhale_function_print__console_8hpp_1a4342d8164f753f333c53321e183903bd`
+
+- :ref:`exhale_function_print__console_8hpp_1a7d92cb77870273584c8475f1e6ce7d76`
+
+- :ref:`exhale_function_print__console_8hpp_1a6fb0c84c52a53213fc01bd866221b2a5`
+
+- :ref:`exhale_function_print__console_8hpp_1ae70a37091917cb7b82ac872b190b33a3`

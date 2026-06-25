@@ -1,0 +1,48 @@
+
+.. _file_include_models_stellar_input.hpp:
+
+File stellar_input.hpp
+======================
+
+|exhale_lsh| :ref:`Parent directory <dir_include_models>` (``include/models``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``include/models/stellar_input.hpp``)
+-------------------------------------------------
+
+
+
+
+
+
+Includes
+--------
+
+
+- ``core/config_parser.hpp`` (:ref:`file_include_core_config_parser.hpp`)
+
+
+
+Included By
+-----------
+
+
+- :ref:`file_include_grid_grid_builder.hpp`
+
+- :ref:`file_include_models_envelope_builder.hpp`
+
+
+
+
+Classes
+-------
+
+
+- :ref:`exhale_struct_structStellarInput`
+

@@ -1,0 +1,14 @@
+.. _exhale_function_print__console_8hpp_1a4342d8164f753f333c53321e183903bd:
+
+Function io::initializeRun
+==========================
+
+- Defined in :ref:`file_include_io_print_console.hpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: io::initializeRun(size_t)
+   :project: MPULS

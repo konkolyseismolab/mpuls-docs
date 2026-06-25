@@ -1,0 +1,52 @@
+
+.. _program_listing_file_conf.py:
+
+Program Listing for File conf.py
+================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file_conf.py>` (``conf.py``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: py
+
+   import os
+   
+   # Add extensions
+   extensions = [
+       'breathe',
+       'exhale',
+       'myst_parser',
+       'sphinx_rtd_theme'
+   ]
+   
+   project_root = os.path.abspath("../")
+   
+   # Breathe configuration
+   breathe_projects = { "MPULS": project_root+"/build/docs/xml" }
+   breathe_default_project = "MPULS"
+   
+   # Exhale configuration (automates page generation)
+   exhale_args = {
+       "containmentFolder":     "./api",
+       "rootFileName":          "library_root.rst",
+       "rootFileTitle":         "MPULS API reference",
+       "doxygenStripFromPath":  "..",
+       "createTreeView" : True,
+       
+   
+       #"exhaleDoxygenSourceTree":  project_root
+   }
+   
+   source_suffix = {
+       '.md': 'markdown',
+       '.rst': 'restructuredtext'
+   }
+   
+   # Tell sphinx what the primary language being documented is.
+   primary_domain = 'cpp'
+   
+   # Tell sphinx what the pygments highlight language should be.
+   highlight_language = 'cpp'
+   
+   html_theme = "sphinx_rtd_theme"

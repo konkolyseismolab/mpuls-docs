@@ -1,0 +1,219 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Time integration &mdash; Modular PULsation Suite  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=7ab3649f" />
+      <link rel="stylesheet" type="text/css" href="../../_static/collapsible-lists/css/tree_view.css?v=a885cde7" />
+      <link rel="stylesheet" type="text/css" href="../../_static/compact-api.css?v=bfcdbbe1" />
+
+  
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script src="../../_static/collapsible-lists/js/CollapsibleLists.compressed.js?v=73120307"></script>
+      <script src="../../_static/collapsible-lists/js/apply-collapsible-lists.js?v=660e4f45"></script>
+      <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+      <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="MPULS API reference" href="../../api/library_root.html" />
+    <link rel="prev" title="Solution filtering" href="hyperbolic-filter.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Modular PULsation Suite
+              <img src="../../_static/logo-mpuls.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../guide/index.html">MPULS User Guide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">MPULS User Manual</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../physics/physics.html">Physical background</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="numerics.html">Numerical background</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="fvm_scheme.html">The Finite Volume Method</a></li>
+<li class="toctree-l3"><a class="reference internal" href="flux_calculation.html">Hyperbolic equation solving</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Reconstruction.html">Solution Reconstruction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Limiters.html">Limiters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="hyperbolic-filter.html">Solution filtering</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Time integration</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv4I_12QuantityTypeE14TimeSolverBase"><code class="docutils literal notranslate"><span class="pre">TimeSolverBase</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv4I_12QuantityType000E7SSP_RK2"><code class="docutils literal notranslate"><span class="pre">SSP_RK2</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv4I_12QuantityType000E7SSP_RK3"><code class="docutils literal notranslate"><span class="pre">SSP_RK3</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference Manual</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../api/library_root.html">MPULS API reference</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Modular PULsation Suite</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">MPULS User Manual</a></li>
+          <li class="breadcrumb-item"><a href="numerics.html">Numerical background</a></li>
+      <li class="breadcrumb-item active">Time integration</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/manual/numerics/time_integration.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="time-integration">
+<h1>Time integration<a class="headerlink" href="#time-integration" title="Link to this heading"></a></h1>
+<p>Using the method of lines (MOL) aprroach, the semi-difference flux formulas
+convert the PDE system into a system of ordenary differential equations for
+each grid points. Therefore the whole system for the <span class="math notranslate nohighlight">\(i,j,k\)</span> gridpoint gives:</p>
+<div class="math notranslate nohighlight">
+\[ \frac{\partial \boldsymbol q_{i,j,k}}{\partial t} = \boldsymbol f (\boldsymbol q_{i,j,k}, \boldsymbol r_{i,j,k}, t) \]</div>
+<dl>
+<dt class="sig sig-object cpp">
+<span class="target" id="group__TimeSolvers"></span><em><span class="pre">group</span></em> <span class="sig-name descname"><span class="pre">TimeSolvers</span></span></dt>
+<dd><p>The time solvers have a common virtual interface defined in <a class="reference internal" href="#classTimeSolverBase"><span class="std std-ref">TimeSolverBase</span></a>. They implement various Strong Stability Preserving Runge-Kutta schemes (SSP-RK) for temporal integration in the method of lines framework.</p>
+<p>The TimeSolverType concept enforces that only concrete implementations (not the base) can be instantiated, preventing improper use of the abstract interface. </p>
+<dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv4I_12QuantityTypeE14TimeSolverBase">
+<span id="_CPPv3I_12QuantityTypeE14TimeSolverBase"></span><span id="_CPPv2I_12QuantityTypeE14TimeSolverBase"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">QuantityType</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Q</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="classTimeSolverBase"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">TimeSolverBase</span></span></span><br /></dt>
+<dd><div class="docutils container">
+<em>#include &lt;time_solver/time_solver.hpp&gt;</em></div>
+<p>The abstract interface for time solvers. </p>
+<p>Defines the common virtual interface that all concrete time integration schemes must implement. This includes methods for time stepping control and the main solve routine.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Template Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>Q</strong> – Type of the state vector quantity </p>
+</dd>
+</dl>
+<p>Subclassed by <a class="reference internal" href="#classSSP__RK2"><span class="std std-ref">SSP_RK2&lt; Q, RHS, CFL, Boundary &gt;</span></a>, <a class="reference internal" href="#classSSP__RK3"><span class="std std-ref">SSP_RK3&lt; Q, RHS, CFL, Boundary &gt;</span></a></p>
+</dd></dl>
+
+<dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv4I_12QuantityType000E7SSP_RK2">
+<span id="_CPPv3I_12QuantityType000E7SSP_RK2"></span><span id="_CPPv2I_12QuantityType000E7SSP_RK2"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">QuantityType</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Q</span></span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">RHS</span></span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CFL</span></span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Boundary</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="classSSP__RK2"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">SSP_RK2</span></span></span><span class="w"> </span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="k"><span class="pre">public</span></span><span class="w"> </span><a class="reference internal" href="../../api/classTimeSolverBase.html#_CPPv4I_12QuantityTypeE14TimeSolverBase" title="TimeSolverBase"><span class="n"><span class="pre">TimeSolverBase</span></span></a><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="../../api/classSSP__RK2.html#_CPPv4I_12QuantityType000E7SSP_RK2" title="SSP_RK2::Q"><span class="n"><span class="pre">Q</span></span></a><span class="p"><span class="pre">&gt;</span></span><br /></dt>
+<dd><div class="docutils container">
+<em>#include &lt;time_solver/time_solver.hpp&gt;</em></div>
+<p>Strong Stability Preseving Runge Kutta 2nd order. </p>
+<p>This solver implements the SSP-RK2 method, also known as Heun method for ordinary differential equations, in the method of lines sense. The method is described in 2 steps. Giving the following formula:       <div class="math notranslate nohighlight">
+\[\begin{split}     \begin{array}{c}
+     \displaystyle \boldsymbol{k}_1 = h \boldsymbol{f}(\boldsymbol{q}^n) \\
+     \displaystyle \boldsymbol{k}_2 = h \boldsymbol{f}(\boldsymbol{q}^n + k_1) \\
+     \displaystyle \boldsymbol{q}^{n+1} = \boldsymbol{q}^n + \frac 1 2 (\boldsymbol k_1 + \boldsymbol k_2)
+     \end{array}
+\end{split}\]</div>
+</p>
+<dl class="field-list simple">
+<dt class="field-odd">Template Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>Q</strong> – The structure of the State vector </p></li>
+<li><p><strong>RHS</strong> – The right hand side of the equation <span class="math notranslate nohighlight">\(\boldsymbol{f}(\boldsymbol{q}, t)\)</span></p></li>
+<li><p><strong>CFL</strong> – The Adaptive timestep generator class </p></li>
+<li><p><strong>Boundary</strong> – The boundary condition implementation. </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv4I_12QuantityType000E7SSP_RK3">
+<span id="_CPPv3I_12QuantityType000E7SSP_RK3"></span><span id="_CPPv2I_12QuantityType000E7SSP_RK3"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">QuantityType</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Q</span></span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">RHS</span></span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CFL</span></span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Boundary</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="classSSP__RK3"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">SSP_RK3</span></span></span><span class="w"> </span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="k"><span class="pre">public</span></span><span class="w"> </span><a class="reference internal" href="../../api/classTimeSolverBase.html#_CPPv4I_12QuantityTypeE14TimeSolverBase" title="TimeSolverBase"><span class="n"><span class="pre">TimeSolverBase</span></span></a><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="../../api/classSSP__RK3.html#_CPPv4I_12QuantityType000E7SSP_RK3" title="SSP_RK3::Q"><span class="n"><span class="pre">Q</span></span></a><span class="p"><span class="pre">&gt;</span></span><br /></dt>
+<dd><div class="docutils container">
+<em>#include &lt;time_solver/time_solver.hpp&gt;</em></div>
+<p>Strong Stability Preseving Runge Kutta 3rd order. </p>
+<p>This solver implements the SSP-RK3 method for ordinary differential equations, in the method of lines sense. The method is described in three steps. Giving the following formula:        <div class="math notranslate nohighlight">
+\[\begin{split}     \begin{array}{c}
+     \displaystyle \boldsymbol{k}_1 = h \boldsymbol{f}(\boldsymbol{q}^n) \\
+     \displaystyle \boldsymbol{k}_2 = h \boldsymbol{f}(\boldsymbol{q}^n + k_1) \\
+     \displaystyle \boldsymbol{k}_3 = h \boldsymbol{f}(\boldsymbol{q}^n + \frac 1 4 (\boldsymbol k_1 +\boldsymbol k_2 ))
+     \displaystyle \boldsymbol{q}^{n+1} = \boldsymbol{q}^n + \frac 1 3 (\boldsymbol k_1 + \boldsymbol k_2) + \frac 2 3 \boldsymbol k_3
+     \end{array}
+\end{split}\]</div>
+</p>
+<dl class="field-list simple">
+<dt class="field-odd">Template Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>Q</strong> – The structure of the State vector </p></li>
+<li><p><strong>RHS</strong> – The right hand side of the equation <span class="math notranslate nohighlight">\(\boldsymbol{f}(\boldsymbol{q}, t)\)</span></p></li>
+<li><p><strong>CFL</strong> – The Adaptive timestep generator class </p></li>
+<li><p><strong>Boundary</strong> – The boundary condition implementation. </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="hyperbolic-filter.html" class="btn btn-neutral float-left" title="Solution filtering" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../../api/library_root.html" class="btn btn-neutral float-right" title="MPULS API reference" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright .</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

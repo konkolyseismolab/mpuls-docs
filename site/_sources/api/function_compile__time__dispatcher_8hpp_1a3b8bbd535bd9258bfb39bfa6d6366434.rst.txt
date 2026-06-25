@@ -1,0 +1,14 @@
+.. _exhale_function_compile__time__dispatcher_8hpp_1a3b8bbd535bd9258bfb39bfa6d6366434:
+
+Template Function createFluxTag
+===============================
+
+- Defined in :ref:`file_include_core_compile_time_dispatcher.hpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: createFluxTag(FluxCalculator, T&&)
+   :project: MPULS

@@ -1,0 +1,101 @@
+
+.. _program_listing_file_src_grid_grid_builder.cpp:
+
+Program Listing for File grid_builder.cpp
+=========================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file_src_grid_grid_builder.cpp>` (``src/grid/grid_builder.cpp``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   #include "grid/grid_builder.hpp"
+   #include <cmath>
+   #include <stdexcept>
+   #include <iostream>   // ← EZ KELL A TERMINÁL KIÍRÁSHOZ
+   
+   namespace grid {
+   
+       Grid build(const StellarInput& input) {
+   
+           std::cout << "[GridBuilder] Building grid..." << std::endl;
+           std::cout << "  scale      = " << input.grid_cfg.scale << std::endl;
+           std::cout << "  num_cells  = " << input.grid_cfg.number_of_grid_cells << std::endl;
+           std::cout << "  r_min      = " << input.grid_cfg.radius_min << std::endl;
+           std::cout << "  r_max      = " << input.grid_cfg.radius_max << std::endl;
+   
+           Grid grid;
+           int num_cells = input.grid_cfg.number_of_grid_cells;
+   
+           grid.faces.resize(num_cells+1);
+           grid.centers.resize(num_cells);
+   
+           const double r_min = input.grid_cfg.radius_min;
+           const double r_max = input.grid_cfg.radius_max;
+   
+           // --- 1) Cellahatárok sugara ---
+           if (input.grid_cfg.scale == "linear") {
+   
+               std::cout << "[GridBuilder] Using LINEAR spacing." << std::endl;
+   
+               for (int i = 0; i <= num_cells; ++i) {
+                   double q = double(i) / num_cells;
+                   grid.faces[i].radius = r_min + q * (r_max - r_min);
+               }
+   
+           } else if (input.grid_cfg.scale == "log" || input.grid_cfg.scale == "logarithmic") {
+   
+               std::cout << "[GridBuilder] Using LOGARITHMIC spacing." << std::endl;
+   
+               if (r_min <= 0.0) {
+                   throw std::runtime_error("Logarithmic grid requires radius_min > 0");
+               }
+   
+               double log_min = std::log(r_min);
+               double log_max = std::log(r_max);
+   
+               for (int i = 0; i <= num_cells; ++i) {
+                   double q = double(i) / num_cells;
+                   double log_r = log_min + q * (log_max - log_min);
+                   grid.faces[i].radius = std::exp(log_r);
+               }
+   
+           } else {
+               throw std::runtime_error("Unknown grid scale: " + input.grid_cfg.scale);
+           }
+   
+           // Debug: első és utolsó sugár
+           std::cout << "  radius[0]  = " << grid.faces[0].radius << std::endl;
+           std::cout << "  radius[N]  = " << grid.faces[num_cells].radius << std::endl;
+   
+           // --- 2) Cellahatárok tömege (Lagrange-i rács) ---
+           for (int i = 0; i <= num_cells; ++i) {
+               double q = double(i) / num_cells;
+               grid.faces[i].enclosed_mass = input.mass * q;
+               grid.faces[i].velocity = 0.0;
+           }
+   
+           std::cout << "  mass[0]    = " << grid.faces[0].enclosed_mass << std::endl;
+           std::cout << "  mass[N]    = " << grid.faces[num_cells].enclosed_mass << std::endl;
+   
+           // --- 3) Cellaközépek (még üres fizika) ---
+           for (int i = 0; i < num_cells; ++i) {
+               grid.centers[i].density = 0.0;
+               grid.centers[i].temperature = 0.0;
+               grid.centers[i].pressure = 0.0;
+               grid.centers[i].opacity = 0.0;
+               grid.centers[i].radiative_luminosity = 0.0;
+               grid.centers[i].convective_luminosity = 0.0;
+               grid.centers[i].turbulent_energy = 0.0;
+               grid.centers[i].heat_capacity = 0.0;
+               grid.centers[i].internal_energy = 0.0;
+               grid.centers[i].energy_source = 0.0;
+           }
+   
+           std::cout << "[GridBuilder] Grid construction complete." << std::endl;
+   
+           return grid;
+       }
+   
+   }

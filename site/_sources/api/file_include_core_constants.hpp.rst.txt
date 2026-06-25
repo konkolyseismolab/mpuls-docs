@@ -1,0 +1,70 @@
+
+.. _file_include_core_constants.hpp:
+
+File constants.hpp
+==================
+
+|exhale_lsh| :ref:`Parent directory <dir_include_core>` (``include/core``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+
+
+Physical constants in CGS units. 
+
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``include/core/constants.hpp``)
+-------------------------------------------
+
+
+
+
+
+
+Includes
+--------
+
+
+- ``cmath``
+
+
+
+Included By
+-----------
+
+
+- :ref:`file_include_grid_grid.hpp`
+
+- :ref:`file_include_io_print_console.hpp`
+
+- :ref:`file_include_models_initial_models.hpp`
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_constants`
+
+
+Variables
+---------
+
+
+- :ref:`exhale_variable_namespaceconstants_1a27895881bf36c2968dada68de7fff4df`
+
+- :ref:`exhale_variable_namespaceconstants_1aef6a70bf5e02077c823bda1eba37a769`
+
+- :ref:`exhale_variable_namespaceconstants_1acc33c8ba80741ed46691ee05503fb81e`
+
+- :ref:`exhale_variable_namespaceconstants_1ac46ad396847a4e15973762f39350eaf0`
+
+- :ref:`exhale_variable_namespaceconstants_1a1f9529591ca6dbdc20aaa3b8105da607`
+

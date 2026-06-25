@@ -1,0 +1,192 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Template Function createLimiterTag &mdash; Modular PULsation Suite  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=7ab3649f" />
+      <link rel="stylesheet" type="text/css" href="../_static/collapsible-lists/css/tree_view.css?v=a885cde7" />
+      <link rel="stylesheet" type="text/css" href="../_static/compact-api.css?v=bfcdbbe1" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script src="../_static/collapsible-lists/js/CollapsibleLists.compressed.js?v=73120307"></script>
+      <script src="../_static/collapsible-lists/js/apply-collapsible-lists.js?v=660e4f45"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Template Function createReconstructionTag" href="function_compile__time__dispatcher_8hpp_1a9978be9ec33b3d779b636e8fe222ade0.html" />
+    <link rel="prev" title="Template Function createIntegratorTag" href="function_compile__time__dispatcher_8hpp_1af90bda6680729cad82f2e0e9e4850f47.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Modular PULsation Suite
+              <img src="../_static/logo-mpuls.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../guide/index.html">MPULS User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../manual/index.html">MPULS User Manual</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference Manual</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="library_root.html">MPULS API reference</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="library_root.html#page-hierarchy">Page Hierarchy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="library_root.html#class-hierarchy">Class Hierarchy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="library_root.html#file-hierarchy">File Hierarchy</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="library_root.html#full-api">Full API</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="library_root.html#namespaces">Namespaces</a></li>
+<li class="toctree-l3"><a class="reference internal" href="library_root.html#classes-and-structs">Classes and Structs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="library_root.html#enums">Enums</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="library_root.html#functions">Functions</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="function_compile__time__dispatcher_8hpp_1a7684c0cd12126ed58ee7bbe793fa95f4.html">Template Function createEquationTag</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_compile__time__dispatcher_8hpp_1a3b8bbd535bd9258bfb39bfa6d6366434.html">Template Function createFluxTag</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_compile__time__dispatcher_8hpp_1af90bda6680729cad82f2e0e9e4850f47.html">Template Function createIntegratorTag</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Template Function createLimiterTag</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_compile__time__dispatcher_8hpp_1a9978be9ec33b3d779b636e8fe222ade0.html">Template Function createReconstructionTag</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_envelope__builder_8hpp_1a717c924bff07df3804ba31d1fc4a36af.html">Function envelope::build_static_envelope</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_compile__time__dispatcher_8hpp_1a27a2ed4213b0d1fb6f6e5ca671406f1a.html">Function generateFromConfig</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_grid__builder_8hpp_1ae486fd2de65542bc1ee22e82a31f7f51.html">Function grid::build</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_compile__time__dispatcher_8hpp_1a7438b4836635fc284ebf915aceb3ff55.html">Template Function grid_dim_generator</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_compile__time__dispatcher_8hpp_1acd37447c36d81154e4ad2aeb6795c4f8.html">Template Function grid_generator</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_print__console_8hpp_1a4342d8164f753f333c53321e183903bd.html">Function io::initializeRun</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_print__console_8hpp_1a7d92cb77870273584c8475f1e6ce7d76.html">Function io::log_surface_boundary_summary</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_print__console_8hpp_1a6fb0c84c52a53213fc01bd866221b2a5.html">Function io::placeholder_warning</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_print__console_8hpp_1ae70a37091917cb7b82ac872b190b33a3.html">Function io::unimplemented_warning</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_initial__models_8hpp_1ae38657604bb2a021940106bf18eca18d.html">Function KelvinHelmholtzInitialCondition</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_config__parser_8hpp_1ab2d3612c42f5e2c0ca7d6c3fc24f0614.html">Function loadConfig</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_simulation2d_8hpp_1a50087ef639129db722c485e48f7b8f52.html">Template Function simulation_2d::createEquation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_simulation2d_8hpp_1add0bbce5253a56fd01b6eaccd26798e4.html">Template Function simulation_2d::createFluxCalculator</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_simulation2d_8hpp_1ad0c0db2ca932178a8409c41eb8fd41ac.html">Template Function simulation_2d::createLimiter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_simulation2d_8hpp_1a484cc9916a24c5f348ba5c3dc1411803.html">Template Function simulation_2d::createReconstruction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_simulation2d_8hpp_1a50879ceb8176df5414e6b6bded61d1c5.html">Template Function simulation_2d::createTimeSolver</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_simulation2d_8hpp_1add987f6758214e6b394039ef157a6573.html">Template Function simulation_2d::getQfromEq</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_simulation2d_8hpp_1ad8ed7bbcf51a98c91f1725d21cc2123e.html">Template Function simulation_2d::solver_factory</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_initial__models_8hpp_1a5e76af92416c0cab11bcea98fe6666e6.html">Function staticModelInitialCondition</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_profile__writer_8hpp_1a92e39358f1c190b8a7459afb2fa3f2df.html">Function write2DQuantityProfileToHdf5</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_profile__writer_8hpp_1a21ce09ebf264d1fdb91135863cec2133.html">Function write2DScalarProfileToHdf5</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_profile__writer_8hpp_1a9d030f6947c666a5d614e062847b47e7.html">Function writeProfileToHdf5</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="library_root.html#variables">Variables</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Modular PULsation Suite</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="library_root.html">MPULS API reference</a></li>
+      <li class="breadcrumb-item active">Template Function createLimiterTag</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/api/function_compile__time__dispatcher_8hpp_1a6f98987fd5ae02bb483df5a4869cd98f.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="template-function-createlimitertag">
+<span id="exhale-function-compile-time-dispatcher-8hpp-1a6f98987fd5ae02bb483df5a4869cd98f"></span><h1>Template Function createLimiterTag<a class="headerlink" href="#template-function-createlimitertag" title="Link to this heading"></a></h1>
+<ul class="simple">
+<li><p>Defined in <a class="reference internal" href="file_include_core_compile_time_dispatcher.hpp.html#file-include-core-compile-time-dispatcher-hpp"><span class="std std-ref">File compile_time_dispatcher.hpp</span></a></p></li>
+</ul>
+<section id="function-documentation">
+<h2>Function Documentation<a class="headerlink" href="#function-documentation" title="Link to this heading"></a></h2>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4I0E16createLimiterTagDa8LimitersRR1T">
+<span id="_CPPv3I0E16createLimiterTag8LimitersRR1T"></span><span id="_CPPv2I0E16createLimiterTag8LimitersRR1T"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">T</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="compile__time__dispatcher_8hpp_1a6f98987fd5ae02bb483df5a4869cd98f"></span><span class="kt"><span class="pre">auto</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">createLimiterTag</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">Limiters</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">limiter_cfg</span></span>, <a class="reference internal" href="#_CPPv4I0E16createLimiterTagDa8LimitersRR1T" title="createLimiterTag::T"><span class="n"><span class="pre">T</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">current</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4I0E16createLimiterTagDa8LimitersRR1T" title="Link to this definition"></a><br /></dt>
+<dd><p>Coupling limiter cofiguration to Limiters . </p>
+<p><div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>component_tags</p>
+</div>
+</p>
+<dl class="field-list simple">
+<dt class="field-odd">Template Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>T</strong> – Right-value callable object, preferably lambda-function</p>
+</dd>
+<dt class="field-even">Parameters<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>limiter_cfg</strong> – configuration enum value describing limiter type. </p></li>
+<li><p><strong>current</strong> – the current stage rvalue object</p></li>
+</ul>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>rvalue object current, called with the appropiate limiter tag</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="function_compile__time__dispatcher_8hpp_1af90bda6680729cad82f2e0e9e4850f47.html" class="btn btn-neutral float-left" title="Template Function createIntegratorTag" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="function_compile__time__dispatcher_8hpp_1a9978be9ec33b3d779b636e8fe222ade0.html" class="btn btn-neutral float-right" title="Template Function createReconstructionTag" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright .</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,28 @@
+.. _exhale_class_classEquationBase:
+
+Template Class EquationBase
+===========================
+
+- Defined in :ref:`file_include_equations_equations.hpp`
+
+
+Inheritance Relationships
+-------------------------
+
+Derived Types
+*************
+
+- ``public Euler2d< T, Q >`` (:ref:`exhale_class_classEuler2d`)
+- ``public ScalarTransport2d< T, Q >`` (:ref:`exhale_class_classScalarTransport2d`)
+
+
+Class Documentation
+-------------------
+
+
+.. doxygenclass:: EquationBase
+   :project: MPULS
+   :members:
+   :protected-members:
+   :private-members:
+   :undoc-members:

@@ -1,0 +1,14 @@
+.. _exhale_enum_namespacemodel_1a3ae25a4a9f22dccaa99cdecb28ab4e0f:
+
+Enum InitialModel
+=================
+
+- Defined in :ref:`file_include_core_config_params.hpp`
+
+
+Enum Documentation
+------------------
+
+
+.. doxygenenum:: model::InitialModel
+   :project: MPULS

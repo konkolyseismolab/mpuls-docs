@@ -1,0 +1,7 @@
+.. _page_md_input__config:
+
+Input configuration
+===================
+
+.. doxygenpage:: md_input__config
+   :project: MPULS

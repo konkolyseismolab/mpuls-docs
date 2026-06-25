@@ -1,0 +1,14 @@
+.. _exhale_function_compile__time__dispatcher_8hpp_1af90bda6680729cad82f2e0e9e4850f47:
+
+Template Function createIntegratorTag
+=====================================
+
+- Defined in :ref:`file_include_core_compile_time_dispatcher.hpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: createIntegratorTag(Integrator, T&&)
+   :project: MPULS

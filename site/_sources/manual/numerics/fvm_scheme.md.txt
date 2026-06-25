@@ -1,0 +1,23 @@
+The Finite Volume Method
+========================
+
+The finite volume method solves the PDE by pairing the solution grid points
+with control volumes around them. This allows us to integrate the PDE system
+by volume,  converting the flux divergences to flux surface integrals.
+
+Therfore the PDE of the $l$ element of the generic state vector $\boldsymbol q$
+
+$$    \frac{\partial q^l}{\partial t} + \boldsymbol \nabla  \cdot \boldsymbol F_{\rm adv}^l + \boldsymbol \nabla \cdot \boldsymbol F_{\rm diff}^l =  S^l$$
+
+will become 
+
+$$
+   \frac{\partial}{\partial t} q^j\int_V  {\rm d} V+ \oint_A \boldsymbol F_{\rm adv}^j {\rm d} \boldsymbol A   + \oint \boldsymbol F_{\rm diff}^j {\rm d} \boldsymbol A = \int_V S^j {\rm d} V.
+$$
+
+Introducing the $\Delta V_{i,j,k} =\Delta x_i \Delta y_j \Delta z_k$ finite control volume (in general the $dV_{i,j,k} volume element on a curviliear grid), We define the cell average as
+
+$$
+\overline{ q}_{i,j,k}^l = \frac{ \int_{\Delta V} q_{i,j,k}^l(\boldsymbol r) dV}{ \int_{\Delta V} dV}\approx \frac{1}{\Delta V_{i,j,k}} \int_{\Delta V} q_{i,j,k}^l(\boldsymbol r) dV.
+$$
+

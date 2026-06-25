@@ -1,0 +1,14 @@
+.. _exhale_variable_common_8hpp_1aeaa45c68beb95f9860a4b00f3491dfe9:
+
+Variable is_horizontal
+======================
+
+- Defined in :ref:`file_include_core_common.hpp`
+
+
+Variable Documentation
+----------------------
+
+
+.. doxygenvariable:: is_horizontal
+   :project: MPULS

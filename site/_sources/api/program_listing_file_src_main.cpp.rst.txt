@@ -1,0 +1,108 @@
+
+.. _program_listing_file_src_main.cpp:
+
+Program Listing for File main.cpp
+=================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file_src_main.cpp>` (``src/main.cpp``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   #include <filesystem>
+   #include <iostream>
+   
+   #include "core/config_parser.hpp"
+   #include "core/custom_exceptions.hpp"
+   #include "io/profile_writer.hpp"
+   #include "io/print_console.hpp"
+   #include "grid/grid_builder.hpp"
+   #include "models/envelope_builder.hpp"
+   #include "core/simulation2d.hpp"
+   
+   
+   int main(int argc, char* argv[]) 
+   {
+       try
+       {
+           io::initializeRun();
+   
+           std::string config_file = "config/example_config.yaml";
+           for (int i = 1; i < argc; ++i) {
+               if (std::string(argv[i]) == "--config" && i+1 < argc) {
+                   config_file = argv[i+1];
+                   break;
+               }
+           }
+   
+           Config cfg = loadConfig(config_file);
+           
+           // -- swhitch between run modes
+   
+           switch (cfg.mode)
+           {
+           
+           case Mode::testing1D:
+           {
+               // --- Build StellarInput ---
+               StellarInput input {
+                   .mass       = cfg.stellar_parameters.stellar_mass,
+                   .radius     = cfg.stellar_parameters.stellar_radius,
+                   .luminosity = cfg.stellar_parameters.luminosity,
+                   .t_eff      = cfg.stellar_parameters.t_eff,
+                   .metallicity = cfg.stellar_parameters.metallicity,
+                   .grid_cfg   = cfg.grid_cfg
+               };
+   
+               // --- Build grid (this prints debug info) ---
+               Grid grid = grid::build(input);
+               envelope::build_static_envelope(grid, input);
+   
+   
+               // --- Extract radius for HDF5 ---
+               std::vector<double> radius;
+               radius.reserve(grid.faces.size());
+               for (auto& f : grid.faces)
+                   radius.push_back(f.radius);
+   
+               std::vector<double> zeros(radius.size(), 0.0);
+   
+               if (cfg.output_format == "hdf5") {
+                   std::filesystem::create_directories(cfg.output_dir);
+                   std::string output_path = cfg.output_dir + "/" + cfg.output_summary_name + ".h5";
+   
+                   writeProfileToHdf5(output_path,
+                                   radius,
+                                   zeros,
+                                   zeros,
+                                   zeros);
+   
+                   std::cout << "Output file saved to: " << output_path << "\n";
+               } else {
+                   std::cerr << "Unsupported output format: " << cfg.output_format << "\n";
+               }
+   
+               return 0;
+           }
+           case Mode::testing2D:
+           {
+               std::unique_ptr<simulation_2d::Simulation2D> simulation{simulation_2d::Simulation2D::InitializeNewSimulation2D(cfg)};
+               simulation->startSimulation();
+               return 0;
+           }
+           
+           }
+       }
+       catch(UnimplementedError& e)
+       {
+           std::cerr << e.what() << std::endl;
+           return 1;
+       }
+       catch(std::exception& e)
+       {
+           std::cerr << e.what() << std::endl;
+           return 2;
+       }
+   
+   }

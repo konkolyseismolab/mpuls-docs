@@ -1,0 +1,177 @@
+:orphan:
+
+
+Full API
+========
+
+Directories
+***********
+
+
+.. toctree::
+   :maxdepth: 5
+
+   dir_include.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   dir_include_advection.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   dir_include_core.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   dir_include_equations.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   dir_include_grid.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   dir_include_io.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   dir_include_models.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   dir_include_time_solver.rst
+
+Files
+*****
+
+
+.. toctree::
+   :maxdepth: 5
+
+   file_include_grid_cell_center.hpp.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_include_grid_cell_interface.hpp.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_include_core_common.hpp.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_include_core_compile_time_dispatcher.hpp.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_include_core_config_params.hpp.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_include_core_config_parser.hpp.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_include_core_constants.hpp.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_include_core_custom_exceptions.hpp.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_include_models_envelope_builder.hpp.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_include_equations_equations.hpp.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_include_advection_flux_operators.hpp.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_include_grid_grid.hpp.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_include_grid_grid_builder.hpp.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_include_grid_grid_state.hpp.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_include_advection_hyperdiffusion.hpp.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_include_models_initial_models.hpp.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_include_io_print_console.hpp.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_include_io_profile_writer.hpp.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_include_grid_quantity.hpp.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_include_core_simulation2d.hpp.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_include_models_stellar_input.hpp.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_include_time_solver_time_solver.hpp.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_include_core_version.hpp.rst
+
+Pages
+*****
+
+
+.. toctree::
+   :maxdepth: 5
+
+   page_todo.rst

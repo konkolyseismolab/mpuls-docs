@@ -1,0 +1,23 @@
+.. _dir_include_models:
+
+
+Directory models
+================
+
+
+|exhale_lsh| :ref:`Parent directory <dir_include>` (``include``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+
+*Directory path:* ``include/models``
+
+
+Files
+-----
+
+- :ref:`file_include_models_envelope_builder.hpp`
+- :ref:`file_include_models_initial_models.hpp`
+- :ref:`file_include_models_stellar_input.hpp`
+
+

@@ -1,0 +1,14 @@
+.. _exhale_function_print__console_8hpp_1a6fb0c84c52a53213fc01bd866221b2a5:
+
+Function io::placeholder_warning
+================================
+
+- Defined in :ref:`file_include_io_print_console.hpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: io::placeholder_warning(const std::string&, const std::string&, const std::string&)
+   :project: MPULS

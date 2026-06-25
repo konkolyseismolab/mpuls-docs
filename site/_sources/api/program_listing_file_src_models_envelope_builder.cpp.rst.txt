@@ -1,0 +1,119 @@
+
+.. _program_listing_file_src_models_envelope_builder.cpp:
+
+Program Listing for File envelope_builder.cpp
+=============================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file_src_models_envelope_builder.cpp>` (``src/models/envelope_builder.cpp``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   // models/envelope_builder.cpp
+   #include "models/envelope_builder.hpp"
+   #include "io/print_console.hpp"
+   #include "grid/grid_builder.hpp"
+   #include "core/constants.hpp"
+   #include "grid/cell_interface.hpp"
+   #include "grid/cell_center.hpp"
+   
+   #include <cmath>
+   
+   namespace envelope {
+   
+   static void set_surface_boundary(Grid& grid, const StellarInput& input) {
+   
+       const int n_face   = static_cast<int>(grid.faces.size()) - 1;
+       const int n_center = n_face - 1;
+   
+       // Physical constants
+       const double sigma_sb = constants::kStefanBoltzmann;
+       const double pi       = constants::kPi;
+   
+       // Stellar parameters
+       const double luminosity = input.luminosity;   // erg/s
+       const double t_eff      = input.t_eff;        // K
+   
+       // Eddington factor (T = f * Teff)
+       double eddington_factor = constants::kEddingtonFactor;
+   
+       // Stefan–Boltzmann law: L = 4πR²σT⁴
+       const double r_surface =
+           std::sqrt(luminosity / (4.0 * pi * sigma_sb * std::pow(t_eff, 4)));
+   
+       const double t_surface = eddington_factor * t_eff;
+   
+       // Assign to grid
+       // Outer face radius
+       grid.faces[n_face].radius = r_surface;
+   
+       // Center temperature
+       grid.centers[n_center].temperature = t_surface;
+   
+       // Pressure and density at the surface
+       grid.centers[n_center].pressure = 0.0;
+       grid.centers[n_center].density  = 0.0;
+   
+       // Luminosity components
+       grid.centers[n_center].radiative_luminosity  = luminosity;
+       grid.centers[n_center].convective_luminosity = 0.0;
+       grid.centers[n_center].turbulent_energy      = 0.0; // later: L_t
+   
+   
+       // Log summary
+       io::log_surface_boundary_summary(r_surface, t_surface, grid.centers[n_center].pressure, grid.centers[n_center].density, luminosity);
+   
+       std::cout << "\n[NOTE] Surface boundary conditions set using Stefan–Boltzmann law and Eddington approximation.\n"
+                 << "       These will be modified during inward integration and relaxation steps.\n\n";
+   
+       io::placeholder_warning("turbulent_energy (set to 0.0 at surface)", __FILE__, __func__);
+   
+       io::placeholder_warning(
+           std::string("Simple Eddington factor (") +
+           std::to_string(eddington_factor) +
+           ") used for surface temperature. Replace with more accurate grey-atmosphere treatment later.",
+           __FILE__,
+           __func__
+       );
+   }
+   
+   
+   
+   static void compute_outer_zone(Grid& grid, const StellarInput& input) {
+       io::unimplemented_warning(__FILE__, __func__);
+   }
+   
+   
+   static void step_inward_zone(Grid& grid, const StellarInput& input, int i) {
+       io::unimplemented_warning(__FILE__, __func__);
+   }
+   
+   
+   
+   void build_static_envelope(Grid& grid, const StellarInput& input) {
+   
+       // --- Step 1: Set initial surface boundary conditions ---
+       set_surface_boundary(grid, input);
+   
+       // --- Step 2: Compute the outermost physical zone ---
+       compute_outer_zone(grid, input);
+   
+       // --- Step 3: Inward integration (placeholder for now) ---
+       // NOTE: anchor_index is not known yet — it will be determined dynamically
+       //       during inward integration once T <= T_anchor.
+       //
+       // For now, use a temporary dummy value or simply comment this out
+       // until step_inward_zone() is implemented.
+   
+       int n_grid = grid.faces.size() - 1;
+       int anchor_index = 1; // TEMPORARY placeholder — will be computed later!!
+   
+       io::placeholder_warning("anchor_index", __FILE__, __func__);
+   
+       for (int i = n_grid - 1; i > anchor_index; --i) {
+           step_inward_zone(grid, input, i);
+       }
+   }
+   
+   } // namespace envelope

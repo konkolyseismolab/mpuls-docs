@@ -1,0 +1,27 @@
+.. _exhale_class_classsimulation__2d_1_1ComponentWrapper:
+
+Template Class ComponentWrapper
+===============================
+
+- Defined in :ref:`file_include_core_simulation2d.hpp`
+
+
+Inheritance Relationships
+-------------------------
+
+Base Type
+*********
+
+- ``public simulation_2d::ComponentBase`` (:ref:`exhale_class_classsimulation__2d_1_1ComponentBase`)
+
+
+Class Documentation
+-------------------
+
+
+.. doxygenclass:: simulation_2d::ComponentWrapper
+   :project: MPULS
+   :members:
+   :protected-members:
+   :private-members:
+   :undoc-members:

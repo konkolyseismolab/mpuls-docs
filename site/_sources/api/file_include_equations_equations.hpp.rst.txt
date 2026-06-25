@@ -1,0 +1,64 @@
+
+.. _file_include_equations_equations.hpp:
+
+File equations.hpp
+==================
+
+|exhale_lsh| :ref:`Parent directory <dir_include_equations>` (``include/equations``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``include/equations/equations.hpp``)
+------------------------------------------------
+
+
+
+
+
+
+Includes
+--------
+
+
+- ``cmath``
+
+- ``concepts``
+
+- ``core/common.hpp`` (:ref:`file_include_core_common.hpp`)
+
+- ``grid/quantity.hpp`` (:ref:`file_include_grid_quantity.hpp`)
+
+- ``span``
+
+
+
+Included By
+-----------
+
+
+- :ref:`file_include_advection_flux_operators.hpp`
+
+- :ref:`file_include_advection_hyperdiffusion.hpp`
+
+- :ref:`file_include_core_simulation2d.hpp`
+
+- :ref:`file_include_time_solver_time_solver.hpp`
+
+
+
+
+Classes
+-------
+
+
+- :ref:`exhale_class_classEquationBase`
+
+- :ref:`exhale_class_classEuler2d`
+
+- :ref:`exhale_class_classScalarTransport2d`
+

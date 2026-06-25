@@ -1,0 +1,14 @@
+.. _exhale_function_quantity_8hpp_1a74c2ecb814bc243f25b8236fd8cd6064:
+
+Template Function operator+
+===========================
+
+- Defined in :ref:`file_include_grid_quantity.hpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: operator+(D, const QuantityBase<D, N>&)
+   :project: MPULS

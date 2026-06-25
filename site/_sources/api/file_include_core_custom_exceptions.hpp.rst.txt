@@ -1,0 +1,48 @@
+
+.. _file_include_core_custom_exceptions.hpp:
+
+File custom_exceptions.hpp
+==========================
+
+|exhale_lsh| :ref:`Parent directory <dir_include_core>` (``include/core``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``include/core/custom_exceptions.hpp``)
+---------------------------------------------------
+
+
+
+
+
+
+Includes
+--------
+
+
+- ``exception`` (:ref:`file_include_core_custom_exceptions.hpp`)
+
+- ``iostream``
+
+- ``sstream``
+
+- ``stdexcept``
+
+- ``string``
+
+
+
+
+
+
+Classes
+-------
+
+
+- :ref:`exhale_class_classUnimplementedError`
+

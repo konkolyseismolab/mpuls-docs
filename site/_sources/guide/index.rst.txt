@@ -1,0 +1,15 @@
+MPULS User Guide
+================
+
+The topic of stellar pulsation modelling and its numerical solution needs a
+complex program structure. In this User Guide we walk through the interested
+reader how to use MPULS and its modules in various environments. 
+
+
+.. toctree::
+   :maxdepth: 2 
+
+   install
+   getting-started
+   input_config
+   output

@@ -1,0 +1,16 @@
+.. _dir__home_gabesz_Dokumentumok_Munka_MPULS_include_grid:
+
+
+Directory grid
+==============
+
+
+|exhale_lsh| :ref:`Parent directory <dir_include>` (``include``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+
+*Directory path:* ``/home/gabesz/Dokumentumok/Munka/MPULS/include/grid``
+
+
+

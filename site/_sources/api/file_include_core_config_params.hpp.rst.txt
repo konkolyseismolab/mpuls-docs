@@ -1,0 +1,90 @@
+
+.. _file_include_core_config_params.hpp:
+
+File config_params.hpp
+======================
+
+|exhale_lsh| :ref:`Parent directory <dir_include_core>` (``include/core``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``include/core/config_params.hpp``)
+-----------------------------------------------
+
+
+
+
+
+
+Includes
+--------
+
+
+- ``string``
+
+- ``vector``
+
+
+
+Included By
+-----------
+
+
+- :ref:`file_include_core_compile_time_dispatcher.hpp`
+
+- :ref:`file_include_core_config_parser.hpp`
+
+- :ref:`file_include_core_simulation2d.hpp`
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_model`
+
+- :ref:`namespace_solver_params`
+
+
+Classes
+-------
+
+
+- :ref:`exhale_struct_structConfig`
+
+- :ref:`exhale_struct_structGrid2Dconfig`
+
+- :ref:`exhale_struct_structGridConfig`
+
+- :ref:`exhale_struct_structmodel_1_1ModelConfig`
+
+- :ref:`exhale_struct_structSolverConfig`
+
+- :ref:`exhale_struct_structStellarParameters`
+
+
+Enums
+-----
+
+
+- :ref:`exhale_enum_config__params_8hpp_1a46c8a310cf4c094f8c80e1cb8dc1f911`
+
+- :ref:`exhale_enum_namespacemodel_1a907c446eb5c73e13a7d76edd612fdfef`
+
+- :ref:`exhale_enum_namespacemodel_1a3ae25a4a9f22dccaa99cdecb28ab4e0f`
+
+- :ref:`exhale_enum_namespacesolver__params_1a2b577686b8ffe76b030025b230938ef2`
+
+- :ref:`exhale_enum_namespacesolver__params_1ad745adffd0fab83afbaf692ea8165050`
+
+- :ref:`exhale_enum_namespacesolver__params_1a8c444a3981a4189f632deff4104e1165`
+
+- :ref:`exhale_enum_namespacesolver__params_1abd53625bda2fa8124b0f37652e3340d1`
+

@@ -1,0 +1,14 @@
+.. _exhale_variable_namespaceconstants_1a27895881bf36c2968dada68de7fff4df:
+
+Variable constants::kEddingtonFactor
+====================================
+
+- Defined in :ref:`file_include_core_constants.hpp`
+
+
+Variable Documentation
+----------------------
+
+
+.. doxygenvariable:: constants::kEddingtonFactor
+   :project: MPULS

@@ -1,0 +1,307 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Program Listing for File config_parser.cpp &mdash; Modular PULsation Suite  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=7ab3649f" />
+      <link rel="stylesheet" type="text/css" href="../_static/collapsible-lists/css/tree_view.css?v=a885cde7" />
+      <link rel="stylesheet" type="text/css" href="../_static/compact-api.css?v=bfcdbbe1" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script src="../_static/collapsible-lists/js/CollapsibleLists.compressed.js?v=73120307"></script>
+      <script src="../_static/collapsible-lists/js/apply-collapsible-lists.js?v=660e4f45"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Modular PULsation Suite
+              <img src="../_static/logo-mpuls.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../guide/index.html">MPULS User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../manual/index.html">MPULS User Manual</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference Manual</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="library_root.html">MPULS API reference</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Modular PULsation Suite</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Program Listing for File config_parser.cpp</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/api/program_listing_file_src_core_config_parser.cpp.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="program-listing-for-file-config-parser-cpp">
+<span id="program-listing-file-src-core-config-parser-cpp"></span><h1>Program Listing for File config_parser.cpp<a class="headerlink" href="#program-listing-for-file-config-parser-cpp" title="Link to this heading"></a></h1>
+<p>↰ <a class="reference internal" href="file_src_core_config_parser.cpp.html#file-src-core-config-parser-cpp"><span class="std std-ref">Return to documentation for file</span></a> (<code class="docutils literal notranslate"><span class="pre">src/core/config_parser.cpp</span></code>)</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;core/config_parser.hpp&quot;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;core/constants.hpp&quot;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;yaml-cpp/yaml.h&gt;</span><span class="c1">              // AI says, there&#39;s a lib for YAML files in CPP -- let&#39;s check (C does not have one, so I had to write a py wrapper to read the file)</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;core/custom_exceptions.hpp&quot;</span>
+
+
+
+
+<span class="n">Config</span><span class="w"> </span><span class="nf">loadConfig</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span><span class="w"> </span><span class="n">yaml_path</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">YAML</span><span class="o">::</span><span class="n">Node</span><span class="w"> </span><span class="n">root</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">YAML</span><span class="o">::</span><span class="n">LoadFile</span><span class="p">(</span><span class="n">yaml_path</span><span class="p">);</span>
+<span class="w">    </span><span class="n">Config</span><span class="w"> </span><span class="n">cfg</span><span class="p">;</span>
+
+<span class="w">    </span><span class="c1">// --- General settings ---</span>
+<span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">gen</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">root</span><span class="p">[</span><span class="s">&quot;general_settings&quot;</span><span class="p">];</span>
+<span class="w">    </span><span class="n">cfg</span><span class="p">.</span><span class="n">output_dir</span><span class="w">          </span><span class="o">=</span><span class="w"> </span><span class="n">gen</span><span class="p">[</span><span class="s">&quot;output_dir&quot;</span><span class="p">].</span><span class="n">as</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span><span class="p">();</span>
+<span class="w">    </span><span class="n">cfg</span><span class="p">.</span><span class="n">output_format</span><span class="w">       </span><span class="o">=</span><span class="w"> </span><span class="n">gen</span><span class="p">[</span><span class="s">&quot;output_format&quot;</span><span class="p">].</span><span class="n">as</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span><span class="p">();</span>
+<span class="w">    </span><span class="n">cfg</span><span class="p">.</span><span class="n">output_summary_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">gen</span><span class="p">[</span><span class="s">&quot;output_summary_name&quot;</span><span class="p">].</span><span class="n">as</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span><span class="p">();</span>
+<span class="w">    </span><span class="n">cfg</span><span class="p">.</span><span class="n">output_prefix</span><span class="w">       </span><span class="o">=</span><span class="w"> </span><span class="n">gen</span><span class="p">[</span><span class="s">&quot;output_prefix&quot;</span><span class="p">].</span><span class="n">as</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span><span class="p">();</span>
+<span class="w">    </span><span class="n">cfg</span><span class="p">.</span><span class="n">dimensions</span><span class="w">          </span><span class="o">=</span><span class="w"> </span><span class="n">gen</span><span class="p">[</span><span class="s">&quot;dimension&quot;</span><span class="p">].</span><span class="n">as</span><span class="o">&lt;</span><span class="kt">short</span><span class="o">&gt;</span><span class="p">();</span>
+<span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">mode_str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">gen</span><span class="p">[</span><span class="s">&quot;mode&quot;</span><span class="p">].</span><span class="n">as</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span><span class="p">();</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">mode_str</span><span class="o">==</span><span class="s">&quot;testing&quot;</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">switch</span><span class="w"> </span><span class="p">(</span><span class="n">cfg</span><span class="p">.</span><span class="n">dimensions</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="mi">1</span><span class="p">:</span>
+<span class="w">            </span><span class="n">cfg</span><span class="p">.</span><span class="n">mode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Mode</span><span class="o">::</span><span class="n">testing1D</span><span class="p">;</span><span class="cm">/* code */</span>
+<span class="w">            </span><span class="k">break</span><span class="p">;</span>
+<span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="mi">2</span><span class="p">:</span>
+<span class="w">            </span><span class="n">cfg</span><span class="p">.</span><span class="n">mode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Mode</span><span class="o">::</span><span class="n">testing2D</span><span class="p">;</span>
+<span class="w">            </span><span class="k">break</span><span class="p">;</span>
+<span class="w">        </span><span class="k">default</span><span class="o">:</span>
+<span class="w">            </span><span class="k">throw</span><span class="w"> </span><span class="n">UnimplementedError</span><span class="p">(</span><span class="n">__FILE__</span><span class="p">,</span><span class="n">__func__</span><span class="p">,</span><span class="n">__LINE__</span><span class="p">,</span>
+<span class="w">                </span><span class="n">mode_str</span><span class="o">+</span><span class="s">&quot;with &quot;</span><span class="o">+</span><span class="n">std</span><span class="o">::</span><span class="n">to_string</span><span class="p">(</span><span class="n">cfg</span><span class="p">.</span><span class="n">dimensions</span><span class="p">)</span><span class="o">+</span><span class="s">&quot; is not implemented.&quot;</span><span class="p">);</span>
+<span class="w">            </span><span class="k">break</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">else</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">throw</span><span class="w"> </span><span class="n">UnimplementedError</span><span class="p">(</span><span class="n">__FILE__</span><span class="p">,</span><span class="n">__func__</span><span class="p">,</span><span class="n">__LINE__</span><span class="p">,</span>
+<span class="w">                </span><span class="n">mode_str</span><span class="o">+</span><span class="s">&quot; is not implemented.&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">model</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">root</span><span class="p">[</span><span class="s">&quot;model&quot;</span><span class="p">];</span>
+<span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">modeltype</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">model</span><span class="p">[</span><span class="s">&quot;system_type&quot;</span><span class="p">].</span><span class="n">as</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span><span class="p">();</span>
+<span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">init_cond</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">model</span><span class="p">[</span><span class="s">&quot;initial_conditions&quot;</span><span class="p">][</span><span class="s">&quot;name&quot;</span><span class="p">].</span><span class="n">as</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span><span class="p">();</span>
+<span class="w">    </span><span class="k">switch</span><span class="w"> </span><span class="p">(</span><span class="n">cfg</span><span class="p">.</span><span class="n">mode</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="no">Mode</span><span class="o">::</span><span class="no">testing2D</span><span class="p">:</span>
+<span class="w">        </span><span class="cm">/* code */</span>
+<span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="n">modeltype</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;Euler&quot;</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="n">cfg</span><span class="p">.</span><span class="n">model</span><span class="p">.</span><span class="n">type</span><span class="o">=</span><span class="n">model</span><span class="o">::</span><span class="n">Equation</span><span class="o">::</span><span class="n">Euler2d</span><span class="p">;</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">init_cond</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;Kelvin-Helmholtz&quot;</span><span class="p">)</span>
+<span class="w">                </span><span class="n">cfg</span><span class="p">.</span><span class="n">model</span><span class="p">.</span><span class="n">initial_model</span><span class="o">=</span><span class="n">model</span><span class="o">::</span><span class="n">InitialModel</span><span class="o">::</span><span class="n">KelvinHelmholtz</span><span class="p">;</span>
+<span class="w">            </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="p">(</span><span class="n">init_cond</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;constant&quot;</span><span class="p">)</span>
+<span class="w">                </span><span class="n">cfg</span><span class="p">.</span><span class="n">model</span><span class="p">.</span><span class="n">initial_model</span><span class="o">=</span><span class="n">model</span><span class="o">::</span><span class="n">InitialModel</span><span class="o">::</span><span class="n">Constant</span><span class="p">;</span>
+<span class="w">            </span><span class="k">else</span>
+<span class="w">                </span><span class="k">throw</span><span class="w"> </span><span class="n">UnimplementedError</span><span class="p">(</span><span class="n">__FILE__</span><span class="p">,</span><span class="n">__func__</span><span class="p">,</span><span class="n">__LINE__</span><span class="p">,</span>
+<span class="w">                </span><span class="s">&quot;Only Kelvin-Helmholt and constant state tests are available.&quot;</span><span class="p">);</span>
+<span class="w">            </span><span class="n">cfg</span><span class="p">.</span><span class="n">model</span><span class="p">.</span><span class="n">params</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">model</span><span class="p">[</span><span class="s">&quot;initial_conditions&quot;</span><span class="p">][</span><span class="s">&quot;params&quot;</span><span class="p">].</span><span class="n">as</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;&gt;</span><span class="p">();</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="k">else</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">                    </span><span class="k">throw</span><span class="w"> </span><span class="n">UnimplementedError</span><span class="p">(</span><span class="n">__FILE__</span><span class="p">,</span><span class="n">__func__</span><span class="p">,</span><span class="n">__LINE__</span><span class="p">,</span>
+<span class="w">                </span><span class="s">&quot;Only Euler 2D tests are available currently.&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="k">break</span><span class="p">;</span>
+
+<span class="w">    </span><span class="k">default</span><span class="o">:</span>
+<span class="w">        </span><span class="k">break</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+
+
+<span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">sim</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">root</span><span class="p">[</span><span class="s">&quot;simulation&quot;</span><span class="p">];</span>
+<span class="w">    </span><span class="c1">// --- Boundary conditions ---</span>
+<span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">bc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">model</span><span class="p">[</span><span class="s">&quot;boundary_conditions&quot;</span><span class="p">];</span>
+<span class="w">    </span><span class="n">cfg</span><span class="p">.</span><span class="n">inner_boundary</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">bc</span><span class="p">[</span><span class="s">&quot;inner_boundary&quot;</span><span class="p">].</span><span class="n">as</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span><span class="p">();</span>
+<span class="w">    </span><span class="n">cfg</span><span class="p">.</span><span class="n">outer_boundary</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">bc</span><span class="p">[</span><span class="s">&quot;outer_boundary&quot;</span><span class="p">].</span><span class="n">as</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span><span class="p">();</span>
+
+<span class="w">    </span><span class="c1">// --- Integrator settings ---</span>
+<span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">integ</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sim</span><span class="p">[</span><span class="s">&quot;integrator&quot;</span><span class="p">];</span>
+<span class="w">    </span><span class="n">cfg</span><span class="p">.</span><span class="n">integrator_type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">integ</span><span class="p">[</span><span class="s">&quot;integrator_type&quot;</span><span class="p">].</span><span class="n">as</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span><span class="p">();</span>
+<span class="w">    </span><span class="n">cfg</span><span class="p">.</span><span class="n">time_step</span><span class="w">       </span><span class="o">=</span><span class="w"> </span><span class="n">integ</span><span class="p">[</span><span class="s">&quot;time_step&quot;</span><span class="p">].</span><span class="n">as</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span><span class="p">();</span>
+<span class="w">    </span><span class="n">cfg</span><span class="p">.</span><span class="n">delta_t</span><span class="w">         </span><span class="o">=</span><span class="w"> </span><span class="n">integ</span><span class="p">[</span><span class="s">&quot;delta_t&quot;</span><span class="p">].</span><span class="n">as</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="p">();</span>
+<span class="w">    </span><span class="n">cfg</span><span class="p">.</span><span class="n">t_max</span><span class="w">           </span><span class="o">=</span><span class="w"> </span><span class="n">integ</span><span class="p">[</span><span class="s">&quot;t_max&quot;</span><span class="p">].</span><span class="n">as</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="p">();</span>
+<span class="w">    </span><span class="n">cfg</span><span class="p">.</span><span class="n">t_init</span><span class="w">          </span><span class="o">=</span><span class="w"> </span><span class="n">integ</span><span class="p">[</span><span class="s">&quot;initial_t&quot;</span><span class="p">].</span><span class="n">as</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="p">();</span>
+<span class="w">    </span><span class="c1">// --- Grid configuration ---</span>
+<span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">grid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">root</span><span class="p">[</span><span class="s">&quot;grid&quot;</span><span class="p">];</span>
+<span class="w">    </span><span class="n">cfg</span><span class="p">.</span><span class="n">grid_cfg</span><span class="p">.</span><span class="n">number_of_grid_cells</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">grid</span><span class="p">[</span><span class="s">&quot;number_of_radial_grid_cells&quot;</span><span class="p">].</span><span class="n">as</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">();</span>
+<span class="w">    </span><span class="n">cfg</span><span class="p">.</span><span class="n">grid_cfg</span><span class="p">.</span><span class="n">radius_min</span><span class="w">           </span><span class="o">=</span><span class="w"> </span><span class="n">grid</span><span class="p">[</span><span class="s">&quot;radius_min&quot;</span><span class="p">].</span><span class="n">as</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="p">();</span>
+<span class="w">    </span><span class="n">cfg</span><span class="p">.</span><span class="n">grid_cfg</span><span class="p">.</span><span class="n">radius_max</span><span class="w">           </span><span class="o">=</span><span class="w"> </span><span class="n">grid</span><span class="p">[</span><span class="s">&quot;radius_max&quot;</span><span class="p">].</span><span class="n">as</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="p">();</span>
+<span class="w">    </span><span class="n">cfg</span><span class="p">.</span><span class="n">grid_cfg</span><span class="p">.</span><span class="n">scale</span><span class="w">                </span><span class="o">=</span><span class="w"> </span><span class="n">grid</span><span class="p">[</span><span class="s">&quot;scale&quot;</span><span class="p">].</span><span class="n">as</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span><span class="p">();</span>
+
+
+<span class="w">    </span><span class="c1">// --- 2D integrator and grid configuration ---</span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">cfg</span><span class="p">.</span><span class="n">mode</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">Mode</span><span class="o">::</span><span class="n">testing2D</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="n">cfg</span><span class="p">.</span><span class="n">integrator_type</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;SSP_RK2&quot;</span><span class="p">)</span>
+<span class="w">            </span><span class="n">cfg</span><span class="p">.</span><span class="n">solver_cfg</span><span class="p">.</span><span class="n">integrator</span><span class="o">=</span><span class="n">solver_params</span><span class="o">::</span><span class="n">Integrator</span><span class="o">::</span><span class="n">SSP_RK2</span><span class="p">;</span>
+<span class="w">        </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="p">(</span><span class="n">cfg</span><span class="p">.</span><span class="n">integrator_type</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;SSP_RK3&quot;</span><span class="p">)</span>
+<span class="w">            </span><span class="n">cfg</span><span class="p">.</span><span class="n">solver_cfg</span><span class="p">.</span><span class="n">integrator</span><span class="o">=</span><span class="n">solver_params</span><span class="o">::</span><span class="n">Integrator</span><span class="o">::</span><span class="n">SSP_RK3</span><span class="p">;</span>
+<span class="w">        </span><span class="k">else</span>
+<span class="w">            </span><span class="k">throw</span><span class="w"> </span><span class="n">UnimplementedError</span><span class="p">(</span><span class="n">__FILE__</span><span class="p">,</span><span class="n">__func__</span><span class="p">,</span><span class="n">__LINE__</span><span class="p">,</span>
+<span class="w">               </span><span class="n">cfg</span><span class="p">.</span><span class="n">integrator_type</span><span class="o">+</span><span class="w"> </span><span class="o">+</span><span class="s">&quot; is not implemented.&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="n">cfg</span><span class="p">.</span><span class="n">solver_cfg</span><span class="p">.</span><span class="n">cfl_number</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">integ</span><span class="p">[</span><span class="s">&quot;cfl_number&quot;</span><span class="p">].</span><span class="n">as</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="p">();</span>
+<span class="w">        </span><span class="k">auto</span><span class="w"> </span><span class="n">hyp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sim</span><span class="p">[</span><span class="s">&quot;hyperbolic_solver&quot;</span><span class="p">];</span>
+<span class="w">        </span><span class="k">auto</span><span class="w"> </span><span class="n">reconst</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">hyp</span><span class="p">[</span><span class="s">&quot;reconstruction&quot;</span><span class="p">].</span><span class="n">as</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span><span class="p">();</span>
+
+<span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="n">reconst</span><span class="o">==</span><span class="s">&quot;piecewise_linear&quot;</span><span class="p">)</span>
+<span class="w">            </span><span class="n">cfg</span><span class="p">.</span><span class="n">solver_cfg</span><span class="p">.</span><span class="n">reconstructor</span><span class="o">=</span><span class="n">solver_params</span><span class="o">::</span><span class="n">Reconstructor</span><span class="o">::</span><span class="n">PLM</span><span class="p">;</span>
+<span class="w">        </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="p">(</span><span class="n">reconst</span><span class="o">==</span><span class="s">&quot;piecewise_constant&quot;</span><span class="p">)</span>
+<span class="w">            </span><span class="n">cfg</span><span class="p">.</span><span class="n">solver_cfg</span><span class="p">.</span><span class="n">reconstructor</span><span class="o">=</span><span class="n">solver_params</span><span class="o">::</span><span class="n">Reconstructor</span><span class="o">::</span><span class="n">PCM</span><span class="p">;</span>
+<span class="w">        </span><span class="k">else</span>
+<span class="w">            </span><span class="k">throw</span><span class="w"> </span><span class="n">UnimplementedError</span><span class="p">(</span><span class="n">__FILE__</span><span class="p">,</span><span class="n">__func__</span><span class="p">,</span><span class="n">__LINE__</span><span class="p">,</span>
+<span class="w">               </span><span class="n">reconst</span><span class="o">+</span><span class="w"> </span><span class="o">+</span><span class="s">&quot; is not implemented.&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="k">auto</span><span class="w"> </span><span class="n">limiter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">hyp</span><span class="p">[</span><span class="s">&quot;limiter&quot;</span><span class="p">].</span><span class="n">as</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span><span class="p">();</span>
+<span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="n">limiter</span><span class="o">==</span><span class="s">&quot;vanleer&quot;</span><span class="p">)</span>
+<span class="w">            </span><span class="n">cfg</span><span class="p">.</span><span class="n">solver_cfg</span><span class="p">.</span><span class="n">limiter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">solver_params</span><span class="o">::</span><span class="n">Limiters</span><span class="o">::</span><span class="n">VanLeer</span><span class="p">;</span>
+<span class="w">        </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="p">(</span><span class="n">limiter</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;minmod&quot;</span><span class="p">)</span>
+<span class="w">            </span><span class="n">cfg</span><span class="p">.</span><span class="n">solver_cfg</span><span class="p">.</span><span class="n">limiter</span><span class="o">=</span><span class="n">solver_params</span><span class="o">::</span><span class="n">Limiters</span><span class="o">::</span><span class="n">MinMod</span><span class="p">;</span>
+<span class="w">        </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="p">(</span><span class="n">limiter</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;superbee&quot;</span><span class="p">)</span>
+<span class="w">            </span><span class="n">cfg</span><span class="p">.</span><span class="n">solver_cfg</span><span class="p">.</span><span class="n">limiter</span><span class="o">=</span><span class="n">solver_params</span><span class="o">::</span><span class="n">Limiters</span><span class="o">::</span><span class="n">Superbee</span><span class="p">;</span>
+<span class="w">        </span><span class="k">else</span>
+<span class="w">            </span><span class="k">throw</span><span class="w"> </span><span class="n">UnimplementedError</span><span class="p">(</span><span class="n">__FILE__</span><span class="p">,</span><span class="n">__func__</span><span class="p">,</span><span class="n">__LINE__</span><span class="p">,</span>
+<span class="w">               </span><span class="n">limiter</span><span class="w"> </span><span class="o">+</span><span class="s">&quot; is not implemented.&quot;</span><span class="p">);</span>
+
+<span class="w">        </span><span class="k">auto</span><span class="w"> </span><span class="n">flux</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="n">hyp</span><span class="p">[</span><span class="s">&quot;flux_calculation&quot;</span><span class="p">].</span><span class="n">as</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span><span class="p">();</span>
+<span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="n">flux</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;local-lf&quot;</span><span class="p">)</span>
+<span class="w">            </span><span class="n">cfg</span><span class="p">.</span><span class="n">solver_cfg</span><span class="p">.</span><span class="n">flux_calculator</span><span class="o">=</span><span class="n">solver_params</span><span class="o">::</span><span class="n">FluxCalculator</span><span class="o">::</span><span class="n">LLF</span><span class="p">;</span>
+<span class="w">        </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="p">(</span><span class="n">flux</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;upwind&quot;</span><span class="p">)</span>
+<span class="w">            </span><span class="n">cfg</span><span class="p">.</span><span class="n">solver_cfg</span><span class="p">.</span><span class="n">flux_calculator</span><span class="o">=</span><span class="n">solver_params</span><span class="o">::</span><span class="n">FluxCalculator</span><span class="o">::</span><span class="n">Upwind</span><span class="p">;</span>
+<span class="w">        </span><span class="k">else</span>
+<span class="w">            </span><span class="k">throw</span><span class="w"> </span><span class="n">UnimplementedError</span><span class="p">(</span><span class="n">__FILE__</span><span class="p">,</span><span class="n">__func__</span><span class="p">,</span><span class="n">__LINE__</span><span class="p">,</span>
+<span class="w">               </span><span class="n">flux</span><span class="w"> </span><span class="o">+</span><span class="s">&quot; is not implemented.&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="n">cfg</span><span class="p">.</span><span class="n">solver_cfg</span><span class="p">.</span><span class="n">is_diffusion</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sim</span><span class="p">[</span><span class="s">&quot;hyperdiffusion&quot;</span><span class="p">].</span><span class="n">as</span><span class="o">&lt;</span><span class="kt">bool</span><span class="o">&gt;</span><span class="p">();</span>
+<span class="w">        </span><span class="n">cfg</span><span class="p">.</span><span class="n">solver_cfg</span><span class="p">.</span><span class="n">hyperdiffusivity</span><span class="o">=</span><span class="n">sim</span><span class="p">[</span><span class="s">&quot;hyperdiffusivity_coeff&quot;</span><span class="p">].</span><span class="n">as</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="p">();</span>
+
+<span class="w">        </span><span class="n">cfg</span><span class="p">.</span><span class="n">grid_2d_cfg</span><span class="p">.</span><span class="n">r0</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cfg</span><span class="p">.</span><span class="n">grid_cfg</span><span class="p">.</span><span class="n">radius_min</span><span class="p">;</span>
+<span class="w">        </span><span class="n">cfg</span><span class="p">.</span><span class="n">grid_2d_cfg</span><span class="p">.</span><span class="n">rN</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cfg</span><span class="p">.</span><span class="n">grid_cfg</span><span class="p">.</span><span class="n">radius_max</span><span class="p">;</span>
+<span class="w">        </span><span class="n">cfg</span><span class="p">.</span><span class="n">grid_2d_cfg</span><span class="p">.</span><span class="n">Nrad</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cfg</span><span class="p">.</span><span class="n">grid_cfg</span><span class="p">.</span><span class="n">number_of_grid_cells</span><span class="p">;</span>
+<span class="w">        </span><span class="n">cfg</span><span class="p">.</span><span class="n">grid_2d_cfg</span><span class="p">.</span><span class="n">Nhor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">grid</span><span class="p">[</span><span class="s">&quot;number_of_theta_grid_cells&quot;</span><span class="p">].</span><span class="n">as</span><span class="o">&lt;</span><span class="kt">size_t</span><span class="o">&gt;</span><span class="p">();</span>
+<span class="w">        </span><span class="k">auto</span><span class="w"> </span><span class="n">theta_domain</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">grid</span><span class="p">[</span><span class="s">&quot;size_of_theta_grid&quot;</span><span class="p">].</span><span class="n">as</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="p">();</span>
+<span class="w">        </span><span class="n">theta_domain</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="mf">180.</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">constants</span><span class="o">::</span><span class="n">kPi</span><span class="p">;</span>
+<span class="w">        </span><span class="n">cfg</span><span class="p">.</span><span class="n">grid_2d_cfg</span><span class="p">.</span><span class="n">theta0</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">constants</span><span class="o">::</span><span class="n">kPi</span><span class="w"> </span><span class="o">*</span><span class="mf">0.5</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mf">0.5</span><span class="w"> </span><span class="o">*</span><span class="n">theta_domain</span><span class="p">;</span>
+<span class="w">        </span><span class="n">cfg</span><span class="p">.</span><span class="n">grid_2d_cfg</span><span class="p">.</span><span class="n">thetaN</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">constants</span><span class="o">::</span><span class="n">kPi</span><span class="w"> </span><span class="o">*</span><span class="mf">0.5</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">0.5</span><span class="w"> </span><span class="o">*</span><span class="n">theta_domain</span><span class="p">;</span>
+<span class="w">        </span><span class="k">auto</span><span class="w"> </span><span class="n">gridtype</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">grid</span><span class="p">[</span><span class="s">&quot;type&quot;</span><span class="p">].</span><span class="n">as</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span><span class="p">();</span>
+<span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="n">gridtype</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;uniform&quot;</span><span class="p">)</span>
+<span class="w">        </span><span class="n">cfg</span><span class="p">.</span><span class="n">grid_2d_cfg</span><span class="p">.</span><span class="n">type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Grid2Dconfig</span><span class="o">::</span><span class="n">GridType</span><span class="o">::</span><span class="n">Uniform</span><span class="p">;</span>
+<span class="w">        </span><span class="k">else</span>
+<span class="w">        </span><span class="k">throw</span><span class="w"> </span><span class="n">UnimplementedError</span><span class="p">(</span><span class="n">__FILE__</span><span class="p">,</span><span class="n">__func__</span><span class="p">,</span><span class="n">__LINE__</span><span class="p">,</span>
+<span class="w">               </span><span class="n">gridtype</span><span class="w"> </span><span class="o">+</span><span class="s">&quot; is not implemented.&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="n">cfg</span><span class="p">.</span><span class="n">solver_cfg</span><span class="p">.</span><span class="n">is_diffusion</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="n">cfg</span><span class="p">.</span><span class="n">grid_2d_cfg</span><span class="p">.</span><span class="n">Nghost_rad</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cfg</span><span class="p">.</span><span class="n">grid_2d_cfg</span><span class="p">.</span><span class="n">Nghost_hor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="k">else</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="n">cfg</span><span class="p">.</span><span class="n">grid_2d_cfg</span><span class="p">.</span><span class="n">Nghost_rad</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cfg</span><span class="p">.</span><span class="n">grid_2d_cfg</span><span class="p">.</span><span class="n">Nghost_hor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+
+
+
+
+<span class="w">    </span><span class="c1">// --- Stellar parameters: M, L, Teff, Z are MANDATORY ---</span>
+<span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">sp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">root</span><span class="p">[</span><span class="s">&quot;stellar_parameters&quot;</span><span class="p">];</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">sp</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">std</span><span class="o">::</span><span class="n">cerr</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;[Error] &#39;stellar_parameters&#39; block is missing in config file: &quot;</span>
+<span class="w">                  </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">yaml_path</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+<span class="w">        </span><span class="n">std</span><span class="o">::</span><span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">require_double</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="o">&amp;</span><span class="p">](</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span><span class="w"> </span><span class="n">key</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">sp</span><span class="p">[</span><span class="n">key</span><span class="p">]</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">sp</span><span class="p">[</span><span class="n">key</span><span class="p">].</span><span class="n">IsNull</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">std</span><span class="o">::</span><span class="n">cerr</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;[Error] Missing mandatory stellar parameter &#39;&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">key</span>
+<span class="w">                      </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;&#39; in &#39;stellar_parameters&#39; block.</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+<span class="w">            </span><span class="n">std</span><span class="o">::</span><span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">sp</span><span class="p">[</span><span class="n">key</span><span class="p">].</span><span class="n">as</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="p">();</span>
+<span class="w">    </span><span class="p">};</span>
+
+<span class="w">    </span><span class="n">cfg</span><span class="p">.</span><span class="n">stellar_parameters</span><span class="p">.</span><span class="n">stellar_mass</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">require_double</span><span class="p">(</span><span class="s">&quot;stellar_mass&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">cfg</span><span class="p">.</span><span class="n">stellar_parameters</span><span class="p">.</span><span class="n">luminosity</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="n">require_double</span><span class="p">(</span><span class="s">&quot;luminosity&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">constants</span><span class="o">::</span><span class="n">kLSun</span><span class="p">;</span><span class="w"> </span><span class="c1">// Convert from L_sun to erg/s</span>
+<span class="w">    </span><span class="n">cfg</span><span class="p">.</span><span class="n">stellar_parameters</span><span class="p">.</span><span class="n">t_eff</span><span class="w">        </span><span class="o">=</span><span class="w"> </span><span class="n">require_double</span><span class="p">(</span><span class="s">&quot;t_eff&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">cfg</span><span class="p">.</span><span class="n">stellar_parameters</span><span class="p">.</span><span class="n">metallicity</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="n">require_double</span><span class="p">(</span><span class="s">&quot;metallicity&quot;</span><span class="p">);</span>
+
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">cfg</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright .</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

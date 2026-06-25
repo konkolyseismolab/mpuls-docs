@@ -1,0 +1,14 @@
+.. _exhale_function_config__parser_8hpp_1ab2d3612c42f5e2c0ca7d6c3fc24f0614:
+
+Function loadConfig
+===================
+
+- Defined in :ref:`file_include_core_config_parser.hpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: loadConfig(const std::string&)
+   :project: MPULS

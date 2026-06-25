@@ -1,0 +1,104 @@
+
+.. _program_listing_file_src_core_simulation2d.cpp:
+
+Program Listing for File simulation2d.cpp
+=========================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file_src_core_simulation2d.cpp>` (``src/core/simulation2d.cpp``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   #include "core/simulation2d.hpp"
+   #include "core/compile_time_dispatcher.hpp"
+   #include "core/custom_exceptions.hpp"
+   #include "models/initial_models.hpp"
+   #include "io/profile_writer.hpp"
+   
+   using namespace simulation_2d;
+   
+   Simulation2D* Simulation2D::InitializeNewSimulation2D(Config new_cfg)
+   {
+       auto grid_cfg = new_cfg.grid_2d_cfg;
+       auto modelparams = new_cfg.model.params;
+       Simulation2D* sim = generateFromConfig(new_cfg.model.type,new_cfg.solver_cfg,new_cfg.grid_2d_cfg);
+       sim->cfg = new_cfg;
+       switch (grid_cfg.type)
+       {
+       case Grid2Dconfig::GridType::Uniform:
+           sim->getComponent<GridDimensions2d<double>>(0) = GridDimensions2d<double>::createUniformGrid(
+               grid_cfg.Nrad+2*grid_cfg.Nghost_rad, grid_cfg.Nhor+2*grid_cfg.Nghost_hor, grid_cfg.r0, grid_cfg.rN, grid_cfg.theta0, grid_cfg.thetaN);
+           break;
+       
+       default:
+           throw UnimplementedError(__FILE__,__func__,__LINE__,"Bad value at initialization");
+           break;
+       }
+   
+       switch (new_cfg.model.initial_model)
+       {
+       case model::InitialModel::KelvinHelmholtz:
+           KelvinHelmholtzInitialCondition(sim->getComponent<Grid2d<EquationTraits<component_tags::equation::Euler>::Q>>(1),
+           sim->getComponent<GridDimensions2d<double>>(0), modelparams[0], modelparams[1], modelparams[2],
+           modelparams[3], modelparams[4], modelparams[5], modelparams[6], modelparams[7]);
+           break;
+       case model::InitialModel::Constant:
+           staticModelInitialCondition(sim->getComponent<Grid2d<EquationTraits<component_tags::equation::Euler>::Q>>(1),
+           sim->getComponent<GridDimensions2d<double>>(0), modelparams[0], modelparams[1], modelparams[2]);
+           break;
+       default:
+           throw UnimplementedError(__FILE__,__func__,__LINE__,"Bad value at initialization");
+           break;
+       }
+   
+       using myQ=EquationTraits<component_tags::equation::Euler>::Q;
+       using EqType=EquationTraits<component_tags::equation::Euler>::EquationType;
+   
+       auto& equation = sim->getComponent<Euler2D<bool,myQ>>(3);
+       equation.setGamma(1.4);
+       auto& boundary_cond = sim->getComponent<Boundary2DPerHorRigidRad<myQ>>(11);
+       if(new_cfg.solver_cfg.is_diffusion)
+       {
+           auto& diffusivity = sim->getComponent<hyperdiffusion<myQ,EqType>>(15);
+           diffusivity.setCoeff(new_cfg.solver_cfg.hyperdiffusivity);
+       }
+   
+       boundary_cond.setConditions(sim->getComponent<Grid2d<myQ>>(1));
+   
+       return sim;
+   }
+   
+   
+   void Simulation2D::startSimulation()
+   {
+   
+       using myQ = EquationTraits<component_tags::equation::Euler>::Q;
+       auto& grid_dim = this->getComponent<GridDimensions2d<QuantityTraits<myQ>::D>>(0);
+       auto& grid = this->getComponent<Grid2d<myQ>>(1);
+   
+       write2DQuantityProfileToHdf5(cfg.output_prefix+"000.hdf5",
+       grid_dim.getRadialCoordinates(),
+       grid_dim.getHorizontalCoordinates(),
+       grid.getGrid(),4);
+       
+       std::printf("simulation started\n");
+       double current_t = cfg.t_init;
+       double dump_t = cfg.delta_t;
+       double T_end = cfg.t_max;
+       int i=1;
+       while(current_t < T_end)
+       {
+           solver->set_t0(solver->get_T());
+           current_t+=dump_t;
+           if (current_t > T_end) current_t = T_end;
+           solver->set_T(current_t);
+           solver->solve();
+           char filename[35];
+           std::sprintf(filename,"%s%03d.hdf5",cfg.output_prefix.c_str(),i++);
+           write2DQuantityProfileToHdf5(filename,
+           grid_dim.getRadialCoordinates(),
+           grid_dim.getHorizontalCoordinates(),
+           grid.getGrid(),4);
+       }
+   }

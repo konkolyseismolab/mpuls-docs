@@ -1,0 +1,43 @@
+PDE Systems
+===========
+
+Radial stellar pulsations and stellar pulsations in general are described by hydrodynamics.
+The system of equations are consisting of the conservation of mass, the conservation of
+momentum and conservation of energy. Although stars are made up plasma, the magnetic field and
+rotation is usually neglected in these models, due to the complexity of the problem.
+
+Thus in vector formulation our governing equations are
+
+.. math::
+   :label:
+  
+   \frac{\partial \rho}{\partial t} + \boldsymbol \nabla \cdot (\rho \boldsymbol v) &= 0 \\
+   \frac{\partial \boldsymbol v}{\partial t} + \boldsymbol v \cdot \boldsymbol \nabla \boldsymbol v &= -\frac{1}{\rho} 
+   \boldsymbol \nabla p  - \frac{1}{\rho} \boldsymbol \nabla \cdot \boldsymbol{\underline \tau} - \boldsymbol g \\
+   \frac{\partial }{\partial t}\left(e + \frac 1 2 \vert\boldsymbol v \vert^2\right) + 
+   \boldsymbol v \cdot \boldsymbol \nabla \left(e + \frac 1 2 \vert\boldsymbol v \vert^2\right) &= -\frac{1}{\rho} \boldsymbol \nabla \cdot
+   \left( p \boldsymbol v + \boldsymbol F_{\text rad} + \boldsymbol{\underline \tau} \cdot \boldsymbol v \right) - \boldsymbol g \cdot \boldsymbol v
+
+Where :math:`\rho` is the density, :math:`\boldsymbol v` is the velocity, :math:`\boldsymbol g` is graviational acceleration,
+:math:`p` denotes pressure, :math:`\boldsymbol{\underline \tau}` is the viscous stress tensor, :math:`e` denotes specific
+internal energy and :math:`F_{\text rad}` means radiative flux (or generally a heat transfer).
+
+Converting these equations into conservation form, we arrive at a partial differential equation systems, with the generic form:
+
+.. math:: \frac{\partial q}{\partial t} + \boldsymbol \nabla \cdot \boldsymbol F_{\text adv}(q) + \boldsymbol \nabla \cdot\boldsymbol F_{\text diff}(q) = S (q)
+   :label: generic-pde
+
+In this generic form, one can define the so called state-vector as :math:`\boldsymbol q = (\rho, \rho u , \rho v, \rho w, \rho e_{\rm tot} )`. 
+
+.. admonition:: Implementation
+
+   Since the state-vector couples all information that is available in a grid point, it should be implemented together.
+   Therefore, we implement it as an array-based templated format, called :ref:`QuantityBase<exhale_class_classQuantityBase>`:
+
+   These are implemented through the various classes (see :ref:`file_include_equations_equations.hpp` header documentation).
+
+
+
+.. doxygengroup:: Equations
+   :project: MPULS
+   :outline:

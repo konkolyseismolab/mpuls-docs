@@ -1,0 +1,21 @@
+.. _dir_include_equations:
+
+
+Directory equations
+===================
+
+
+|exhale_lsh| :ref:`Parent directory <dir_include>` (``include``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+
+*Directory path:* ``include/equations``
+
+
+Files
+-----
+
+- :ref:`file_include_equations_equations.hpp`
+
+

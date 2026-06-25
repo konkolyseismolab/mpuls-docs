@@ -1,0 +1,18 @@
+.. _exhale_class_classHyperDiffusion:
+
+Template Class HyperDiffusion
+=============================
+
+- Defined in :ref:`file_include_advection_hyperdiffusion.hpp`
+
+
+Class Documentation
+-------------------
+
+
+.. doxygenclass:: HyperDiffusion
+   :project: MPULS
+   :members:
+   :protected-members:
+   :private-members:
+   :undoc-members:

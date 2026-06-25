@@ -1,0 +1,14 @@
+.. _exhale_function_simulation2d_8hpp_1add0bbce5253a56fd01b6eaccd26798e4:
+
+Template Function simulation_2d::createFluxCalculator
+=====================================================
+
+- Defined in :ref:`file_include_core_simulation2d.hpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: simulation_2d::createFluxCalculator(fluxtag, eqType&)
+   :project: MPULS

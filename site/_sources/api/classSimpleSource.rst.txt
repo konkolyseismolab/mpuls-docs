@@ -1,0 +1,18 @@
+.. _exhale_class_classSimpleSource:
+
+Template Class SimpleSource
+===========================
+
+- Defined in :ref:`file_include_time_solver_time_solver.hpp`
+
+
+Class Documentation
+-------------------
+
+
+.. doxygenclass:: SimpleSource
+   :project: MPULS
+   :members:
+   :protected-members:
+   :private-members:
+   :undoc-members:

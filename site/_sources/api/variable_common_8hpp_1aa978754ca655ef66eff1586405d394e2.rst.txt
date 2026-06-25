@@ -1,0 +1,14 @@
+.. _exhale_variable_common_8hpp_1aa978754ca655ef66eff1586405d394e2:
+
+Variable is_2D
+==============
+
+- Defined in :ref:`file_include_core_common.hpp`
+
+
+Variable Documentation
+----------------------
+
+
+.. doxygenvariable:: is_2D
+   :project: MPULS

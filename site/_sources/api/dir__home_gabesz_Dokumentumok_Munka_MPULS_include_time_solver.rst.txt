@@ -1,0 +1,16 @@
+.. _dir__home_gabesz_Dokumentumok_Munka_MPULS_include_time_solver:
+
+
+Directory time_solver
+=====================
+
+
+|exhale_lsh| :ref:`Parent directory <dir_include>` (``include``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+
+*Directory path:* ``/home/gabesz/Dokumentumok/Munka/MPULS/include/time_solver``
+
+
+

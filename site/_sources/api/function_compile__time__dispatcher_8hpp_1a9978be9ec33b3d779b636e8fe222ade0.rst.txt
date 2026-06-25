@@ -1,0 +1,14 @@
+.. _exhale_function_compile__time__dispatcher_8hpp_1a9978be9ec33b3d779b636e8fe222ade0:
+
+Template Function createReconstructionTag
+=========================================
+
+- Defined in :ref:`file_include_core_compile_time_dispatcher.hpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: createReconstructionTag(Reconstructor, T&&)
+   :project: MPULS

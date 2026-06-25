@@ -1,0 +1,203 @@
+
+.. _program_listing_file_src_core_config_parser.cpp:
+
+Program Listing for File config_parser.cpp
+==========================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file_src_core_config_parser.cpp>` (``src/core/config_parser.cpp``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   #include "core/config_parser.hpp"
+   #include "core/constants.hpp"
+   #include <yaml-cpp/yaml.h>              // AI says, there's a lib for YAML files in CPP -- let's check (C does not have one, so I had to write a py wrapper to read the file)
+   #include <iostream>
+   #include "core/custom_exceptions.hpp"
+   
+   
+   
+   
+   Config loadConfig(const std::string& yaml_path) {
+       YAML::Node root = YAML::LoadFile(yaml_path);
+       Config cfg;
+   
+       // --- General settings ---
+       auto gen = root["general_settings"];
+       cfg.output_dir          = gen["output_dir"].as<std::string>();
+       cfg.output_format       = gen["output_format"].as<std::string>();
+       cfg.output_summary_name = gen["output_summary_name"].as<std::string>();
+       cfg.output_prefix       = gen["output_prefix"].as<std::string>();
+       cfg.dimensions          = gen["dimension"].as<short>();
+       auto mode_str = gen["mode"].as<std::string>();
+       if (mode_str=="testing")
+       {
+           switch (cfg.dimensions)
+           {
+           case 1:
+               cfg.mode = Mode::testing1D;/* code */
+               break;
+           case 2:
+               cfg.mode = Mode::testing2D;
+               break;
+           default:
+               throw UnimplementedError(__FILE__,__func__,__LINE__,
+                   mode_str+"with "+std::to_string(cfg.dimensions)+" is not implemented.");
+               break;
+           }
+       }
+       else
+       {
+           throw UnimplementedError(__FILE__,__func__,__LINE__,
+                   mode_str+" is not implemented.");
+       }
+   
+       auto model = root["model"];
+       auto modeltype = model["system_type"].as<std::string>();
+       auto init_cond = model["initial_conditions"]["name"].as<std::string>();
+       switch (cfg.mode)
+       {
+       case Mode::testing2D:
+           /* code */
+           if(modeltype == "Euler")
+           {
+               cfg.model.type=model::Equation::Euler2d;
+               if (init_cond == "Kelvin-Helmholtz")
+                   cfg.model.initial_model=model::InitialModel::KelvinHelmholtz;
+               else if(init_cond == "constant")
+                   cfg.model.initial_model=model::InitialModel::Constant;
+               else
+                   throw UnimplementedError(__FILE__,__func__,__LINE__,
+                   "Only Kelvin-Helmholt and constant state tests are available.");
+               cfg.model.params = model["initial_conditions"]["params"].as<std::vector<double>>();
+           }
+           else
+           {
+                       throw UnimplementedError(__FILE__,__func__,__LINE__,
+                   "Only Euler 2D tests are available currently.");
+           }
+   
+           break;
+       
+       default:
+           break;
+       }
+   
+   
+   
+       auto sim = root["simulation"];
+       // --- Boundary conditions ---
+       auto bc = model["boundary_conditions"];
+       cfg.inner_boundary = bc["inner_boundary"].as<std::string>();
+       cfg.outer_boundary = bc["outer_boundary"].as<std::string>();
+   
+       // --- Integrator settings ---
+       auto integ = sim["integrator"];
+       cfg.integrator_type = integ["integrator_type"].as<std::string>();
+       cfg.time_step       = integ["time_step"].as<std::string>();
+       cfg.delta_t         = integ["delta_t"].as<double>();
+       cfg.t_max           = integ["t_max"].as<double>();
+       cfg.t_init          = integ["initial_t"].as<double>();
+       // --- Grid configuration ---
+       auto grid = root["grid"];
+       cfg.grid_cfg.number_of_grid_cells = grid["number_of_radial_grid_cells"].as<int>();
+       cfg.grid_cfg.radius_min           = grid["radius_min"].as<double>();
+       cfg.grid_cfg.radius_max           = grid["radius_max"].as<double>();
+       cfg.grid_cfg.scale                = grid["scale"].as<std::string>();
+   
+   
+       // --- 2D integrator and grid configuration ---
+       if(cfg.mode == Mode::testing2D)
+       {
+           if(cfg.integrator_type == "SSP_RK2")
+               cfg.solver_cfg.integrator=solver_params::Integrator::SSP_RK2;
+           else if(cfg.integrator_type == "SSP_RK3")
+               cfg.solver_cfg.integrator=solver_params::Integrator::SSP_RK3;
+           else
+               throw UnimplementedError(__FILE__,__func__,__LINE__,
+                  cfg.integrator_type+ +" is not implemented.");
+           cfg.solver_cfg.cfl_number = integ["cfl_number"].as<double>();
+           auto hyp = sim["hyperbolic_solver"];
+           auto reconst = hyp["reconstruction"].as<std::string>();
+   
+           if(reconst=="piecewise_linear")
+               cfg.solver_cfg.reconstructor=solver_params::Reconstructor::PLM;
+           else if(reconst=="piecewise_constant")
+               cfg.solver_cfg.reconstructor=solver_params::Reconstructor::PCM;
+           else
+               throw UnimplementedError(__FILE__,__func__,__LINE__,
+                  reconst+ +" is not implemented.");
+           auto limiter = hyp["limiter"].as<std::string>();
+           if(limiter=="vanleer")
+               cfg.solver_cfg.limiter = solver_params::Limiters::VanLeer;
+           else if(limiter == "minmod")
+               cfg.solver_cfg.limiter=solver_params::Limiters::MinMod;
+           else if(limiter == "superbee")
+               cfg.solver_cfg.limiter=solver_params::Limiters::Superbee;
+           else
+               throw UnimplementedError(__FILE__,__func__,__LINE__,
+                  limiter +" is not implemented.");
+   
+           auto flux    = hyp["flux_calculation"].as<std::string>();
+           if(flux == "local-lf")
+               cfg.solver_cfg.flux_calculator=solver_params::FluxCalculator::LLF;
+           else if(flux == "upwind")
+               cfg.solver_cfg.flux_calculator=solver_params::FluxCalculator::Upwind;
+           else
+               throw UnimplementedError(__FILE__,__func__,__LINE__,
+                  flux +" is not implemented.");
+           cfg.solver_cfg.is_diffusion = sim["hyperdiffusion"].as<bool>();
+           cfg.solver_cfg.hyperdiffusivity=sim["hyperdiffusivity_coeff"].as<double>();
+   
+           cfg.grid_2d_cfg.r0 = cfg.grid_cfg.radius_min;
+           cfg.grid_2d_cfg.rN = cfg.grid_cfg.radius_max;
+           cfg.grid_2d_cfg.Nrad = cfg.grid_cfg.number_of_grid_cells;
+           cfg.grid_2d_cfg.Nhor = grid["number_of_theta_grid_cells"].as<size_t>();
+           auto theta_domain = grid["size_of_theta_grid"].as<double>();
+           theta_domain /= 180. / constants::kPi;
+           cfg.grid_2d_cfg.theta0 = constants::kPi *0.5 - 0.5 *theta_domain;
+           cfg.grid_2d_cfg.thetaN = constants::kPi *0.5 + 0.5 *theta_domain;
+           auto gridtype = grid["type"].as<std::string>();
+           if(gridtype == "uniform")
+           cfg.grid_2d_cfg.type = Grid2Dconfig::GridType::Uniform;
+           else
+           throw UnimplementedError(__FILE__,__func__,__LINE__,
+                  gridtype +" is not implemented.");
+           if(cfg.solver_cfg.is_diffusion)
+           {
+               cfg.grid_2d_cfg.Nghost_rad = cfg.grid_2d_cfg.Nghost_hor = 3;
+           }
+           else
+           {
+               cfg.grid_2d_cfg.Nghost_rad = cfg.grid_2d_cfg.Nghost_hor = 2;
+           }
+       }
+   
+   
+   
+   
+       // --- Stellar parameters: M, L, Teff, Z are MANDATORY ---
+       auto sp = root["stellar_parameters"];
+       if (!sp) {
+           std::cerr << "[Error] 'stellar_parameters' block is missing in config file: "
+                     << yaml_path << "\n";
+           std::exit(1);
+       }
+   
+       auto require_double = [&](const std::string& key) {
+           if (!sp[key] || sp[key].IsNull()) {
+               std::cerr << "[Error] Missing mandatory stellar parameter '" << key
+                         << "' in 'stellar_parameters' block.\n";
+               std::exit(1);
+           }
+           return sp[key].as<double>();
+       };
+   
+       cfg.stellar_parameters.stellar_mass = require_double("stellar_mass");
+       cfg.stellar_parameters.luminosity   = require_double("luminosity") * constants::kLSun; // Convert from L_sun to erg/s
+       cfg.stellar_parameters.t_eff        = require_double("t_eff");
+       cfg.stellar_parameters.metallicity  = require_double("metallicity");
+   
+       return cfg;
+   }

@@ -1,0 +1,72 @@
+
+.. _file_include_grid_grid.hpp:
+
+File grid.hpp
+=============
+
+|exhale_lsh| :ref:`Parent directory <dir_include_grid>` (``include/grid``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``include/grid/grid.hpp``)
+--------------------------------------
+
+
+
+
+
+
+Includes
+--------
+
+
+- ``array``
+
+- ``cmath``
+
+- ``core/constants.hpp`` (:ref:`file_include_core_constants.hpp`)
+
+- ``cstdio``
+
+- ``grid/quantity.hpp`` (:ref:`file_include_grid_quantity.hpp`)
+
+- ``string``
+
+- ``vector``
+
+
+
+Included By
+-----------
+
+
+- :ref:`file_include_advection_flux_operators.hpp`
+
+- :ref:`file_include_advection_hyperdiffusion.hpp`
+
+- :ref:`file_include_core_compile_time_dispatcher.hpp`
+
+- :ref:`file_include_models_initial_models.hpp`
+
+- :ref:`file_include_time_solver_time_solver.hpp`
+
+
+
+
+Classes
+-------
+
+
+- :ref:`exhale_class_classBoundary2DPerHorRigidRad`
+
+- :ref:`exhale_class_classBoundary2DPeriodic`
+
+- :ref:`exhale_class_classGrid2d`
+
+- :ref:`exhale_class_classGridDimensions2d`
+

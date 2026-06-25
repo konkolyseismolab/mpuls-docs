@@ -1,0 +1,28 @@
+.. _exhale_class_classReconstructionBase:
+
+Template Class ReconstructionBase
+=================================
+
+- Defined in :ref:`file_include_advection_flux_operators.hpp`
+
+
+Inheritance Relationships
+-------------------------
+
+Derived Types
+*************
+
+- ``public PCM< Q, Dir, Limiter >`` (:ref:`exhale_class_classPCM`)
+- ``public PLM< Q, Dir, Limiter >`` (:ref:`exhale_class_classPLM`)
+
+
+Class Documentation
+-------------------
+
+
+.. doxygenclass:: ReconstructionBase
+   :project: MPULS
+   :members:
+   :protected-members:
+   :private-members:
+   :undoc-members:

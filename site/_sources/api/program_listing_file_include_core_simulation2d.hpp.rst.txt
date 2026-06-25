@@ -1,0 +1,360 @@
+
+.. _program_listing_file_include_core_simulation2d.hpp:
+
+Program Listing for File simulation2d.hpp
+=========================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file_include_core_simulation2d.hpp>` (``include/core/simulation2d.hpp``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   #pragma once
+   #include "time_solver/time_solver.hpp"
+   #include "grid/quantity.hpp"
+   #include "advection/flux_operators.hpp"
+   #include "advection/hyperdiffusion.hpp"
+   #include "equations/equations.hpp"
+   #include "config_params.hpp"
+   
+   
+   #include <memory>
+   #include <type_traits>
+   #include <vector>
+   
+   namespace component_tags
+   {
+       namespace limiter
+       {
+           struct VanLeer{};
+           struct Minmod{};
+           struct Superbee{};
+       }
+   
+       namespace reconst
+       {
+           struct PCM{};
+           struct PLM{};
+       }
+   
+       namespace flux
+       {
+           struct LlfFlux{};
+           struct CirFLux{};
+       }
+   
+       namespace solver
+       {
+           struct SSP_RK2{};
+           struct SSP_RK3{};
+       }
+   
+       namespace equation
+       {
+           struct Euler{};
+           struct Scalar2D{};
+       }
+   }
+   
+   
+   namespace simulation_2d {
+   
+   class SolverBase
+   {
+       public:
+           virtual void solve() = 0;
+           virtual ~SolverBase() = default;
+           virtual void setT(double t) = 0;
+           virtual double getT() const = 0;
+           virtual void setT0(double t0) = 0;
+           virtual double getT0() const = 0;
+   };
+   
+   template <HasTimeSolverInterface T>
+   class SolverWrapper : public SolverBase {
+   
+       private:
+           T* solver;
+   
+       public:
+           SolverWrapper(T* solver) : solver(solver) {}
+           ~SolverWrapper() {
+               delete solver;
+           }
+   
+           void solve()  override {
+               solver->solve();
+           }
+           void setT(double t) override {
+               solver->setT(t);
+           }
+           double getT() const override {
+               return solver->getT();
+           }
+           void setT0(double t0) override {
+               solver->setT0(t0);
+           }
+           double getT0() const override {
+               return solver->getT0();
+           }
+   
+   };
+   
+   class ComponentBase
+   {
+       public:
+           virtual ~ComponentBase() = default;
+   };
+   
+   template <typename T>
+   class ComponentWrapper : public ComponentBase
+   {
+       private:
+           T* component;
+       public:
+           ComponentWrapper(T* component) : component(component) {}
+           T* getComponent() const { return component; }
+           ComponentWrapper() : component(nullptr) {}
+           ComponentWrapper(const ComponentWrapper& other) : component(other.component) {}
+           ~ComponentWrapper() {
+               delete component;
+           }
+           ComponentWrapper& operator=(const ComponentWrapper& other) {
+               if (this != &other) {
+                   component = other.component;
+               }
+               return *this;
+           }
+           ComponentWrapper(ComponentWrapper&& other) noexcept : component(other.component) {
+               other.component = nullptr;
+           }
+           ComponentWrapper& operator=(ComponentWrapper&& other) noexcept {
+               if (this != &other) {
+                   component = other.component;
+                   other.component = nullptr;
+               }
+               return *this;
+           }
+   };
+   
+   class Simulation2d {
+   
+   private:
+       std::vector<std::unique_ptr<ComponentBase>> components; 
+       std::unique_ptr<SolverBase> solver; 
+       Config cfg; 
+   
+   public:
+   
+       template <typename T>
+       void addComponent(T* component) {
+               components.push_back(std::make_unique<ComponentWrapper<T>>(component));
+           }
+       template <typename T>
+       void setSolver(T* solver_instance) {
+               solver = std::make_unique<SolverWrapper<T>>(solver_instance);
+           }
+       template <typename T>
+       std::unique_ptr<ComponentWrapper<T>>& getComponentPtr(size_t i)
+       {
+           return dynamic_cast<std::unique_ptr<ComponentWrapper<T>>>(components[i]);
+       }
+   
+       template <typename T>
+       T& getComponent(size_t i)
+       {        return *dynamic_cast<ComponentWrapper<T>*>(components[i].get())->getComponent();
+       }
+   
+       SolverBase* getSolver() const { return solver.get(); }
+   
+       void solve() {
+           if (solver) {
+               solver->solve();
+           }
+       }
+   
+       void startSimulation();
+   
+   
+       static Simulation2d* InitializeNewSimulation2D(Config new_cfg);
+   };
+   
+   template <typename T>
+   struct always_false{
+       static constexpr bool value = false;
+   };
+   
+   template <typename eqType>
+   auto constexpr getQfromEq([[maybe_unused]] eqType eq) {
+       if constexpr (std::is_same_v<eqType, component_tags::equation::Euler>) {
+           return QuantityBase<double,4>(); // Euler egyenlet esetén 4 komponens van
+       } else if constexpr (std::is_same_v<eqType, component_tags::equation::Scalar2D>) {
+           return QuantityBase<double,1>(); // Sclar2D esetén 1 komponens van
+       } else {
+           static_assert(always_false<eqType>::value, "Ismeretlen egyenlet típus");
+       }
+   }
+   
+   
+   template <typename eqType>
+   struct EquationTraits{};
+   template <>
+   struct EquationTraits<component_tags::equation::Euler> {
+       using Q = QuantityBase<double,4>;
+       using EquationType = Euler2d<bool, Q>;
+   };
+   
+   template <>
+   struct EquationTraits<component_tags::equation::Scalar2D> {
+       using Q = QuantityBase<double,1>;
+       using EquationType = ScalarTransport2d<bool, Q>;
+   };
+   
+   template <typename eqType>
+   auto constexpr createEquation([[maybe_unused]] eqType eq) {
+       if constexpr (std::is_same_v<eqType, component_tags::equation::Euler>) {
+           return new Euler2d<bool,typename EquationTraits<eqType>::Q>(); // Példa: Euler egyenlet létrehozása
+       } else if constexpr (std::is_same_v<eqType, component_tags::equation::Scalar2D>) {
+           return new ScalarTransport2d<bool,typename EquationTraits<eqType>::Q>(); // Példa: Scalar2D egyenlet létrehozása
+       } else {
+           static_assert(always_false<eqType>::value, "Ismeretlen egyenlet típus");
+       }
+   }
+   
+   template <typename Q, typename limTag>
+   auto constexpr createLimiter() {
+       if constexpr (std::is_same_v<limTag, component_tags::limiter::VanLeer>) {
+           return new VanLeer<Q>(); // Példa: VanLeer limiter létrehozása
+       } else if constexpr (std::is_same_v<limTag, component_tags::limiter::Minmod>) {
+           return new MinMod<Q>(); // Példa: Minmod limiter létrehozása
+       } else if constexpr (std::is_same_v<limTag, component_tags::limiter::Superbee>) {
+           return new Superbee<Q>(); // Példa: Superbee limiter létrehozása
+       } else {
+           static_assert(always_false<limTag>::value, "Ismeretlen limiter típus");
+       }
+   }
+   
+   //template <template <typename Q>  class limiterType, typename Q>
+   //struct LimiterTraits{
+   //    using LimiterType = limiterType<Q>;
+   //    using QType = Q;
+   //};
+   
+   template <typename fluxtag, typename Q,Direction dir, class eqType>
+   auto constexpr createFluxCalculator( [[maybe_unused]] fluxtag flux, eqType& equation) {
+       if constexpr (std::is_same_v<fluxtag, component_tags::flux::LlfFlux>) {
+           return new LLFflux<Q,dir,eqType>(equation); // Példa: LLF flux operátor létrehozása
+       } else if constexpr (std::is_same_v<fluxtag, component_tags::flux::CirFLux>) {
+           return new CIRFlux<Q,dir,eqType>(equation); // Példa: CIR flux operátor létrehozása
+       } else {
+           static_assert(always_false<fluxtag>::value, "Unknown setting.");
+       }
+   }
+   
+   
+   template <Direction dir,typename reconstTag, template <typename Q> class Limiter, QuantityType Q>
+   auto constexpr createReconstruction([[maybe_unused]] reconstTag , Limiter<Q>& limiter, GridDimensions2d<typename QuantityTraits<Q>::D>& grid_dims) {
+       if constexpr (std::is_same_v<reconstTag, component_tags::reconst::PLM>) {
+           return new PLM<Q, dir, Limiter<Q>>(limiter,grid_dims); // Példa: PLM rekonstrukció létrehozása
+       } else if constexpr (std::is_same_v<reconstTag, component_tags::reconst::PCM>) {
+           return new PCM<Q, dir, Limiter<Q>>(limiter,grid_dims); // Példa: PCM rekonstrukció létrehozása
+       } else {
+           static_assert(always_false<reconstTag>::value, "Ismeretlen rekonstrukciósió típus");
+       }
+   }
+   
+   template <typename TimeSolverTag, typename... Args>
+   auto constexpr createTimeSolver([[maybe_unused]] TimeSolverTag tag, Args&&... args) {
+       if constexpr (std::is_same_v<TimeSolverTag, component_tags::solver::SSP_RK2>) {
+           return new SSP_RK2(std::forward<Args>(args)...); // Példa: SSP_RK2 időlépő létrehozása
+       }
+       else if constexpr (std::is_same_v<TimeSolverTag, component_tags::solver::SSP_RK3>) {
+           return new SSP_RK3(std::forward<Args>(args)...); // Példa: SSP_RK3 időlépő létrehozása
+       }
+       else {
+           static_assert(always_false<TimeSolverTag>::value, "Uknown time solver.");
+       }
+   }
+   
+   template <typename EqTag, typename flux, typename limiter, typename reconst, typename solver, typename D, QuantityType Q>
+   auto solver_factory(EqTag eq_tag, flux fluxtag,[[maybe_unused]] limiter limtag, reconst reconsttag, solver solvertag, bool is_diffusion,
+        GridDimensions2d<D>& grid_dims, Grid2d<Q>& old_grid, Grid2d<Q>& new_grid, D cfl_number) {
+   
+      // using Q = typename EquationTraits<EqTag>::Q;
+       using EquationType = typename EquationTraits<EqTag>::EquationType;
+   
+       Simulation2d* sim = new Simulation2d();
+   
+       sim->addComponent(&grid_dims);
+       sim->addComponent(&old_grid); 
+       sim->addComponent(&new_grid); 
+   
+       auto equation = createEquation(eq_tag);
+       auto limiter_instance = createLimiter<Q,limiter>();
+   
+       sim->addComponent(equation); 
+       sim->addComponent(limiter_instance); 
+   
+       auto reconst_rad = createReconstruction<Direction::Radial>(reconsttag, *limiter_instance, grid_dims);
+       auto reconst_hor = createReconstruction<Direction::Horizontal>(reconsttag, *limiter_instance, grid_dims);
+   
+   
+       sim->addComponent(reconst_rad);
+       sim->addComponent(reconst_hor);
+   
+   
+       auto flux_calc_rad = createFluxCalculator<decltype(fluxtag),
+           Q,
+           Direction::Radial,
+           std::remove_cvref_t<decltype(*equation)>>(fluxtag,  *equation);
+       auto flux_calc_hor = createFluxCalculator<decltype(fluxtag),
+           Q,
+           Direction::Horizontal>(fluxtag, *equation);
+   
+       sim->addComponent(flux_calc_rad);
+       sim->addComponent(flux_calc_hor);
+   
+       auto flux_op_rad = new FluxOperator<Q, std::remove_cvref_t<decltype(*reconst_rad)>, decltype(*flux_calc_rad)>(
+           Direction::Radial, grid_dims, *reconst_rad, *flux_calc_rad);
+       auto flux_op_hor = new FluxOperator<Q, std::remove_cvref_t<decltype(*reconst_hor)>, decltype(*flux_calc_hor)>(
+           Direction::Horizontal, grid_dims, *reconst_hor, *flux_calc_hor);
+   
+       sim->addComponent(flux_op_rad);
+       sim->addComponent(flux_op_hor);
+   
+       auto boundary_cond = new Boundary2DPerHorRigidRad<Q>();
+       auto cfl_cond = new CFL<Q,EquationType>(cfl_number, *equation, grid_dims);
+       auto Source = new SimpleSource<Q,EquationType>(*equation,grid_dims);
+       auto rhs_adv = new RightHandSide<Q,decltype(*flux_op_rad), decltype(*flux_op_hor), decltype(*Source), EquationType>(
+           *flux_op_rad, *flux_op_hor, *Source, *equation);
+   
+       sim->addComponent(boundary_cond);
+       sim->addComponent(cfl_cond);
+       sim->addComponent(Source);
+       sim->addComponent(rhs_adv);
+   
+       if(is_diffusion)
+       {
+           auto hyperdiffusivity = new HyperDiffusion<Q,EquationType>(grid_dims,*equation);
+           sim->addComponent(hyperdiffusivity);
+           auto diffusion = new Diffusion2d<decltype(*hyperdiffusivity),Q>(*hyperdiffusivity,grid_dims);
+           sim->addComponent(diffusion);
+           auto rhs = new RightHandSideDecorator<decltype(*rhs_adv), decltype(*diffusion),Q>(*rhs_adv, *diffusion);
+           sim->addComponent(rhs);
+           auto new_solver = createTimeSolver(solvertag, 0.1, 0.0, 0.0,
+           sim->getComponent<Grid2d<Q>>(1), sim->getComponent<Grid2d<Q>>(2), *rhs, *cfl_cond, *boundary_cond);
+       sim->setSolver(new_solver);
+       }
+       else
+       {
+           auto new_solver = createTimeSolver(solvertag, 0.1, 0.0, 0.0,
+               sim->getComponent<Grid2d<Q>>(1), sim->getComponent<Grid2d<Q>>(2), *rhs_adv, *cfl_cond, *boundary_cond);
+           sim->setSolver(new_solver);
+       }
+       return sim;
+   
+   }
+   
+   
+   }

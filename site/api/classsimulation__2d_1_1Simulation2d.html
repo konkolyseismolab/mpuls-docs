@@ -1,0 +1,266 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Class Simulation2d &mdash; Modular PULsation Suite  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=7ab3649f" />
+      <link rel="stylesheet" type="text/css" href="../_static/collapsible-lists/css/tree_view.css?v=a885cde7" />
+      <link rel="stylesheet" type="text/css" href="../_static/compact-api.css?v=bfcdbbe1" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script src="../_static/collapsible-lists/js/CollapsibleLists.compressed.js?v=73120307"></script>
+      <script src="../_static/collapsible-lists/js/apply-collapsible-lists.js?v=660e4f45"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Class SolverBase" href="classsimulation__2d_1_1SolverBase.html" />
+    <link rel="prev" title="Template Class ComponentWrapper" href="classsimulation__2d_1_1ComponentWrapper.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Modular PULsation Suite
+              <img src="../_static/logo-mpuls.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../guide/index.html">MPULS User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../manual/index.html">MPULS User Manual</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference Manual</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="library_root.html">MPULS API reference</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="library_root.html#page-hierarchy">Page Hierarchy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="library_root.html#class-hierarchy">Class Hierarchy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="library_root.html#file-hierarchy">File Hierarchy</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="library_root.html#full-api">Full API</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="library_root.html#namespaces">Namespaces</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="library_root.html#classes-and-structs">Classes and Structs</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="structCellCenter.html">Struct CellCenter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structCellInterface.html">Struct CellInterface</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structConfig.html">Struct Config</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structGrid.html">Struct Grid</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structGrid2Dconfig.html">Struct Grid2Dconfig</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structGridConfig.html">Struct GridConfig</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structmodel_1_1ModelConfig.html">Struct ModelConfig</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structQuantityTraits.html">Template Struct QuantityTraits</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structsimulation__2d_1_1always__false.html">Template Struct always_false</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structsimulation__2d_1_1EquationTraits.html">Template Struct EquationTraits</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structSolverConfig.html">Struct SolverConfig</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structStellarInput.html">Struct StellarInput</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structStellarParameters.html">Struct StellarParameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classBoundary2DPerHorRigidRad.html">Template Class Boundary2DPerHorRigidRad</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classBoundary2DPeriodic.html">Template Class Boundary2DPeriodic</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classCFL.html">Template Class CFL</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classCIRFlux.html">Template Class CIRFlux</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classDiffusion2d.html">Template Class Diffusion2d</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classEquationBase.html">Template Class EquationBase</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classEuler2d.html">Template Class Euler2d</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classFluxOperator.html">Template Class FluxOperator</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classGrid2d.html">Template Class Grid2d</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classGridDimensions2d.html">Template Class GridDimensions2d</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classHyperDiffusion.html">Template Class HyperDiffusion</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classLimiterBase.html">Template Class LimiterBase</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classLLFflux.html">Template Class LLFflux</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classMinMod.html">Template Class MinMod</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classPCM.html">Template Class PCM</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classPLM.html">Template Class PLM</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classQuantityBase.html">Template Class QuantityBase</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classReconstructionBase.html">Template Class ReconstructionBase</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classRightHandSide.html">Template Class RightHandSide</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classRightHandSideDecorator.html">Template Class RightHandSideDecorator</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classScalarTransport2d.html">Template Class ScalarTransport2d</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classSimpleSource.html">Template Class SimpleSource</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classsimulation__2d_1_1ComponentBase.html">Class ComponentBase</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classsimulation__2d_1_1ComponentWrapper.html">Template Class ComponentWrapper</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Class Simulation2d</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classsimulation__2d_1_1SolverBase.html">Class SolverBase</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classsimulation__2d_1_1SolverWrapper.html">Template Class SolverWrapper</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classSSP__RK2.html">Template Class SSP_RK2</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classSSP__RK3.html">Template Class SSP_RK3</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classSuperbee.html">Template Class Superbee</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classTimeSolverBase.html">Template Class TimeSolverBase</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classUnimplementedError.html">Class UnimplementedError</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classVanLeer.html">Template Class VanLeer</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="library_root.html#enums">Enums</a></li>
+<li class="toctree-l3"><a class="reference internal" href="library_root.html#functions">Functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="library_root.html#variables">Variables</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Modular PULsation Suite</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="library_root.html">MPULS API reference</a></li>
+      <li class="breadcrumb-item active">Class Simulation2d</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/api/classsimulation__2d_1_1Simulation2d.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="class-simulation2d">
+<span id="exhale-class-classsimulation-2d-1-1simulation2d"></span><h1>Class Simulation2d<a class="headerlink" href="#class-simulation2d" title="Link to this heading"></a></h1>
+<ul class="simple">
+<li><p>Defined in <a class="reference internal" href="file_include_core_simulation2d.hpp.html#file-include-core-simulation2d-hpp"><span class="std std-ref">File simulation2d.hpp</span></a></p></li>
+</ul>
+<section id="class-documentation">
+<h2>Class Documentation<a class="headerlink" href="#class-documentation" title="Link to this heading"></a></h2>
+<dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv4N13simulation_2d12Simulation2dE">
+<span id="_CPPv3N13simulation_2d12Simulation2dE"></span><span id="_CPPv2N13simulation_2d12Simulation2dE"></span><span id="simulation_2d::Simulation2d"></span><span class="target" id="classsimulation__2d_1_1Simulation2d"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Simulation2d</span></span></span><a class="headerlink" href="#_CPPv4N13simulation_2d12Simulation2dE" title="Link to this definition"></a><br /></dt>
+<dd><p>The full 2D pipeline. </p>
+<p><dl>
+<dt class="sig sig-object cpp">
+<a class="reference internal" href="page_todo.html#todo_1_todo000001"><span class="std std-ref"><span class="pre">Todo:</span></span></a></dt>
+<dd><p>Dedicated accessors and/or private members for the GridDimensions OldGrid and NewGrid components. </p>
+</dd></dl>
+
+</p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4I0EN13simulation_2d12Simulation2d12addComponentEvP1T">
+<span id="_CPPv3I0EN13simulation_2d12Simulation2d12addComponentEP1T"></span><span id="_CPPv2I0EN13simulation_2d12Simulation2d12addComponentEP1T"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">typename</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">T</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="classsimulation__2d_1_1Simulation2d_1af46fde41a8c85d42a77805f66d3a09c8"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">addComponent</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I0EN13simulation_2d12Simulation2d12addComponentEvP1T" title="simulation_2d::Simulation2d::addComponent::T"><span class="n"><span class="pre">T</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">component</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4I0EN13simulation_2d12Simulation2d12addComponentEvP1T" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4I0EN13simulation_2d12Simulation2d9setSolverEvP1T">
+<span id="_CPPv3I0EN13simulation_2d12Simulation2d9setSolverEP1T"></span><span id="_CPPv2I0EN13simulation_2d12Simulation2d9setSolverEP1T"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">typename</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">T</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="classsimulation__2d_1_1Simulation2d_1a2e60887949ae4a9db33fe2755d67fc20"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setSolver</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I0EN13simulation_2d12Simulation2d9setSolverEvP1T" title="simulation_2d::Simulation2d::setSolver::T"><span class="n"><span class="pre">T</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">solver_instance</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4I0EN13simulation_2d12Simulation2d9setSolverEvP1T" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4I0EN13simulation_2d12Simulation2d15getComponentPtrERNSt10unique_ptrI16ComponentWrapperI1TEEE6size_t">
+<span id="_CPPv3I0EN13simulation_2d12Simulation2d15getComponentPtrE6size_t"></span><span id="_CPPv2I0EN13simulation_2d12Simulation2d15getComponentPtrE6size_t"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">typename</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">T</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="classsimulation__2d_1_1Simulation2d_1a1dc9b359e048f718dd9448388188eb04"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">unique_ptr</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="classsimulation__2d_1_1ComponentWrapper.html#_CPPv4I0EN13simulation_2d16ComponentWrapperE" title="simulation_2d::ComponentWrapper"><span class="n"><span class="pre">ComponentWrapper</span></span></a><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4I0EN13simulation_2d12Simulation2d15getComponentPtrERNSt10unique_ptrI16ComponentWrapperI1TEEE6size_t" title="simulation_2d::Simulation2d::getComponentPtr::T"><span class="n"><span class="pre">T</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">getComponentPtr</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">i</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4I0EN13simulation_2d12Simulation2d15getComponentPtrERNSt10unique_ptrI16ComponentWrapperI1TEEE6size_t" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4I0EN13simulation_2d12Simulation2d12getComponentER1T6size_t">
+<span id="_CPPv3I0EN13simulation_2d12Simulation2d12getComponentE6size_t"></span><span id="_CPPv2I0EN13simulation_2d12Simulation2d12getComponentE6size_t"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">typename</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">T</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="classsimulation__2d_1_1Simulation2d_1ac5458c0bbc8615e4262c3d40fbbc3ec4"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4I0EN13simulation_2d12Simulation2d12getComponentER1T6size_t" title="simulation_2d::Simulation2d::getComponent::T"><span class="n"><span class="pre">T</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">getComponent</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">i</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4I0EN13simulation_2d12Simulation2d12getComponentER1T6size_t" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK13simulation_2d12Simulation2d9getSolverEv">
+<span id="_CPPv3NK13simulation_2d12Simulation2d9getSolverEv"></span><span id="_CPPv2NK13simulation_2d12Simulation2d9getSolverEv"></span><span id="simulation_2d::Simulation2d::getSolverC"></span><span class="target" id="classsimulation__2d_1_1Simulation2d_1a36d9c2bbc58bdd146f29893dd43771f2"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><a class="reference internal" href="classsimulation__2d_1_1SolverBase.html#_CPPv4N13simulation_2d10SolverBaseE" title="simulation_2d::SolverBase"><span class="n"><span class="pre">SolverBase</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">getSolver</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK13simulation_2d12Simulation2d9getSolverEv" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N13simulation_2d12Simulation2d5solveEv">
+<span id="_CPPv3N13simulation_2d12Simulation2d5solveEv"></span><span id="_CPPv2N13simulation_2d12Simulation2d5solveEv"></span><span id="simulation_2d::Simulation2d::solve"></span><span class="target" id="classsimulation__2d_1_1Simulation2d_1a11fc925c692d0f8bb5c7bd1402818af7"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">solve</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N13simulation_2d12Simulation2d5solveEv" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N13simulation_2d12Simulation2d15startSimulationEv">
+<span id="_CPPv3N13simulation_2d12Simulation2d15startSimulationEv"></span><span id="_CPPv2N13simulation_2d12Simulation2d15startSimulationEv"></span><span id="simulation_2d::Simulation2d::startSimulation"></span><span class="target" id="classsimulation__2d_1_1Simulation2d_1a405b3d73da57250f85fc1e21c55e33a5"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">startSimulation</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N13simulation_2d12Simulation2d15startSimulationEv" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-static-functions">Public Static Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N13simulation_2d12Simulation2d25InitializeNewSimulation2DE6Config">
+<span id="_CPPv3N13simulation_2d12Simulation2d25InitializeNewSimulation2DE6Config"></span><span id="_CPPv2N13simulation_2d12Simulation2d25InitializeNewSimulation2DE6Config"></span><span id="simulation_2d::Simulation2d::InitializeNewSimulation2D__Config"></span><span class="target" id="classsimulation__2d_1_1Simulation2d_1aa14869365c624338252270bfeddbfce4"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N13simulation_2d12Simulation2dE" title="simulation_2d::Simulation2d"><span class="n"><span class="pre">Simulation2d</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">InitializeNewSimulation2D</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="structConfig.html#_CPPv46Config" title="Config"><span class="n"><span class="pre">Config</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">new_cfg</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N13simulation_2d12Simulation2d25InitializeNewSimulation2DE6Config" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-private-members">Private Members</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N13simulation_2d12Simulation2d10componentsE">
+<span id="_CPPv3N13simulation_2d12Simulation2d10componentsE"></span><span id="_CPPv2N13simulation_2d12Simulation2d10componentsE"></span><span id="simulation_2d::Simulation2d::components__std::vector:std::unique_ptr:ComponentBase::"></span><span class="target" id="classsimulation__2d_1_1Simulation2d_1ab2d0d55327bcab15d86c3ac94890bc70"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">unique_ptr</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="classsimulation__2d_1_1ComponentBase.html#_CPPv4N13simulation_2d13ComponentBaseE" title="simulation_2d::ComponentBase"><span class="n"><span class="pre">ComponentBase</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">components</span></span></span><a class="headerlink" href="#_CPPv4N13simulation_2d12Simulation2d10componentsE" title="Link to this definition"></a><br /></dt>
+<dd><p>All components of the pipeline. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N13simulation_2d12Simulation2d6solverE">
+<span id="_CPPv3N13simulation_2d12Simulation2d6solverE"></span><span id="_CPPv2N13simulation_2d12Simulation2d6solverE"></span><span id="simulation_2d::Simulation2d::solver__std::unique_ptr:SolverBase:"></span><span class="target" id="classsimulation__2d_1_1Simulation2d_1af64b8c46a62b6bd6f91cc20e641b228b"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">unique_ptr</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="classsimulation__2d_1_1SolverBase.html#_CPPv4N13simulation_2d10SolverBaseE" title="simulation_2d::SolverBase"><span class="n"><span class="pre">SolverBase</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">solver</span></span></span><a class="headerlink" href="#_CPPv4N13simulation_2d12Simulation2d6solverE" title="Link to this definition"></a><br /></dt>
+<dd><p>The underliing time solver. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N13simulation_2d12Simulation2d3cfgE">
+<span id="_CPPv3N13simulation_2d12Simulation2d3cfgE"></span><span id="_CPPv2N13simulation_2d12Simulation2d3cfgE"></span><span id="simulation_2d::Simulation2d::cfg__Config"></span><span class="target" id="classsimulation__2d_1_1Simulation2d_1a1e9278d8654a5cb9b428b95fa7276939"></span><a class="reference internal" href="structConfig.html#_CPPv46Config" title="Config"><span class="n"><span class="pre">Config</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">cfg</span></span></span><a class="headerlink" href="#_CPPv4N13simulation_2d12Simulation2d3cfgE" title="Link to this definition"></a><br /></dt>
+<dd><p>Runtime configuration. </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="classsimulation__2d_1_1ComponentWrapper.html" class="btn btn-neutral float-left" title="Template Class ComponentWrapper" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="classsimulation__2d_1_1SolverBase.html" class="btn btn-neutral float-right" title="Class SolverBase" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright .</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

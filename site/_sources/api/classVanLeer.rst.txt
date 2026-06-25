@@ -1,0 +1,27 @@
+.. _exhale_class_classVanLeer:
+
+Template Class VanLeer
+======================
+
+- Defined in :ref:`file_include_advection_flux_operators.hpp`
+
+
+Inheritance Relationships
+-------------------------
+
+Base Type
+*********
+
+- ``public LimiterBase< Q >`` (:ref:`exhale_class_classLimiterBase`)
+
+
+Class Documentation
+-------------------
+
+
+.. doxygenclass:: VanLeer
+   :project: MPULS
+   :members:
+   :protected-members:
+   :private-members:
+   :undoc-members:

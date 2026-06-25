@@ -1,0 +1,238 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Program Listing for File config_params.hpp &mdash; Modular PULsation Suite  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=7ab3649f" />
+      <link rel="stylesheet" type="text/css" href="../_static/collapsible-lists/css/tree_view.css?v=a885cde7" />
+      <link rel="stylesheet" type="text/css" href="../_static/compact-api.css?v=bfcdbbe1" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script src="../_static/collapsible-lists/js/CollapsibleLists.compressed.js?v=73120307"></script>
+      <script src="../_static/collapsible-lists/js/apply-collapsible-lists.js?v=660e4f45"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Modular PULsation Suite
+              <img src="../_static/logo-mpuls.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../guide/index.html">MPULS User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../manual/index.html">MPULS User Manual</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference Manual</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="library_root.html">MPULS API reference</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Modular PULsation Suite</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Program Listing for File config_params.hpp</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/api/program_listing_file_include_core_config_params.hpp.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="program-listing-for-file-config-params-hpp">
+<span id="program-listing-file-include-core-config-params-hpp"></span><h1>Program Listing for File config_params.hpp<a class="headerlink" href="#program-listing-for-file-config-params-hpp" title="Link to this heading"></a></h1>
+<p>↰ <a class="reference internal" href="file_include_core_config_params.hpp.html#file-include-core-config-params-hpp"><span class="std std-ref">Return to documentation for file</span></a> (<code class="docutils literal notranslate"><span class="pre">include/core/config_params.hpp</span></code>)</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#pragma once</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;string&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;vector&gt;</span>
+
+<span class="k">struct</span><span class="w"> </span><span class="nc">StellarParameters</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">stellar_mass</span><span class="p">;</span><span class="w">              </span><span class="c1">// stellar mass (M☉)</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">stellar_radius</span><span class="p">;</span><span class="w">            </span><span class="c1">// radius (cm)</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">t_eff</span><span class="p">;</span><span class="w">              </span><span class="c1">// effective temperature (K)</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">luminosity</span><span class="p">;</span><span class="w">          </span><span class="c1">// luminosity (L☉)</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">metallicity</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.0</span><span class="p">;</span><span class="w"> </span><span class="c1">// optional, default 0</span>
+
+<span class="p">};</span>
+
+<span class="k">struct</span><span class="w"> </span><span class="nc">GridConfig</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">number_of_grid_cells</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">radius_min</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">radius_max</span><span class="p">;</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">scale</span><span class="p">;</span><span class="w">   </span><span class="c1">// &quot;linear&quot; or &quot;log&quot;</span>
+<span class="p">};</span>
+
+<span class="k">enum</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">Mode</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">testing1D</span><span class="p">,</span>
+<span class="w">    </span><span class="n">testing2D</span>
+<span class="p">};</span>
+
+
+
+<span class="k">namespace</span><span class="w"> </span><span class="nn">solver_params</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">enum</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">Limiters</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">kVanLeer</span><span class="p">,</span>
+<span class="w">        </span><span class="n">kMinMod</span><span class="p">,</span>
+<span class="w">        </span><span class="n">kSuperbee</span>
+<span class="w">    </span><span class="p">};</span>
+
+<span class="w">    </span><span class="k">enum</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">FluxCalculator</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">kLocalLaxFriedrichs</span><span class="p">,</span>
+<span class="w">        </span><span class="n">kUpwind</span>
+<span class="w">    </span><span class="p">};</span>
+
+<span class="w">    </span><span class="k">enum</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">Reconstructor</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">kPiecewiseLinear</span><span class="p">,</span>
+<span class="w">        </span><span class="n">kPiecewiseConstant</span>
+<span class="w">    </span><span class="p">};</span>
+
+<span class="w">    </span><span class="k">enum</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">Integrator</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">kSspRungeKutta2</span><span class="p">,</span>
+<span class="w">        </span><span class="n">kSspRungeKutta3</span>
+<span class="w">    </span><span class="p">};</span>
+<span class="p">}</span>
+
+<span class="k">namespace</span><span class="w"> </span><span class="nn">model</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">enum</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">Equation</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">kScalar2d</span><span class="p">,</span>
+<span class="w">        </span><span class="n">kEuler2d</span>
+<span class="w">    </span><span class="p">};</span>
+
+<span class="w">    </span><span class="k">enum</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">InitialModel</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">kKelvinHelmholtz</span><span class="p">,</span>
+<span class="w">        </span><span class="n">kConstant</span>
+<span class="w">    </span><span class="p">};</span>
+<span class="w">    </span><span class="k">struct</span><span class="w"> </span><span class="nc">ModelConfig</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">Equation</span><span class="w"> </span><span class="n">type</span><span class="p">;</span>
+<span class="w">        </span><span class="n">InitialModel</span><span class="w"> </span><span class="n">initial_model</span><span class="p">;</span>
+<span class="w">        </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="w"> </span><span class="n">params</span><span class="p">;</span>
+<span class="w">    </span><span class="p">};</span>
+<span class="p">}</span>
+
+
+
+<span class="k">struct</span><span class="w"> </span><span class="nc">SolverConfig</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="n">solver_params</span><span class="o">::</span><span class="n">Limiters</span><span class="w"> </span><span class="n">limiter</span><span class="p">;</span>
+<span class="w">    </span><span class="n">solver_params</span><span class="o">::</span><span class="n">FluxCalculator</span><span class="w"> </span><span class="n">flux_calculator</span><span class="p">;</span>
+<span class="w">    </span><span class="n">solver_params</span><span class="o">::</span><span class="n">Reconstructor</span><span class="w"> </span><span class="n">reconstructor</span><span class="p">;</span>
+<span class="w">    </span><span class="n">solver_params</span><span class="o">::</span><span class="n">Integrator</span><span class="w"> </span><span class="n">integrator</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">cfl_number</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">hyperdiffusivity</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="n">is_diffusion</span><span class="p">;</span>
+<span class="p">};</span>
+<span class="k">struct</span><span class="w"> </span><span class="nc">Grid2Dconfig</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">enum</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">GridType</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">Uniform</span><span class="w"> </span><span class="p">};</span>
+<span class="w">    </span><span class="kt">size_t</span><span class="w"> </span><span class="n">Nrad</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">size_t</span><span class="w"> </span><span class="n">Nhor</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">size_t</span><span class="w"> </span><span class="n">Nghost_rad</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">size_t</span><span class="w"> </span><span class="n">Nghost_hor</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">r0</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">rN</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">theta0</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">thetaN</span><span class="p">;</span>
+<span class="w">    </span><span class="n">GridType</span><span class="w"> </span><span class="n">type</span><span class="p">;</span>
+<span class="p">};</span>
+
+
+<span class="k">struct</span><span class="w"> </span><span class="nc">Config</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">output_dir</span><span class="p">;</span><span class="w">       </span><span class="c1">// Directory to save outputs</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">output_format</span><span class="p">;</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">output_summary_name</span><span class="p">;</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">output_prefix</span><span class="p">;</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">inner_boundary</span><span class="p">;</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">outer_boundary</span><span class="p">;</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">integrator_type</span><span class="p">;</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">time_step</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">delta_t</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">t_max</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">t_init</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">short</span><span class="w"> </span><span class="n">dimensions</span><span class="p">;</span>
+<span class="w">    </span><span class="n">Mode</span><span class="w"> </span><span class="n">mode</span><span class="p">;</span>
+
+<span class="w">    </span><span class="n">StellarParameters</span><span class="w"> </span><span class="n">stellar_parameters</span><span class="p">;</span><span class="w"> </span><span class="c1">// → most már itt van a konkrét blokk</span>
+
+<span class="w">    </span><span class="n">model</span><span class="o">::</span><span class="n">ModelConfig</span><span class="w"> </span><span class="n">model</span><span class="p">;</span>
+<span class="w">    </span><span class="n">SolverConfig</span><span class="w"> </span><span class="n">solver_cfg</span><span class="p">;</span>
+<span class="w">    </span><span class="n">GridConfig</span><span class="w"> </span><span class="n">grid_cfg</span><span class="p">;</span>
+<span class="w">    </span><span class="n">Grid2Dconfig</span><span class="w"> </span><span class="n">grid_2d_cfg</span><span class="p">;</span>
+
+<span class="p">};</span>
+</pre></div>
+</div>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright .</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

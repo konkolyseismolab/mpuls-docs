@@ -1,0 +1,27 @@
+.. _exhale_class_classPLM:
+
+Template Class PLM
+==================
+
+- Defined in :ref:`file_include_advection_flux_operators.hpp`
+
+
+Inheritance Relationships
+-------------------------
+
+Base Type
+*********
+
+- ``public ReconstructionBase< Q >`` (:ref:`exhale_class_classReconstructionBase`)
+
+
+Class Documentation
+-------------------
+
+
+.. doxygenclass:: PLM
+   :project: MPULS
+   :members:
+   :protected-members:
+   :private-members:
+   :undoc-members:

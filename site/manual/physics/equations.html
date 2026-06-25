@@ -1,0 +1,180 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PDE Systems &mdash; Modular PULsation Suite  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=7ab3649f" />
+      <link rel="stylesheet" type="text/css" href="../../_static/collapsible-lists/css/tree_view.css?v=a885cde7" />
+      <link rel="stylesheet" type="text/css" href="../../_static/compact-api.css?v=bfcdbbe1" />
+
+  
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script src="../../_static/collapsible-lists/js/CollapsibleLists.compressed.js?v=73120307"></script>
+      <script src="../../_static/collapsible-lists/js/apply-collapsible-lists.js?v=660e4f45"></script>
+      <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+      <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Numerical background" href="../numerics/numerics.html" />
+    <link rel="prev" title="Physical background" href="physics.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Modular PULsation Suite
+              <img src="../../_static/logo-mpuls.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../guide/index.html">MPULS User Guide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">MPULS User Manual</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="physics.html">Physical background</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">PDE Systems</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv4I_12QuantityTypeE12EquationBase"><code class="docutils literal notranslate"><span class="pre">EquationBase</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv4I_14TwoDimensional_12QuantityTypeE17ScalarTransport2d"><code class="docutils literal notranslate"><span class="pre">ScalarTransport2d</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv4I_14TwoDimensional_12QuantityTypeE7Euler2d"><code class="docutils literal notranslate"><span class="pre">Euler2d</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../numerics/numerics.html">Numerical background</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference Manual</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../api/library_root.html">MPULS API reference</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Modular PULsation Suite</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">MPULS User Manual</a></li>
+          <li class="breadcrumb-item"><a href="physics.html">Physical background</a></li>
+      <li class="breadcrumb-item active">PDE Systems</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/manual/physics/equations.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="pde-systems">
+<h1>PDE Systems<a class="headerlink" href="#pde-systems" title="Link to this heading"></a></h1>
+<p>Radial stellar pulsations and stellar pulsations in general are described by hydrodynamics.
+The system of equations are consisting of the conservation of mass, the conservation of
+momentum and conservation of energy. Although stars are made up plasma, the magnetic field and
+rotation is usually neglected in these models, due to the complexity of the problem.</p>
+<p>Thus in vector formulation our governing equations are</p>
+<div class="math notranslate nohighlight" id="equation-manual-physics-equations-0">
+<span class="eqno">(1)<a class="headerlink" href="#equation-manual-physics-equations-0" title="Link to this equation"></a></span>\[\begin{split}\frac{\partial \rho}{\partial t} + \boldsymbol \nabla \cdot (\rho \boldsymbol v) &amp;= 0 \\
+\frac{\partial \boldsymbol v}{\partial t} + \boldsymbol v \cdot \boldsymbol \nabla \boldsymbol v &amp;= -\frac{1}{\rho}
+\boldsymbol \nabla p  - \frac{1}{\rho} \boldsymbol \nabla \cdot \boldsymbol{\underline \tau} - \boldsymbol g \\
+\frac{\partial }{\partial t}\left(e + \frac 1 2 \vert\boldsymbol v \vert^2\right) +
+\boldsymbol v \cdot \boldsymbol \nabla \left(e + \frac 1 2 \vert\boldsymbol v \vert^2\right) &amp;= -\frac{1}{\rho} \boldsymbol \nabla \cdot
+\left( p \boldsymbol v + \boldsymbol F_{\text rad} + \boldsymbol{\underline \tau} \cdot \boldsymbol v \right) - \boldsymbol g \cdot \boldsymbol v\end{split}\]</div>
+<p>Where <span class="math notranslate nohighlight">\(\rho\)</span> is the density, <span class="math notranslate nohighlight">\(\boldsymbol v\)</span> is the velocity, <span class="math notranslate nohighlight">\(\boldsymbol g\)</span> is graviational acceleration,
+<span class="math notranslate nohighlight">\(p\)</span> denotes pressure, <span class="math notranslate nohighlight">\(\boldsymbol{\underline \tau}\)</span> is the viscous stress tensor, <span class="math notranslate nohighlight">\(e\)</span> denotes specific
+internal energy and <span class="math notranslate nohighlight">\(F_{\text rad}\)</span> means radiative flux (or generally a heat transfer).</p>
+<p>Converting these equations into conservation form, we arrive at a partial differential equation systems, with the generic form:</p>
+<div class="math notranslate nohighlight" id="equation-generic-pde">
+<span class="eqno">(2)<a class="headerlink" href="#equation-generic-pde" title="Link to this equation"></a></span>\[\frac{\partial q}{\partial t} + \boldsymbol \nabla \cdot \boldsymbol F_{\text adv}(q) + \boldsymbol \nabla \cdot\boldsymbol F_{\text diff}(q) = S (q)\]</div>
+<p>In this generic form, one can define the so called state-vector as <span class="math notranslate nohighlight">\(\boldsymbol q = (\rho, \rho u , \rho v, \rho w, \rho e_{\rm tot} )\)</span>.</p>
+<div class="admonition-implementation admonition">
+<p class="admonition-title">Implementation</p>
+<p>Since the state-vector couples all information that is available in a grid point, it should be implemented together.
+Therefore, we implement it as an array-based templated format, called <a class="reference internal" href="../../api/classQuantityBase.html#exhale-class-classquantitybase"><span class="std std-ref">QuantityBase</span></a>:</p>
+<p>These are implemented through the various classes (see <a class="reference internal" href="../../api/file_include_equations_equations.hpp.html#file-include-equations-equations-hpp"><span class="std std-ref">File equations.hpp</span></a> header documentation).</p>
+</div>
+<dl>
+<dt class="sig sig-object cpp">
+<span class="target" id="group__Equations"></span><em><span class="pre">group</span></em> <span class="sig-name descname"><span class="pre">Equations</span></span></dt>
+<dd><dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv4I_12QuantityTypeE12EquationBase">
+<span id="_CPPv3I_12QuantityTypeE12EquationBase"></span><span id="_CPPv2I_12QuantityTypeE12EquationBase"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">QuantityType</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Q</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="classEquationBase"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">EquationBase</span></span></span><br /></dt>
+<dd><p>Subclassed by <a class="reference internal" href="#classEuler2d"><span class="std std-ref">Euler2d&lt; T, Q &gt;</span></a>, <a class="reference internal" href="#classScalarTransport2d"><span class="std std-ref">ScalarTransport2d&lt; T, Q &gt;</span></a></p>
+</dd></dl>
+
+<dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv4I_14TwoDimensional_12QuantityTypeE17ScalarTransport2d">
+<span id="_CPPv3I_14TwoDimensional_12QuantityTypeE17ScalarTransport2d"></span><span id="_CPPv2I_14TwoDimensional_12QuantityTypeE17ScalarTransport2d"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">TwoDimensional</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">T</span></span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">QuantityType</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Q</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="classScalarTransport2d"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ScalarTransport2d</span></span></span><span class="w"> </span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="k"><span class="pre">public</span></span><span class="w"> </span><a class="reference internal" href="../../api/classEquationBase.html#_CPPv4I_12QuantityTypeE12EquationBase" title="EquationBase"><span class="n"><span class="pre">EquationBase</span></span></a><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="../../api/classScalarTransport2d.html#_CPPv4I_14TwoDimensional_12QuantityTypeE17ScalarTransport2d" title="ScalarTransport2d::Q"><span class="n"><span class="pre">Q</span></span></a><span class="p"><span class="pre">&gt;</span></span><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv4I_14TwoDimensional_12QuantityTypeE7Euler2d">
+<span id="_CPPv3I_14TwoDimensional_12QuantityTypeE7Euler2d"></span><span id="_CPPv2I_14TwoDimensional_12QuantityTypeE7Euler2d"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">TwoDimensional</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">T</span></span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">QuantityType</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Q</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="classEuler2d"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Euler2d</span></span></span><span class="w"> </span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="k"><span class="pre">public</span></span><span class="w"> </span><a class="reference internal" href="../../api/classEquationBase.html#_CPPv4I_12QuantityTypeE12EquationBase" title="EquationBase"><span class="n"><span class="pre">EquationBase</span></span></a><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="../../api/classEuler2d.html#_CPPv4I_14TwoDimensional_12QuantityTypeE7Euler2d" title="Euler2d::Q"><span class="n"><span class="pre">Q</span></span></a><span class="p"><span class="pre">&gt;</span></span><br /></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="physics.html" class="btn btn-neutral float-left" title="Physical background" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../numerics/numerics.html" class="btn btn-neutral float-right" title="Numerical background" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright .</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

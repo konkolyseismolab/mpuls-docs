@@ -1,0 +1,27 @@
+.. _exhale_class_classUnimplementedError:
+
+Class UnimplementedError
+========================
+
+- Defined in :ref:`file_include_core_custom_exceptions.hpp`
+
+
+Inheritance Relationships
+-------------------------
+
+Base Type
+*********
+
+- ``public std::runtime_error``
+
+
+Class Documentation
+-------------------
+
+
+.. doxygenclass:: UnimplementedError
+   :project: MPULS
+   :members:
+   :protected-members:
+   :private-members:
+   :undoc-members:

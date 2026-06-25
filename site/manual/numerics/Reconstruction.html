@@ -1,0 +1,335 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Solution Reconstruction &mdash; Modular PULsation Suite  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=7ab3649f" />
+      <link rel="stylesheet" type="text/css" href="../../_static/collapsible-lists/css/tree_view.css?v=a885cde7" />
+      <link rel="stylesheet" type="text/css" href="../../_static/compact-api.css?v=bfcdbbe1" />
+
+  
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script src="../../_static/collapsible-lists/js/CollapsibleLists.compressed.js?v=73120307"></script>
+      <script src="../../_static/collapsible-lists/js/apply-collapsible-lists.js?v=660e4f45"></script>
+      <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+      <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Limiters" href="Limiters.html" />
+    <link rel="prev" title="Hyperbolic equation solving" href="flux_calculation.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Modular PULsation Suite
+              <img src="../../_static/logo-mpuls.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../guide/index.html">MPULS User Guide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">MPULS User Manual</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../physics/physics.html">Physical background</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="numerics.html">Numerical background</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="fvm_scheme.html">The Finite Volume Method</a></li>
+<li class="toctree-l3"><a class="reference internal" href="flux_calculation.html">Hyperbolic equation solving</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Solution Reconstruction</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv4I_12QuantityTypeE18ReconstructionBase"><code class="docutils literal notranslate"><span class="pre">ReconstructionBase</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv4I_12QuantityType_9Direction_11LimiterTypeI1QEE3PCM"><code class="docutils literal notranslate"><span class="pre">PCM</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv4I_12QuantityType_9Direction_11LimiterTypeI1QEE3PLM"><code class="docutils literal notranslate"><span class="pre">PLM</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="Limiters.html">Limiters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="hyperbolic-filter.html">Solution filtering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="time_integration.html">Time integration</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference Manual</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../api/library_root.html">MPULS API reference</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Modular PULsation Suite</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">MPULS User Manual</a></li>
+          <li class="breadcrumb-item"><a href="numerics.html">Numerical background</a></li>
+      <li class="breadcrumb-item active">Solution Reconstruction</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/manual/numerics/Reconstruction.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="solution-reconstruction">
+<h1>Solution Reconstruction<a class="headerlink" href="#solution-reconstruction" title="Link to this heading"></a></h1>
+<p>This is an important topic. See this:</p>
+<div class="math notranslate nohighlight">
+\[q_j(x_{i+1/2}) \approx q_j(x_i) + \frac{h}{2} \delta q_j\]</div>
+<p>In the case of higher order schemes, it is necessary to give a good approximation of the
+interface values, from which the fluxes are calculated. If the reconstruction is neglected
+i. e. the cell average is considered to be the interface value, we end up with the simple
+first order Godunov method. (In FDM this would be the Courant-Isaacson-Rees method).</p>
+<p>Higher order schemes use some kind of interpolant to calclutae the interfaces values at the two
+s ide of the interface, which is later used for either solving the (approximate) Riemann problem
+(MUSCL methods), or other techniques are applied (e.g. Rusanov fluxes). The most common
+interpolants are the piecewise linear and piecewise parabolic reconstruction methods.
+The reconstruction method may apply so-called flux &#64;ref Limiters which modify the exact interpolant
+to prevent the introduction of new extrema into the solution, thus preventing Gibbs phenomenon.</p>
+<dl>
+<dt class="sig sig-object cpp">
+<span class="target" id="group__Reconstruction"></span><em><span class="pre">group</span></em> <span class="sig-name descname"><span class="pre">Reconstruction</span></span></dt>
+<dd><p>Solution reconstruction aims to reproduce the interface values to a given precision. </p>
+<p>Reconstruction is defined seperately from the slope limiters, allowing larger modularity.</p>
+<p>The base concept here is, that the classes derived from <a class="reference internal" href="#classReconstructionBase"><span class="std std-ref">ReconstructionBase</span></a> can be used to derive the left and right interface states relative to the <strong>cell center</strong>. This is important implementation detail, that at the current states every interface is calculated twice. The need of separate storage per interface is still a question. This would need further syncronisasions among threads and the memory access can be a bottleneck. Thus, at least for the reference implementation this need this way and <a class="reference internal" href="../../api/classFluxOperator.html#classFluxOperator"><span class="std std-ref">FluxOperator</span></a> class can be different.</p>
+<p><div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>Limiters</p>
+</div>
+</p>
+<dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv4I_12QuantityTypeE18ReconstructionBase">
+<span id="_CPPv3I_12QuantityTypeE18ReconstructionBase"></span><span id="_CPPv2I_12QuantityTypeE18ReconstructionBase"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">QuantityType</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Q</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="classReconstructionBase"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ReconstructionBase</span></span></span><br /></dt>
+<dd><div class="docutils container">
+<em>#include &lt;advection/flux_operators.hpp&gt;</em></div>
+<p>Abstract interface for solution reconstruction methods. </p>
+<p>Technically it is just a callable that provides left and right interface states. </p>
+<p>Subclassed by <a class="reference internal" href="#classPCM"><span class="std std-ref">PCM&lt; Q, Dir, Limiter &gt;</span></a>, <a class="reference internal" href="#classPLM"><span class="std std-ref">PLM&lt; Q, Dir, Limiter &gt;</span></a></p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N18ReconstructionBase14get_left_stateERK6Grid2dI1QE6size_t6size_t">
+<span id="_CPPv3N18ReconstructionBase14get_left_stateERK6Grid2dI1QE6size_t6size_t"></span><span id="_CPPv2N18ReconstructionBase14get_left_stateERK6Grid2dI1QE6size_t6size_t"></span><span id="ReconstructionBase::get_left_state__Grid2d:Q:CR.s.s"></span><span class="target" id="classReconstructionBase_1a80cbcb94f383758ba855683c3354f0b8"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><a class="reference internal" href="../../api/classReconstructionBase.html#_CPPv4I_12QuantityTypeE18ReconstructionBase" title="ReconstructionBase::Q"><span class="n"><span class="pre">Q</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">get_left_state</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="../../api/classGrid2d.html#_CPPv4I_12QuantityTypeE6Grid2d" title="Grid2d"><span class="n"><span class="pre">Grid2d</span></span></a><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="../../api/classReconstructionBase.html#_CPPv4I_12QuantityTypeE18ReconstructionBase" title="ReconstructionBase::Q"><span class="n"><span class="pre">Q</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">grid</span></span>, <span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">i</span></span>, <span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">j</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><br /></dt>
+<dd><p>Calculate the left state w.r.t. the cell center. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>grid</strong> – The calculation grid </p></li>
+<li><p><strong>i, j</strong> – The 2D indices of the cell</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>the value of <span class="math notranslate nohighlight">\( q_i^L \equiv q_{i-1/2}^+ \)</span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N18ReconstructionBase15get_right_stateERK6Grid2dI1QE6size_t6size_t">
+<span id="_CPPv3N18ReconstructionBase15get_right_stateERK6Grid2dI1QE6size_t6size_t"></span><span id="_CPPv2N18ReconstructionBase15get_right_stateERK6Grid2dI1QE6size_t6size_t"></span><span id="ReconstructionBase::get_right_state__Grid2d:Q:CR.s.s"></span><span class="target" id="classReconstructionBase_1a83d8bf5c26f5593802a9879df27d16ca"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><a class="reference internal" href="../../api/classReconstructionBase.html#_CPPv4I_12QuantityTypeE18ReconstructionBase" title="ReconstructionBase::Q"><span class="n"><span class="pre">Q</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">get_right_state</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="../../api/classGrid2d.html#_CPPv4I_12QuantityTypeE6Grid2d" title="Grid2d"><span class="n"><span class="pre">Grid2d</span></span></a><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="../../api/classReconstructionBase.html#_CPPv4I_12QuantityTypeE18ReconstructionBase" title="ReconstructionBase::Q"><span class="n"><span class="pre">Q</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">grid</span></span>, <span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">i</span></span>, <span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">j</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><br /></dt>
+<dd><p>Calculate the right state w.r.t. the cell center. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>grid</strong> – The calculation grid </p></li>
+<li><p><strong>i, j</strong> – The 2D indices of the cell</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>the value of <span class="math notranslate nohighlight">\( q_i^R \equiv q_{i+1/2}^- \)</span></p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv4I_12QuantityType_9Direction_11LimiterTypeI1QEE3PCM">
+<span id="_CPPv3I_12QuantityType_9Direction_11LimiterTypeI1QEE3PCM"></span><span id="_CPPv2I_12QuantityType_9Direction_11LimiterTypeI1QEE3PCM"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">QuantityType</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Q</span></span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="../../api/enum_common_8hpp_1a224b9163917ac32fc95a60d8c1eec3aa.html#_CPPv49Direction" title="Direction"><span class="n"><span class="pre">Direction</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Dir</span></span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="Limiters.html#_CPPv4I00E11LimiterType" title="LimiterType"><span class="n"><span class="pre">LimiterType</span></span></a><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="../../api/classPCM.html#_CPPv4I_12QuantityType_9Direction_11LimiterTypeI1QEE3PCM" title="PCM::Q"><span class="n"><span class="pre">Q</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Limiter</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="classPCM"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">PCM</span></span></span><span class="w"> </span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="k"><span class="pre">public</span></span><span class="w"> </span><a class="reference internal" href="../../api/classReconstructionBase.html#_CPPv4I_12QuantityTypeE18ReconstructionBase" title="ReconstructionBase"><span class="n"><span class="pre">ReconstructionBase</span></span></a><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="../../api/classPCM.html#_CPPv4I_12QuantityType_9Direction_11LimiterTypeI1QEE3PCM" title="PCM::Q"><span class="n"><span class="pre">Q</span></span></a><span class="p"><span class="pre">&gt;</span></span><br /></dt>
+<dd><div class="docutils container">
+<em>#include &lt;advection/flux_operators.hpp&gt;</em></div>
+<p>Piecevise Constant Reconstruction. </p>
+<p>
+The simple procidure gives the interface value of <span class="math notranslate nohighlight">\( q \)</span> as</p>
+<p><div class="math notranslate nohighlight">
+\[ q_{i+1/2}^- = q_i \qquad \text{and} \qquad q_{i+1/2}^- = q_{i+1}
+\]</div>
+</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>the Limiter is not used here and will be removed later probably. </p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Template Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>Q</strong> – Type of the statevector </p></li>
+<li><p><strong>Dir</strong> – Constant Direction enum. Determining the operator direction compile time </p></li>
+<li><p><strong>Limiter</strong> – <a class="reference internal" href="Limiters.html#classLimiterBase"><span class="std std-ref">LimiterBase</span></a> child object that defines the flux limiter.</p></li>
+</ul>
+</dd>
+</dl>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3PCM14get_left_stateERK6Grid2dI1QE6size_t6size_t">
+<span id="_CPPv3N3PCM14get_left_stateERK6Grid2dI1QE6size_t6size_t"></span><span id="_CPPv2N3PCM14get_left_stateERK6Grid2dI1QE6size_t6size_t"></span><span id="PCM::get_left_state__Grid2d:Q:CR.s.s"></span><span class="target" id="classPCM_1a61d36923647e9fb76c2d84330df3bf03"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><a class="reference internal" href="../../api/classPCM.html#_CPPv4I_12QuantityType_9Direction_11LimiterTypeI1QEE3PCM" title="PCM::Q"><span class="n"><span class="pre">Q</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">get_left_state</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="../../api/classGrid2d.html#_CPPv4I_12QuantityTypeE6Grid2d" title="Grid2d"><span class="n"><span class="pre">Grid2d</span></span></a><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="../../api/classPCM.html#_CPPv4I_12QuantityType_9Direction_11LimiterTypeI1QEE3PCM" title="PCM::Q"><span class="n"><span class="pre">Q</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">grid</span></span>, <span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">i</span></span>, <span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">j</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">override</span></span><br /></dt>
+<dd><p>Calculate the left state w.r.t. the cell center. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>grid</strong> – The calculation grid </p></li>
+<li><p><strong>i, j</strong> – The 2<a class="reference internal" href="../../api/classPCM.html#classPCM_1ac1d212630df966ea77ad304b16aeda30"><span class="std std-ref">D</span></a> indices of the cell</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>the value of <span class="math notranslate nohighlight">\( q_i^L \equiv q_{i-1/2}^+ \)</span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3PCM15get_right_stateERK6Grid2dI1QE6size_t6size_t">
+<span id="_CPPv3N3PCM15get_right_stateERK6Grid2dI1QE6size_t6size_t"></span><span id="_CPPv2N3PCM15get_right_stateERK6Grid2dI1QE6size_t6size_t"></span><span id="PCM::get_right_state__Grid2d:Q:CR.s.s"></span><span class="target" id="classPCM_1a5bc7823722a4826ea664b6f0c3b70898"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><a class="reference internal" href="../../api/classPCM.html#_CPPv4I_12QuantityType_9Direction_11LimiterTypeI1QEE3PCM" title="PCM::Q"><span class="n"><span class="pre">Q</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">get_right_state</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="../../api/classGrid2d.html#_CPPv4I_12QuantityTypeE6Grid2d" title="Grid2d"><span class="n"><span class="pre">Grid2d</span></span></a><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="../../api/classPCM.html#_CPPv4I_12QuantityType_9Direction_11LimiterTypeI1QEE3PCM" title="PCM::Q"><span class="n"><span class="pre">Q</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">grid</span></span>, <span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">i</span></span>, <span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">j</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">override</span></span><br /></dt>
+<dd><p>Calculate the right state w.r.t. the cell center. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>grid</strong> – The calculation grid </p></li>
+<li><p><strong>i, j</strong> – The 2<a class="reference internal" href="../../api/classPCM.html#classPCM_1ac1d212630df966ea77ad304b16aeda30"><span class="std std-ref">D</span></a> indices of the cell</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>the value of <span class="math notranslate nohighlight">\( q_i^R \equiv q_{i+1/2}^- \)</span></p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv4I_12QuantityType_9Direction_11LimiterTypeI1QEE3PLM">
+<span id="_CPPv3I_12QuantityType_9Direction_11LimiterTypeI1QEE3PLM"></span><span id="_CPPv2I_12QuantityType_9Direction_11LimiterTypeI1QEE3PLM"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">QuantityType</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Q</span></span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="../../api/enum_common_8hpp_1a224b9163917ac32fc95a60d8c1eec3aa.html#_CPPv49Direction" title="Direction"><span class="n"><span class="pre">Direction</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Dir</span></span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="Limiters.html#_CPPv4I00E11LimiterType" title="LimiterType"><span class="n"><span class="pre">LimiterType</span></span></a><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="../../api/classPLM.html#_CPPv4I_12QuantityType_9Direction_11LimiterTypeI1QEE3PLM" title="PLM::Q"><span class="n"><span class="pre">Q</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Limiter</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="classPLM"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">PLM</span></span></span><span class="w"> </span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="k"><span class="pre">public</span></span><span class="w"> </span><a class="reference internal" href="../../api/classReconstructionBase.html#_CPPv4I_12QuantityTypeE18ReconstructionBase" title="ReconstructionBase"><span class="n"><span class="pre">ReconstructionBase</span></span></a><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="../../api/classPLM.html#_CPPv4I_12QuantityType_9Direction_11LimiterTypeI1QEE3PLM" title="PLM::Q"><span class="n"><span class="pre">Q</span></span></a><span class="p"><span class="pre">&gt;</span></span><br /></dt>
+<dd><div class="docutils container">
+<em>#include &lt;advection/flux_operators.hpp&gt;</em></div>
+<p>Piecewise Linear Reconstruction. </p>
+<p><div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>Direction enum. Determining the operator direction compile time </p>
+</div>
+</p>
+<dl class="field-list simple">
+<dt class="field-odd">Template Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>Q</strong> – Type of the statevector </p></li>
+<li><p><strong>Dir</strong> – Constant </p></li>
+<li><p><strong>Limiter</strong> – object that defines the flux limiter. The simple procedure gives the interface value of </p></li>
+</ul>
+</dd>
+</dl>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3PLM14get_left_stateERK6Grid2dI1QE6size_t6size_t">
+<span id="_CPPv3N3PLM14get_left_stateERK6Grid2dI1QE6size_t6size_t"></span><span id="_CPPv2N3PLM14get_left_stateERK6Grid2dI1QE6size_t6size_t"></span><span id="PLM::get_left_state__Grid2d:Q:CR.s.s"></span><span class="target" id="classPLM_1a035008f11971dc6e07807216311fa269"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><a class="reference internal" href="../../api/classPLM.html#_CPPv4I_12QuantityType_9Direction_11LimiterTypeI1QEE3PLM" title="PLM::Q"><span class="n"><span class="pre">Q</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">get_left_state</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="../../api/classGrid2d.html#_CPPv4I_12QuantityTypeE6Grid2d" title="Grid2d"><span class="n"><span class="pre">Grid2d</span></span></a><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="../../api/classPLM.html#_CPPv4I_12QuantityType_9Direction_11LimiterTypeI1QEE3PLM" title="PLM::Q"><span class="n"><span class="pre">Q</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">grid</span></span>, <span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">i</span></span>, <span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">j</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">override</span></span><br /></dt>
+<dd><p>Calculate the left state w.r.t. the cell center. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>grid</strong> – The calculation grid </p></li>
+<li><p><strong>i, j</strong> – The 2<a class="reference internal" href="../../api/classPLM.html#classPLM_1a46aedfe4d13e10d9e3a45b78809db0bf"><span class="std std-ref">D</span></a> indices of the cell</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>the value of <span class="math notranslate nohighlight">\( q_i^L \equiv q_{i-1/2}^+ \)</span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3PLM15get_right_stateERK6Grid2dI1QE6size_t6size_t">
+<span id="_CPPv3N3PLM15get_right_stateERK6Grid2dI1QE6size_t6size_t"></span><span id="_CPPv2N3PLM15get_right_stateERK6Grid2dI1QE6size_t6size_t"></span><span id="PLM::get_right_state__Grid2d:Q:CR.s.s"></span><span class="target" id="classPLM_1a493bc4b5a4fc8d71b3a89779f5e3fad4"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><a class="reference internal" href="../../api/classPLM.html#_CPPv4I_12QuantityType_9Direction_11LimiterTypeI1QEE3PLM" title="PLM::Q"><span class="n"><span class="pre">Q</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">get_right_state</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="../../api/classGrid2d.html#_CPPv4I_12QuantityTypeE6Grid2d" title="Grid2d"><span class="n"><span class="pre">Grid2d</span></span></a><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="../../api/classPLM.html#_CPPv4I_12QuantityType_9Direction_11LimiterTypeI1QEE3PLM" title="PLM::Q"><span class="n"><span class="pre">Q</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">grid</span></span>, <span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">i</span></span>, <span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">j</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">override</span></span><br /></dt>
+<dd><p>Calculate the right state w.r.t. the cell center. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>grid</strong> – The calculation grid </p></li>
+<li><p><strong>i, j</strong> – The 2<a class="reference internal" href="../../api/classPLM.html#classPLM_1a46aedfe4d13e10d9e3a45b78809db0bf"><span class="std std-ref">D</span></a> indices of the cell</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>the value of <span class="math notranslate nohighlight">\( q_i^R \equiv q_{i+1/2}^- \)</span></p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="flux_calculation.html" class="btn btn-neutral float-left" title="Hyperbolic equation solving" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Limiters.html" class="btn btn-neutral float-right" title="Limiters" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright .</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

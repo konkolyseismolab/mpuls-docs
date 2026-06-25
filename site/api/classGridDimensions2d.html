@@ -1,0 +1,343 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Template Class GridDimensions2d &mdash; Modular PULsation Suite  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=7ab3649f" />
+      <link rel="stylesheet" type="text/css" href="../_static/collapsible-lists/css/tree_view.css?v=a885cde7" />
+      <link rel="stylesheet" type="text/css" href="../_static/compact-api.css?v=bfcdbbe1" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script src="../_static/collapsible-lists/js/CollapsibleLists.compressed.js?v=73120307"></script>
+      <script src="../_static/collapsible-lists/js/apply-collapsible-lists.js?v=660e4f45"></script>
+      <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+      <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Template Class HyperDiffusion" href="classHyperDiffusion.html" />
+    <link rel="prev" title="Template Class Grid2d" href="classGrid2d.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Modular PULsation Suite
+              <img src="../_static/logo-mpuls.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../guide/index.html">MPULS User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../manual/index.html">MPULS User Manual</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference Manual</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="library_root.html">MPULS API reference</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="library_root.html#page-hierarchy">Page Hierarchy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="library_root.html#class-hierarchy">Class Hierarchy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="library_root.html#file-hierarchy">File Hierarchy</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="library_root.html#full-api">Full API</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="library_root.html#namespaces">Namespaces</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="library_root.html#classes-and-structs">Classes and Structs</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="structCellCenter.html">Struct CellCenter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structCellInterface.html">Struct CellInterface</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structConfig.html">Struct Config</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structGrid.html">Struct Grid</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structGrid2Dconfig.html">Struct Grid2Dconfig</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structGridConfig.html">Struct GridConfig</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structmodel_1_1ModelConfig.html">Struct ModelConfig</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structQuantityTraits.html">Template Struct QuantityTraits</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structsimulation__2d_1_1always__false.html">Template Struct always_false</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structsimulation__2d_1_1EquationTraits.html">Template Struct EquationTraits</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structSolverConfig.html">Struct SolverConfig</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structStellarInput.html">Struct StellarInput</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structStellarParameters.html">Struct StellarParameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classBoundary2DPerHorRigidRad.html">Template Class Boundary2DPerHorRigidRad</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classBoundary2DPeriodic.html">Template Class Boundary2DPeriodic</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classCFL.html">Template Class CFL</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classCIRFlux.html">Template Class CIRFlux</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classDiffusion2d.html">Template Class Diffusion2d</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classEquationBase.html">Template Class EquationBase</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classEuler2d.html">Template Class Euler2d</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classFluxOperator.html">Template Class FluxOperator</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classGrid2d.html">Template Class Grid2d</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Template Class GridDimensions2d</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classHyperDiffusion.html">Template Class HyperDiffusion</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classLimiterBase.html">Template Class LimiterBase</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classLLFflux.html">Template Class LLFflux</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classMinMod.html">Template Class MinMod</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classPCM.html">Template Class PCM</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classPLM.html">Template Class PLM</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classQuantityBase.html">Template Class QuantityBase</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classReconstructionBase.html">Template Class ReconstructionBase</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classRightHandSide.html">Template Class RightHandSide</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classRightHandSideDecorator.html">Template Class RightHandSideDecorator</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classScalarTransport2d.html">Template Class ScalarTransport2d</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classSimpleSource.html">Template Class SimpleSource</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classsimulation__2d_1_1ComponentBase.html">Class ComponentBase</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classsimulation__2d_1_1ComponentWrapper.html">Template Class ComponentWrapper</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classsimulation__2d_1_1Simulation2d.html">Class Simulation2d</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classsimulation__2d_1_1SolverBase.html">Class SolverBase</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classsimulation__2d_1_1SolverWrapper.html">Template Class SolverWrapper</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classSSP__RK2.html">Template Class SSP_RK2</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classSSP__RK3.html">Template Class SSP_RK3</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classSuperbee.html">Template Class Superbee</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classTimeSolverBase.html">Template Class TimeSolverBase</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classUnimplementedError.html">Class UnimplementedError</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classVanLeer.html">Template Class VanLeer</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="library_root.html#enums">Enums</a></li>
+<li class="toctree-l3"><a class="reference internal" href="library_root.html#functions">Functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="library_root.html#variables">Variables</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Modular PULsation Suite</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="library_root.html">MPULS API reference</a></li>
+      <li class="breadcrumb-item active">Template Class GridDimensions2d</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/api/classGridDimensions2d.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="template-class-griddimensions2d">
+<span id="exhale-class-classgriddimensions2d"></span><h1>Template Class GridDimensions2d<a class="headerlink" href="#template-class-griddimensions2d" title="Link to this heading"></a></h1>
+<ul class="simple">
+<li><p>Defined in <a class="reference internal" href="file_include_grid_grid.hpp.html#file-include-grid-grid-hpp"><span class="std std-ref">File grid.hpp</span></a></p></li>
+</ul>
+<section id="class-documentation">
+<h2>Class Documentation<a class="headerlink" href="#class-documentation" title="Link to this heading"></a></h2>
+<dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv4I0E16GridDimensions2d">
+<span id="_CPPv3I0E16GridDimensions2d"></span><span id="_CPPv2I0E16GridDimensions2d"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">typename</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">D</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="classGridDimensions2d"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">GridDimensions2d</span></span></span><a class="headerlink" href="#_CPPv4I0E16GridDimensions2d" title="Link to this definition"></a><br /></dt>
+<dd><p>Class that defines the interface areas for the non-uniform grid.</p>
+<p><dl>
+<dt class="sig sig-object cpp">
+<a class="reference internal" href="page_todo.html#todo_1_todo000002"><span class="std std-ref"><span class="pre">Todo:</span></span></a></dt>
+<dd><p>This should be somehow expanded to decouple geometry from Reconsstruction and <a class="reference internal" href="classFluxOperator.html#classFluxOperator"><span class="std std-ref">FluxOperator</span></a></p>
+</dd></dl>
+
+</p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N16GridDimensions2d16GridDimensions2dEv">
+<span id="_CPPv3N16GridDimensions2d16GridDimensions2dEv"></span><span id="_CPPv2N16GridDimensions2d16GridDimensions2dEv"></span><span id="GridDimensions2d::GridDimensions2d"></span><span class="target" id="classGridDimensions2d_1abfb16dcafe4613809ae1d93010ad9fa0"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">GridDimensions2d</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N16GridDimensions2d16GridDimensions2dEv" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N16GridDimensions2d16GridDimensions2dE6size_t6size_t">
+<span id="_CPPv3N16GridDimensions2d16GridDimensions2dE6size_t6size_t"></span><span id="_CPPv2N16GridDimensions2d16GridDimensions2dE6size_t6size_t"></span><span id="GridDimensions2d::GridDimensions2d__s.s"></span><span class="target" id="classGridDimensions2d_1a0abf9c867657d760914292fbc9017f71"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">GridDimensions2d</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">n_r</span></span>, <span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">n_h</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N16GridDimensions2d16GridDimensions2dE6size_t6size_t" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK16GridDimensions2d10getNradialEv">
+<span id="_CPPv3NK16GridDimensions2d10getNradialEv"></span><span id="_CPPv2NK16GridDimensions2d10getNradialEv"></span><span id="GridDimensions2d::getNradialC"></span><span class="target" id="classGridDimensions2d_1a9015ee79393fb7f7e39c315ffd0f73c3"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getNradial</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK16GridDimensions2d10getNradialEv" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK16GridDimensions2d14getNhorizontalEv">
+<span id="_CPPv3NK16GridDimensions2d14getNhorizontalEv"></span><span id="_CPPv2NK16GridDimensions2d14getNhorizontalEv"></span><span id="GridDimensions2d::getNhorizontalC"></span><span class="target" id="classGridDimensions2d_1a3cf7d3883c55ae07b81586814e1a0fd2"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getNhorizontal</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK16GridDimensions2d14getNhorizontalEv" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK16GridDimensions2d20getRadialCoordinatesEv">
+<span id="_CPPv3NK16GridDimensions2d20getRadialCoordinatesEv"></span><span id="_CPPv2NK16GridDimensions2d20getRadialCoordinatesEv"></span><span id="GridDimensions2d::getRadialCoordinatesC"></span><span class="target" id="classGridDimensions2d_1a2c0c5779888e83e96e1c1829d265c1b8"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4I0E16GridDimensions2d" title="GridDimensions2d::D"><span class="n"><span class="pre">D</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">getRadialCoordinates</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK16GridDimensions2d20getRadialCoordinatesEv" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK16GridDimensions2d24getHorizontalCoordinatesEv">
+<span id="_CPPv3NK16GridDimensions2d24getHorizontalCoordinatesEv"></span><span id="_CPPv2NK16GridDimensions2d24getHorizontalCoordinatesEv"></span><span id="GridDimensions2d::getHorizontalCoordinatesC"></span><span class="target" id="classGridDimensions2d_1a852332af36ccc1cdb31de4e6d55d75e1"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4I0E16GridDimensions2d" title="GridDimensions2d::D"><span class="n"><span class="pre">D</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">getHorizontalCoordinates</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK16GridDimensions2d24getHorizontalCoordinatesEv" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N16GridDimensions2d11radialCoordE6size_t">
+<span id="_CPPv3N16GridDimensions2d11radialCoordE6size_t"></span><span id="_CPPv2N16GridDimensions2d11radialCoordE6size_t"></span><span id="GridDimensions2d::radialCoord__s"></span><span class="target" id="classGridDimensions2d_1ac296eac68acb9e4e7823a76da609d523"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4I0E16GridDimensions2d" title="GridDimensions2d::D"><span class="n"><span class="pre">D</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">radialCoord</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">i</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N16GridDimensions2d11radialCoordE6size_t" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK16GridDimensions2d11radialCoordE6size_t">
+<span id="_CPPv3NK16GridDimensions2d11radialCoordE6size_t"></span><span id="_CPPv2NK16GridDimensions2d11radialCoordE6size_t"></span><span id="GridDimensions2d::radialCoord__sC"></span><span class="target" id="classGridDimensions2d_1a7fbc46cfa9acc32303da6aec62945af2"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4I0E16GridDimensions2d" title="GridDimensions2d::D"><span class="n"><span class="pre">D</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">radialCoord</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">i</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK16GridDimensions2d11radialCoordE6size_t" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N16GridDimensions2d15horizontalCoordE6size_t">
+<span id="_CPPv3N16GridDimensions2d15horizontalCoordE6size_t"></span><span id="_CPPv2N16GridDimensions2d15horizontalCoordE6size_t"></span><span id="GridDimensions2d::horizontalCoord__s"></span><span class="target" id="classGridDimensions2d_1a147245f2649ec2f81b32a09b32121004"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4I0E16GridDimensions2d" title="GridDimensions2d::D"><span class="n"><span class="pre">D</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">horizontalCoord</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">j</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N16GridDimensions2d15horizontalCoordE6size_t" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK16GridDimensions2d15horizontalCoordE6size_t">
+<span id="_CPPv3NK16GridDimensions2d15horizontalCoordE6size_t"></span><span id="_CPPv2NK16GridDimensions2d15horizontalCoordE6size_t"></span><span id="GridDimensions2d::horizontalCoord__sC"></span><span class="target" id="classGridDimensions2d_1adb50201b1d52473fe34cd0b662aa027b"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4I0E16GridDimensions2d" title="GridDimensions2d::D"><span class="n"><span class="pre">D</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">horizontalCoord</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">j</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK16GridDimensions2d15horizontalCoordE6size_t" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N16GridDimensions2d19interfaceAreaIphalfE6size_t6size_t">
+<span id="_CPPv3N16GridDimensions2d19interfaceAreaIphalfE6size_t6size_t"></span><span id="_CPPv2N16GridDimensions2d19interfaceAreaIphalfE6size_t6size_t"></span><span id="GridDimensions2d::interfaceAreaIphalf__s.s"></span><span class="target" id="classGridDimensions2d_1a1d3b6a685425c4c5b0af48f192956602"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4I0E16GridDimensions2d" title="GridDimensions2d::D"><span class="n"><span class="pre">D</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">interfaceAreaIphalf</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">i</span></span>, <span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">j</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N16GridDimensions2d19interfaceAreaIphalfE6size_t6size_t" title="Link to this definition"></a><br /></dt>
+<dd><p>Calculates interface are at half index vertical coordinate. </p>
+<p>The area on the 2D grid (in the current implementation)   <div class="math notranslate nohighlight">
+\[A_{i+1/2,j} = 2 \pi r_{i+1/2}^2 \sin \theta_j \Delta \theta 
+\]</div>
+</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>i, j</strong> – indicies.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><span class="math notranslate nohighlight">\(A_{i+1/2,j}\)</span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N16GridDimensions2d19interfaceAreaJphalfE6size_t6size_t">
+<span id="_CPPv3N16GridDimensions2d19interfaceAreaJphalfE6size_t6size_t"></span><span id="_CPPv2N16GridDimensions2d19interfaceAreaJphalfE6size_t6size_t"></span><span id="GridDimensions2d::interfaceAreaJphalf__s.s"></span><span class="target" id="classGridDimensions2d_1a2adf149f3f06b96e6931e7a2f733b33b"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4I0E16GridDimensions2d" title="GridDimensions2d::D"><span class="n"><span class="pre">D</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">interfaceAreaJphalf</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">i</span></span>, <span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">j</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N16GridDimensions2d19interfaceAreaJphalfE6size_t6size_t" title="Link to this definition"></a><br /></dt>
+<dd><p>Computes the are at half-j indices. </p>
+<p>At <span class="math notranslate nohighlight">\(j+1/2\)</span> the area is:   <div class="math notranslate nohighlight">
+\[A_{i,j+1/2} = 2 \pi r_{i}^2 \sin \theta_{j+1/2} \Delta r_i 
+\]</div>
+</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>i, j</strong> – indicies.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><span class="math notranslate nohighlight">\(A_{i,j+1/2}\)</span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N16GridDimensions2d10cellVolumeE6size_t6size_t">
+<span id="_CPPv3N16GridDimensions2d10cellVolumeE6size_t6size_t"></span><span id="_CPPv2N16GridDimensions2d10cellVolumeE6size_t6size_t"></span><span id="GridDimensions2d::cellVolume__s.s"></span><span class="target" id="classGridDimensions2d_1a572841579ad3653bfc19d3f6db66189f"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4I0E16GridDimensions2d" title="GridDimensions2d::D"><span class="n"><span class="pre">D</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">cellVolume</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">i</span></span>, <span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">j</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N16GridDimensions2d10cellVolumeE6size_t6size_t" title="Link to this definition"></a><br /></dt>
+<dd><p>Computes the cell control volume. </p>
+<p>At <span class="math notranslate nohighlight">\(j+1/2\)</span> the area is:   <div class="math notranslate nohighlight">
+\[V_{i,j} = 2 \pi r_{i}^2 \sin \theta_{j} \Delta \theta_j \Delta r_i 
+\]</div>
+</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>i, j</strong> – indicies.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><span class="math notranslate nohighlight">\(V_{i,j}\)</span></p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-static-functions">Public Static Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N16GridDimensions2d17createUniformGridE6size_t6size_t1D1D1D1D">
+<span id="_CPPv3N16GridDimensions2d17createUniformGridE6size_t6size_t1D1D1D1D"></span><span id="_CPPv2N16GridDimensions2d17createUniformGridE6size_t6size_t1D1D1D1D"></span><span id="GridDimensions2d::createUniformGrid__s.s.D.D.D.D"></span><span class="target" id="classGridDimensions2d_1a479f975a3c27ed004aa7b536b6601ff4"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4I0E16GridDimensions2d" title="GridDimensions2d"><span class="n"><span class="pre">GridDimensions2d</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">createUniformGrid</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">n_r</span></span>, <span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">n_h</span></span>, <a class="reference internal" href="#_CPPv4I0E16GridDimensions2d" title="GridDimensions2d::D"><span class="n"><span class="pre">D</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">r0</span></span>, <a class="reference internal" href="#_CPPv4I0E16GridDimensions2d" title="GridDimensions2d::D"><span class="n"><span class="pre">D</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">rN</span></span>, <a class="reference internal" href="#_CPPv4I0E16GridDimensions2d" title="GridDimensions2d::D"><span class="n"><span class="pre">D</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">theta0</span></span>, <a class="reference internal" href="#_CPPv4I0E16GridDimensions2d" title="GridDimensions2d::D"><span class="n"><span class="pre">D</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">thetaN</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N16GridDimensions2d17createUniformGridE6size_t6size_t1D1D1D1D" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-private-members">Private Members</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N16GridDimensions2d14n_radial_totalE">
+<span id="_CPPv3N16GridDimensions2d14n_radial_totalE"></span><span id="_CPPv2N16GridDimensions2d14n_radial_totalE"></span><span id="GridDimensions2d::n_radial_total__s"></span><span class="target" id="classGridDimensions2d_1ae83de9498ebc880d0660c1fb7959ff5a"></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">n_radial_total</span></span></span><a class="headerlink" href="#_CPPv4N16GridDimensions2d14n_radial_totalE" title="Link to this definition"></a><br /></dt>
+<dd><p>Number of radial zones including ghost cells. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N16GridDimensions2d18n_horizontal_totalE">
+<span id="_CPPv3N16GridDimensions2d18n_horizontal_totalE"></span><span id="_CPPv2N16GridDimensions2d18n_horizontal_totalE"></span><span id="GridDimensions2d::n_horizontal_total__s"></span><span class="target" id="classGridDimensions2d_1ae2490be43b6a38db8f96d88efc1a65e6"></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">n_horizontal_total</span></span></span><a class="headerlink" href="#_CPPv4N16GridDimensions2d18n_horizontal_totalE" title="Link to this definition"></a><br /></dt>
+<dd><p>Number of horizontal zones including ghost cells. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N16GridDimensions2d18radial_coordinatesE">
+<span id="_CPPv3N16GridDimensions2d18radial_coordinatesE"></span><span id="_CPPv2N16GridDimensions2d18radial_coordinatesE"></span><span id="GridDimensions2d::radial_coordinates__std::vector:D:"></span><span class="target" id="classGridDimensions2d_1ad2edb5a0d436aa71df0896ff38ceb4c2"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4I0E16GridDimensions2d" title="GridDimensions2d::D"><span class="n"><span class="pre">D</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">radial_coordinates</span></span></span><a class="headerlink" href="#_CPPv4N16GridDimensions2d18radial_coordinatesE" title="Link to this definition"></a><br /></dt>
+<dd><p>Radial coordinates of the grid points. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N16GridDimensions2d22horizontal_coordinatesE">
+<span id="_CPPv3N16GridDimensions2d22horizontal_coordinatesE"></span><span id="_CPPv2N16GridDimensions2d22horizontal_coordinatesE"></span><span id="GridDimensions2d::horizontal_coordinates__std::vector:D:"></span><span class="target" id="classGridDimensions2d_1a7ffb90e639e3be03bd9bda534de22b00"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4I0E16GridDimensions2d" title="GridDimensions2d::D"><span class="n"><span class="pre">D</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">horizontal_coordinates</span></span></span><a class="headerlink" href="#_CPPv4N16GridDimensions2d22horizontal_coordinatesE" title="Link to this definition"></a><br /></dt>
+<dd><p>Horizontal coordinates of the grid points. </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="classGrid2d.html" class="btn btn-neutral float-left" title="Template Class Grid2d" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="classHyperDiffusion.html" class="btn btn-neutral float-right" title="Template Class HyperDiffusion" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright .</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

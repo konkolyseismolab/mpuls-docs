@@ -1,0 +1,18 @@
+.. _exhale_struct_structsimulation__2d_1_1always__false:
+
+Template Struct always_false
+============================
+
+- Defined in :ref:`file_include_core_simulation2d.hpp`
+
+
+Struct Documentation
+--------------------
+
+
+.. doxygenstruct:: simulation_2d::always_false
+   :project: MPULS
+   :members:
+   :protected-members:
+   :private-members:
+   :undoc-members:

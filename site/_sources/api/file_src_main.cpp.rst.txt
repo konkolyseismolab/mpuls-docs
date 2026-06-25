@@ -1,0 +1,61 @@
+
+.. _file_src_main.cpp:
+
+File main.cpp
+=============
+
+|exhale_lsh| :ref:`Parent directory <dir_src>` (``src``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``src/main.cpp``)
+-----------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_src_main.cpp.rst
+
+
+
+
+
+Includes
+--------
+
+
+- ``core/config_parser.hpp`` (:ref:`file_include_core_config_parser.hpp`)
+
+- ``core/custom_exceptions.hpp`` (:ref:`file_include_core_custom_exceptions.hpp`)
+
+- ``core/simulation2d.hpp`` (:ref:`file_include_core_simulation2d.hpp`)
+
+- ``filesystem``
+
+- ``grid/grid_builder.hpp`` (:ref:`file_include_grid_grid_builder.hpp`)
+
+- ``io/print_console.hpp`` (:ref:`file_include_io_print_console.hpp`)
+
+- ``io/profile_writer.hpp`` (:ref:`file_include_io_profile_writer.hpp`)
+
+- ``iostream``
+
+- ``models/envelope_builder.hpp`` (:ref:`file_include_models_envelope_builder.hpp`)
+
+
+
+
+
+
+Functions
+---------
+
+
+- :ref:`exhale_function_main_8cpp_1a0ddf1224851353fc92bfbff6f499fa97`
+

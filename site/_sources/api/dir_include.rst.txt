@@ -1,0 +1,22 @@
+.. _dir_include:
+
+
+Directory include
+=================
+
+
+*Directory path:* ``include``
+
+Subdirectories
+--------------
+
+- :ref:`dir_include_advection`
+- :ref:`dir_include_core`
+- :ref:`dir_include_equations`
+- :ref:`dir_include_grid`
+- :ref:`dir_include_io`
+- :ref:`dir_include_models`
+- :ref:`dir_include_time_solver`
+
+
+

@@ -1,0 +1,27 @@
+.. _exhale_class_classSSP__RK2:
+
+Template Class SSP_RK2
+======================
+
+- Defined in :ref:`file_include_time_solver_time_solver.hpp`
+
+
+Inheritance Relationships
+-------------------------
+
+Base Type
+*********
+
+- ``public TimeSolverBase< Q >`` (:ref:`exhale_class_classTimeSolverBase`)
+
+
+Class Documentation
+-------------------
+
+
+.. doxygenclass:: SSP_RK2
+   :project: MPULS
+   :members:
+   :protected-members:
+   :private-members:
+   :undoc-members:

@@ -1,0 +1,30 @@
+
+.. _namespace_component_tags:
+
+Namespace component_tags
+========================
+
+
+A number of different empty structs are defined here. These are coupled with the real template classes for initialization. 
+
+
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+
+
+
+Detailed Description
+--------------------
+
+To prevent following template dependencies these values are passed to the factory method simulation_2d::solver_factory() to determine the exact solver pipeline. Then these are also coupled with the solver_config struct, and converted through the dispatcher during runtime
+
+compile_time_dispather.hpp solver_factory() 
+
+
+
+
+

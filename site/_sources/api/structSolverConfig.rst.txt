@@ -1,0 +1,18 @@
+.. _exhale_struct_structSolverConfig:
+
+Struct SolverConfig
+===================
+
+- Defined in :ref:`file_include_core_config_params.hpp`
+
+
+Struct Documentation
+--------------------
+
+
+.. doxygenstruct:: SolverConfig
+   :project: MPULS
+   :members:
+   :protected-members:
+   :private-members:
+   :undoc-members:

@@ -1,0 +1,18 @@
+.. _exhale_class_classRightHandSideDecorator:
+
+Template Class RightHandSideDecorator
+=====================================
+
+- Defined in :ref:`file_include_time_solver_time_solver.hpp`
+
+
+Class Documentation
+-------------------
+
+
+.. doxygenclass:: RightHandSideDecorator
+   :project: MPULS
+   :members:
+   :protected-members:
+   :private-members:
+   :undoc-members:

@@ -1,0 +1,22 @@
+Solution Reconstruction
+=======================
+
+This is an important topic. See this:
+
+$$q_j(x_{i+1/2}) \approx q_j(x_i) + \frac{h}{2} \delta q_j$$
+In the case of higher order schemes, it is necessary to give a good approximation of the
+interface values, from which the fluxes are calculated. If the reconstruction is neglected
+i. e. the cell average is considered to be the interface value, we end up with the simple
+first order Godunov method. (In FDM this would be the Courant-Isaacson-Rees method).
+
+Higher order schemes use some kind of interpolant to calclutae the interfaces values at the two
+s ide of the interface, which is later used for either solving the (approximate) Riemann problem
+(MUSCL methods), or other techniques are applied (e.g. Rusanov fluxes). The most common
+interpolants are the piecewise linear and piecewise parabolic reconstruction methods.
+The reconstruction method may apply so-called flux @ref Limiters which modify the exact interpolant
+to prevent the introduction of new extrema into the solution, thus preventing Gibbs phenomenon.
+
+```{doxygengroup} Reconstruction
+   :project: MPULS
+   :members:
+```

@@ -1,0 +1,18 @@
+.. _exhale_struct_structQuantityTraits:
+
+Template Struct QuantityTraits
+==============================
+
+- Defined in :ref:`file_include_grid_quantity.hpp`
+
+
+Struct Documentation
+--------------------
+
+
+.. doxygenstruct:: QuantityTraits
+   :project: MPULS
+   :members:
+   :protected-members:
+   :private-members:
+   :undoc-members:

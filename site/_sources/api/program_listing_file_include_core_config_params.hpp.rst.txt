@@ -1,0 +1,134 @@
+
+.. _program_listing_file_include_core_config_params.hpp:
+
+Program Listing for File config_params.hpp
+==========================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file_include_core_config_params.hpp>` (``include/core/config_params.hpp``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   #pragma once
+   #include <string>
+   #include <vector>
+   
+   struct StellarParameters {
+       double stellar_mass;              // stellar mass (M☉)
+       double stellar_radius;            // radius (cm)
+       double t_eff;              // effective temperature (K)
+       double luminosity;          // luminosity (L☉)
+       double metallicity = 0.0; // optional, default 0
+   
+   };
+   
+   struct GridConfig {
+       int number_of_grid_cells;
+       double radius_min;
+       double radius_max;
+       std::string scale;   // "linear" or "log"
+   }; 
+   
+   enum class Mode
+   {
+       testing1D,
+       testing2D
+   }; 
+   
+   
+   
+   namespace solver_params
+   {
+       enum class Limiters {
+           kVanLeer,
+           kMinMod,
+           kSuperbee
+       };
+   
+       enum class FluxCalculator {
+           kLocalLaxFriedrichs,
+           kUpwind
+       };
+   
+       enum class Reconstructor {
+           kPiecewiseLinear,
+           kPiecewiseConstant
+       };
+   
+       enum class Integrator {
+           kSspRungeKutta2,
+           kSspRungeKutta3
+       };
+   }
+   
+   namespace model
+   {
+       enum class Equation
+       {
+           kScalar2d,
+           kEuler2d
+       };
+   
+       enum class InitialModel
+       {
+           kKelvinHelmholtz,
+           kConstant
+       };
+       struct ModelConfig
+       {
+           Equation type;
+           InitialModel initial_model;
+           std::vector<double> params;
+       };
+   }
+   
+   
+   
+   struct SolverConfig {
+   
+       solver_params::Limiters limiter;
+       solver_params::FluxCalculator flux_calculator;
+       solver_params::Reconstructor reconstructor;
+       solver_params::Integrator integrator;
+       double cfl_number;
+       double hyperdiffusivity;
+       bool is_diffusion;
+   };
+   struct Grid2Dconfig {
+       enum class GridType { Uniform };
+       size_t Nrad;
+       size_t Nhor;
+       size_t Nghost_rad;
+       size_t Nghost_hor;
+       double r0;
+       double rN;
+       double theta0;
+       double thetaN;
+       GridType type;
+   };
+   
+   
+   struct Config {
+       std::string output_dir;       // Directory to save outputs
+       std::string output_format;
+       std::string output_summary_name;
+       std::string output_prefix;
+       std::string inner_boundary;
+       std::string outer_boundary;
+       std::string integrator_type;
+       std::string time_step;
+       double delta_t;
+       double t_max;
+       double t_init;
+       short dimensions;
+       Mode mode;
+   
+       StellarParameters stellar_parameters; // → most már itt van a konkrét blokk
+   
+       model::ModelConfig model;
+       SolverConfig solver_cfg;
+       GridConfig grid_cfg;
+       Grid2Dconfig grid_2d_cfg;
+   
+   };

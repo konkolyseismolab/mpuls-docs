@@ -1,0 +1,14 @@
+.. _exhale_variable_namespaceconstants_1acc33c8ba80741ed46691ee05503fb81e:
+
+Variable constants::kMSun
+=========================
+
+- Defined in :ref:`file_include_core_constants.hpp`
+
+
+Variable Documentation
+----------------------
+
+
+.. doxygenvariable:: constants::kMSun
+   :project: MPULS

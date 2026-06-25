@@ -1,0 +1,73 @@
+
+.. _file_src_models_envelope_builder.cpp:
+
+File envelope_builder.cpp
+=========================
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``src/models/envelope_builder.cpp``)
+------------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_src_models_envelope_builder.cpp.rst
+
+
+
+
+
+Includes
+--------
+
+
+- ``cmath``
+
+- ``core/constants.hpp`` (:ref:`file_include_core_constants.hpp`)
+
+- ``grid/cell_center.hpp`` (:ref:`file_include_grid_cell_center.hpp`)
+
+- ``grid/cell_interface.hpp`` (:ref:`file_include_grid_cell_interface.hpp`)
+
+- ``grid/grid_builder.hpp`` (:ref:`file_include_grid_grid_builder.hpp`)
+
+- ``io/print_console.hpp`` (:ref:`file_include_io_print_console.hpp`)
+
+- ``models/envelope_builder.hpp`` (:ref:`file_include_models_envelope_builder.hpp`)
+
+
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_envelope`
+
+
+Functions
+---------
+
+
+- :ref:`exhale_function_envelope__builder_8cpp_1a717c924bff07df3804ba31d1fc4a36af`
+
+- :ref:`exhale_function_envelope__builder_8cpp_1aedeff4a7eb7313f487183b1da1aec832`
+
+- :ref:`exhale_function_envelope__builder_8cpp_1a717c924bff07df3804ba31d1fc4a36af`
+
+- :ref:`exhale_function_envelope__builder_8cpp_1aedeff4a7eb7313f487183b1da1aec832`
+
+- :ref:`exhale_function_envelope__builder_8cpp_1aa2c96fcbfabcef5ead765f94af664bd6`
+
+- :ref:`exhale_function_envelope__builder_8cpp_1ac000ac8c1b9c200051380cb23a269835`
+
+- :ref:`exhale_function_envelope__builder_8cpp_1aa2c96fcbfabcef5ead765f94af664bd6`
+
+- :ref:`exhale_function_envelope__builder_8cpp_1ac000ac8c1b9c200051380cb23a269835`
+

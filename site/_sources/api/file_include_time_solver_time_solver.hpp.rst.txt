@@ -1,0 +1,73 @@
+
+.. _file_include_time_solver_time_solver.hpp:
+
+File time_solver.hpp
+====================
+
+|exhale_lsh| :ref:`Parent directory <dir_include_time_solver>` (``include/time_solver``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+
+
+This file will be split later on, but for now it contains the time solver class and related functions. 
+
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``include/time_solver/time_solver.hpp``)
+----------------------------------------------------
+
+
+
+
+
+
+Includes
+--------
+
+
+- ``chrono``
+
+- ``concepts``
+
+- ``equations/equations.hpp`` (:ref:`file_include_equations_equations.hpp`)
+
+- ``grid/grid.hpp`` (:ref:`file_include_grid_grid.hpp`)
+
+- ``grid/quantity.hpp`` (:ref:`file_include_grid_quantity.hpp`)
+
+- ``stdio.h``
+
+
+
+Included By
+-----------
+
+
+- :ref:`file_include_core_simulation2d.hpp`
+
+
+
+
+Classes
+-------
+
+
+- :ref:`exhale_class_classCFL`
+
+- :ref:`exhale_class_classRightHandSide`
+
+- :ref:`exhale_class_classRightHandSideDecorator`
+
+- :ref:`exhale_class_classSimpleSource`
+
+- :ref:`exhale_class_classSSP__RK2`
+
+- :ref:`exhale_class_classSSP__RK3`
+
+- :ref:`exhale_class_classTimeSolverBase`
+

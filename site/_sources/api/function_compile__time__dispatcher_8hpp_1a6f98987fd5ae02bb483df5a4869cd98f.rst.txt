@@ -1,0 +1,14 @@
+.. _exhale_function_compile__time__dispatcher_8hpp_1a6f98987fd5ae02bb483df5a4869cd98f:
+
+Template Function createLimiterTag
+==================================
+
+- Defined in :ref:`file_include_core_compile_time_dispatcher.hpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: createLimiterTag(Limiters, T&&)
+   :project: MPULS

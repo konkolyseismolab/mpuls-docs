@@ -1,0 +1,9 @@
+# Dev Notes
+
+## 2025-10-10
+
+- Kiszerveztem a fizikai paramétereket `defaults.cpp`-be, hogy ne legyenek a `main.cpp`-ben.
+- Hozzáadtam az `l` vektort, ami a módusszámokat tartalmazza.
+- Bővítettem a `writeProfileToHdf5()` függvényt, hogy az `l`-t is mentse.
+- A Python olvasómodul most már az `l`-t is beolvassa.
+- Átneveztem a CMakeLists-ben a futtatható file-t hello_cpp20-ről mpuls-ra

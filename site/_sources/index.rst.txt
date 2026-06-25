@@ -1,0 +1,38 @@
+MPULS
+=====
+
+Modular PULSation  (or project AONIR, NUMENOR, Cepheid, the name is undecided) is a
+next generation radial stellar pulsation code, intended to solve trhe Navier-Stokes
+equations for a radial pulsation variable star (e.g. RR Lyraes or Cepheids) utilizing
+parallel computations on various backends in reasonable calculation times.
+
+Current features:
+ - Solving of hyperbolic equation systems with a general solver up to 2nd order on 2D spherical grids.
+ - The solver is modular, and can be chosen at runtime.
+ - Additional hyperbolic filtering can be applied to supress high wavenumber numeric noise. 
+
+
+
+
+.. warning::
+
+   This project is under development, thus any API interface, or feature can change in subsequent versions without further notice.
+
+.. note::
+
+   The MPULS software is currently closed-source but it will be open after release of version 1.0.0, which is expected in 2028 Q4.
+
+
+.. toctree::
+   :maxdepth: 2
+   :hidden:
+
+   guide/index
+   manual/index
+
+.. toctree::
+   :maxdepth: 4
+   :caption: Reference Manual
+   :hidden:
+   
+   api/library_root

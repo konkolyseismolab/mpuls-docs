@@ -1,0 +1,14 @@
+.. _exhale_variable_common_8hpp_1a6cc92b784171808c91b212208136e428:
+
+Variable is_radial
+==================
+
+- Defined in :ref:`file_include_core_common.hpp`
+
+
+Variable Documentation
+----------------------
+
+
+.. doxygenvariable:: is_radial
+   :project: MPULS

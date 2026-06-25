@@ -1,0 +1,18 @@
+.. _exhale_struct_structmodel_1_1ModelConfig:
+
+Struct ModelConfig
+==================
+
+- Defined in :ref:`file_include_core_config_params.hpp`
+
+
+Struct Documentation
+--------------------
+
+
+.. doxygenstruct:: model::ModelConfig
+   :project: MPULS
+   :members:
+   :protected-members:
+   :private-members:
+   :undoc-members:

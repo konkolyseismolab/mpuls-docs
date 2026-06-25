@@ -1,0 +1,20 @@
+
+.. _namespace_envelope:
+
+Namespace envelope
+==================
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+
+
+
+
+Functions
+---------
+
+
+- :ref:`exhale_function_envelope__builder_8hpp_1a717c924bff07df3804ba31d1fc4a36af`

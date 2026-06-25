@@ -1,0 +1,96 @@
+
+.. _file_include_advection_flux_operators.hpp:
+
+File flux_operators.hpp
+=======================
+
+|exhale_lsh| :ref:`Parent directory <dir_include_advection>` (``include/advection``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``include/advection/flux_operators.hpp``)
+-----------------------------------------------------
+
+
+
+
+Detailed Description
+--------------------
+
+This file contains every classes that are needed for the solution of the hyperbolic operators. The variable names int this file resembles the mathematical terms most of the cases the rules are the following:
+
+
+
+- ``q_ij`` is :math:`q_{ij}` 
+
+
+- ``q_ip1`` is equivalent with :math:`q_{i+1}` 
+
+
+- ``q_im1`` is equivalent with :math:`q_{i-1}` 
+
+
+- ``q_iphalf`` is equivalent with :math:`q_{i+1/2}` 
+
+
+
+
+
+
+
+Includes
+--------
+
+
+- ``concepts``
+
+- ``core/common.hpp`` (:ref:`file_include_core_common.hpp`)
+
+- ``equations/equations.hpp`` (:ref:`file_include_equations_equations.hpp`)
+
+- ``grid/grid.hpp`` (:ref:`file_include_grid_grid.hpp`)
+
+- ``grid/quantity.hpp`` (:ref:`file_include_grid_quantity.hpp`)
+
+- ``span``
+
+
+
+Included By
+-----------
+
+
+- :ref:`file_include_core_simulation2d.hpp`
+
+
+
+
+Classes
+-------
+
+
+- :ref:`exhale_class_classCIRFlux`
+
+- :ref:`exhale_class_classFluxOperator`
+
+- :ref:`exhale_class_classLimiterBase`
+
+- :ref:`exhale_class_classLLFflux`
+
+- :ref:`exhale_class_classMinMod`
+
+- :ref:`exhale_class_classPCM`
+
+- :ref:`exhale_class_classPLM`
+
+- :ref:`exhale_class_classReconstructionBase`
+
+- :ref:`exhale_class_classSuperbee`
+
+- :ref:`exhale_class_classVanLeer`
+

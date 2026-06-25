@@ -1,0 +1,71 @@
+
+.. _file_include_core_compile_time_dispatcher.hpp:
+
+File compile_time_dispatcher.hpp
+================================
+
+|exhale_lsh| :ref:`Parent directory <dir_include_core>` (``include/core``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+
+
+The API bridge between the compile time pipeline and the runtime configuration. 
+
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``include/core/compile_time_dispatcher.hpp``)
+---------------------------------------------------------
+
+
+
+
+Detailed Description
+--------------------
+
+These functions provide the conversion from configuration parameters to compile time tags, which then are used by the different solver factory methods. 
+
+
+
+
+Includes
+--------
+
+
+- ``core/config_params.hpp`` (:ref:`file_include_core_config_params.hpp`)
+
+- ``core/simulation2d.hpp`` (:ref:`file_include_core_simulation2d.hpp`)
+
+- ``grid/grid.hpp`` (:ref:`file_include_grid_grid.hpp`)
+
+- ``stdexcept``
+
+
+
+
+
+
+Functions
+---------
+
+
+- :ref:`exhale_function_compile__time__dispatcher_8hpp_1a7684c0cd12126ed58ee7bbe793fa95f4`
+
+- :ref:`exhale_function_compile__time__dispatcher_8hpp_1a3b8bbd535bd9258bfb39bfa6d6366434`
+
+- :ref:`exhale_function_compile__time__dispatcher_8hpp_1af90bda6680729cad82f2e0e9e4850f47`
+
+- :ref:`exhale_function_compile__time__dispatcher_8hpp_1a6f98987fd5ae02bb483df5a4869cd98f`
+
+- :ref:`exhale_function_compile__time__dispatcher_8hpp_1a9978be9ec33b3d779b636e8fe222ade0`
+
+- :ref:`exhale_function_compile__time__dispatcher_8hpp_1a27a2ed4213b0d1fb6f6e5ca671406f1a`
+
+- :ref:`exhale_function_compile__time__dispatcher_8hpp_1a7438b4836635fc284ebf915aceb3ff55`
+
+- :ref:`exhale_function_compile__time__dispatcher_8hpp_1acd37447c36d81154e4ad2aeb6795c4f8`
+

@@ -1,0 +1,55 @@
+
+.. _file_include_core_common.hpp:
+
+File common.hpp
+===============
+
+|exhale_lsh| :ref:`Parent directory <dir_include_core>` (``include/core``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``include/core/common.hpp``)
+----------------------------------------
+
+
+
+
+
+
+
+
+Included By
+-----------
+
+
+- :ref:`file_include_advection_flux_operators.hpp`
+
+- :ref:`file_include_advection_hyperdiffusion.hpp`
+
+- :ref:`file_include_equations_equations.hpp`
+
+
+
+
+Enums
+-----
+
+
+- :ref:`exhale_enum_common_8hpp_1a224b9163917ac32fc95a60d8c1eec3aa`
+
+
+Variables
+---------
+
+
+- :ref:`exhale_variable_common_8hpp_1aa978754ca655ef66eff1586405d394e2`
+
+- :ref:`exhale_variable_common_8hpp_1aeaa45c68beb95f9860a4b00f3491dfe9`
+
+- :ref:`exhale_variable_common_8hpp_1a6cc92b784171808c91b212208136e428`
+

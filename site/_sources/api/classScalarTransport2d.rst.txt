@@ -1,0 +1,27 @@
+.. _exhale_class_classScalarTransport2d:
+
+Template Class ScalarTransport2d
+================================
+
+- Defined in :ref:`file_include_equations_equations.hpp`
+
+
+Inheritance Relationships
+-------------------------
+
+Base Type
+*********
+
+- ``public EquationBase< Q >`` (:ref:`exhale_class_classEquationBase`)
+
+
+Class Documentation
+-------------------
+
+
+.. doxygenclass:: ScalarTransport2d
+   :project: MPULS
+   :members:
+   :protected-members:
+   :private-members:
+   :undoc-members:

@@ -1,0 +1,14 @@
+.. _exhale_function_envelope__builder_8hpp_1a717c924bff07df3804ba31d1fc4a36af:
+
+Function envelope::build_static_envelope
+========================================
+
+- Defined in :ref:`file_include_models_envelope_builder.hpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: envelope::build_static_envelope(Grid&, const StellarInput&)
+   :project: MPULS

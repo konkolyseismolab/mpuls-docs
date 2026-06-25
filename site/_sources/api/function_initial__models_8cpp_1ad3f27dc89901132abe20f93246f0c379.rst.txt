@@ -1,0 +1,14 @@
+.. _exhale_function_initial__models_8cpp_1ad3f27dc89901132abe20f93246f0c379:
+
+Function KelvinHelmholtzInitialCondition(Grid2d<QuantityBase<double, 4>>&, GridDimensions2d<double>, double, double, double, double, double, double, double, double)
+====================================================================================================================================================================
+
+- Defined in :ref:`file_src_models_initial_models.cpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: KelvinHelmholtzInitialCondition(Grid2d<QuantityBase<double, 4>>&, GridDimensions2d<double>, double, double, double, double, double, double, double, double)
+   :project: MPULS

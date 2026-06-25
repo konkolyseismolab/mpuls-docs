@@ -1,0 +1,18 @@
+.. _exhale_class_classFluxOperator:
+
+Template Class FluxOperator
+===========================
+
+- Defined in :ref:`file_include_advection_flux_operators.hpp`
+
+
+Class Documentation
+-------------------
+
+
+.. doxygenclass:: FluxOperator
+   :project: MPULS
+   :members:
+   :protected-members:
+   :private-members:
+   :undoc-members:

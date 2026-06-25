@@ -1,0 +1,14 @@
+.. _exhale_variable_conf_8py_1ab61ace37f718682561ced372c10b6247:
+
+Variable project_root
+=====================
+
+- Defined in :ref:`file_conf.py`
+
+
+Variable Documentation
+----------------------
+
+
+.. doxygenvariable:: project_root
+   :project: MPULS

@@ -1,0 +1,18 @@
+.. _exhale_class_classsimulation__2d_1_1Simulation2d:
+
+Class Simulation2d
+==================
+
+- Defined in :ref:`file_include_core_simulation2d.hpp`
+
+
+Class Documentation
+-------------------
+
+
+.. doxygenclass:: simulation_2d::Simulation2d
+   :project: MPULS
+   :members:
+   :protected-members:
+   :private-members:
+   :undoc-members:

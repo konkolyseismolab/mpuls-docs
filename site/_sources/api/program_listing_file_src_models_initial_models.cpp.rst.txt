@@ -1,0 +1,70 @@
+
+.. _program_listing_file_src_models_initial_models.cpp:
+
+Program Listing for File initial_models.cpp
+===========================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file_src_models_initial_models.cpp>` (``src/models/initial_models.cpp``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   #include "models/initial_models.hpp"
+   
+   
+   
+   void KelvinHelmholtzInitialCondition(Grid2d<QuantityBase<double,4>>& grid,
+        GridDimensions2d<double> grid_dims, double gamma,
+        double v1, double v2, double rho1, double rho2,double p0, double delta, double m)
+   {
+       auto h_size = grid_dims.getNhorizontal();
+       auto r_size = grid_dims.getNradial();
+       auto r_N = grid_dims.radialCoord(r_size-1);
+       auto theta_N =grid_dims.horizontalCoord(h_size -1);
+       auto r_0 = grid_dims.radialCoord(0);
+       auto theta_0 = grid_dims.horizontalCoord(0);
+   
+       auto i_start = grid.getNrGhost();
+       auto j_start = grid.getNhGhost();
+       auto i_end   = grid.getNr() + i_start;
+       auto j_end   = grid.getNh() + j_start;
+       
+       for(auto i = i_start; i< i_end ; i++)
+       {
+           auto r = grid_dims.radialCoord(i);
+           auto y = (r-r_0)/(r_N-r_0);
+           for(auto j=j_start; j< j_end; j++)
+           {
+               auto theta = grid_dims.horizontalCoord(j);
+               auto x = (theta-theta_0)/(theta_N-theta_0);
+   
+               double rho_ij, u_ij, v_ij, e_ij, p_ij;
+   
+               
+               //v_ij = std::abs(y-0.5) <0.25 ? v1 : v2;
+               //rho_ij = std::abs(y-0.5) <0.25 ? rho1 : rho2;
+               v_ij = y < 0.5 ? v1 : v2;
+               rho_ij = y < 0.5 ? rho1 : rho2;
+               p_ij = p0 ;//+ v_ij*v_ij*rho_ij * std::log(r/r_0);
+               u_ij = delta * std::sin(2*constants::kPi*m * x);
+               v_ij += delta * std::sin(2*constants::kPi*m * x);
+               e_ij = p0/(gamma - 1);
+   
+               QuantityBase<double,4> q_ij({
+                   rho_ij,
+                   rho_ij*u_ij,
+                   rho_ij*v_ij,
+                   e_ij  + rho_ij * 0.5 * (u_ij*u_ij + v_ij * v_ij) 
+               });
+               grid.setQuantity(q_ij,i,j);
+           }
+       }
+   }
+   
+   void staticModelInitialCondition(Grid2d<QuantityBase<double,4>>& grid,
+        GridDimensions2d<double> grid_dims, double gamma,
+        double rho, double p)
+        {
+           return KelvinHelmholtzInitialCondition(grid, grid_dims, gamma, 0., 0., rho, rho, p, 0., 1);
+        }

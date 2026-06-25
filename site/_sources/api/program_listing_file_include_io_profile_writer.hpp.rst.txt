@@ -1,0 +1,35 @@
+
+.. _program_listing_file_include_io_profile_writer.hpp:
+
+Program Listing for File profile_writer.hpp
+===========================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file_include_io_profile_writer.hpp>` (``include/io/profile_writer.hpp``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   #pragma once
+   #include <string>
+   #include <vector>
+   
+   void writeProfileToHdf5(const std::string &filename,
+                              const std::vector<double> &radius,
+                              const std::vector<double> &kappa,
+                              const std::vector<double> &xi,
+                              const std::vector<double> &l);
+   
+   
+   
+   void write2DScalarProfileToHdf5(const std::string &filename,
+                              const std::vector<double> &radius,
+                              const std::vector<double> &theta,
+                              const std::vector<double> &scalar_field);
+   
+   
+   void write2DQuantityProfileToHdf5(const std::string &filename,
+                              const std::vector<double> &radius,
+                              const std::vector<double> &theta,
+                              const std::vector<double> &scalar_field,
+                              const size_t N);

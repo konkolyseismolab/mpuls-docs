@@ -1,0 +1,29 @@
+.. _exhale_class_classLimiterBase:
+
+Template Class LimiterBase
+==========================
+
+- Defined in :ref:`file_include_advection_flux_operators.hpp`
+
+
+Inheritance Relationships
+-------------------------
+
+Derived Types
+*************
+
+- ``public MinMod< Q >`` (:ref:`exhale_class_classMinMod`)
+- ``public Superbee< Q >`` (:ref:`exhale_class_classSuperbee`)
+- ``public VanLeer< Q >`` (:ref:`exhale_class_classVanLeer`)
+
+
+Class Documentation
+-------------------
+
+
+.. doxygenclass:: LimiterBase
+   :project: MPULS
+   :members:
+   :protected-members:
+   :private-members:
+   :undoc-members:

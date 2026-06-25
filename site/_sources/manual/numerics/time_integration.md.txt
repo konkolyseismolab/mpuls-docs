@@ -1,0 +1,12 @@
+Time integration
+================
+
+Using the method of lines (MOL) aprroach, the semi-difference flux formulas
+convert the PDE system into a system of ordenary differential equations for
+each grid points. Therefore the whole system for the $i,j,k$ gridpoint gives:
+
+$$ \frac{\partial \boldsymbol q_{i,j,k}}{\partial t} = \boldsymbol f (\boldsymbol q_{i,j,k}, \boldsymbol r_{i,j,k}, t) $$
+
+```{doxygengroup} TimeSolvers
+   :project: MPULS
+```

@@ -1,0 +1,22 @@
+
+.. _namespace_mpuls:
+
+Namespace mpuls
+===============
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+
+
+
+
+Variables
+---------
+
+
+- :ref:`exhale_variable_version_8hpp_1a8d83916e0be66a5e4a8302b0ffbb8174`
+
+- :ref:`exhale_variable_version_8hpp_1a069e767c98d300d7a55a28e40e0c0d8a`

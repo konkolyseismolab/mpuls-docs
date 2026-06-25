@@ -1,0 +1,23 @@
+
+.. _program_listing_file_include_models_stellar_input.hpp:
+
+Program Listing for File stellar_input.hpp
+==========================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file_include_models_stellar_input.hpp>` (``include/models/stellar_input.hpp``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   #pragma once
+   #include "core/config_parser.hpp"
+   
+   struct StellarInput {
+       double mass;        
+       double radius;      
+       double luminosity;  
+       double t_eff;       
+       double metallicity; 
+       GridConfig grid_cfg;
+   };

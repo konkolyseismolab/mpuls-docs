@@ -1,0 +1,14 @@
+.. _exhale_enum_common_8hpp_1a224b9163917ac32fc95a60d8c1eec3aa:
+
+Enum Direction
+==============
+
+- Defined in :ref:`file_include_core_common.hpp`
+
+
+Enum Documentation
+------------------
+
+
+.. doxygenenum:: Direction
+   :project: MPULS

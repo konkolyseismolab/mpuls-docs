@@ -1,0 +1,153 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>File compile_time_dispatcher.hpp &mdash; Modular PULsation Suite  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=7ab3649f" />
+      <link rel="stylesheet" type="text/css" href="../_static/collapsible-lists/css/tree_view.css?v=a885cde7" />
+      <link rel="stylesheet" type="text/css" href="../_static/compact-api.css?v=bfcdbbe1" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script src="../_static/collapsible-lists/js/CollapsibleLists.compressed.js?v=73120307"></script>
+      <script src="../_static/collapsible-lists/js/apply-collapsible-lists.js?v=660e4f45"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Modular PULsation Suite
+              <img src="../_static/logo-mpuls.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../guide/index.html">MPULS User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../manual/index.html">MPULS User Manual</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference Manual</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="library_root.html">MPULS API reference</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Modular PULsation Suite</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">File compile_time_dispatcher.hpp</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/api/file_include_core_compile_time_dispatcher.hpp.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="file-compile-time-dispatcher-hpp">
+<span id="file-include-core-compile-time-dispatcher-hpp"></span><h1>File compile_time_dispatcher.hpp<a class="headerlink" href="#file-compile-time-dispatcher-hpp" title="Link to this heading"></a></h1>
+<p>↰ <a class="reference internal" href="dir_include_core.html#dir-include-core"><span class="std std-ref">Parent directory</span></a> (<code class="docutils literal notranslate"><span class="pre">include/core</span></code>)</p>
+<p>The API bridge between the compile time pipeline and the runtime configuration.</p>
+<nav class="contents local" id="contents">
+<p class="topic-title">Contents</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#definition-include-core-compile-time-dispatcher-hpp" id="id1">Definition (<code class="docutils literal notranslate"><span class="pre">include/core/compile_time_dispatcher.hpp</span></code>)</a></p></li>
+<li><p><a class="reference internal" href="#detailed-description" id="id2">Detailed Description</a></p></li>
+<li><p><a class="reference internal" href="#includes" id="id3">Includes</a></p></li>
+<li><p><a class="reference internal" href="#functions" id="id4">Functions</a></p></li>
+</ul>
+</nav>
+<section id="definition-include-core-compile-time-dispatcher-hpp">
+<h2>Definition (<code class="docutils literal notranslate"><span class="pre">include/core/compile_time_dispatcher.hpp</span></code>)<a class="headerlink" href="#definition-include-core-compile-time-dispatcher-hpp" title="Link to this heading"></a></h2>
+</section>
+<section id="detailed-description">
+<h2>Detailed Description<a class="headerlink" href="#detailed-description" title="Link to this heading"></a></h2>
+<p>These functions provide the conversion from configuration parameters to compile time tags, which then are used by the different solver factory methods.</p>
+</section>
+<section id="includes">
+<h2>Includes<a class="headerlink" href="#includes" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">core/config_params.hpp</span></code> (<a class="reference internal" href="file_include_core_config_params.hpp.html#file-include-core-config-params-hpp"><span class="std std-ref">File config_params.hpp</span></a>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">core/simulation2d.hpp</span></code> (<a class="reference internal" href="file_include_core_simulation2d.hpp.html#file-include-core-simulation2d-hpp"><span class="std std-ref">File simulation2d.hpp</span></a>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">grid/grid.hpp</span></code> (<a class="reference internal" href="file_include_grid_grid.hpp.html#file-include-grid-grid-hpp"><span class="std std-ref">File grid.hpp</span></a>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">stdexcept</span></code></p></li>
+</ul>
+</section>
+<section id="functions">
+<h2>Functions<a class="headerlink" href="#functions" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="function_compile__time__dispatcher_8hpp_1a7684c0cd12126ed58ee7bbe793fa95f4.html#exhale-function-compile-time-dispatcher-8hpp-1a7684c0cd12126ed58ee7bbe793fa95f4"><span class="std std-ref">Template Function createEquationTag</span></a></p></li>
+<li><p><a class="reference internal" href="function_compile__time__dispatcher_8hpp_1a3b8bbd535bd9258bfb39bfa6d6366434.html#exhale-function-compile-time-dispatcher-8hpp-1a3b8bbd535bd9258bfb39bfa6d6366434"><span class="std std-ref">Template Function createFluxTag</span></a></p></li>
+<li><p><a class="reference internal" href="function_compile__time__dispatcher_8hpp_1af90bda6680729cad82f2e0e9e4850f47.html#exhale-function-compile-time-dispatcher-8hpp-1af90bda6680729cad82f2e0e9e4850f47"><span class="std std-ref">Template Function createIntegratorTag</span></a></p></li>
+<li><p><a class="reference internal" href="function_compile__time__dispatcher_8hpp_1a6f98987fd5ae02bb483df5a4869cd98f.html#exhale-function-compile-time-dispatcher-8hpp-1a6f98987fd5ae02bb483df5a4869cd98f"><span class="std std-ref">Template Function createLimiterTag</span></a></p></li>
+<li><p><a class="reference internal" href="function_compile__time__dispatcher_8hpp_1a9978be9ec33b3d779b636e8fe222ade0.html#exhale-function-compile-time-dispatcher-8hpp-1a9978be9ec33b3d779b636e8fe222ade0"><span class="std std-ref">Template Function createReconstructionTag</span></a></p></li>
+<li><p><a class="reference internal" href="function_compile__time__dispatcher_8hpp_1a27a2ed4213b0d1fb6f6e5ca671406f1a.html#exhale-function-compile-time-dispatcher-8hpp-1a27a2ed4213b0d1fb6f6e5ca671406f1a"><span class="std std-ref">Function generateFromConfig</span></a></p></li>
+<li><p><a class="reference internal" href="function_compile__time__dispatcher_8hpp_1a7438b4836635fc284ebf915aceb3ff55.html#exhale-function-compile-time-dispatcher-8hpp-1a7438b4836635fc284ebf915aceb3ff55"><span class="std std-ref">Template Function grid_dim_generator</span></a></p></li>
+<li><p><a class="reference internal" href="function_compile__time__dispatcher_8hpp_1acd37447c36d81154e4ad2aeb6795c4f8.html#exhale-function-compile-time-dispatcher-8hpp-1acd37447c36d81154e4ad2aeb6795c4f8"><span class="std std-ref">Template Function grid_generator</span></a></p></li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright .</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

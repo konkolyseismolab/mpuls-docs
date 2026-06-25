@@ -1,0 +1,14 @@
+.. _exhale_function_grid__builder_8hpp_1ae486fd2de65542bc1ee22e82a31f7f51:
+
+Function grid::build
+====================
+
+- Defined in :ref:`file_include_grid_grid_builder.hpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: grid::build(const StellarInput&)
+   :project: MPULS

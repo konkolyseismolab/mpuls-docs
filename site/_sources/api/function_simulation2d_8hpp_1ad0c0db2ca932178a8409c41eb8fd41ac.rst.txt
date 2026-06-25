@@ -1,0 +1,14 @@
+.. _exhale_function_simulation2d_8hpp_1ad0c0db2ca932178a8409c41eb8fd41ac:
+
+Template Function simulation_2d::createLimiter
+==============================================
+
+- Defined in :ref:`file_include_core_simulation2d.hpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: simulation_2d::createLimiter()
+   :project: MPULS

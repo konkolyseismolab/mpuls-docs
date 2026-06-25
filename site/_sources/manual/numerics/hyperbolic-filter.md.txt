@@ -1,0 +1,7 @@
+Solution filtering
+===================
+
+Although the Kurganov-Tadmor scheme is TVD by itself, the use of difference form geometry and 2nd order accurate source calculation create numeric oscillations. Therefore we filter hign wavenumber oscillations of the solutions. For this we use a Nordlund[^1] type filter.
+
+
+[^1]:

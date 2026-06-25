@@ -1,0 +1,14 @@
+.. _exhale_function_simulation2d_8hpp_1add987f6758214e6b394039ef157a6573:
+
+Template Function simulation_2d::getQfromEq
+===========================================
+
+- Defined in :ref:`file_include_core_simulation2d.hpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: simulation_2d::getQfromEq(eqType)
+   :project: MPULS

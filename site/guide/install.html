@@ -1,0 +1,310 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Installation &mdash; Modular PULsation Suite  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=7ab3649f" />
+      <link rel="stylesheet" type="text/css" href="../_static/collapsible-lists/css/tree_view.css?v=a885cde7" />
+      <link rel="stylesheet" type="text/css" href="../_static/compact-api.css?v=bfcdbbe1" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script src="../_static/collapsible-lists/js/CollapsibleLists.compressed.js?v=73120307"></script>
+      <script src="../_static/collapsible-lists/js/apply-collapsible-lists.js?v=660e4f45"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Getting started" href="getting-started.html" />
+    <link rel="prev" title="MPULS User Guide" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Modular PULsation Suite
+              <img src="../_static/logo-mpuls.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">MPULS User Guide</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Installation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#dependencies">Dependencies</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#external-libraries">External libraries</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#build-system">Build system</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#hdf5-c-library">HDF5 C++ library</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#yaml-support-via-yaml-cpp">YAML support (via yaml-cpp)</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#building-the-code">Building the code</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#build-flags">Build flags</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#build-process">Build process</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="getting-started.html">Getting started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="input_config.html">Input configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="output.html">Handling the output</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../manual/index.html">MPULS User Manual</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference Manual</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../api/library_root.html">MPULS API reference</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Modular PULsation Suite</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">MPULS User Guide</a></li>
+      <li class="breadcrumb-item active">Installation</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/guide/install.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="installation">
+<h1>Installation<a class="headerlink" href="#installation" title="Link to this heading"></a></h1>
+<p>It is suggested to install the package locally, more preferably into a <code class="docutils literal notranslate"><span class="pre">conda</span></code> or other container environment.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Current dependencies are expected to change with the progress of the development.</p>
+</div>
+<section id="dependencies">
+<h2>Dependencies<a class="headerlink" href="#dependencies" title="Link to this heading"></a></h2>
+<section id="external-libraries">
+<h3>External libraries<a class="headerlink" href="#external-libraries" title="Link to this heading"></a></h3>
+<p>The code needs some external packages for compilation based on the backend.
+The core dependencies are:</p>
+<ul class="simple">
+<li><p>HDF5 C++ library - for input/output support (mandatory)</p></li>
+<li><p>YAML C++ library - for input/output support (mandatory)</p></li>
+<li><p>CUDA 12.0 or higher - for CUDA backend support (optional)</p></li>
+<li><p>ASAN library - for developers testing memory layout (optional)</p></li>
+</ul>
+</section>
+<section id="build-system">
+<h3>Build system<a class="headerlink" href="#build-system" title="Link to this heading"></a></h3>
+<p>For compilation and build the following are necessary:</p>
+<ul class="simple">
+<li><p>C++20 standard capable compiler (e.g. GCC 11.0 or Clang 13.0)</p></li>
+<li><p>nvcc 12.0  - for CUDA support (part of the CUDA-toolkit)</p></li>
+<li><p>Cmake 3.12 or higher</p></li>
+</ul>
+<p>This project requires the HDF5 C++ library (<code class="docutils literal notranslate"><span class="pre">H5Cpp.h</span></code>, <code class="docutils literal notranslate"><span class="pre">libhdf5_cpp.so</span></code>) to compile and run.</p>
+</section>
+<section id="hdf5-c-library">
+<h3>HDF5 C++ library<a class="headerlink" href="#hdf5-c-library" title="Link to this heading"></a></h3>
+<section id="recommended-setup-platform-independent">
+<h4>Recommended setup (platform-independent)<a class="headerlink" href="#recommended-setup-platform-independent" title="Link to this heading"></a></h4>
+<p>We recommend using <a class="reference external" href="https://docs.conda.io/en/latest/miniconda.html">Miniconda</a> to install HDF5 without root access:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>hdf5_env<span class="w"> </span>hdf5<span class="w"> </span>h5py<span class="w"> </span>-c<span class="w"> </span>conda-forge
+conda<span class="w"> </span>activate<span class="w"> </span>hdf5_env
+<span class="nb">export</span><span class="w"> </span><span class="nv">HDF5_ROOT</span><span class="o">=</span><span class="nv">$CONDA_PREFIX</span>
+cmake<span class="w"> </span>-S<span class="w"> </span>.<span class="w"> </span>-B<span class="w"> </span>build
+cmake<span class="w"> </span>--build<span class="w"> </span>build
+</pre></div>
+</div>
+</section>
+<section id="alternatively-you-can-build-hdf5-manually">
+<h4>Alternatively, you can build HDF5 manually:<a class="headerlink" href="#alternatively-you-can-build-hdf5-manually" title="Link to this heading"></a></h4>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>wget<span class="w"> </span>https://support.hdfgroup.org/ftp/HDF5/current/src/hdf5-1.14.3.tar.gz
+tar<span class="w"> </span>-xzf<span class="w"> </span>hdf5-1.14.3.tar.gz
+<span class="nb">cd</span><span class="w"> </span>hdf5-1.14.3
+./configure<span class="w"> </span>--prefix<span class="o">=</span><span class="nv">$HOME</span>/hdf5<span class="w"> </span>--enable-cxx
+make<span class="w"> </span>-j4<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>make<span class="w"> </span>install
+<span class="nb">export</span><span class="w"> </span><span class="nv">HDF5_ROOT</span><span class="o">=</span><span class="nv">$HOME</span>/hdf5
+cmake<span class="w"> </span>-S<span class="w"> </span>.<span class="w"> </span>-B<span class="w"> </span>build
+cmake<span class="w"> </span>--build<span class="w"> </span>build
+</pre></div>
+</div>
+</section>
+<section id="or-install-it-globally-linux-ubuntu-line">
+<h4>Or install it globally (linux, Ubuntu line):<a class="headerlink" href="#or-install-it-globally-linux-ubuntu-line" title="Link to this heading"></a></h4>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>libhdf5-dev
+</pre></div>
+</div>
+<p>Note: You must have CMake ≥ 3.12 and a C++20-capable compiler.</p>
+</section>
+</section>
+<section id="yaml-support-via-yaml-cpp">
+<h3>YAML support (via yaml-cpp)<a class="headerlink" href="#yaml-support-via-yaml-cpp" title="Link to this heading"></a></h3>
+<p>This project requires <a class="reference external" href="https://github.com/jbeder/yaml-cpp">yaml-cpp</a> for configuration parsing.</p>
+<section id="macos-homebrew">
+<h4>macOS (Homebrew)<a class="headerlink" href="#macos-homebrew" title="Link to this heading"></a></h4>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>brew<span class="w"> </span>install<span class="w"> </span>yaml-cpp
+cmake<span class="w"> </span>-S<span class="w"> </span>.<span class="w"> </span>-B<span class="w"> </span>build<span class="w"> </span>-Dyaml-cpp_DIR<span class="o">=</span>/opt/homebrew/opt/yaml-cpp/lib/cmake/yaml-cpp
+</pre></div>
+</div>
+<p>Then either pass the path manually:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cmake<span class="w"> </span>-S<span class="w"> </span>.<span class="w"> </span>-B<span class="w"> </span>build<span class="w"> </span>-Dyaml-cpp_DIR<span class="o">=</span>/opt/homebrew/opt/yaml-cpp/lib/cmake/yaml-cpp
+</pre></div>
+</div>
+<p>Or, if you’re using <code class="docutils literal notranslate"><span class="pre">zsh</span></code>, make it persistent by adding this to your <code class="docutils literal notranslate"><span class="pre">.zshrc</span></code> file:</p>
+<div class="highlight-zsh notranslate"><div class="highlight"><pre><span></span><span class="c1"># ~/.zshrc</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">CMAKE_PREFIX_PATH</span><span class="o">=</span><span class="s2">&quot;/opt/homebrew/opt/yaml-cpp&quot;</span>
+</pre></div>
+</div>
+<p>Then reload the shell:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">source</span><span class="w"> </span>~/.zshrc
+</pre></div>
+</div>
+<p>Now you can build without passing any extra flags:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cmake<span class="w"> </span>-S<span class="w"> </span>.<span class="w"> </span>-B<span class="w"> </span>build
+cmake<span class="w"> </span>--build<span class="w"> </span>build
+</pre></div>
+</div>
+</section>
+<section id="linux-apt-based-install">
+<h4>Linux (apt-based) install:<a class="headerlink" href="#linux-apt-based-install" title="Link to this heading"></a></h4>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>libyaml-cpp-dev
+cmake<span class="w"> </span>-S<span class="w"> </span>.<span class="w"> </span>-B<span class="w"> </span>build
+</pre></div>
+</div>
+<p>If you’re using <code class="docutils literal notranslate"><span class="pre">bash</span></code>, add the same line to your <code class="docutils literal notranslate"><span class="pre">~/.bashrc</span></code> or <code class="docutils literal notranslate"><span class="pre">~/.bash_profile</span></code>:</p>
+<div class="highlight-zsh notranslate"><div class="highlight"><pre><span></span><span class="c1"># ~/.zshrc</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">CMAKE_PREFIX_PATH</span><span class="o">=</span><span class="s2">&quot;/opt/homebrew/opt/yaml-cpp&quot;</span>
+</pre></div>
+</div>
+<p>Then reload the shell:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">source</span><span class="w"> </span>~/.bashrc
+</pre></div>
+</div>
+<p>or</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">source</span><span class="w"> </span>~/.bash_profile
+</pre></div>
+</div>
+<p>Now you can build the project:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cmake<span class="w"> </span>-S<span class="w"> </span>.<span class="w"> </span>-B<span class="w"> </span>build
+cmake<span class="w"> </span>--build<span class="w"> </span>build
+</pre></div>
+</div>
+</section>
+<section id="manual-build-any-platform">
+<h4>Manual build (any platform):<a class="headerlink" href="#manual-build-any-platform" title="Link to this heading"></a></h4>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/jbeder/yaml-cpp.git
+<span class="nb">cd</span><span class="w"> </span>yaml-cpp<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>mkdir<span class="w"> </span>build<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">cd</span><span class="w"> </span>build
+cmake<span class="w"> </span>-DCMAKE_INSTALL_PREFIX<span class="o">=</span><span class="nv">$HOME</span>/yaml-cpp-install<span class="w"> </span>..
+make<span class="w"> </span>-j4<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>make<span class="w"> </span>install
+cmake<span class="w"> </span>-S<span class="w"> </span>.<span class="w"> </span>-B<span class="w"> </span>build<span class="w"> </span>-Dyaml-cpp_DIR<span class="o">=</span><span class="nv">$HOME</span>/yaml-cpp-install/lib/cmake/yaml-cpp
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+<section id="building-the-code">
+<h2>Building the code<a class="headerlink" href="#building-the-code" title="Link to this heading"></a></h2>
+<section id="build-flags">
+<h3>Build flags<a class="headerlink" href="#build-flags" title="Link to this heading"></a></h3>
+<p>There are three building modes:</p>
+<ul class="simple">
+<li><p>debug <code class="docutils literal notranslate"><span class="pre">-DCMAKE_BUILD_TYPE=Debug</span></code></p></li>
+<li><p>release <code class="docutils literal notranslate"><span class="pre">-DCMAKE_BUILD_TYPE=Release</span></code></p></li>
+<li><p>sanitized <code class="docutils literal notranslate"><span class="pre">-DCMAKE_BUILD_TYPE=DebugSanit</span></code></p></li>
+</ul>
+<p>In debug mode the <code class="docutils literal notranslate"><span class="pre">-g</span></code> compilation flag is set with no optimizations, ideal for attaching a debugger.
+The release version uses <code class="docutils literal notranslate"><span class="pre">-O2</span></code> for optimization (roughly a factor of 10 in speed).
+Sanitized mode is a special debug mode, which cheks against memory leaks, index errors.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>For the sanitization to work, you need to install the ASAN library for your compiler.</p>
+</div>
+<p>Unit tests can be run by the <code class="docutils literal notranslate"><span class="pre">-DBUILD_TESTING=ON</span></code> flag, and the <code class="docutils literal notranslate"><span class="pre">ctest</span></code> command can be run from the build directory.</p>
+</section>
+<section id="build-process">
+<h3>Build process<a class="headerlink" href="#build-process" title="Link to this heading"></a></h3>
+<p>Go to the root folder of the project then:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cmake<span class="w"> </span>-S<span class="w"> </span>.<span class="w"> </span>-B<span class="w"> </span>build
+cmake<span class="w"> </span>--build<span class="w"> </span>build
+</pre></div>
+</div>
+<p>or equivantely</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cmake<span class="w"> </span>-S<span class="w"> </span>.<span class="w"> </span>-B<span class="w"> </span>build
+<span class="nb">cd</span><span class="w"> </span>./build
+make<span class="w"> </span>-j4
+</pre></div>
+</div>
+<p>If you have set the <code class="docutils literal notranslate"><span class="pre">-DBUILD_TESTING=ON</span></code> flag, the tests can be run by the</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ctest<span class="w"> </span>.<span class="w"> </span>-V
+</pre></div>
+</div>
+<p>command. (This is more verbose then the default command.)</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Please note, that at the current early development phase the validity of the numerical results in
+the <code class="docutils literal notranslate"><span class="pre">Release</span></code> build was not tested yet. Therefore use it on your own risk.</p>
+</div>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="MPULS User Guide" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="getting-started.html" class="btn btn-neutral float-right" title="Getting started" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright .</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

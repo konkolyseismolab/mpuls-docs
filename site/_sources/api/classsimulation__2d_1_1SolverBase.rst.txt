@@ -1,0 +1,27 @@
+.. _exhale_class_classsimulation__2d_1_1SolverBase:
+
+Class SolverBase
+================
+
+- Defined in :ref:`file_include_core_simulation2d.hpp`
+
+
+Inheritance Relationships
+-------------------------
+
+Derived Type
+************
+
+- ``public simulation_2d::SolverWrapper< T >`` (:ref:`exhale_class_classsimulation__2d_1_1SolverWrapper`)
+
+
+Class Documentation
+-------------------
+
+
+.. doxygenclass:: simulation_2d::SolverBase
+   :project: MPULS
+   :members:
+   :protected-members:
+   :private-members:
+   :undoc-members:

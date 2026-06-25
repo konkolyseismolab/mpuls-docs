@@ -1,0 +1,24 @@
+
+.. _program_listing_file_include_core_constants.hpp:
+
+Program Listing for File constants.hpp
+======================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file_include_core_constants.hpp>` (``include/core/constants.hpp``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   #pragma once
+   #include <cmath>
+   
+   
+   namespace constants {
+   
+       constexpr double kStefanBoltzmann = 5.670374419e-5;     // erg cm^-2 s^-1 K^-4
+       constexpr double kLSun            = 3.828e33;           // erg/s
+       constexpr double kMSun            = 1.989e33;           // g
+       constexpr double kEddingtonFactor = 0.5;                // T_surface = f * T_eff, where f is the Eddington factor
+       constexpr double kPi              = M_PI;
+   } // namespace constants

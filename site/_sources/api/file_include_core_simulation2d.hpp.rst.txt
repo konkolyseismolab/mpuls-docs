@@ -1,0 +1,102 @@
+
+.. _file_include_core_simulation2d.hpp:
+
+File simulation2d.hpp
+=====================
+
+|exhale_lsh| :ref:`Parent directory <dir_include_core>` (``include/core``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``include/core/simulation2d.hpp``)
+----------------------------------------------
+
+
+
+
+
+
+Includes
+--------
+
+
+- ``advection/flux_operators.hpp`` (:ref:`file_include_advection_flux_operators.hpp`)
+
+- ``advection/hyperdiffusion.hpp`` (:ref:`file_include_advection_hyperdiffusion.hpp`)
+
+- ``config_params.hpp`` (:ref:`file_include_core_config_params.hpp`)
+
+- ``equations/equations.hpp`` (:ref:`file_include_equations_equations.hpp`)
+
+- ``grid/quantity.hpp`` (:ref:`file_include_grid_quantity.hpp`)
+
+- ``memory``
+
+- ``time_solver/time_solver.hpp`` (:ref:`file_include_time_solver_time_solver.hpp`)
+
+- ``type_traits``
+
+- ``vector``
+
+
+
+Included By
+-----------
+
+
+- :ref:`file_include_core_compile_time_dispatcher.hpp`
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_component_tags`
+
+- :ref:`namespace_simulation_2d`
+
+
+Classes
+-------
+
+
+- :ref:`exhale_struct_structsimulation__2d_1_1always__false`
+
+- :ref:`exhale_struct_structsimulation__2d_1_1EquationTraits`
+
+- :ref:`exhale_class_classsimulation__2d_1_1ComponentBase`
+
+- :ref:`exhale_class_classsimulation__2d_1_1ComponentWrapper`
+
+- :ref:`exhale_class_classsimulation__2d_1_1Simulation2d`
+
+- :ref:`exhale_class_classsimulation__2d_1_1SolverBase`
+
+- :ref:`exhale_class_classsimulation__2d_1_1SolverWrapper`
+
+
+Functions
+---------
+
+
+- :ref:`exhale_function_simulation2d_8hpp_1a50087ef639129db722c485e48f7b8f52`
+
+- :ref:`exhale_function_simulation2d_8hpp_1add0bbce5253a56fd01b6eaccd26798e4`
+
+- :ref:`exhale_function_simulation2d_8hpp_1ad0c0db2ca932178a8409c41eb8fd41ac`
+
+- :ref:`exhale_function_simulation2d_8hpp_1a484cc9916a24c5f348ba5c3dc1411803`
+
+- :ref:`exhale_function_simulation2d_8hpp_1a50879ceb8176df5414e6b6bded61d1c5`
+
+- :ref:`exhale_function_simulation2d_8hpp_1add987f6758214e6b394039ef157a6573`
+
+- :ref:`exhale_function_simulation2d_8hpp_1ad8ed7bbcf51a98c91f1725d21cc2123e`
+

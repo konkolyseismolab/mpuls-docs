@@ -1,0 +1,218 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Program Listing for File profile_writer.cpp &mdash; Modular PULsation Suite  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=7ab3649f" />
+      <link rel="stylesheet" type="text/css" href="../_static/collapsible-lists/css/tree_view.css?v=a885cde7" />
+      <link rel="stylesheet" type="text/css" href="../_static/compact-api.css?v=bfcdbbe1" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script src="../_static/collapsible-lists/js/CollapsibleLists.compressed.js?v=73120307"></script>
+      <script src="../_static/collapsible-lists/js/apply-collapsible-lists.js?v=660e4f45"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Modular PULsation Suite
+              <img src="../_static/logo-mpuls.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../guide/index.html">MPULS User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../manual/index.html">MPULS User Manual</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference Manual</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="library_root.html">MPULS API reference</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Modular PULsation Suite</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Program Listing for File profile_writer.cpp</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/api/program_listing_file_src_io_profile_writer.cpp.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="program-listing-for-file-profile-writer-cpp">
+<span id="program-listing-file-src-io-profile-writer-cpp"></span><h1>Program Listing for File profile_writer.cpp<a class="headerlink" href="#program-listing-for-file-profile-writer-cpp" title="Link to this heading"></a></h1>
+<p>↰ <a class="reference internal" href="file_src_io_profile_writer.cpp.html#file-src-io-profile-writer-cpp"><span class="std std-ref">Return to documentation for file</span></a> (<code class="docutils literal notranslate"><span class="pre">src/io/profile_writer.cpp</span></code>)</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;io/profile_writer.hpp&quot;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;H5Cpp.h&quot;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;sstream&gt;</span>
+
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">writeProfileToHdf5</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span><span class="w"> </span><span class="n">filename</span><span class="p">,</span>
+<span class="w">                           </span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">radius</span><span class="p">,</span>
+<span class="w">                           </span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">kappa</span><span class="p">,</span>
+<span class="w">                           </span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">rho</span><span class="p">,</span>
+<span class="w">                           </span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="w"> </span><span class="o">&amp;</span><span class="n">q</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">H5</span><span class="p">;</span>
+
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">hsize_t</span><span class="w"> </span><span class="n">size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">radius</span><span class="p">.</span><span class="n">size</span><span class="p">();</span>
+
+<span class="c1">// H5F_ACC_TRUNC means &quot;truncate&quot; mode:</span>
+<span class="c1">// If the file already exists, it will be deleted and recreated.</span>
+<span class="c1">// If the file does not exist, it will be created.</span>
+<span class="c1">// This ensures that we always start with a clean, fresh HDF5 file.</span>
+<span class="w">    </span><span class="n">H5File</span><span class="w"> </span><span class="nf">file</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span><span class="w"> </span><span class="n">H5F_ACC_TRUNC</span><span class="p">);</span>
+<span class="w">    </span><span class="n">hsize_t</span><span class="w"> </span><span class="n">dims</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="n">size</span><span class="p">};</span>
+
+<span class="c1">// Define a 1D dataspace with &#39;size&#39; elements.</span>
+<span class="c1">// This describes the shape of the dataset we are about to create.</span>
+<span class="w">    </span><span class="n">DataSpace</span><span class="w"> </span><span class="nf">dataspace</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">dims</span><span class="p">);</span>
+
+
+<span class="c1">// Create a dataset named &quot;r&quot; with native double-precision type (PredType::NATIVE_DOUBLE) and the given dataspace.</span>
+<span class="c1">// &#39;PredType&#39; defines the HDF5 data type; &#39;NATIVE_DOUBLE&#39; matches the system&#39;s native C++ double format.</span>
+<span class="c1">// Then write the contents of the &#39;r&#39; vector into it using a raw pointer.</span>
+<span class="w">    </span><span class="n">file</span><span class="p">.</span><span class="n">createDataSet</span><span class="p">(</span><span class="s">&quot;radius&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">PredType</span><span class="o">::</span><span class="n">NATIVE_DOUBLE</span><span class="p">,</span><span class="w"> </span><span class="n">dataspace</span><span class="p">).</span><span class="n">write</span><span class="p">(</span><span class="n">radius</span><span class="p">.</span><span class="n">data</span><span class="p">(),</span><span class="w"> </span><span class="n">PredType</span><span class="o">::</span><span class="n">NATIVE_DOUBLE</span><span class="p">);</span>
+<span class="w">    </span><span class="n">file</span><span class="p">.</span><span class="n">createDataSet</span><span class="p">(</span><span class="s">&quot;kappa&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">PredType</span><span class="o">::</span><span class="n">NATIVE_DOUBLE</span><span class="p">,</span><span class="w"> </span><span class="n">dataspace</span><span class="p">).</span><span class="n">write</span><span class="p">(</span><span class="n">kappa</span><span class="p">.</span><span class="n">data</span><span class="p">(),</span><span class="w"> </span><span class="n">PredType</span><span class="o">::</span><span class="n">NATIVE_DOUBLE</span><span class="p">);</span>
+<span class="w">    </span><span class="n">file</span><span class="p">.</span><span class="n">createDataSet</span><span class="p">(</span><span class="s">&quot;rho&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">PredType</span><span class="o">::</span><span class="n">NATIVE_DOUBLE</span><span class="p">,</span><span class="w"> </span><span class="n">dataspace</span><span class="p">).</span><span class="n">write</span><span class="p">(</span><span class="n">rho</span><span class="p">.</span><span class="n">data</span><span class="p">(),</span><span class="w"> </span><span class="n">PredType</span><span class="o">::</span><span class="n">NATIVE_DOUBLE</span><span class="p">);</span>
+<span class="w">    </span><span class="n">file</span><span class="p">.</span><span class="n">createDataSet</span><span class="p">(</span><span class="s">&quot;q&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">PredType</span><span class="o">::</span><span class="n">NATIVE_DOUBLE</span><span class="p">,</span><span class="w"> </span><span class="n">dataspace</span><span class="p">).</span><span class="n">write</span><span class="p">(</span><span class="n">q</span><span class="p">.</span><span class="n">data</span><span class="p">(),</span><span class="w"> </span><span class="n">PredType</span><span class="o">::</span><span class="n">NATIVE_DOUBLE</span><span class="p">);</span>
+
+<span class="p">}</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="n">write2DScalarProfileToHdf5</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="o">&amp;</span><span class="n">filename</span><span class="p">,</span>
+<span class="w">                           </span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="w"> </span><span class="o">&amp;</span><span class="n">radius</span><span class="p">,</span>
+<span class="w">                           </span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="w"> </span><span class="o">&amp;</span><span class="n">theta</span><span class="p">,</span>
+<span class="w">                           </span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="w"> </span><span class="o">&amp;</span><span class="n">scalar_field</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">H5</span><span class="p">;</span>
+
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">hsize_t</span><span class="w"> </span><span class="n">radial_size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">radius</span><span class="p">.</span><span class="n">size</span><span class="p">();</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">hsize_t</span><span class="w"> </span><span class="n">theta_size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">theta</span><span class="p">.</span><span class="n">size</span><span class="p">();</span>
+
+<span class="w">    </span><span class="n">H5File</span><span class="w"> </span><span class="nf">file</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span><span class="w"> </span><span class="n">H5F_ACC_TRUNC</span><span class="p">);</span>
+<span class="w">    </span><span class="n">hsize_t</span><span class="w"> </span><span class="n">radial_dims</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="n">radial_size</span><span class="p">};</span>
+<span class="w">    </span><span class="n">hsize_t</span><span class="w"> </span><span class="n">theta_dims</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="n">theta_size</span><span class="p">};</span>
+<span class="w">    </span><span class="n">hsize_t</span><span class="w"> </span><span class="n">scalar_dims</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="n">radial_size</span><span class="p">,</span><span class="w"> </span><span class="n">theta_size</span><span class="p">};</span>
+
+<span class="w">    </span><span class="n">DataSpace</span><span class="w"> </span><span class="nf">radial_dataspace</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">radial_dims</span><span class="p">);</span>
+<span class="w">    </span><span class="n">DataSpace</span><span class="w"> </span><span class="nf">theta_dataspace</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">theta_dims</span><span class="p">);</span>
+<span class="w">    </span><span class="n">DataSpace</span><span class="w"> </span><span class="nf">scalar_dataspace</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="n">scalar_dims</span><span class="p">);</span>
+
+<span class="w">    </span><span class="n">file</span><span class="p">.</span><span class="n">createDataSet</span><span class="p">(</span><span class="s">&quot;radius&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">PredType</span><span class="o">::</span><span class="n">NATIVE_DOUBLE</span><span class="p">,</span><span class="w"> </span><span class="n">radial_dataspace</span><span class="p">).</span><span class="n">write</span><span class="p">(</span><span class="n">radius</span><span class="p">.</span><span class="n">data</span><span class="p">(),</span><span class="w"> </span><span class="n">PredType</span><span class="o">::</span><span class="n">NATIVE_DOUBLE</span><span class="p">);</span>
+<span class="w">    </span><span class="n">file</span><span class="p">.</span><span class="n">createDataSet</span><span class="p">(</span><span class="s">&quot;theta&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">PredType</span><span class="o">::</span><span class="n">NATIVE_DOUBLE</span><span class="p">,</span><span class="w"> </span><span class="n">theta_dataspace</span><span class="p">).</span><span class="n">write</span><span class="p">(</span><span class="n">theta</span><span class="p">.</span><span class="n">data</span><span class="p">(),</span><span class="w"> </span><span class="n">PredType</span><span class="o">::</span><span class="n">NATIVE_DOUBLE</span><span class="p">);</span>
+<span class="w">    </span><span class="n">file</span><span class="p">.</span><span class="n">createDataSet</span><span class="p">(</span><span class="s">&quot;scalar_field&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">PredType</span><span class="o">::</span><span class="n">NATIVE_DOUBLE</span><span class="p">,</span><span class="w"> </span><span class="n">scalar_dataspace</span><span class="p">).</span><span class="n">write</span><span class="p">(</span><span class="n">scalar_field</span><span class="p">.</span><span class="n">data</span><span class="p">(),</span><span class="w"> </span><span class="n">PredType</span><span class="o">::</span><span class="n">NATIVE_DOUBLE</span><span class="p">);</span>
+
+<span class="p">}</span>
+<span class="kt">void</span><span class="w"> </span><span class="n">write2DQuantityProfileToHdf5</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="o">&amp;</span><span class="n">filename</span><span class="p">,</span>
+<span class="w">                           </span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="w"> </span><span class="o">&amp;</span><span class="n">radius</span><span class="p">,</span>
+<span class="w">                           </span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="w"> </span><span class="o">&amp;</span><span class="n">theta</span><span class="p">,</span>
+<span class="w">                           </span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="w"> </span><span class="o">&amp;</span><span class="n">scalar_field</span><span class="p">,</span>
+<span class="w">                           </span><span class="k">const</span><span class="w"> </span><span class="kt">size_t</span><span class="w"> </span><span class="n">N</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">H5</span><span class="p">;</span>
+
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">hsize_t</span><span class="w"> </span><span class="n">radial_size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">radius</span><span class="p">.</span><span class="n">size</span><span class="p">();</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">hsize_t</span><span class="w"> </span><span class="n">theta_size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">theta</span><span class="p">.</span><span class="n">size</span><span class="p">();</span>
+
+<span class="w">    </span><span class="n">H5File</span><span class="w"> </span><span class="nf">file</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span><span class="w"> </span><span class="n">H5F_ACC_TRUNC</span><span class="p">);</span>
+<span class="w">    </span><span class="n">hsize_t</span><span class="w"> </span><span class="n">radial_dims</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="n">radial_size</span><span class="p">};</span>
+<span class="w">    </span><span class="n">hsize_t</span><span class="w"> </span><span class="n">theta_dims</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="n">theta_size</span><span class="p">};</span>
+<span class="w">    </span><span class="n">hsize_t</span><span class="w"> </span><span class="n">scalar_dims</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="n">radial_size</span><span class="p">,</span><span class="w"> </span><span class="n">theta_size</span><span class="p">};</span>
+
+<span class="w">    </span><span class="n">DataSpace</span><span class="w"> </span><span class="nf">radial_dataspace</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">radial_dims</span><span class="p">);</span>
+<span class="w">    </span><span class="n">DataSpace</span><span class="w"> </span><span class="nf">theta_dataspace</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">theta_dims</span><span class="p">);</span>
+<span class="w">    </span><span class="n">DataSpace</span><span class="w"> </span><span class="nf">scalar_dataspace</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="n">scalar_dims</span><span class="p">);</span>
+<span class="w">    </span><span class="cm">/*std::vector&lt;DataSpace&gt;QuantityElems;</span>
+<span class="cm">    for(auto i =0; i&lt; N; i++)</span>
+<span class="cm">    {</span>
+<span class="cm">        DataSpace scalar_dataspace(2, scalar_dims);</span>
+<span class="cm">        QuantityElems.push_back(scalar_dataspace);</span>
+<span class="cm">    }*/</span>
+<span class="w">    </span><span class="n">file</span><span class="p">.</span><span class="n">createDataSet</span><span class="p">(</span><span class="s">&quot;radius&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">PredType</span><span class="o">::</span><span class="n">NATIVE_DOUBLE</span><span class="p">,</span><span class="w"> </span><span class="n">radial_dataspace</span><span class="p">).</span><span class="n">write</span><span class="p">(</span><span class="n">radius</span><span class="p">.</span><span class="n">data</span><span class="p">(),</span><span class="w"> </span><span class="n">PredType</span><span class="o">::</span><span class="n">NATIVE_DOUBLE</span><span class="p">);</span>
+<span class="w">    </span><span class="n">file</span><span class="p">.</span><span class="n">createDataSet</span><span class="p">(</span><span class="s">&quot;theta&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">PredType</span><span class="o">::</span><span class="n">NATIVE_DOUBLE</span><span class="p">,</span><span class="w"> </span><span class="n">theta_dataspace</span><span class="p">).</span><span class="n">write</span><span class="p">(</span><span class="n">theta</span><span class="p">.</span><span class="n">data</span><span class="p">(),</span><span class="w"> </span><span class="n">PredType</span><span class="o">::</span><span class="n">NATIVE_DOUBLE</span><span class="p">);</span>
+<span class="w">    </span><span class="c1">//file.createDataSet(&quot;scalar_field&quot;, PredType::NATIVE_DOUBLE, scalar_dataspace).write(scalar_field.data(), PredType::NATIVE_DOUBLE);</span>
+<span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="k">auto</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">0ul</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">&lt;</span><span class="n">N</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">std</span><span class="o">::</span><span class="n">stringstream</span><span class="w"> </span><span class="n">str</span><span class="p">{};</span>
+<span class="w">        </span><span class="n">str</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Quantity_elem_&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">i</span><span class="p">;</span>
+<span class="w">        </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="w"> </span><span class="n">current_data_field</span><span class="p">(</span><span class="n">radius</span><span class="p">.</span><span class="n">size</span><span class="p">()</span><span class="o">*</span><span class="n">theta</span><span class="p">.</span><span class="n">size</span><span class="p">());</span>
+<span class="w">        </span><span class="k">auto</span><span class="w"> </span><span class="n">blocksize</span><span class="o">=</span><span class="n">radius</span><span class="p">.</span><span class="n">size</span><span class="p">()</span><span class="o">*</span><span class="n">theta</span><span class="p">.</span><span class="n">size</span><span class="p">();</span>
+<span class="w">        </span><span class="n">std</span><span class="o">::</span><span class="n">copy</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">next</span><span class="p">(</span><span class="n">scalar_field</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span><span class="n">i</span><span class="o">*</span><span class="n">blocksize</span><span class="p">),</span>
+<span class="w">                  </span><span class="n">std</span><span class="o">::</span><span class="n">next</span><span class="p">(</span><span class="n">scalar_field</span><span class="p">.</span><span class="n">begin</span><span class="p">(),(</span><span class="n">i</span><span class="o">+</span><span class="mi">1ul</span><span class="p">)</span><span class="o">*</span><span class="n">blocksize</span><span class="p">),</span>
+<span class="w">                  </span><span class="n">current_data_field</span><span class="p">.</span><span class="n">begin</span><span class="p">());</span>
+<span class="w">        </span><span class="n">file</span><span class="p">.</span><span class="n">createDataSet</span><span class="p">(</span><span class="n">str</span><span class="p">.</span><span class="n">str</span><span class="p">(),</span><span class="n">PredType</span><span class="o">::</span><span class="n">NATIVE_DOUBLE</span><span class="p">,</span><span class="w"> </span><span class="n">scalar_dataspace</span><span class="p">).</span><span class="n">write</span><span class="p">(</span><span class="n">current_data_field</span><span class="p">.</span><span class="n">data</span><span class="p">(),</span><span class="w"> </span><span class="n">PredType</span><span class="o">::</span><span class="n">NATIVE_DOUBLE</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright .</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

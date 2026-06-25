@@ -1,0 +1,54 @@
+
+.. _file_include_advection_hyperdiffusion.hpp:
+
+File hyperdiffusion.hpp
+=======================
+
+|exhale_lsh| :ref:`Parent directory <dir_include_advection>` (``include/advection``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``include/advection/hyperdiffusion.hpp``)
+-----------------------------------------------------
+
+
+
+
+
+
+Includes
+--------
+
+
+- ``core/common.hpp`` (:ref:`file_include_core_common.hpp`)
+
+- ``equations/equations.hpp`` (:ref:`file_include_equations_equations.hpp`)
+
+- ``grid/grid.hpp`` (:ref:`file_include_grid_grid.hpp`)
+
+- ``grid/quantity.hpp`` (:ref:`file_include_grid_quantity.hpp`)
+
+
+
+Included By
+-----------
+
+
+- :ref:`file_include_core_simulation2d.hpp`
+
+
+
+
+Classes
+-------
+
+
+- :ref:`exhale_class_classDiffusion2d`
+
+- :ref:`exhale_class_classHyperDiffusion`
+

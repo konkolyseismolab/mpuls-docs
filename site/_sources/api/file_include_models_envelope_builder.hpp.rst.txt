@@ -1,0 +1,49 @@
+
+.. _file_include_models_envelope_builder.hpp:
+
+File envelope_builder.hpp
+=========================
+
+|exhale_lsh| :ref:`Parent directory <dir_include_models>` (``include/models``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``include/models/envelope_builder.hpp``)
+----------------------------------------------------
+
+
+
+
+
+
+Includes
+--------
+
+
+- ``grid/grid_builder.hpp`` (:ref:`file_include_grid_grid_builder.hpp`)
+
+- ``models/stellar_input.hpp`` (:ref:`file_include_models_stellar_input.hpp`)
+
+
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_envelope`
+
+
+Functions
+---------
+
+
+- :ref:`exhale_function_envelope__builder_8hpp_1a717c924bff07df3804ba31d1fc4a36af`
+

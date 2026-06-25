@@ -1,0 +1,34 @@
+
+.. _namespace_solver_params:
+
+Namespace solver_params
+=======================
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+
+
+
+Detailed Description
+--------------------
+
+Configuration parameters of the 2D solver. 
+
+
+
+
+
+Enums
+-----
+
+
+- :ref:`exhale_enum_namespacesolver__params_1a2b577686b8ffe76b030025b230938ef2`
+
+- :ref:`exhale_enum_namespacesolver__params_1ad745adffd0fab83afbaf692ea8165050`
+
+- :ref:`exhale_enum_namespacesolver__params_1a8c444a3981a4189f632deff4104e1165`
+
+- :ref:`exhale_enum_namespacesolver__params_1abd53625bda2fa8124b0f37652e3340d1`

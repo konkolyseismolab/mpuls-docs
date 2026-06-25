@@ -1,0 +1,194 @@
+
+Installation
+============
+
+It is suggested to install the package locally, more preferably into a `conda` or other container environment.
+
+```{note}
+Current dependencies are expected to change with the progress of the development.
+```
+
+Dependencies
+------------
+
+### External libraries
+
+The code needs some external packages for compilation based on the backend. 
+The core dependencies are:
+- HDF5 C++ library - for input/output support (mandatory)
+- YAML C++ library - for input/output support (mandatory)
+- CUDA 12.0 or higher - for CUDA backend support (optional)
+- ASAN library - for developers testing memory layout (optional)
+
+### Build system
+
+For compilation and build the following are necessary:
+- C++20 standard capable compiler (e.g. GCC 11.0 or Clang 13.0)
+- nvcc 12.0  - for CUDA support (part of the CUDA-toolkit)
+- Cmake 3.12 or higher
+
+
+This project requires the HDF5 C++ library (`H5Cpp.h`, `libhdf5_cpp.so`) to compile and run.
+
+### HDF5 C++ library
+
+#### Recommended setup (platform-independent)
+
+We recommend using [Miniconda](https://docs.conda.io/en/latest/miniconda.html) to install HDF5 without root access:
+
+```bash
+conda create -n hdf5_env hdf5 h5py -c conda-forge
+conda activate hdf5_env
+export HDF5_ROOT=$CONDA_PREFIX
+cmake -S . -B build
+cmake --build build
+```
+
+#### Alternatively, you can build HDF5 manually:
+
+```bash
+wget https://support.hdfgroup.org/ftp/HDF5/current/src/hdf5-1.14.3.tar.gz
+tar -xzf hdf5-1.14.3.tar.gz
+cd hdf5-1.14.3
+./configure --prefix=$HOME/hdf5 --enable-cxx
+make -j4 && make install
+export HDF5_ROOT=$HOME/hdf5
+cmake -S . -B build
+cmake --build build
+
+```
+
+#### Or install it globally (linux, Ubuntu line):
+
+```bash
+sudo apt install libhdf5-dev
+```
+
+
+Note: You must have CMake ≥ 3.12 and a C++20-capable compiler.
+
+
+### YAML support (via yaml-cpp)
+
+This project requires [yaml-cpp](https://github.com/jbeder/yaml-cpp) for configuration parsing.
+
+#### macOS (Homebrew)
+
+```bash
+brew install yaml-cpp
+cmake -S . -B build -Dyaml-cpp_DIR=/opt/homebrew/opt/yaml-cpp/lib/cmake/yaml-cpp
+```
+
+Then either pass the path manually:
+
+```bash
+cmake -S . -B build -Dyaml-cpp_DIR=/opt/homebrew/opt/yaml-cpp/lib/cmake/yaml-cpp
+```
+
+Or, if you're using ``zsh``, make it persistent by adding this to your ``.zshrc`` file:
+
+```zsh
+# ~/.zshrc
+export CMAKE_PREFIX_PATH="/opt/homebrew/opt/yaml-cpp"
+```
+
+Then reload the shell:
+
+```bash
+source ~/.zshrc
+```
+
+Now you can build without passing any extra flags:
+```bash
+cmake -S . -B build
+cmake --build build
+```
+
+
+#### Linux (apt-based) install:
+
+```bash
+sudo apt install libyaml-cpp-dev
+cmake -S . -B build
+```
+
+If you're using ``bash``, add the same line to your ``~/.bashrc`` or ``~/.bash_profile``:
+
+```zsh
+# ~/.zshrc
+export CMAKE_PREFIX_PATH="/opt/homebrew/opt/yaml-cpp"
+```
+
+Then reload the shell:
+
+```bash
+source ~/.bashrc
+```
+
+or
+
+```bash
+source ~/.bash_profile
+```
+
+Now you can build the project:
+```bash
+cmake -S . -B build
+cmake --build build
+```
+
+
+#### Manual build (any platform):
+
+```bash
+git clone https://github.com/jbeder/yaml-cpp.git
+cd yaml-cpp && mkdir build && cd build
+cmake -DCMAKE_INSTALL_PREFIX=$HOME/yaml-cpp-install ..
+make -j4 && make install
+cmake -S . -B build -Dyaml-cpp_DIR=$HOME/yaml-cpp-install/lib/cmake/yaml-cpp
+```
+
+Building the code
+-----------------
+
+### Build flags
+There are three building modes:
+- debug `-DCMAKE_BUILD_TYPE=Debug`
+- release `-DCMAKE_BUILD_TYPE=Release`
+- sanitized `-DCMAKE_BUILD_TYPE=DebugSanit`
+
+In debug mode the `-g` compilation flag is set with no optimizations, ideal for attaching a debugger.
+The release version uses `-O2` for optimization (roughly a factor of 10 in speed).
+Sanitized mode is a special debug mode, which cheks against memory leaks, index errors.
+
+```{warning}
+For the sanitization to work, you need to install the ASAN library for your compiler.
+```
+Unit tests can be run by the `-DBUILD_TESTING=ON` flag, and the `ctest` command can be run from the build directory. 
+
+### Build process
+Go to the root folder of the project then:
+
+```bash
+cmake -S . -B build
+cmake --build build
+```
+or equivantely 
+
+```bash
+cmake -S . -B build
+cd ./build
+make -j4
+```
+
+If you have set the `-DBUILD_TESTING=ON` flag, the tests can be run by the
+
+```bash
+ctest . -V
+```
+command. (This is more verbose then the default command.)
+
+```{warning}
+Please note, that at the current early development phase the validity of the numerical results in
+the `Release` build was not tested yet. Therefore use it on your own risk.
+```

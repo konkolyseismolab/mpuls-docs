@@ -1,0 +1,18 @@
+.. _exhale_struct_structCellCenter:
+
+Struct CellCenter
+=================
+
+- Defined in :ref:`file_include_grid_cell_center.hpp`
+
+
+Struct Documentation
+--------------------
+
+
+.. doxygenstruct:: CellCenter
+   :project: MPULS
+   :members:
+   :protected-members:
+   :private-members:
+   :undoc-members:

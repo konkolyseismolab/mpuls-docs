@@ -1,0 +1,14 @@
+.. _exhale_function_simulation2d_8hpp_1a50087ef639129db722c485e48f7b8f52:
+
+Template Function simulation_2d::createEquation
+===============================================
+
+- Defined in :ref:`file_include_core_simulation2d.hpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: simulation_2d::createEquation(eqType)
+   :project: MPULS

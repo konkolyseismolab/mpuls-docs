@@ -1,0 +1,230 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Template Class CFL &mdash; Modular PULsation Suite  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=7ab3649f" />
+      <link rel="stylesheet" type="text/css" href="../_static/collapsible-lists/css/tree_view.css?v=a885cde7" />
+      <link rel="stylesheet" type="text/css" href="../_static/compact-api.css?v=bfcdbbe1" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script src="../_static/collapsible-lists/js/CollapsibleLists.compressed.js?v=73120307"></script>
+      <script src="../_static/collapsible-lists/js/apply-collapsible-lists.js?v=660e4f45"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Template Class CIRFlux" href="classCIRFlux.html" />
+    <link rel="prev" title="Template Class Boundary2DPeriodic" href="classBoundary2DPeriodic.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Modular PULsation Suite
+              <img src="../_static/logo-mpuls.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../guide/index.html">MPULS User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../manual/index.html">MPULS User Manual</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference Manual</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="library_root.html">MPULS API reference</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="library_root.html#page-hierarchy">Page Hierarchy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="library_root.html#class-hierarchy">Class Hierarchy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="library_root.html#file-hierarchy">File Hierarchy</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="library_root.html#full-api">Full API</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="library_root.html#namespaces">Namespaces</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="library_root.html#classes-and-structs">Classes and Structs</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="structCellCenter.html">Struct CellCenter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structCellInterface.html">Struct CellInterface</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structConfig.html">Struct Config</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structGrid.html">Struct Grid</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structGrid2Dconfig.html">Struct Grid2Dconfig</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structGridConfig.html">Struct GridConfig</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structmodel_1_1ModelConfig.html">Struct ModelConfig</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structQuantityTraits.html">Template Struct QuantityTraits</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structsimulation__2d_1_1always__false.html">Template Struct always_false</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structsimulation__2d_1_1EquationTraits.html">Template Struct EquationTraits</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structSolverConfig.html">Struct SolverConfig</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structStellarInput.html">Struct StellarInput</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structStellarParameters.html">Struct StellarParameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classBoundary2DPerHorRigidRad.html">Template Class Boundary2DPerHorRigidRad</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classBoundary2DPeriodic.html">Template Class Boundary2DPeriodic</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Template Class CFL</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classCIRFlux.html">Template Class CIRFlux</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classDiffusion2d.html">Template Class Diffusion2d</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classEquationBase.html">Template Class EquationBase</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classEuler2d.html">Template Class Euler2d</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classFluxOperator.html">Template Class FluxOperator</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classGrid2d.html">Template Class Grid2d</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classGridDimensions2d.html">Template Class GridDimensions2d</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classHyperDiffusion.html">Template Class HyperDiffusion</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classLimiterBase.html">Template Class LimiterBase</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classLLFflux.html">Template Class LLFflux</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classMinMod.html">Template Class MinMod</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classPCM.html">Template Class PCM</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classPLM.html">Template Class PLM</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classQuantityBase.html">Template Class QuantityBase</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classReconstructionBase.html">Template Class ReconstructionBase</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classRightHandSide.html">Template Class RightHandSide</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classRightHandSideDecorator.html">Template Class RightHandSideDecorator</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classScalarTransport2d.html">Template Class ScalarTransport2d</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classSimpleSource.html">Template Class SimpleSource</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classsimulation__2d_1_1ComponentBase.html">Class ComponentBase</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classsimulation__2d_1_1ComponentWrapper.html">Template Class ComponentWrapper</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classsimulation__2d_1_1Simulation2d.html">Class Simulation2d</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classsimulation__2d_1_1SolverBase.html">Class SolverBase</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classsimulation__2d_1_1SolverWrapper.html">Template Class SolverWrapper</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classSSP__RK2.html">Template Class SSP_RK2</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classSSP__RK3.html">Template Class SSP_RK3</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classSuperbee.html">Template Class Superbee</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classTimeSolverBase.html">Template Class TimeSolverBase</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classUnimplementedError.html">Class UnimplementedError</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classVanLeer.html">Template Class VanLeer</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="library_root.html#enums">Enums</a></li>
+<li class="toctree-l3"><a class="reference internal" href="library_root.html#functions">Functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="library_root.html#variables">Variables</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Modular PULsation Suite</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="library_root.html">MPULS API reference</a></li>
+      <li class="breadcrumb-item active">Template Class CFL</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/api/classCFL.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="template-class-cfl">
+<span id="exhale-class-classcfl"></span><h1>Template Class CFL<a class="headerlink" href="#template-class-cfl" title="Link to this heading"></a></h1>
+<ul class="simple">
+<li><p>Defined in <a class="reference internal" href="file_include_time_solver_time_solver.hpp.html#file-include-time-solver-time-solver-hpp"><span class="std std-ref">File time_solver.hpp</span></a></p></li>
+</ul>
+<section id="class-documentation">
+<h2>Class Documentation<a class="headerlink" href="#class-documentation" title="Link to this heading"></a></h2>
+<dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv4I_12QuantityType0E3CFL">
+<span id="_CPPv3I_12QuantityType0E3CFL"></span><span id="_CPPv2I_12QuantityType0E3CFL"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">QuantityType</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Q</span></span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Equation</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="classCFL"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CFL</span></span></span><a class="headerlink" href="#_CPPv4I_12QuantityType0E3CFL" title="Link to this definition"></a><br /></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3CFL3CFLE1DR8EquationR16GridDimensions2dI1DE">
+<span id="_CPPv3N3CFL3CFLE1DR8EquationR16GridDimensions2dI1DE"></span><span id="_CPPv2N3CFL3CFLE1DR8EquationR16GridDimensions2dI1DE"></span><span id="CFL::CFL__D.EquationR.GridDimensions2d:D:R"></span><span class="target" id="classCFL_1ae47d72b56cf3f35a7e82b82ccb3f0e6e"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CFL</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N3CFL1DE" title="CFL::D"><span class="n"><span class="pre">D</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">cfl</span></span>, <a class="reference internal" href="#_CPPv4I_12QuantityType0E3CFL" title="CFL::Equation"><span class="n"><span class="pre">Equation</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">eq</span></span>, <a class="reference internal" href="classGridDimensions2d.html#_CPPv4I0E16GridDimensions2d" title="GridDimensions2d"><span class="n"><span class="pre">GridDimensions2d</span></span></a><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4N3CFL1DE" title="CFL::D"><span class="n"><span class="pre">D</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">grid_dim</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3CFL3CFLE1DR8EquationR16GridDimensions2dI1DE" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3CFL8getNewDtERK6Grid2dI1QE">
+<span id="_CPPv3N3CFL8getNewDtERK6Grid2dI1QE"></span><span id="_CPPv2N3CFL8getNewDtERK6Grid2dI1QE"></span><span id="CFL::getNewDt__Grid2d:Q:CR"></span><span class="target" id="classCFL_1a29348ef7611af370d58e135beb55102e"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N3CFL1DE" title="CFL::D"><span class="n"><span class="pre">D</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getNewDt</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="classGrid2d.html#_CPPv4I_12QuantityTypeE6Grid2d" title="Grid2d"><span class="n"><span class="pre">Grid2d</span></span></a><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4I_12QuantityType0E3CFL" title="CFL::Q"><span class="n"><span class="pre">Q</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">grid</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3CFL8getNewDtERK6Grid2dI1QE" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-private-types">Private Types</p>
+<dl class="cpp type">
+<dt class="sig sig-object cpp" id="_CPPv4N3CFL1DE">
+<span id="_CPPv3N3CFL1DE"></span><span id="_CPPv2N3CFL1DE"></span><span class="target" id="classCFL_1a129d284588bd657c3c050a5408146812"></span><span class="k"><span class="pre">using</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">D</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">typename</span></span><span class="w"> </span><a class="reference internal" href="structQuantityTraits.html#_CPPv4I0E14QuantityTraits" title="QuantityTraits"><span class="n"><span class="pre">QuantityTraits</span></span></a><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4I_12QuantityType0E3CFL" title="CFL::Q"><span class="n"><span class="pre">Q</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">D</span></span><a class="headerlink" href="#_CPPv4N3CFL1DE" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-private-members">Private Members</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N3CFL10cfl_numberE">
+<span id="_CPPv3N3CFL10cfl_numberE"></span><span id="_CPPv2N3CFL10cfl_numberE"></span><span id="CFL::cfl_number__D"></span><span class="target" id="classCFL_1aa5f41a201ccfe8663e25f0a83ada2c63"></span><a class="reference internal" href="#_CPPv4N3CFL1DE" title="CFL::D"><span class="n"><span class="pre">D</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">cfl_number</span></span></span><a class="headerlink" href="#_CPPv4N3CFL10cfl_numberE" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N3CFL2eqE">
+<span id="_CPPv3N3CFL2eqE"></span><span id="_CPPv2N3CFL2eqE"></span><span id="CFL::eq__EquationR"></span><span class="target" id="classCFL_1ab10905aaf64560075f04be1458d39292"></span><a class="reference internal" href="#_CPPv4I_12QuantityType0E3CFL" title="CFL::Equation"><span class="n"><span class="pre">Equation</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">eq</span></span></span><a class="headerlink" href="#_CPPv4N3CFL2eqE" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N3CFL8grid_dimE">
+<span id="_CPPv3N3CFL8grid_dimE"></span><span id="_CPPv2N3CFL8grid_dimE"></span><span id="CFL::grid_dim__GridDimensions2d:D:R"></span><span class="target" id="classCFL_1ad03a3934686d4799cbc95aaa93e4f63b"></span><a class="reference internal" href="classGridDimensions2d.html#_CPPv4I0E16GridDimensions2d" title="GridDimensions2d"><span class="n"><span class="pre">GridDimensions2d</span></span></a><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4N3CFL1DE" title="CFL::D"><span class="n"><span class="pre">D</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">grid_dim</span></span></span><a class="headerlink" href="#_CPPv4N3CFL8grid_dimE" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="classBoundary2DPeriodic.html" class="btn btn-neutral float-left" title="Template Class Boundary2DPeriodic" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="classCIRFlux.html" class="btn btn-neutral float-right" title="Template Class CIRFlux" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright .</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

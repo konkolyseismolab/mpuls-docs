@@ -1,0 +1,1922 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MPULS API reference &mdash; Modular PULsation Suite  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=7ab3649f" />
+      <link rel="stylesheet" type="text/css" href="../_static/collapsible-lists/css/tree_view.css?v=a885cde7" />
+      <link rel="stylesheet" type="text/css" href="../_static/compact-api.css?v=bfcdbbe1" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script src="../_static/collapsible-lists/js/CollapsibleLists.compressed.js?v=73120307"></script>
+      <script src="../_static/collapsible-lists/js/apply-collapsible-lists.js?v=660e4f45"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Namespace component_tags" href="namespace_component_tags.html" />
+    <link rel="prev" title="Time integration" href="../manual/numerics/time_integration.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Modular PULsation Suite
+              <img src="../_static/logo-mpuls.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../guide/index.html">MPULS User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../manual/index.html">MPULS User Manual</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference Manual</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">MPULS API reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#page-hierarchy">Page Hierarchy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#class-hierarchy">Class Hierarchy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#file-hierarchy">File Hierarchy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#full-api">Full API</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#namespaces">Namespaces</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="namespace_component_tags.html">Namespace component_tags</a></li>
+<li class="toctree-l4"><a class="reference internal" href="namespace_constants.html">Namespace constants</a></li>
+<li class="toctree-l4"><a class="reference internal" href="namespace_envelope.html">Namespace envelope</a></li>
+<li class="toctree-l4"><a class="reference internal" href="namespace_grid.html">Namespace grid</a></li>
+<li class="toctree-l4"><a class="reference internal" href="namespace_io.html">Namespace io</a></li>
+<li class="toctree-l4"><a class="reference internal" href="namespace_model.html">Namespace model</a></li>
+<li class="toctree-l4"><a class="reference internal" href="namespace_mpuls.html">Namespace mpuls</a></li>
+<li class="toctree-l4"><a class="reference internal" href="namespace_simulation_2d.html">Namespace simulation_2d</a></li>
+<li class="toctree-l4"><a class="reference internal" href="namespace_solver_params.html">Namespace solver_params</a></li>
+<li class="toctree-l4"><a class="reference internal" href="namespace_std.html">Namespace std</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#classes-and-structs">Classes and Structs</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="structCellCenter.html">Struct CellCenter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structCellInterface.html">Struct CellInterface</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structConfig.html">Struct Config</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structGrid.html">Struct Grid</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structGrid2Dconfig.html">Struct Grid2Dconfig</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structGridConfig.html">Struct GridConfig</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structmodel_1_1ModelConfig.html">Struct ModelConfig</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structQuantityTraits.html">Template Struct QuantityTraits</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structsimulation__2d_1_1always__false.html">Template Struct always_false</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structsimulation__2d_1_1EquationTraits.html">Template Struct EquationTraits</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structSolverConfig.html">Struct SolverConfig</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structStellarInput.html">Struct StellarInput</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structStellarParameters.html">Struct StellarParameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classBoundary2DPerHorRigidRad.html">Template Class Boundary2DPerHorRigidRad</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classBoundary2DPeriodic.html">Template Class Boundary2DPeriodic</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classCFL.html">Template Class CFL</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classCIRFlux.html">Template Class CIRFlux</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classDiffusion2d.html">Template Class Diffusion2d</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classEquationBase.html">Template Class EquationBase</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classEuler2d.html">Template Class Euler2d</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classFluxOperator.html">Template Class FluxOperator</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classGrid2d.html">Template Class Grid2d</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classGridDimensions2d.html">Template Class GridDimensions2d</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classHyperDiffusion.html">Template Class HyperDiffusion</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classLimiterBase.html">Template Class LimiterBase</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classLLFflux.html">Template Class LLFflux</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classMinMod.html">Template Class MinMod</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classPCM.html">Template Class PCM</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classPLM.html">Template Class PLM</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classQuantityBase.html">Template Class QuantityBase</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classReconstructionBase.html">Template Class ReconstructionBase</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classRightHandSide.html">Template Class RightHandSide</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classRightHandSideDecorator.html">Template Class RightHandSideDecorator</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classScalarTransport2d.html">Template Class ScalarTransport2d</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classSimpleSource.html">Template Class SimpleSource</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classsimulation__2d_1_1ComponentBase.html">Class ComponentBase</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classsimulation__2d_1_1ComponentWrapper.html">Template Class ComponentWrapper</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classsimulation__2d_1_1Simulation2d.html">Class Simulation2d</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classsimulation__2d_1_1SolverBase.html">Class SolverBase</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classsimulation__2d_1_1SolverWrapper.html">Template Class SolverWrapper</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classSSP__RK2.html">Template Class SSP_RK2</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classSSP__RK3.html">Template Class SSP_RK3</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classSuperbee.html">Template Class Superbee</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classTimeSolverBase.html">Template Class TimeSolverBase</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classUnimplementedError.html">Class UnimplementedError</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classVanLeer.html">Template Class VanLeer</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#enums">Enums</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="enum_common_8hpp_1a224b9163917ac32fc95a60d8c1eec3aa.html">Enum Direction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="enum_config__params_8hpp_1a46c8a310cf4c094f8c80e1cb8dc1f911.html">Enum Mode</a></li>
+<li class="toctree-l4"><a class="reference internal" href="enum_namespacemodel_1a907c446eb5c73e13a7d76edd612fdfef.html">Enum Equation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="enum_namespacemodel_1a3ae25a4a9f22dccaa99cdecb28ab4e0f.html">Enum InitialModel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="enum_namespacesolver__params_1a2b577686b8ffe76b030025b230938ef2.html">Enum FluxCalculator</a></li>
+<li class="toctree-l4"><a class="reference internal" href="enum_namespacesolver__params_1ad745adffd0fab83afbaf692ea8165050.html">Enum Integrator</a></li>
+<li class="toctree-l4"><a class="reference internal" href="enum_namespacesolver__params_1a8c444a3981a4189f632deff4104e1165.html">Enum Limiters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="enum_namespacesolver__params_1abd53625bda2fa8124b0f37652e3340d1.html">Enum Reconstructor</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#functions">Functions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="function_compile__time__dispatcher_8hpp_1a7684c0cd12126ed58ee7bbe793fa95f4.html">Template Function createEquationTag</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_compile__time__dispatcher_8hpp_1a3b8bbd535bd9258bfb39bfa6d6366434.html">Template Function createFluxTag</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_compile__time__dispatcher_8hpp_1af90bda6680729cad82f2e0e9e4850f47.html">Template Function createIntegratorTag</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_compile__time__dispatcher_8hpp_1a6f98987fd5ae02bb483df5a4869cd98f.html">Template Function createLimiterTag</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_compile__time__dispatcher_8hpp_1a9978be9ec33b3d779b636e8fe222ade0.html">Template Function createReconstructionTag</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_envelope__builder_8hpp_1a717c924bff07df3804ba31d1fc4a36af.html">Function envelope::build_static_envelope</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_compile__time__dispatcher_8hpp_1a27a2ed4213b0d1fb6f6e5ca671406f1a.html">Function generateFromConfig</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_grid__builder_8hpp_1ae486fd2de65542bc1ee22e82a31f7f51.html">Function grid::build</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_compile__time__dispatcher_8hpp_1a7438b4836635fc284ebf915aceb3ff55.html">Template Function grid_dim_generator</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_compile__time__dispatcher_8hpp_1acd37447c36d81154e4ad2aeb6795c4f8.html">Template Function grid_generator</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_print__console_8hpp_1a4342d8164f753f333c53321e183903bd.html">Function io::initializeRun</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_print__console_8hpp_1a7d92cb77870273584c8475f1e6ce7d76.html">Function io::log_surface_boundary_summary</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_print__console_8hpp_1a6fb0c84c52a53213fc01bd866221b2a5.html">Function io::placeholder_warning</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_print__console_8hpp_1ae70a37091917cb7b82ac872b190b33a3.html">Function io::unimplemented_warning</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_initial__models_8hpp_1ae38657604bb2a021940106bf18eca18d.html">Function KelvinHelmholtzInitialCondition</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_config__parser_8hpp_1ab2d3612c42f5e2c0ca7d6c3fc24f0614.html">Function loadConfig</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_simulation2d_8hpp_1a50087ef639129db722c485e48f7b8f52.html">Template Function simulation_2d::createEquation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_simulation2d_8hpp_1add0bbce5253a56fd01b6eaccd26798e4.html">Template Function simulation_2d::createFluxCalculator</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_simulation2d_8hpp_1ad0c0db2ca932178a8409c41eb8fd41ac.html">Template Function simulation_2d::createLimiter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_simulation2d_8hpp_1a484cc9916a24c5f348ba5c3dc1411803.html">Template Function simulation_2d::createReconstruction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_simulation2d_8hpp_1a50879ceb8176df5414e6b6bded61d1c5.html">Template Function simulation_2d::createTimeSolver</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_simulation2d_8hpp_1add987f6758214e6b394039ef157a6573.html">Template Function simulation_2d::getQfromEq</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_simulation2d_8hpp_1ad8ed7bbcf51a98c91f1725d21cc2123e.html">Template Function simulation_2d::solver_factory</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_initial__models_8hpp_1a5e76af92416c0cab11bcea98fe6666e6.html">Function staticModelInitialCondition</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_profile__writer_8hpp_1a92e39358f1c190b8a7459afb2fa3f2df.html">Function write2DQuantityProfileToHdf5</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_profile__writer_8hpp_1a21ce09ebf264d1fdb91135863cec2133.html">Function write2DScalarProfileToHdf5</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_profile__writer_8hpp_1a9d030f6947c666a5d614e062847b47e7.html">Function writeProfileToHdf5</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#variables">Variables</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="variable_namespaceconstants_1a27895881bf36c2968dada68de7fff4df.html">Variable constants::kEddingtonFactor</a></li>
+<li class="toctree-l4"><a class="reference internal" href="variable_namespaceconstants_1aef6a70bf5e02077c823bda1eba37a769.html">Variable constants::kLSun</a></li>
+<li class="toctree-l4"><a class="reference internal" href="variable_namespaceconstants_1acc33c8ba80741ed46691ee05503fb81e.html">Variable constants::kMSun</a></li>
+<li class="toctree-l4"><a class="reference internal" href="variable_namespaceconstants_1ac46ad396847a4e15973762f39350eaf0.html">Variable constants::kPi</a></li>
+<li class="toctree-l4"><a class="reference internal" href="variable_namespaceconstants_1a1f9529591ca6dbdc20aaa3b8105da607.html">Variable constants::kStefanBoltzmann</a></li>
+<li class="toctree-l4"><a class="reference internal" href="variable_common_8hpp_1aa978754ca655ef66eff1586405d394e2.html">Variable is_2D</a></li>
+<li class="toctree-l4"><a class="reference internal" href="variable_common_8hpp_1aeaa45c68beb95f9860a4b00f3491dfe9.html">Variable is_horizontal</a></li>
+<li class="toctree-l4"><a class="reference internal" href="variable_common_8hpp_1a6cc92b784171808c91b212208136e428.html">Variable is_radial</a></li>
+<li class="toctree-l4"><a class="reference internal" href="variable_version_8hpp_1a8d83916e0be66a5e4a8302b0ffbb8174.html">Variable mpuls::author</a></li>
+<li class="toctree-l4"><a class="reference internal" href="variable_version_8hpp_1a069e767c98d300d7a55a28e40e0c0d8a.html">Variable mpuls::version</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Modular PULsation Suite</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">MPULS API reference</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/api/library_root.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="mpuls-api-reference">
+<h1>MPULS API reference<a class="headerlink" href="#mpuls-api-reference" title="Link to this heading"></a></h1>
+<section id="page-hierarchy">
+<h2>Page Hierarchy<a class="headerlink" href="#page-hierarchy" title="Link to this heading"></a></h2>
+<ul class="treeView" id="page-treeView">
+  <li>
+    <ul class="collapsibleList">
+      <li> <a href="page_todo.html#page-todo">Todo List</a></li>
+    </ul>
+  </li><!-- only tree view element -->
+</ul><!-- /treeView page-treeView --></section>
+<section id="class-hierarchy">
+<h2>Class Hierarchy<a class="headerlink" href="#class-hierarchy" title="Link to this heading"></a></h2>
+<ul class="treeView" id="class-treeView">
+  <li>
+    <ul class="collapsibleList">
+      <li>Namespace <a href="namespace_model.html#namespace-model">model</a><ul><li>Struct <a href="structmodel_1_1ModelConfig.html#exhale-struct-structmodel-1-1ModelConfig">ModelConfig</a></li><li>Enum <a href="enum_namespacemodel_1a907c446eb5c73e13a7d76edd612fdfef.html#exhale-enum-namespacemodel-1a907c446eb5c73e13a7d76edd612fdfef">Equation</a></li><li class="lastChild">Enum <a href="enum_namespacemodel_1a3ae25a4a9f22dccaa99cdecb28ab4e0f.html#exhale-enum-namespacemodel-1a3ae25a4a9f22dccaa99cdecb28ab4e0f">InitialModel</a></li></ul></li><li>Namespace <a href="namespace_simulation_2d.html#namespace-simulation-2d">simulation_2d</a><ul><li>Template Struct <a href="structsimulation__2d_1_1always__false.html#exhale-struct-structsimulation-2d-1-1always-false">always_false</a></li><li>Template Struct <a href="structsimulation__2d_1_1EquationTraits.html#exhale-struct-structsimulation-2d-1-1EquationTraits">EquationTraits</a></li><li>Class <a href="classsimulation__2d_1_1ComponentBase.html#exhale-class-classsimulation-2d-1-1ComponentBase">ComponentBase</a></li><li>Template Class <a href="classsimulation__2d_1_1ComponentWrapper.html#exhale-class-classsimulation-2d-1-1ComponentWrapper">ComponentWrapper</a></li><li>Class <a href="classsimulation__2d_1_1Simulation2d.html#exhale-class-classsimulation-2d-1-1Simulation2d">Simulation2d</a></li><li>Class <a href="classsimulation__2d_1_1SolverBase.html#exhale-class-classsimulation-2d-1-1SolverBase">SolverBase</a></li><li class="lastChild">Template Class <a href="classsimulation__2d_1_1SolverWrapper.html#exhale-class-classsimulation-2d-1-1SolverWrapper">SolverWrapper</a></li></ul></li><li>Namespace <a href="namespace_solver_params.html#namespace-solver-params">solver_params</a><ul><li>Enum <a href="enum_namespacesolver__params_1a2b577686b8ffe76b030025b230938ef2.html#exhale-enum-namespacesolver-params-1a2b577686b8ffe76b030025b230938ef2">FluxCalculator</a></li><li>Enum <a href="enum_namespacesolver__params_1ad745adffd0fab83afbaf692ea8165050.html#exhale-enum-namespacesolver-params-1ad745adffd0fab83afbaf692ea8165050">Integrator</a></li><li>Enum <a href="enum_namespacesolver__params_1a8c444a3981a4189f632deff4104e1165.html#exhale-enum-namespacesolver-params-1a8c444a3981a4189f632deff4104e1165">Limiters</a></li><li class="lastChild">Enum <a href="enum_namespacesolver__params_1abd53625bda2fa8124b0f37652e3340d1.html#exhale-enum-namespacesolver-params-1abd53625bda2fa8124b0f37652e3340d1">Reconstructor</a></li></ul></li><li>Struct <a href="structCellCenter.html#exhale-struct-structCellCenter">CellCenter</a></li><li>Struct <a href="structCellInterface.html#exhale-struct-structCellInterface">CellInterface</a></li><li>Struct <a href="structConfig.html#exhale-struct-structConfig">Config</a></li><li>Struct <a href="structGrid.html#exhale-struct-structGrid">Grid</a></li><li>Struct <a href="structGrid2Dconfig.html#exhale-struct-structGrid2Dconfig">Grid2Dconfig</a></li><li>Struct <a href="structGridConfig.html#exhale-struct-structGridConfig">GridConfig</a></li><li>Template Struct <a href="structQuantityTraits.html#exhale-struct-structQuantityTraits">QuantityTraits</a></li><li>Struct <a href="structSolverConfig.html#exhale-struct-structSolverConfig">SolverConfig</a></li><li>Struct <a href="structStellarInput.html#exhale-struct-structStellarInput">StellarInput</a></li><li>Struct <a href="structStellarParameters.html#exhale-struct-structStellarParameters">StellarParameters</a></li><li>Template Class <a href="classBoundary2DPerHorRigidRad.html#exhale-class-classBoundary2DPerHorRigidRad">Boundary2DPerHorRigidRad</a></li><li>Template Class <a href="classBoundary2DPeriodic.html#exhale-class-classBoundary2DPeriodic">Boundary2DPeriodic</a></li><li>Template Class <a href="classCFL.html#exhale-class-classCFL">CFL</a></li><li>Template Class <a href="classCIRFlux.html#exhale-class-classCIRFlux">CIRFlux</a></li><li>Template Class <a href="classDiffusion2d.html#exhale-class-classDiffusion2d">Diffusion2d</a></li><li>Template Class <a href="classEquationBase.html#exhale-class-classEquationBase">EquationBase</a></li><li>Template Class <a href="classEuler2d.html#exhale-class-classEuler2d">Euler2d</a></li><li>Template Class <a href="classFluxOperator.html#exhale-class-classFluxOperator">FluxOperator</a></li><li>Template Class <a href="classGrid2d.html#exhale-class-classGrid2d">Grid2d</a></li><li>Template Class <a href="classGridDimensions2d.html#exhale-class-classGridDimensions2d">GridDimensions2d</a></li><li>Template Class <a href="classHyperDiffusion.html#exhale-class-classHyperDiffusion">HyperDiffusion</a></li><li>Template Class <a href="classLimiterBase.html#exhale-class-classLimiterBase">LimiterBase</a></li><li>Template Class <a href="classLLFflux.html#exhale-class-classLLFflux">LLFflux</a></li><li>Template Class <a href="classMinMod.html#exhale-class-classMinMod">MinMod</a></li><li>Template Class <a href="classPCM.html#exhale-class-classPCM">PCM</a></li><li>Template Class <a href="classPLM.html#exhale-class-classPLM">PLM</a></li><li>Template Class <a href="classQuantityBase.html#exhale-class-classQuantityBase">QuantityBase</a></li><li>Template Class <a href="classReconstructionBase.html#exhale-class-classReconstructionBase">ReconstructionBase</a></li><li>Template Class <a href="classRightHandSide.html#exhale-class-classRightHandSide">RightHandSide</a></li><li>Template Class <a href="classRightHandSideDecorator.html#exhale-class-classRightHandSideDecorator">RightHandSideDecorator</a></li><li>Template Class <a href="classScalarTransport2d.html#exhale-class-classScalarTransport2d">ScalarTransport2d</a></li><li>Template Class <a href="classSimpleSource.html#exhale-class-classSimpleSource">SimpleSource</a></li><li>Template Class <a href="classSSP__RK2.html#exhale-class-classSSP-RK2">SSP_RK2</a></li><li>Template Class <a href="classSSP__RK3.html#exhale-class-classSSP-RK3">SSP_RK3</a></li><li>Template Class <a href="classSuperbee.html#exhale-class-classSuperbee">Superbee</a></li><li>Template Class <a href="classTimeSolverBase.html#exhale-class-classTimeSolverBase">TimeSolverBase</a></li><li>Class <a href="classUnimplementedError.html#exhale-class-classUnimplementedError">UnimplementedError</a></li><li>Template Class <a href="classVanLeer.html#exhale-class-classVanLeer">VanLeer</a></li><li>Enum <a href="enum_common_8hpp_1a224b9163917ac32fc95a60d8c1eec3aa.html#exhale-enum-common-8hpp-1a224b9163917ac32fc95a60d8c1eec3aa">Direction</a></li><li class="lastChild">Enum <a href="enum_config__params_8hpp_1a46c8a310cf4c094f8c80e1cb8dc1f911.html#exhale-enum-config-params-8hpp-1a46c8a310cf4c094f8c80e1cb8dc1f911">Mode</a></li>
+    </ul>
+  </li><!-- only tree view element -->
+</ul><!-- /treeView class-treeView --></section>
+<section id="file-hierarchy">
+<h2>File Hierarchy<a class="headerlink" href="#file-hierarchy" title="Link to this heading"></a></h2>
+<ul class="treeView" id="file-treeView">
+  <li>
+    <ul class="collapsibleList">
+      <li class="lastChild">Directory <a href="dir_include.html#dir-include">include</a><ul><li>Directory <a href="dir_include_advection.html#dir-include-advection">advection</a><ul><li>File <a href="file_include_advection_flux_operators.hpp.html#file-include-advection-flux-operators.hpp">flux_operators.hpp</a></li><li class="lastChild">File <a href="file_include_advection_hyperdiffusion.hpp.html#file-include-advection-hyperdiffusion.hpp">hyperdiffusion.hpp</a></li></ul></li><li>Directory <a href="dir_include_core.html#dir-include-core">core</a><ul><li>File <a href="file_include_core_common.hpp.html#file-include-core-common.hpp">common.hpp</a></li><li>File <a href="file_include_core_compile_time_dispatcher.hpp.html#file-include-core-compile-time-dispatcher.hpp">compile_time_dispatcher.hpp</a></li><li>File <a href="file_include_core_config_params.hpp.html#file-include-core-config-params.hpp">config_params.hpp</a></li><li>File <a href="file_include_core_config_parser.hpp.html#file-include-core-config-parser.hpp">config_parser.hpp</a></li><li>File <a href="file_include_core_constants.hpp.html#file-include-core-constants.hpp">constants.hpp</a></li><li>File <a href="file_include_core_custom_exceptions.hpp.html#file-include-core-custom-exceptions.hpp">custom_exceptions.hpp</a></li><li>File <a href="file_include_core_simulation2d.hpp.html#file-include-core-simulation2d.hpp">simulation2d.hpp</a></li><li class="lastChild">File <a href="file_include_core_version.hpp.html#file-include-core-version.hpp">version.hpp</a></li></ul></li><li>Directory <a href="dir_include_equations.html#dir-include-equations">equations</a><ul><li class="lastChild">File <a href="file_include_equations_equations.hpp.html#file-include-equations-equations.hpp">equations.hpp</a></li></ul></li><li>Directory <a href="dir_include_grid.html#dir-include-grid">grid</a><ul><li>File <a href="file_include_grid_cell_center.hpp.html#file-include-grid-cell-center.hpp">cell_center.hpp</a></li><li>File <a href="file_include_grid_cell_interface.hpp.html#file-include-grid-cell-interface.hpp">cell_interface.hpp</a></li><li>File <a href="file_include_grid_grid.hpp.html#file-include-grid-grid.hpp">grid.hpp</a></li><li>File <a href="file_include_grid_grid_builder.hpp.html#file-include-grid-grid-builder.hpp">grid_builder.hpp</a></li><li>File <a href="file_include_grid_grid_state.hpp.html#file-include-grid-grid-state.hpp">grid_state.hpp</a></li><li class="lastChild">File <a href="file_include_grid_quantity.hpp.html#file-include-grid-quantity.hpp">quantity.hpp</a></li></ul></li><li>Directory <a href="dir_include_io.html#dir-include-io">io</a><ul><li>File <a href="file_include_io_print_console.hpp.html#file-include-io-print-console.hpp">print_console.hpp</a></li><li class="lastChild">File <a href="file_include_io_profile_writer.hpp.html#file-include-io-profile-writer.hpp">profile_writer.hpp</a></li></ul></li><li>Directory <a href="dir_include_models.html#dir-include-models">models</a><ul><li>File <a href="file_include_models_envelope_builder.hpp.html#file-include-models-envelope-builder.hpp">envelope_builder.hpp</a></li><li>File <a href="file_include_models_initial_models.hpp.html#file-include-models-initial-models.hpp">initial_models.hpp</a></li><li class="lastChild">File <a href="file_include_models_stellar_input.hpp.html#file-include-models-stellar-input.hpp">stellar_input.hpp</a></li></ul></li><li class="lastChild">Directory <a href="dir_include_time_solver.html#dir-include-time-solver">time_solver</a><ul><li class="lastChild">File <a href="file_include_time_solver_time_solver.hpp.html#file-include-time-solver-time-solver.hpp">time_solver.hpp</a></li></ul></li></ul></li>
+    </ul>
+  </li><!-- only tree view element -->
+</ul><!-- /treeView file-treeView --></section>
+<section id="full-api">
+<h2>Full API<a class="headerlink" href="#full-api" title="Link to this heading"></a></h2>
+<section id="namespaces">
+<h3>Namespaces<a class="headerlink" href="#namespaces" title="Link to this heading"></a></h3>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="namespace_component_tags.html">Namespace component_tags</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="namespace_component_tags.html#detailed-description">Detailed Description</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="namespace_constants.html">Namespace constants</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="namespace_constants.html#variables">Variables</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="namespace_envelope.html">Namespace envelope</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="namespace_envelope.html#functions">Functions</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="namespace_grid.html">Namespace grid</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="namespace_grid.html#functions">Functions</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="namespace_io.html">Namespace io</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="namespace_io.html#functions">Functions</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="namespace_model.html">Namespace model</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="namespace_model.html#detailed-description">Detailed Description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="namespace_model.html#classes">Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="namespace_model.html#enums">Enums</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="namespace_mpuls.html">Namespace mpuls</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="namespace_mpuls.html#variables">Variables</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="namespace_simulation_2d.html">Namespace simulation_2d</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="namespace_simulation_2d.html#classes">Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="namespace_simulation_2d.html#functions">Functions</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="namespace_solver_params.html">Namespace solver_params</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="namespace_solver_params.html#detailed-description">Detailed Description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="namespace_solver_params.html#enums">Enums</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="namespace_std.html">Namespace std</a></li>
+</ul>
+</div>
+</section>
+<section id="classes-and-structs">
+<h3>Classes and Structs<a class="headerlink" href="#classes-and-structs" title="Link to this heading"></a></h3>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="structCellCenter.html">Struct CellCenter</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="structCellCenter.html#struct-documentation">Struct Documentation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="structCellCenter.html#_CPPv410CellCenter"><code class="docutils literal notranslate"><span class="pre">CellCenter</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="structCellCenter.html#_CPPv4N10CellCenter11temperatureE"><code class="docutils literal notranslate"><span class="pre">temperature</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="structCellCenter.html#_CPPv4N10CellCenter7densityE"><code class="docutils literal notranslate"><span class="pre">density</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="structCellCenter.html#_CPPv4N10CellCenter8pressureE"><code class="docutils literal notranslate"><span class="pre">pressure</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="structCellCenter.html#_CPPv4N10CellCenter15internal_energyE"><code class="docutils literal notranslate"><span class="pre">internal_energy</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="structCellCenter.html#_CPPv4N10CellCenter7opacityE"><code class="docutils literal notranslate"><span class="pre">opacity</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="structCellCenter.html#_CPPv4N10CellCenter13heat_capacityE"><code class="docutils literal notranslate"><span class="pre">heat_capacity</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="structCellCenter.html#_CPPv4N10CellCenter15specific_volumeE"><code class="docutils literal notranslate"><span class="pre">specific_volume</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="structCellCenter.html#_CPPv4N10CellCenter20radiative_luminosityE"><code class="docutils literal notranslate"><span class="pre">radiative_luminosity</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="structCellCenter.html#_CPPv4N10CellCenter21convective_luminosityE"><code class="docutils literal notranslate"><span class="pre">convective_luminosity</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="structCellCenter.html#_CPPv4N10CellCenter20turbulent_luminosityE"><code class="docutils literal notranslate"><span class="pre">turbulent_luminosity</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="structCellCenter.html#_CPPv4N10CellCenter16turbulent_energyE"><code class="docutils literal notranslate"><span class="pre">turbulent_energy</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="structCellCenter.html#_CPPv4N10CellCenter16turbulent_sourceE"><code class="docutils literal notranslate"><span class="pre">turbulent_source</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="structCellCenter.html#_CPPv4N10CellCenter21turbulent_dissipationE"><code class="docutils literal notranslate"><span class="pre">turbulent_dissipation</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="structCellCenter.html#_CPPv4N10CellCenter17radiative_dampingE"><code class="docutils literal notranslate"><span class="pre">radiative_damping</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="structCellCenter.html#_CPPv4N10CellCenter13energy_sourceE"><code class="docutils literal notranslate"><span class="pre">energy_source</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="structCellInterface.html">Struct CellInterface</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="structCellInterface.html#struct-documentation">Struct Documentation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="structCellInterface.html#_CPPv413CellInterface"><code class="docutils literal notranslate"><span class="pre">CellInterface</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="structCellInterface.html#_CPPv4N13CellInterface6radiusE"><code class="docutils literal notranslate"><span class="pre">radius</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="structCellInterface.html#_CPPv4N13CellInterface8velocityE"><code class="docutils literal notranslate"><span class="pre">velocity</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="structCellInterface.html#_CPPv4N13CellInterface13enclosed_massE"><code class="docutils literal notranslate"><span class="pre">enclosed_mass</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="structCellInterface.html#_CPPv4N13CellInterface21pressure_scale_heightE"><code class="docutils literal notranslate"><span class="pre">pressure_scale_height</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="structCellInterface.html#_CPPv4N13CellInterface23superadiabatic_gradientE"><code class="docutils literal notranslate"><span class="pre">superadiabatic_gradient</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="structCellInterface.html#_CPPv4N13CellInterface20radiative_luminosityE"><code class="docutils literal notranslate"><span class="pre">radiative_luminosity</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="structCellInterface.html#_CPPv4N13CellInterface21convective_luminosityE"><code class="docutils literal notranslate"><span class="pre">convective_luminosity</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="structCellInterface.html#_CPPv4N13CellInterface20turbulent_luminosityE"><code class="docutils literal notranslate"><span class="pre">turbulent_luminosity</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="structCellInterface.html#_CPPv4N13CellInterface18turbulent_velocityE"><code class="docutils literal notranslate"><span class="pre">turbulent_velocity</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="structCellInterface.html#_CPPv4N13CellInterface21convective_efficiencyE"><code class="docutils literal notranslate"><span class="pre">convective_efficiency</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="structConfig.html">Struct Config</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="structConfig.html#struct-documentation">Struct Documentation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="structConfig.html#_CPPv46Config"><code class="docutils literal notranslate"><span class="pre">Config</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="structConfig.html#_CPPv4N6Config10output_dirE"><code class="docutils literal notranslate"><span class="pre">output_dir</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="structConfig.html#_CPPv4N6Config13output_formatE"><code class="docutils literal notranslate"><span class="pre">output_format</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="structConfig.html#_CPPv4N6Config19output_summary_nameE"><code class="docutils literal notranslate"><span class="pre">output_summary_name</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="structConfig.html#_CPPv4N6Config13output_prefixE"><code class="docutils literal notranslate"><span class="pre">output_prefix</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="structConfig.html#_CPPv4N6Config14inner_boundaryE"><code class="docutils literal notranslate"><span class="pre">inner_boundary</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="structConfig.html#_CPPv4N6Config14outer_boundaryE"><code class="docutils literal notranslate"><span class="pre">outer_boundary</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="structConfig.html#_CPPv4N6Config15integrator_typeE"><code class="docutils literal notranslate"><span class="pre">integrator_type</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="structConfig.html#_CPPv4N6Config9time_stepE"><code class="docutils literal notranslate"><span class="pre">time_step</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="structConfig.html#_CPPv4N6Config7delta_tE"><code class="docutils literal notranslate"><span class="pre">delta_t</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="structConfig.html#_CPPv4N6Config5t_maxE"><code class="docutils literal notranslate"><span class="pre">t_max</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="structConfig.html#_CPPv4N6Config6t_initE"><code class="docutils literal notranslate"><span class="pre">t_init</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="structConfig.html#_CPPv4N6Config10dimensionsE"><code class="docutils literal notranslate"><span class="pre">dimensions</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="structConfig.html#_CPPv4N6Config4modeE"><code class="docutils literal notranslate"><span class="pre">mode</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="structConfig.html#_CPPv4N6Config18stellar_parametersE"><code class="docutils literal notranslate"><span class="pre">stellar_parameters</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="structConfig.html#_CPPv4N6Config5modelE"><code class="docutils literal notranslate"><span class="pre">model</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="structConfig.html#_CPPv4N6Config10solver_cfgE"><code class="docutils literal notranslate"><span class="pre">solver_cfg</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="structConfig.html#_CPPv4N6Config8grid_cfgE"><code class="docutils literal notranslate"><span class="pre">grid_cfg</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="structConfig.html#_CPPv4N6Config11grid_2d_cfgE"><code class="docutils literal notranslate"><span class="pre">grid_2d_cfg</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="structGrid.html">Struct Grid</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="structGrid.html#struct-documentation">Struct Documentation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="structGrid.html#_CPPv44Grid"><code class="docutils literal notranslate"><span class="pre">Grid</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="structGrid.html#_CPPv4N4Grid7centersE"><code class="docutils literal notranslate"><span class="pre">centers</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="structGrid.html#_CPPv4N4Grid5facesE"><code class="docutils literal notranslate"><span class="pre">faces</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="structGrid2Dconfig.html">Struct Grid2Dconfig</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="structGrid2Dconfig.html#struct-documentation">Struct Documentation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="structGrid2Dconfig.html#_CPPv412Grid2Dconfig"><code class="docutils literal notranslate"><span class="pre">Grid2Dconfig</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="structGrid2Dconfig.html#_CPPv4N12Grid2Dconfig8GridTypeE"><code class="docutils literal notranslate"><span class="pre">GridType</span></code></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="structGrid2Dconfig.html#_CPPv4N12Grid2Dconfig8GridType7UniformE"><code class="docutils literal notranslate"><span class="pre">Uniform</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="structGrid2Dconfig.html#_CPPv4N12Grid2Dconfig4NradE"><code class="docutils literal notranslate"><span class="pre">Nrad</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="structGrid2Dconfig.html#_CPPv4N12Grid2Dconfig4NhorE"><code class="docutils literal notranslate"><span class="pre">Nhor</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="structGrid2Dconfig.html#_CPPv4N12Grid2Dconfig10Nghost_radE"><code class="docutils literal notranslate"><span class="pre">Nghost_rad</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="structGrid2Dconfig.html#_CPPv4N12Grid2Dconfig10Nghost_horE"><code class="docutils literal notranslate"><span class="pre">Nghost_hor</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="structGrid2Dconfig.html#_CPPv4N12Grid2Dconfig2r0E"><code class="docutils literal notranslate"><span class="pre">r0</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="structGrid2Dconfig.html#_CPPv4N12Grid2Dconfig2rNE"><code class="docutils literal notranslate"><span class="pre">rN</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="structGrid2Dconfig.html#_CPPv4N12Grid2Dconfig6theta0E"><code class="docutils literal notranslate"><span class="pre">theta0</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="structGrid2Dconfig.html#_CPPv4N12Grid2Dconfig6thetaNE"><code class="docutils literal notranslate"><span class="pre">thetaN</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="structGrid2Dconfig.html#_CPPv4N12Grid2Dconfig4typeE"><code class="docutils literal notranslate"><span class="pre">type</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="structGridConfig.html">Struct GridConfig</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="structGridConfig.html#struct-documentation">Struct Documentation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="structGridConfig.html#_CPPv410GridConfig"><code class="docutils literal notranslate"><span class="pre">GridConfig</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="structGridConfig.html#_CPPv4N10GridConfig20number_of_grid_cellsE"><code class="docutils literal notranslate"><span class="pre">number_of_grid_cells</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="structGridConfig.html#_CPPv4N10GridConfig10radius_minE"><code class="docutils literal notranslate"><span class="pre">radius_min</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="structGridConfig.html#_CPPv4N10GridConfig10radius_maxE"><code class="docutils literal notranslate"><span class="pre">radius_max</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="structGridConfig.html#_CPPv4N10GridConfig5scaleE"><code class="docutils literal notranslate"><span class="pre">scale</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="structmodel_1_1ModelConfig.html">Struct ModelConfig</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="structmodel_1_1ModelConfig.html#struct-documentation">Struct Documentation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="structmodel_1_1ModelConfig.html#_CPPv4N5model11ModelConfigE"><code class="docutils literal notranslate"><span class="pre">model::ModelConfig</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="structmodel_1_1ModelConfig.html#_CPPv4N5model11ModelConfig4typeE"><code class="docutils literal notranslate"><span class="pre">type</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="structmodel_1_1ModelConfig.html#_CPPv4N5model11ModelConfig13initial_modelE"><code class="docutils literal notranslate"><span class="pre">initial_model</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="structmodel_1_1ModelConfig.html#_CPPv4N5model11ModelConfig6paramsE"><code class="docutils literal notranslate"><span class="pre">params</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="structQuantityTraits.html">Template Struct QuantityTraits</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="structQuantityTraits.html#struct-documentation">Struct Documentation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="structQuantityTraits.html#_CPPv4I0E14QuantityTraits"><code class="docutils literal notranslate"><span class="pre">QuantityTraits</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="structQuantityTraits.html#_CPPv4N14QuantityTraits1DE"><code class="docutils literal notranslate"><span class="pre">D</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="structQuantityTraits.html#_CPPv4N14QuantityTraits1NE"><code class="docutils literal notranslate"><span class="pre">N</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="structsimulation__2d_1_1always__false.html">Template Struct always_false</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="structsimulation__2d_1_1always__false.html#struct-documentation">Struct Documentation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="structsimulation__2d_1_1always__false.html#_CPPv4I0EN13simulation_2d12always_falseE"><code class="docutils literal notranslate"><span class="pre">simulation_2d::always_false</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="structsimulation__2d_1_1always__false.html#_CPPv4N13simulation_2d12always_false5valueE"><code class="docutils literal notranslate"><span class="pre">value</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="structsimulation__2d_1_1EquationTraits.html">Template Struct EquationTraits</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="structsimulation__2d_1_1EquationTraits.html#struct-documentation">Struct Documentation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="structsimulation__2d_1_1EquationTraits.html#_CPPv4I0EN13simulation_2d14EquationTraitsE"><code class="docutils literal notranslate"><span class="pre">simulation_2d::EquationTraits</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="structSolverConfig.html">Struct SolverConfig</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="structSolverConfig.html#struct-documentation">Struct Documentation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="structSolverConfig.html#_CPPv412SolverConfig"><code class="docutils literal notranslate"><span class="pre">SolverConfig</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="structSolverConfig.html#_CPPv4N12SolverConfig7limiterE"><code class="docutils literal notranslate"><span class="pre">limiter</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="structSolverConfig.html#_CPPv4N12SolverConfig15flux_calculatorE"><code class="docutils literal notranslate"><span class="pre">flux_calculator</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="structSolverConfig.html#_CPPv4N12SolverConfig13reconstructorE"><code class="docutils literal notranslate"><span class="pre">reconstructor</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="structSolverConfig.html#_CPPv4N12SolverConfig10integratorE"><code class="docutils literal notranslate"><span class="pre">integrator</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="structSolverConfig.html#_CPPv4N12SolverConfig10cfl_numberE"><code class="docutils literal notranslate"><span class="pre">cfl_number</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="structSolverConfig.html#_CPPv4N12SolverConfig16hyperdiffusivityE"><code class="docutils literal notranslate"><span class="pre">hyperdiffusivity</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="structSolverConfig.html#_CPPv4N12SolverConfig12is_diffusionE"><code class="docutils literal notranslate"><span class="pre">is_diffusion</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="structStellarInput.html">Struct StellarInput</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="structStellarInput.html#struct-documentation">Struct Documentation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="structStellarInput.html#_CPPv412StellarInput"><code class="docutils literal notranslate"><span class="pre">StellarInput</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="structStellarInput.html#_CPPv4N12StellarInput4massE"><code class="docutils literal notranslate"><span class="pre">mass</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="structStellarInput.html#_CPPv4N12StellarInput6radiusE"><code class="docutils literal notranslate"><span class="pre">radius</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="structStellarInput.html#_CPPv4N12StellarInput10luminosityE"><code class="docutils literal notranslate"><span class="pre">luminosity</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="structStellarInput.html#_CPPv4N12StellarInput5t_effE"><code class="docutils literal notranslate"><span class="pre">t_eff</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="structStellarInput.html#_CPPv4N12StellarInput11metallicityE"><code class="docutils literal notranslate"><span class="pre">metallicity</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="structStellarInput.html#_CPPv4N12StellarInput8grid_cfgE"><code class="docutils literal notranslate"><span class="pre">grid_cfg</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="structStellarParameters.html">Struct StellarParameters</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="structStellarParameters.html#struct-documentation">Struct Documentation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="structStellarParameters.html#_CPPv417StellarParameters"><code class="docutils literal notranslate"><span class="pre">StellarParameters</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="structStellarParameters.html#_CPPv4N17StellarParameters12stellar_massE"><code class="docutils literal notranslate"><span class="pre">stellar_mass</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="structStellarParameters.html#_CPPv4N17StellarParameters14stellar_radiusE"><code class="docutils literal notranslate"><span class="pre">stellar_radius</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="structStellarParameters.html#_CPPv4N17StellarParameters5t_effE"><code class="docutils literal notranslate"><span class="pre">t_eff</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="structStellarParameters.html#_CPPv4N17StellarParameters10luminosityE"><code class="docutils literal notranslate"><span class="pre">luminosity</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="structStellarParameters.html#_CPPv4N17StellarParameters11metallicityE"><code class="docutils literal notranslate"><span class="pre">metallicity</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="classBoundary2DPerHorRigidRad.html">Template Class Boundary2DPerHorRigidRad</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="classBoundary2DPerHorRigidRad.html#class-documentation">Class Documentation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="classBoundary2DPerHorRigidRad.html#_CPPv4I_12QuantityTypeE24Boundary2DPerHorRigidRad"><code class="docutils literal notranslate"><span class="pre">Boundary2DPerHorRigidRad</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="classBoundary2DPerHorRigidRad.html#_CPPv4N24Boundary2DPerHorRigidRad13setConditionsER6Grid2dI1QE"><code class="docutils literal notranslate"><span class="pre">setConditions()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classBoundary2DPerHorRigidRad.html#_CPPv4N24Boundary2DPerHorRigidRad1DE"><code class="docutils literal notranslate"><span class="pre">D</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="classBoundary2DPeriodic.html">Template Class Boundary2DPeriodic</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="classBoundary2DPeriodic.html#class-documentation">Class Documentation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="classBoundary2DPeriodic.html#_CPPv4I_12QuantityTypeE18Boundary2DPeriodic"><code class="docutils literal notranslate"><span class="pre">Boundary2DPeriodic</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="classBoundary2DPeriodic.html#_CPPv4N18Boundary2DPeriodic1DE"><code class="docutils literal notranslate"><span class="pre">D</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classBoundary2DPeriodic.html#_CPPv4N18Boundary2DPeriodic13setConditionsER6Grid2dI1QE"><code class="docutils literal notranslate"><span class="pre">setConditions()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="classCFL.html">Template Class CFL</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="classCFL.html#class-documentation">Class Documentation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="classCFL.html#_CPPv4I_12QuantityType0E3CFL"><code class="docutils literal notranslate"><span class="pre">CFL</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="classCFL.html#_CPPv4N3CFL3CFLE1DR8EquationR16GridDimensions2dI1DE"><code class="docutils literal notranslate"><span class="pre">CFL()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classCFL.html#_CPPv4N3CFL8getNewDtERK6Grid2dI1QE"><code class="docutils literal notranslate"><span class="pre">getNewDt()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classCFL.html#_CPPv4N3CFL1DE"><code class="docutils literal notranslate"><span class="pre">D</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classCFL.html#_CPPv4N3CFL10cfl_numberE"><code class="docutils literal notranslate"><span class="pre">cfl_number</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classCFL.html#_CPPv4N3CFL2eqE"><code class="docutils literal notranslate"><span class="pre">eq</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classCFL.html#_CPPv4N3CFL8grid_dimE"><code class="docutils literal notranslate"><span class="pre">grid_dim</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="classCIRFlux.html">Template Class CIRFlux</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="classCIRFlux.html#class-documentation">Class Documentation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="classCIRFlux.html#_CPPv4I_12QuantityType_9Direction_12EquationTypeI1QEE7CIRFlux"><code class="docutils literal notranslate"><span class="pre">CIRFlux</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="classCIRFlux.html#_CPPv4N7CIRFlux7CIRFluxER2Eq"><code class="docutils literal notranslate"><span class="pre">CIRFlux()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classCIRFlux.html#_CPPv4NK7CIRFluxclERK1QRK1QNSt4spanIK1DEE"><code class="docutils literal notranslate"><span class="pre">operator()()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classCIRFlux.html#_CPPv4N7CIRFlux1DE"><code class="docutils literal notranslate"><span class="pre">D</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classCIRFlux.html#_CPPv4N7CIRFlux2eqE"><code class="docutils literal notranslate"><span class="pre">eq</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="classDiffusion2d.html">Template Class Diffusion2d</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="classDiffusion2d.html#class-documentation">Class Documentation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="classDiffusion2d.html#_CPPv4I0_12QuantityTypeE11Diffusion2d"><code class="docutils literal notranslate"><span class="pre">Diffusion2d</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="classDiffusion2d.html#_CPPv4N11Diffusion2d11Diffusion2dER8DiffTypeR16GridDimensions2dI1DE"><code class="docutils literal notranslate"><span class="pre">Diffusion2d()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classDiffusion2d.html#_CPPv4N11Diffusion2dclERK6Grid2dI1QE6size_t6size_t"><code class="docutils literal notranslate"><span class="pre">operator()()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classDiffusion2d.html#_CPPv4N11Diffusion2d1DE"><code class="docutils literal notranslate"><span class="pre">D</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classDiffusion2d.html#_CPPv4N11Diffusion2d11diffusivityE"><code class="docutils literal notranslate"><span class="pre">diffusivity</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classDiffusion2d.html#_CPPv4N11Diffusion2d9grid_dimsE"><code class="docutils literal notranslate"><span class="pre">grid_dims</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="classEquationBase.html">Template Class EquationBase</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="classEquationBase.html#inheritance-relationships">Inheritance Relationships</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="classEquationBase.html#derived-types">Derived Types</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="classEquationBase.html#class-documentation">Class Documentation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="classEquationBase.html#_CPPv4I_12QuantityTypeE12EquationBase"><code class="docutils literal notranslate"><span class="pre">EquationBase</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="classEquationBase.html#_CPPv4N12EquationBaseD0Ev"><code class="docutils literal notranslate"><span class="pre">~EquationBase()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classEquationBase.html#_CPPv4NK12EquationBase11computeFluxERK1Q9DirectionNSt4spanIK1DEE"><code class="docutils literal notranslate"><span class="pre">computeFlux()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classEquationBase.html#_CPPv4NK12EquationBase14getMaxVelocityERK1Q9DirectionNSt4spanIK1DEE"><code class="docutils literal notranslate"><span class="pre">getMaxVelocity()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classEquationBase.html#_CPPv4NK12EquationBase8getSpeedERK1Q9DirectionNSt4spanIK1DEE"><code class="docutils literal notranslate"><span class="pre">getSpeed()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classEquationBase.html#_CPPv4NK12EquationBase13computeSourceERK1QNSt4spanIK1DEE"><code class="docutils literal notranslate"><span class="pre">computeSource()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classEquationBase.html#_CPPv4N12EquationBase1DE"><code class="docutils literal notranslate"><span class="pre">D</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="classEuler2d.html">Template Class Euler2d</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="classEuler2d.html#inheritance-relationships">Inheritance Relationships</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="classEuler2d.html#base-type">Base Type</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="classEuler2d.html#class-documentation">Class Documentation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="classEuler2d.html#_CPPv4I_14TwoDimensional_12QuantityTypeE7Euler2d"><code class="docutils literal notranslate"><span class="pre">Euler2d</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="classEuler2d.html#_CPPv4N7Euler2d7Euler2dEv"><code class="docutils literal notranslate"><span class="pre">Euler2d()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classEuler2d.html#_CPPv4NK7Euler2d8getGammaEv"><code class="docutils literal notranslate"><span class="pre">getGamma()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classEuler2d.html#_CPPv4N7Euler2d8setGammaE1D"><code class="docutils literal notranslate"><span class="pre">setGamma()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classEuler2d.html#_CPPv4NK7Euler2d11computeFluxERK1Q9DirectionNSt4spanIK1DEE"><code class="docutils literal notranslate"><span class="pre">computeFlux()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classEuler2d.html#_CPPv4NK7Euler2d14getMaxVelocityERK1Q9DirectionNSt4spanIK1DEE"><code class="docutils literal notranslate"><span class="pre">getMaxVelocity()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classEuler2d.html#_CPPv4NK7Euler2d8getSpeedERK1Q9DirectionNSt4spanIK1DEE"><code class="docutils literal notranslate"><span class="pre">getSpeed()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classEuler2d.html#_CPPv4NK7Euler2d13computeSourceERK1QNSt4spanIK1DEE"><code class="docutils literal notranslate"><span class="pre">computeSource()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classEuler2d.html#_CPPv4N7Euler2d1DE"><code class="docutils literal notranslate"><span class="pre">D</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classEuler2d.html#_CPPv4NK7Euler2d8pressureEK1Q"><code class="docutils literal notranslate"><span class="pre">pressure()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classEuler2d.html#_CPPv4N7Euler2d5gammaE"><code class="docutils literal notranslate"><span class="pre">gamma</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="classFluxOperator.html">Template Class FluxOperator</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="classFluxOperator.html#class-documentation">Class Documentation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="classFluxOperator.html#_CPPv4I_12QuantityType_18ReconstructionTypeI1QE0E12FluxOperator"><code class="docutils literal notranslate"><span class="pre">FluxOperator</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="classFluxOperator.html#_CPPv4N12FluxOperator12FluxOperatorE9DirectionR16GridDimensions2dI1DER7ReconstR8Fluxcalc"><code class="docutils literal notranslate"><span class="pre">FluxOperator()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classFluxOperator.html#_CPPv4N12FluxOperatorclERK6Grid2dI1QE6size_t6size_t"><code class="docutils literal notranslate"><span class="pre">operator()()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classFluxOperator.html#_CPPv4N12FluxOperator1DE"><code class="docutils literal notranslate"><span class="pre">D</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classFluxOperator.html#_CPPv4N12FluxOperator9directionE"><code class="docutils literal notranslate"><span class="pre">direction</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classFluxOperator.html#_CPPv4N12FluxOperator9grid_dimsE"><code class="docutils literal notranslate"><span class="pre">grid_dims</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classFluxOperator.html#_CPPv4N12FluxOperator7reconstE"><code class="docutils literal notranslate"><span class="pre">reconst</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classFluxOperator.html#_CPPv4N12FluxOperator8fluxcalcE"><code class="docutils literal notranslate"><span class="pre">fluxcalc</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classFluxOperator.html#_CPPv4N12FluxOperator1NE"><code class="docutils literal notranslate"><span class="pre">N</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="classGrid2d.html">Template Class Grid2d</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="classGrid2d.html#class-documentation">Class Documentation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="classGrid2d.html#_CPPv4I_12QuantityTypeE6Grid2d"><code class="docutils literal notranslate"><span class="pre">Grid2d</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="classGrid2d.html#_CPPv4N6Grid2d6Grid2dE6size_t6size_t6size_t6size_t"><code class="docutils literal notranslate"><span class="pre">Grid2d()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classGrid2d.html#_CPPv4N6Grid2d6Grid2dEv"><code class="docutils literal notranslate"><span class="pre">Grid2d()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classGrid2d.html#_CPPv4N6Grid2d6Grid2dERK6Grid2d"><code class="docutils literal notranslate"><span class="pre">Grid2d()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classGrid2d.html#_CPPv4N6Grid2daSERK6Grid2d"><code class="docutils literal notranslate"><span class="pre">operator=()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classGrid2d.html#_CPPv4NK6Grid2d7getGridEv"><code class="docutils literal notranslate"><span class="pre">getGrid()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classGrid2d.html#_CPPv4NK6Grid2d11getQuantityE6size_t6size_t"><code class="docutils literal notranslate"><span class="pre">getQuantity()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classGrid2d.html#_CPPv4N6Grid2d11setQuantityE1Q6size_t6size_t"><code class="docutils literal notranslate"><span class="pre">setQuantity()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classGrid2d.html#_CPPv4NK6Grid2d5getNrEv"><code class="docutils literal notranslate"><span class="pre">getNr()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classGrid2d.html#_CPPv4NK6Grid2d5getNhEv"><code class="docutils literal notranslate"><span class="pre">getNh()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classGrid2d.html#_CPPv4NK6Grid2d10getNrGhostEv"><code class="docutils literal notranslate"><span class="pre">getNrGhost()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classGrid2d.html#_CPPv4NK6Grid2d10getNhGhostEv"><code class="docutils literal notranslate"><span class="pre">getNhGhost()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classGrid2d.html#_CPPv4N6Grid2d1DE"><code class="docutils literal notranslate"><span class="pre">D</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classGrid2d.html#_CPPv4N6Grid2d4gridE"><code class="docutils literal notranslate"><span class="pre">grid</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classGrid2d.html#_CPPv4N6Grid2d8n_radialE"><code class="docutils literal notranslate"><span class="pre">n_radial</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classGrid2d.html#_CPPv4N6Grid2d12n_horizontalE"><code class="docutils literal notranslate"><span class="pre">n_horizontal</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classGrid2d.html#_CPPv4N6Grid2d14n_radial_ghostE"><code class="docutils literal notranslate"><span class="pre">n_radial_ghost</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classGrid2d.html#_CPPv4N6Grid2d18n_horizontal_ghostE"><code class="docutils literal notranslate"><span class="pre">n_horizontal_ghost</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classGrid2d.html#_CPPv4N6Grid2d1NE"><code class="docutils literal notranslate"><span class="pre">N</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="classGridDimensions2d.html">Template Class GridDimensions2d</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="classGridDimensions2d.html#class-documentation">Class Documentation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="classGridDimensions2d.html#_CPPv4I0E16GridDimensions2d"><code class="docutils literal notranslate"><span class="pre">GridDimensions2d</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="classGridDimensions2d.html#_CPPv4N16GridDimensions2d16GridDimensions2dEv"><code class="docutils literal notranslate"><span class="pre">GridDimensions2d()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classGridDimensions2d.html#_CPPv4N16GridDimensions2d16GridDimensions2dE6size_t6size_t"><code class="docutils literal notranslate"><span class="pre">GridDimensions2d()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classGridDimensions2d.html#_CPPv4NK16GridDimensions2d10getNradialEv"><code class="docutils literal notranslate"><span class="pre">getNradial()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classGridDimensions2d.html#_CPPv4NK16GridDimensions2d14getNhorizontalEv"><code class="docutils literal notranslate"><span class="pre">getNhorizontal()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classGridDimensions2d.html#_CPPv4NK16GridDimensions2d20getRadialCoordinatesEv"><code class="docutils literal notranslate"><span class="pre">getRadialCoordinates()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classGridDimensions2d.html#_CPPv4NK16GridDimensions2d24getHorizontalCoordinatesEv"><code class="docutils literal notranslate"><span class="pre">getHorizontalCoordinates()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classGridDimensions2d.html#_CPPv4N16GridDimensions2d11radialCoordE6size_t"><code class="docutils literal notranslate"><span class="pre">radialCoord()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classGridDimensions2d.html#_CPPv4NK16GridDimensions2d11radialCoordE6size_t"><code class="docutils literal notranslate"><span class="pre">radialCoord()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classGridDimensions2d.html#_CPPv4N16GridDimensions2d15horizontalCoordE6size_t"><code class="docutils literal notranslate"><span class="pre">horizontalCoord()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classGridDimensions2d.html#_CPPv4NK16GridDimensions2d15horizontalCoordE6size_t"><code class="docutils literal notranslate"><span class="pre">horizontalCoord()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classGridDimensions2d.html#_CPPv4N16GridDimensions2d19interfaceAreaIphalfE6size_t6size_t"><code class="docutils literal notranslate"><span class="pre">interfaceAreaIphalf()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classGridDimensions2d.html#_CPPv4N16GridDimensions2d19interfaceAreaJphalfE6size_t6size_t"><code class="docutils literal notranslate"><span class="pre">interfaceAreaJphalf()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classGridDimensions2d.html#_CPPv4N16GridDimensions2d10cellVolumeE6size_t6size_t"><code class="docutils literal notranslate"><span class="pre">cellVolume()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classGridDimensions2d.html#_CPPv4N16GridDimensions2d17createUniformGridE6size_t6size_t1D1D1D1D"><code class="docutils literal notranslate"><span class="pre">createUniformGrid()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classGridDimensions2d.html#_CPPv4N16GridDimensions2d14n_radial_totalE"><code class="docutils literal notranslate"><span class="pre">n_radial_total</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classGridDimensions2d.html#_CPPv4N16GridDimensions2d18n_horizontal_totalE"><code class="docutils literal notranslate"><span class="pre">n_horizontal_total</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classGridDimensions2d.html#_CPPv4N16GridDimensions2d18radial_coordinatesE"><code class="docutils literal notranslate"><span class="pre">radial_coordinates</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classGridDimensions2d.html#_CPPv4N16GridDimensions2d22horizontal_coordinatesE"><code class="docutils literal notranslate"><span class="pre">horizontal_coordinates</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="classHyperDiffusion.html">Template Class HyperDiffusion</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="classHyperDiffusion.html#class-documentation">Class Documentation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="classHyperDiffusion.html#_CPPv4I_12QuantityType_12EquationTypeI1QEE14HyperDiffusion"><code class="docutils literal notranslate"><span class="pre">HyperDiffusion</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="classHyperDiffusion.html#_CPPv4N14HyperDiffusion14HyperDiffusionER16GridDimensions2dI1DER2Eq"><code class="docutils literal notranslate"><span class="pre">HyperDiffusion()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classHyperDiffusion.html#_CPPv4N14HyperDiffusionD0Ev"><code class="docutils literal notranslate"><span class="pre">~HyperDiffusion()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classHyperDiffusion.html#_CPPv4N14HyperDiffusion8setCoeffEK1D"><code class="docutils literal notranslate"><span class="pre">setCoeff()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classHyperDiffusion.html#_CPPv4NK14HyperDiffusion8getCoeffEv"><code class="docutils literal notranslate"><span class="pre">getCoeff()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classHyperDiffusion.html#_CPPv4N14HyperDiffusionclERK6Grid2dI1QE6size_t6size_t9Direction"><code class="docutils literal notranslate"><span class="pre">operator()()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classHyperDiffusion.html#_CPPv4N14HyperDiffusion1DE"><code class="docutils literal notranslate"><span class="pre">D</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classHyperDiffusion.html#_CPPv4N14HyperDiffusion20firstOrderDifferenceERK6Grid2dI1QE6size_t6size_t9Direction"><code class="docutils literal notranslate"><span class="pre">firstOrderDifference()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classHyperDiffusion.html#_CPPv4N14HyperDiffusion20thirdOrderDifferenceERK6Grid2dI1QE6size_t6size_t9Direction"><code class="docutils literal notranslate"><span class="pre">thirdOrderDifference()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classHyperDiffusion.html#_CPPv4N14HyperDiffusion9grid_dimsE"><code class="docutils literal notranslate"><span class="pre">grid_dims</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classHyperDiffusion.html#_CPPv4N14HyperDiffusion5coeffE"><code class="docutils literal notranslate"><span class="pre">coeff</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classHyperDiffusion.html#_CPPv4N14HyperDiffusion2eqE"><code class="docutils literal notranslate"><span class="pre">eq</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classHyperDiffusion.html#_CPPv4N14HyperDiffusion1NE"><code class="docutils literal notranslate"><span class="pre">N</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="classLimiterBase.html">Template Class LimiterBase</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="classLimiterBase.html#inheritance-relationships">Inheritance Relationships</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="classLimiterBase.html#derived-types">Derived Types</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="classLimiterBase.html#class-documentation">Class Documentation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="classLimiterBase.html#_CPPv4I_12QuantityTypeE11LimiterBase"><code class="docutils literal notranslate"><span class="pre">LimiterBase</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="classLimiterBase.html#_CPPv4N11LimiterBaseD0Ev"><code class="docutils literal notranslate"><span class="pre">~LimiterBase()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classLimiterBase.html#_CPPv4NK11LimiterBaseclERK1QRK1Q"><code class="docutils literal notranslate"><span class="pre">operator()()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classLimiterBase.html#_CPPv4N11LimiterBase1DE"><code class="docutils literal notranslate"><span class="pre">D</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="classLLFflux.html">Template Class LLFflux</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="classLLFflux.html#class-documentation">Class Documentation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="classLLFflux.html#_CPPv4I_12QuantityType_9Direction_12EquationTypeI1QEE7LLFflux"><code class="docutils literal notranslate"><span class="pre">LLFflux</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="classLLFflux.html#_CPPv4N7LLFflux7LLFfluxER2Eq"><code class="docutils literal notranslate"><span class="pre">LLFflux()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classLLFflux.html#_CPPv4NK7LLFfluxclERK1QRK1QNSt4spanIK1DEE"><code class="docutils literal notranslate"><span class="pre">operator()()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classLLFflux.html#_CPPv4N7LLFflux1DE"><code class="docutils literal notranslate"><span class="pre">D</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classLLFflux.html#_CPPv4N7LLFflux2eqE"><code class="docutils literal notranslate"><span class="pre">eq</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="classMinMod.html">Template Class MinMod</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="classMinMod.html#inheritance-relationships">Inheritance Relationships</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="classMinMod.html#base-type">Base Type</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="classMinMod.html#class-documentation">Class Documentation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="classMinMod.html#_CPPv4I_12QuantityTypeE6MinMod"><code class="docutils literal notranslate"><span class="pre">MinMod</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="classMinMod.html#_CPPv4N6MinMod6MinModEv"><code class="docutils literal notranslate"><span class="pre">MinMod()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classMinMod.html#_CPPv4NK6MinModclERK1QRK1Q"><code class="docutils literal notranslate"><span class="pre">operator()()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classMinMod.html#_CPPv4N6MinMod1DE"><code class="docutils literal notranslate"><span class="pre">D</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classMinMod.html#_CPPv4NK6MinMod10single_varEK1DK1D"><code class="docutils literal notranslate"><span class="pre">single_var()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classMinMod.html#_CPPv4N6MinMod1NE"><code class="docutils literal notranslate"><span class="pre">N</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="classPCM.html">Template Class PCM</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="classPCM.html#inheritance-relationships">Inheritance Relationships</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="classPCM.html#base-type">Base Type</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="classPCM.html#class-documentation">Class Documentation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="classPCM.html#_CPPv4I_12QuantityType_9Direction_11LimiterTypeI1QEE3PCM"><code class="docutils literal notranslate"><span class="pre">PCM</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="classPCM.html#_CPPv4N3PCM3PCMER7LimiterR16GridDimensions2dI1DE"><code class="docutils literal notranslate"><span class="pre">PCM()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classPCM.html#_CPPv4N3PCM21get_left_state_radialERK6Grid2dI1QE6size_t6size_t"><code class="docutils literal notranslate"><span class="pre">get_left_state_radial()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classPCM.html#_CPPv4N3PCM25get_left_state_horizontalERK6Grid2dI1QE6size_t6size_t"><code class="docutils literal notranslate"><span class="pre">get_left_state_horizontal()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classPCM.html#_CPPv4N3PCM22get_right_state_radialERK6Grid2dI1QE6size_t6size_t"><code class="docutils literal notranslate"><span class="pre">get_right_state_radial()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classPCM.html#_CPPv4N3PCM26get_right_state_horizontalERK6Grid2dI1QE6size_t6size_t"><code class="docutils literal notranslate"><span class="pre">get_right_state_horizontal()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classPCM.html#_CPPv4N3PCM14get_left_stateERK6Grid2dI1QE6size_t6size_t"><code class="docutils literal notranslate"><span class="pre">get_left_state()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classPCM.html#_CPPv4N3PCM15get_right_stateERK6Grid2dI1QE6size_t6size_t"><code class="docutils literal notranslate"><span class="pre">get_right_state()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classPCM.html#_CPPv4N3PCM1DE"><code class="docutils literal notranslate"><span class="pre">D</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classPCM.html#_CPPv4N3PCM7limiterE"><code class="docutils literal notranslate"><span class="pre">limiter</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classPCM.html#_CPPv4N3PCM9grid_dimsE"><code class="docutils literal notranslate"><span class="pre">grid_dims</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="classPLM.html">Template Class PLM</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="classPLM.html#inheritance-relationships">Inheritance Relationships</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="classPLM.html#base-type">Base Type</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="classPLM.html#class-documentation">Class Documentation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="classPLM.html#_CPPv4I_12QuantityType_9Direction_11LimiterTypeI1QEE3PLM"><code class="docutils literal notranslate"><span class="pre">PLM</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="classPLM.html#_CPPv4N3PLM3PLMER7LimiterR16GridDimensions2dI1DE"><code class="docutils literal notranslate"><span class="pre">PLM()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classPLM.html#_CPPv4N3PLM21get_left_state_radialERK6Grid2dI1QE6size_t6size_t"><code class="docutils literal notranslate"><span class="pre">get_left_state_radial()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classPLM.html#_CPPv4N3PLM25get_left_state_horizontalERK6Grid2dI1QE6size_t6size_t"><code class="docutils literal notranslate"><span class="pre">get_left_state_horizontal()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classPLM.html#_CPPv4N3PLM22get_right_state_radialERK6Grid2dI1QE6size_t6size_t"><code class="docutils literal notranslate"><span class="pre">get_right_state_radial()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classPLM.html#_CPPv4N3PLM26get_right_state_horizontalERK6Grid2dI1QE6size_t6size_t"><code class="docutils literal notranslate"><span class="pre">get_right_state_horizontal()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classPLM.html#_CPPv4N3PLM14get_left_stateERK6Grid2dI1QE6size_t6size_t"><code class="docutils literal notranslate"><span class="pre">get_left_state()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classPLM.html#_CPPv4N3PLM15get_right_stateERK6Grid2dI1QE6size_t6size_t"><code class="docutils literal notranslate"><span class="pre">get_right_state()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classPLM.html#_CPPv4N3PLM1DE"><code class="docutils literal notranslate"><span class="pre">D</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classPLM.html#_CPPv4N3PLM7limiterE"><code class="docutils literal notranslate"><span class="pre">limiter</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classPLM.html#_CPPv4N3PLM9grid_dimsE"><code class="docutils literal notranslate"><span class="pre">grid_dims</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="classQuantityBase.html">Template Class QuantityBase</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="classQuantityBase.html#class-documentation">Class Documentation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="classQuantityBase.html#_CPPv4I0_iE12QuantityBase"><code class="docutils literal notranslate"><span class="pre">QuantityBase</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="classQuantityBase.html#_CPPv4I0EN12QuantityBase12QuantityTypeE"><code class="docutils literal notranslate"><span class="pre">QuantityBase::QuantityType</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classQuantityBase.html#_CPPv4N12QuantityBase12QuantityBaseEv"><code class="docutils literal notranslate"><span class="pre">QuantityBase()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classQuantityBase.html#_CPPv4N12QuantityBase12QuantityBaseENSt5arrayI1D1NEE"><code class="docutils literal notranslate"><span class="pre">QuantityBase()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classQuantityBase.html#_CPPv4N12QuantityBaseixE6size_t"><code class="docutils literal notranslate"><span class="pre">operator[]()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classQuantityBase.html#_CPPv4NK12QuantityBaseixEK6size_t"><code class="docutils literal notranslate"><span class="pre">operator[]()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classQuantityBase.html#_CPPv4NK12QuantityBaseplERK12QuantityBase"><code class="docutils literal notranslate"><span class="pre">operator+()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classQuantityBase.html#_CPPv4NK12QuantityBasemiERK12QuantityBase"><code class="docutils literal notranslate"><span class="pre">operator-()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classQuantityBase.html#_CPPv4NK12QuantityBasemlE1D"><code class="docutils literal notranslate"><span class="pre">operator*()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classQuantityBase.html#_CPPv4NK12QuantityBasedvE1D"><code class="docutils literal notranslate"><span class="pre">operator/()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classQuantityBase.html#_CPPv4NK12QuantityBasedvE12QuantityBase"><code class="docutils literal notranslate"><span class="pre">operator/()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classQuantityBase.html#_CPPv4NK12QuantityBasemlE12QuantityBase"><code class="docutils literal notranslate"><span class="pre">operator*()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classQuantityBase.html#_CPPv4NK12QuantityBaseplE1D"><code class="docutils literal notranslate"><span class="pre">operator+()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classQuantityBase.html#_CPPv4NK12QuantityBasemiEv"><code class="docutils literal notranslate"><span class="pre">operator-()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classQuantityBase.html#_CPPv4NK12QuantityBase3absEv"><code class="docutils literal notranslate"><span class="pre">abs()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classQuantityBase.html#_CPPv4N12QuantityBase14FixZeroDividerEv"><code class="docutils literal notranslate"><span class="pre">FixZeroDivider()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classQuantityBase.html#_CPPv4N12QuantityBase12state_vectorE"><code class="docutils literal notranslate"><span class="pre">state_vector</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classQuantityBase.html#_CPPv4I0_iEN12QuantityBasemlE12QuantityBaseI1D1NE1DRK12QuantityBaseI1D1NE"><code class="docutils literal notranslate"><span class="pre">operator*()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classQuantityBase.html#_CPPv4I0_iEN12QuantityBaseplE12QuantityBaseI1D1NE1DRK12QuantityBaseI1D1NE"><code class="docutils literal notranslate"><span class="pre">operator+()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="classReconstructionBase.html">Template Class ReconstructionBase</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="classReconstructionBase.html#inheritance-relationships">Inheritance Relationships</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="classReconstructionBase.html#derived-types">Derived Types</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="classReconstructionBase.html#class-documentation">Class Documentation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="classReconstructionBase.html#_CPPv4I_12QuantityTypeE18ReconstructionBase"><code class="docutils literal notranslate"><span class="pre">ReconstructionBase</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="classReconstructionBase.html#_CPPv4N18ReconstructionBaseD0Ev"><code class="docutils literal notranslate"><span class="pre">~ReconstructionBase()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classReconstructionBase.html#_CPPv4N18ReconstructionBase14get_left_stateERK6Grid2dI1QE6size_t6size_t"><code class="docutils literal notranslate"><span class="pre">get_left_state()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classReconstructionBase.html#_CPPv4N18ReconstructionBase15get_right_stateERK6Grid2dI1QE6size_t6size_t"><code class="docutils literal notranslate"><span class="pre">get_right_state()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="classRightHandSide.html">Template Class RightHandSide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="classRightHandSide.html#class-documentation">Class Documentation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="classRightHandSide.html#_CPPv4I_12QuantityType000_12EquationTypeI1QEE13RightHandSide"><code class="docutils literal notranslate"><span class="pre">RightHandSide</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="classRightHandSide.html#_CPPv4N13RightHandSide13RightHandSideER19FluxOperatorTypeRadR19FluxOperatorTypeHorR10SourceTypeR8Equation"><code class="docutils literal notranslate"><span class="pre">RightHandSide()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classRightHandSide.html#_CPPv4N13RightHandSideclERK6Grid2dI1QE6size_t6size_t"><code class="docutils literal notranslate"><span class="pre">operator()()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classRightHandSide.html#_CPPv4N13RightHandSide3f_rE"><code class="docutils literal notranslate"><span class="pre">f_r</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classRightHandSide.html#_CPPv4N13RightHandSide3f_tE"><code class="docutils literal notranslate"><span class="pre">f_t</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classRightHandSide.html#_CPPv4N13RightHandSide11source_termE"><code class="docutils literal notranslate"><span class="pre">source_term</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classRightHandSide.html#_CPPv4N13RightHandSide2eqE"><code class="docutils literal notranslate"><span class="pre">eq</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="classRightHandSideDecorator.html">Template Class RightHandSideDecorator</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="classRightHandSideDecorator.html#class-documentation">Class Documentation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="classRightHandSideDecorator.html#_CPPv4I00_12QuantityTypeE22RightHandSideDecorator"><code class="docutils literal notranslate"><span class="pre">RightHandSideDecorator</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="classRightHandSideDecorator.html#_CPPv4N22RightHandSideDecorator22RightHandSideDecoratorER3RHSR5NewOp"><code class="docutils literal notranslate"><span class="pre">RightHandSideDecorator()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classRightHandSideDecorator.html#_CPPv4N22RightHandSideDecoratorclERK6Grid2dI1QE6size_t6size_t"><code class="docutils literal notranslate"><span class="pre">operator()()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classRightHandSideDecorator.html#_CPPv4N22RightHandSideDecorator8originalE"><code class="docutils literal notranslate"><span class="pre">original</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classRightHandSideDecorator.html#_CPPv4N22RightHandSideDecorator12new_operatorE"><code class="docutils literal notranslate"><span class="pre">new_operator</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="classScalarTransport2d.html">Template Class ScalarTransport2d</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="classScalarTransport2d.html#inheritance-relationships">Inheritance Relationships</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="classScalarTransport2d.html#base-type">Base Type</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="classScalarTransport2d.html#class-documentation">Class Documentation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="classScalarTransport2d.html#_CPPv4I_14TwoDimensional_12QuantityTypeE17ScalarTransport2d"><code class="docutils literal notranslate"><span class="pre">ScalarTransport2d</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="classScalarTransport2d.html#_CPPv4N17ScalarTransport2d17ScalarTransport2dEv"><code class="docutils literal notranslate"><span class="pre">ScalarTransport2d()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classScalarTransport2d.html#_CPPv4N17ScalarTransport2d17ScalarTransport2dE12QuantityBaseI1DXL2EEE"><code class="docutils literal notranslate"><span class="pre">ScalarTransport2d()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classScalarTransport2d.html#_CPPv4N17ScalarTransport2d17ScalarTransport2dE1D1D"><code class="docutils literal notranslate"><span class="pre">ScalarTransport2d()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classScalarTransport2d.html#_CPPv4NK17ScalarTransport2d11getVelocityEv"><code class="docutils literal notranslate"><span class="pre">getVelocity()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classScalarTransport2d.html#_CPPv4N17ScalarTransport2d11setVelocityE12QuantityBaseI1DXL2EEE"><code class="docutils literal notranslate"><span class="pre">setVelocity()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classScalarTransport2d.html#_CPPv4NK17ScalarTransport2d11computeFluxERK1Q9DirectionNSt4spanIK1DEE"><code class="docutils literal notranslate"><span class="pre">computeFlux()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classScalarTransport2d.html#_CPPv4NK17ScalarTransport2d14getMaxVelocityERK1Q9DirectionNSt4spanIK1DEE"><code class="docutils literal notranslate"><span class="pre">getMaxVelocity()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classScalarTransport2d.html#_CPPv4NK17ScalarTransport2d8getSpeedERK1Q9DirectionNSt4spanIK1DEE"><code class="docutils literal notranslate"><span class="pre">getSpeed()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classScalarTransport2d.html#_CPPv4NK17ScalarTransport2d13computeSourceERK1QNSt4spanIK1DEE"><code class="docutils literal notranslate"><span class="pre">computeSource()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classScalarTransport2d.html#_CPPv4N17ScalarTransport2d1DE"><code class="docutils literal notranslate"><span class="pre">D</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classScalarTransport2d.html#_CPPv4N17ScalarTransport2d8velocityE"><code class="docutils literal notranslate"><span class="pre">velocity</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="classSimpleSource.html">Template Class SimpleSource</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="classSimpleSource.html#class-documentation">Class Documentation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="classSimpleSource.html#_CPPv4I_12QuantityType0E12SimpleSource"><code class="docutils literal notranslate"><span class="pre">SimpleSource</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="classSimpleSource.html#_CPPv4N12SimpleSource12SimpleSourceER8EquationR16GridDimensions2dI1DE"><code class="docutils literal notranslate"><span class="pre">SimpleSource()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classSimpleSource.html#_CPPv4N12SimpleSourceclERK6Grid2dI1QE6size_t6size_t"><code class="docutils literal notranslate"><span class="pre">operator()()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classSimpleSource.html#_CPPv4N12SimpleSource1DE"><code class="docutils literal notranslate"><span class="pre">D</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classSimpleSource.html#_CPPv4N12SimpleSource2eqE"><code class="docutils literal notranslate"><span class="pre">eq</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classSimpleSource.html#_CPPv4N12SimpleSource8grid_dimE"><code class="docutils literal notranslate"><span class="pre">grid_dim</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classSimpleSource.html#_CPPv4N12SimpleSource1NE"><code class="docutils literal notranslate"><span class="pre">N</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="classsimulation__2d_1_1ComponentBase.html">Class ComponentBase</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="classsimulation__2d_1_1ComponentBase.html#inheritance-relationships">Inheritance Relationships</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="classsimulation__2d_1_1ComponentBase.html#derived-type">Derived Type</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="classsimulation__2d_1_1ComponentBase.html#class-documentation">Class Documentation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="classsimulation__2d_1_1ComponentBase.html#_CPPv4N13simulation_2d13ComponentBaseE"><code class="docutils literal notranslate"><span class="pre">simulation_2d::ComponentBase</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="classsimulation__2d_1_1ComponentBase.html#_CPPv4N13simulation_2d13ComponentBaseD0Ev"><code class="docutils literal notranslate"><span class="pre">~ComponentBase()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="classsimulation__2d_1_1ComponentWrapper.html">Template Class ComponentWrapper</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="classsimulation__2d_1_1ComponentWrapper.html#inheritance-relationships">Inheritance Relationships</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="classsimulation__2d_1_1ComponentWrapper.html#base-type">Base Type</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="classsimulation__2d_1_1ComponentWrapper.html#class-documentation">Class Documentation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="classsimulation__2d_1_1ComponentWrapper.html#_CPPv4I0EN13simulation_2d16ComponentWrapperE"><code class="docutils literal notranslate"><span class="pre">simulation_2d::ComponentWrapper</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="classsimulation__2d_1_1ComponentWrapper.html#_CPPv4N13simulation_2d16ComponentWrapper16ComponentWrapperEP1T"><code class="docutils literal notranslate"><span class="pre">ComponentWrapper()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classsimulation__2d_1_1ComponentWrapper.html#_CPPv4NK13simulation_2d16ComponentWrapper12getComponentEv"><code class="docutils literal notranslate"><span class="pre">getComponent()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classsimulation__2d_1_1ComponentWrapper.html#_CPPv4N13simulation_2d16ComponentWrapper16ComponentWrapperEv"><code class="docutils literal notranslate"><span class="pre">ComponentWrapper()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classsimulation__2d_1_1ComponentWrapper.html#_CPPv4N13simulation_2d16ComponentWrapper16ComponentWrapperERK16ComponentWrapper"><code class="docutils literal notranslate"><span class="pre">ComponentWrapper()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classsimulation__2d_1_1ComponentWrapper.html#_CPPv4N13simulation_2d16ComponentWrapperD0Ev"><code class="docutils literal notranslate"><span class="pre">~ComponentWrapper()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classsimulation__2d_1_1ComponentWrapper.html#_CPPv4N13simulation_2d16ComponentWrapperaSERK16ComponentWrapper"><code class="docutils literal notranslate"><span class="pre">operator=()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classsimulation__2d_1_1ComponentWrapper.html#_CPPv4N13simulation_2d16ComponentWrapper16ComponentWrapperERR16ComponentWrapper"><code class="docutils literal notranslate"><span class="pre">ComponentWrapper()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classsimulation__2d_1_1ComponentWrapper.html#_CPPv4N13simulation_2d16ComponentWrapperaSERR16ComponentWrapper"><code class="docutils literal notranslate"><span class="pre">operator=()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classsimulation__2d_1_1ComponentWrapper.html#_CPPv4N13simulation_2d16ComponentWrapper9componentE"><code class="docutils literal notranslate"><span class="pre">component</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="classsimulation__2d_1_1Simulation2d.html">Class Simulation2d</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="classsimulation__2d_1_1Simulation2d.html#class-documentation">Class Documentation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="classsimulation__2d_1_1Simulation2d.html#_CPPv4N13simulation_2d12Simulation2dE"><code class="docutils literal notranslate"><span class="pre">simulation_2d::Simulation2d</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="classsimulation__2d_1_1Simulation2d.html#_CPPv4I0EN13simulation_2d12Simulation2d12addComponentEvP1T"><code class="docutils literal notranslate"><span class="pre">addComponent()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classsimulation__2d_1_1Simulation2d.html#_CPPv4I0EN13simulation_2d12Simulation2d9setSolverEvP1T"><code class="docutils literal notranslate"><span class="pre">setSolver()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classsimulation__2d_1_1Simulation2d.html#_CPPv4I0EN13simulation_2d12Simulation2d15getComponentPtrERNSt10unique_ptrI16ComponentWrapperI1TEEE6size_t"><code class="docutils literal notranslate"><span class="pre">getComponentPtr()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classsimulation__2d_1_1Simulation2d.html#_CPPv4I0EN13simulation_2d12Simulation2d12getComponentER1T6size_t"><code class="docutils literal notranslate"><span class="pre">getComponent()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classsimulation__2d_1_1Simulation2d.html#_CPPv4NK13simulation_2d12Simulation2d9getSolverEv"><code class="docutils literal notranslate"><span class="pre">getSolver()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classsimulation__2d_1_1Simulation2d.html#_CPPv4N13simulation_2d12Simulation2d5solveEv"><code class="docutils literal notranslate"><span class="pre">solve()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classsimulation__2d_1_1Simulation2d.html#_CPPv4N13simulation_2d12Simulation2d15startSimulationEv"><code class="docutils literal notranslate"><span class="pre">startSimulation()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classsimulation__2d_1_1Simulation2d.html#_CPPv4N13simulation_2d12Simulation2d25InitializeNewSimulation2DE6Config"><code class="docutils literal notranslate"><span class="pre">InitializeNewSimulation2D()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classsimulation__2d_1_1Simulation2d.html#_CPPv4N13simulation_2d12Simulation2d10componentsE"><code class="docutils literal notranslate"><span class="pre">components</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classsimulation__2d_1_1Simulation2d.html#_CPPv4N13simulation_2d12Simulation2d6solverE"><code class="docutils literal notranslate"><span class="pre">solver</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classsimulation__2d_1_1Simulation2d.html#_CPPv4N13simulation_2d12Simulation2d3cfgE"><code class="docutils literal notranslate"><span class="pre">cfg</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="classsimulation__2d_1_1SolverBase.html">Class SolverBase</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="classsimulation__2d_1_1SolverBase.html#inheritance-relationships">Inheritance Relationships</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="classsimulation__2d_1_1SolverBase.html#derived-type">Derived Type</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="classsimulation__2d_1_1SolverBase.html#class-documentation">Class Documentation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="classsimulation__2d_1_1SolverBase.html#_CPPv4N13simulation_2d10SolverBaseE"><code class="docutils literal notranslate"><span class="pre">simulation_2d::SolverBase</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="classsimulation__2d_1_1SolverBase.html#_CPPv4N13simulation_2d10SolverBase5solveEv"><code class="docutils literal notranslate"><span class="pre">solve()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classsimulation__2d_1_1SolverBase.html#_CPPv4N13simulation_2d10SolverBaseD0Ev"><code class="docutils literal notranslate"><span class="pre">~SolverBase()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classsimulation__2d_1_1SolverBase.html#_CPPv4N13simulation_2d10SolverBase4setTEd"><code class="docutils literal notranslate"><span class="pre">setT()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classsimulation__2d_1_1SolverBase.html#_CPPv4NK13simulation_2d10SolverBase4getTEv"><code class="docutils literal notranslate"><span class="pre">getT()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classsimulation__2d_1_1SolverBase.html#_CPPv4N13simulation_2d10SolverBase5setT0Ed"><code class="docutils literal notranslate"><span class="pre">setT0()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classsimulation__2d_1_1SolverBase.html#_CPPv4NK13simulation_2d10SolverBase5getT0Ev"><code class="docutils literal notranslate"><span class="pre">getT0()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="classsimulation__2d_1_1SolverWrapper.html">Template Class SolverWrapper</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="classsimulation__2d_1_1SolverWrapper.html#inheritance-relationships">Inheritance Relationships</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="classsimulation__2d_1_1SolverWrapper.html#base-type">Base Type</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="classsimulation__2d_1_1SolverWrapper.html#class-documentation">Class Documentation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="classsimulation__2d_1_1SolverWrapper.html#_CPPv4I_22HasTimeSolverInterfaceEN13simulation_2d13SolverWrapperE"><code class="docutils literal notranslate"><span class="pre">simulation_2d::SolverWrapper</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="classsimulation__2d_1_1SolverWrapper.html#_CPPv4N13simulation_2d13SolverWrapper13SolverWrapperEP1T"><code class="docutils literal notranslate"><span class="pre">SolverWrapper()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classsimulation__2d_1_1SolverWrapper.html#_CPPv4N13simulation_2d13SolverWrapperD0Ev"><code class="docutils literal notranslate"><span class="pre">~SolverWrapper()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classsimulation__2d_1_1SolverWrapper.html#_CPPv4N13simulation_2d13SolverWrapper5solveEv"><code class="docutils literal notranslate"><span class="pre">solve()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classsimulation__2d_1_1SolverWrapper.html#_CPPv4N13simulation_2d13SolverWrapper4setTEd"><code class="docutils literal notranslate"><span class="pre">setT()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classsimulation__2d_1_1SolverWrapper.html#_CPPv4NK13simulation_2d13SolverWrapper4getTEv"><code class="docutils literal notranslate"><span class="pre">getT()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classsimulation__2d_1_1SolverWrapper.html#_CPPv4N13simulation_2d13SolverWrapper5setT0Ed"><code class="docutils literal notranslate"><span class="pre">setT0()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classsimulation__2d_1_1SolverWrapper.html#_CPPv4NK13simulation_2d13SolverWrapper5getT0Ev"><code class="docutils literal notranslate"><span class="pre">getT0()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classsimulation__2d_1_1SolverWrapper.html#_CPPv4N13simulation_2d13SolverWrapper6solverE"><code class="docutils literal notranslate"><span class="pre">solver</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="classSSP__RK2.html">Template Class SSP_RK2</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="classSSP__RK2.html#inheritance-relationships">Inheritance Relationships</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="classSSP__RK2.html#base-type">Base Type</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="classSSP__RK2.html#class-documentation">Class Documentation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="classSSP__RK2.html#_CPPv4I_12QuantityType000E7SSP_RK2"><code class="docutils literal notranslate"><span class="pre">SSP_RK2</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="classSSP__RK2.html#_CPPv4N7SSP_RK27SSP_RK2E1D1D1DR6Grid2dI1QER6Grid2dI1QER3RHSR3CFLR8Boundary"><code class="docutils literal notranslate"><span class="pre">SSP_RK2()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classSSP__RK2.html#_CPPv4N7SSP_RK25setDtE1D"><code class="docutils literal notranslate"><span class="pre">setDt()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classSSP__RK2.html#_CPPv4N7SSP_RK24setTE1D"><code class="docutils literal notranslate"><span class="pre">setT()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classSSP__RK2.html#_CPPv4N7SSP_RK25setT0E1D"><code class="docutils literal notranslate"><span class="pre">setT0()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classSSP__RK2.html#_CPPv4NK7SSP_RK25getT0Ev"><code class="docutils literal notranslate"><span class="pre">getT0()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classSSP__RK2.html#_CPPv4NK7SSP_RK25getDtEv"><code class="docutils literal notranslate"><span class="pre">getDt()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classSSP__RK2.html#_CPPv4NK7SSP_RK24getTEv"><code class="docutils literal notranslate"><span class="pre">getT()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classSSP__RK2.html#_CPPv4N7SSP_RK26step_1E6size_t6size_t"><code class="docutils literal notranslate"><span class="pre">step_1()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classSSP__RK2.html#_CPPv4N7SSP_RK26step_2E6size_t6size_t"><code class="docutils literal notranslate"><span class="pre">step_2()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classSSP__RK2.html#_CPPv4N7SSP_RK25solveEv"><code class="docutils literal notranslate"><span class="pre">solve()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classSSP__RK2.html#_CPPv4N7SSP_RK21DE"><code class="docutils literal notranslate"><span class="pre">D</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classSSP__RK2.html#_CPPv4N7SSP_RK23rhsE"><code class="docutils literal notranslate"><span class="pre">rhs</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classSSP__RK2.html#_CPPv4N7SSP_RK23cflE"><code class="docutils literal notranslate"><span class="pre">cfl</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classSSP__RK2.html#_CPPv4N7SSP_RK28boundaryE"><code class="docutils literal notranslate"><span class="pre">boundary</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classSSP__RK2.html#_CPPv4N7SSP_RK22dtE"><code class="docutils literal notranslate"><span class="pre">dt</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classSSP__RK2.html#_CPPv4N7SSP_RK21TE"><code class="docutils literal notranslate"><span class="pre">T</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classSSP__RK2.html#_CPPv4N7SSP_RK22t0E"><code class="docutils literal notranslate"><span class="pre">t0</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classSSP__RK2.html#_CPPv4N7SSP_RK28old_gridE"><code class="docutils literal notranslate"><span class="pre">old_grid</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classSSP__RK2.html#_CPPv4N7SSP_RK28new_gridE"><code class="docutils literal notranslate"><span class="pre">new_grid</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classSSP__RK2.html#_CPPv4N7SSP_RK29temp_gridE"><code class="docutils literal notranslate"><span class="pre">temp_grid</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classSSP__RK2.html#_CPPv4N7SSP_RK27k1_gridE"><code class="docutils literal notranslate"><span class="pre">k1_grid</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="classSSP__RK3.html">Template Class SSP_RK3</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="classSSP__RK3.html#inheritance-relationships">Inheritance Relationships</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="classSSP__RK3.html#base-type">Base Type</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="classSSP__RK3.html#class-documentation">Class Documentation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="classSSP__RK3.html#_CPPv4I_12QuantityType000E7SSP_RK3"><code class="docutils literal notranslate"><span class="pre">SSP_RK3</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="classSSP__RK3.html#_CPPv4N7SSP_RK37SSP_RK3E1D1D1DR6Grid2dI1QER6Grid2dI1QER3RHSR3CFLR8Boundary"><code class="docutils literal notranslate"><span class="pre">SSP_RK3()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classSSP__RK3.html#_CPPv4N7SSP_RK35setDtE1D"><code class="docutils literal notranslate"><span class="pre">setDt()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classSSP__RK3.html#_CPPv4N7SSP_RK34setTE1D"><code class="docutils literal notranslate"><span class="pre">setT()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classSSP__RK3.html#_CPPv4N7SSP_RK35setT0E1D"><code class="docutils literal notranslate"><span class="pre">setT0()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classSSP__RK3.html#_CPPv4NK7SSP_RK34getTEv"><code class="docutils literal notranslate"><span class="pre">getT()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classSSP__RK3.html#_CPPv4NK7SSP_RK35getT0Ev"><code class="docutils literal notranslate"><span class="pre">getT0()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classSSP__RK3.html#_CPPv4NK7SSP_RK35getDtEv"><code class="docutils literal notranslate"><span class="pre">getDt()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classSSP__RK3.html#_CPPv4N7SSP_RK36step_1E6size_t6size_t"><code class="docutils literal notranslate"><span class="pre">step_1()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classSSP__RK3.html#_CPPv4N7SSP_RK36step_2E6size_t6size_t"><code class="docutils literal notranslate"><span class="pre">step_2()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classSSP__RK3.html#_CPPv4N7SSP_RK36step_3E6size_t6size_t"><code class="docutils literal notranslate"><span class="pre">step_3()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classSSP__RK3.html#_CPPv4N7SSP_RK35solveEv"><code class="docutils literal notranslate"><span class="pre">solve()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classSSP__RK3.html#_CPPv4N7SSP_RK31DE"><code class="docutils literal notranslate"><span class="pre">D</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classSSP__RK3.html#_CPPv4N7SSP_RK33rhsE"><code class="docutils literal notranslate"><span class="pre">rhs</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classSSP__RK3.html#_CPPv4N7SSP_RK33cflE"><code class="docutils literal notranslate"><span class="pre">cfl</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classSSP__RK3.html#_CPPv4N7SSP_RK38boundaryE"><code class="docutils literal notranslate"><span class="pre">boundary</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classSSP__RK3.html#_CPPv4N7SSP_RK32dtE"><code class="docutils literal notranslate"><span class="pre">dt</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classSSP__RK3.html#_CPPv4N7SSP_RK31TE"><code class="docutils literal notranslate"><span class="pre">T</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classSSP__RK3.html#_CPPv4N7SSP_RK32t0E"><code class="docutils literal notranslate"><span class="pre">t0</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classSSP__RK3.html#_CPPv4N7SSP_RK38old_gridE"><code class="docutils literal notranslate"><span class="pre">old_grid</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classSSP__RK3.html#_CPPv4N7SSP_RK38new_gridE"><code class="docutils literal notranslate"><span class="pre">new_grid</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classSSP__RK3.html#_CPPv4N7SSP_RK39temp_gridE"><code class="docutils literal notranslate"><span class="pre">temp_grid</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classSSP__RK3.html#_CPPv4N7SSP_RK37k1_gridE"><code class="docutils literal notranslate"><span class="pre">k1_grid</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classSSP__RK3.html#_CPPv4N7SSP_RK37k2_gridE"><code class="docutils literal notranslate"><span class="pre">k2_grid</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="classSuperbee.html">Template Class Superbee</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="classSuperbee.html#inheritance-relationships">Inheritance Relationships</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="classSuperbee.html#base-type">Base Type</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="classSuperbee.html#class-documentation">Class Documentation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="classSuperbee.html#_CPPv4I_12QuantityTypeE8Superbee"><code class="docutils literal notranslate"><span class="pre">Superbee</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="classSuperbee.html#_CPPv4N8Superbee8SuperbeeEv"><code class="docutils literal notranslate"><span class="pre">Superbee()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classSuperbee.html#_CPPv4NK8SuperbeeclERK1QRK1Q"><code class="docutils literal notranslate"><span class="pre">operator()()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classSuperbee.html#_CPPv4N8Superbee1DE"><code class="docutils literal notranslate"><span class="pre">D</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classSuperbee.html#_CPPv4NK8Superbee10single_varEK1DK1D"><code class="docutils literal notranslate"><span class="pre">single_var()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classSuperbee.html#_CPPv4N8Superbee1NE"><code class="docutils literal notranslate"><span class="pre">N</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="classTimeSolverBase.html">Template Class TimeSolverBase</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="classTimeSolverBase.html#inheritance-relationships">Inheritance Relationships</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="classTimeSolverBase.html#derived-types">Derived Types</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="classTimeSolverBase.html#class-documentation">Class Documentation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="classTimeSolverBase.html#_CPPv4I_12QuantityTypeE14TimeSolverBase"><code class="docutils literal notranslate"><span class="pre">TimeSolverBase</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="classTimeSolverBase.html#_CPPv4N14TimeSolverBaseD0Ev"><code class="docutils literal notranslate"><span class="pre">~TimeSolverBase()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classTimeSolverBase.html#_CPPv4N14TimeSolverBase5solveEv"><code class="docutils literal notranslate"><span class="pre">solve()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classTimeSolverBase.html#_CPPv4N14TimeSolverBase4setTE1D"><code class="docutils literal notranslate"><span class="pre">setT()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classTimeSolverBase.html#_CPPv4NK14TimeSolverBase4getTEv"><code class="docutils literal notranslate"><span class="pre">getT()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classTimeSolverBase.html#_CPPv4N14TimeSolverBase5setT0E1D"><code class="docutils literal notranslate"><span class="pre">setT0()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classTimeSolverBase.html#_CPPv4NK14TimeSolverBase5getT0Ev"><code class="docutils literal notranslate"><span class="pre">getT0()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classTimeSolverBase.html#_CPPv4N14TimeSolverBase5setDtE1D"><code class="docutils literal notranslate"><span class="pre">setDt()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classTimeSolverBase.html#_CPPv4NK14TimeSolverBase5getDtEv"><code class="docutils literal notranslate"><span class="pre">getDt()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classTimeSolverBase.html#_CPPv4N14TimeSolverBase1DE"><code class="docutils literal notranslate"><span class="pre">D</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="classUnimplementedError.html">Class UnimplementedError</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="classUnimplementedError.html#inheritance-relationships">Inheritance Relationships</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="classUnimplementedError.html#base-type">Base Type</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="classUnimplementedError.html#class-documentation">Class Documentation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="classUnimplementedError.html#_CPPv418UnimplementedError"><code class="docutils literal notranslate"><span class="pre">UnimplementedError</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="classUnimplementedError.html#_CPPv4N18UnimplementedError18UnimplementedErrorERKNSt6stringE"><code class="docutils literal notranslate"><span class="pre">UnimplementedError()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classUnimplementedError.html#_CPPv4N18UnimplementedError18UnimplementedErrorEPKcPKcKiKNSt6stringE"><code class="docutils literal notranslate"><span class="pre">UnimplementedError()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classUnimplementedError.html#_CPPv4N18UnimplementedError11putTogetherEPKcPKcKiKNSt6stringE"><code class="docutils literal notranslate"><span class="pre">putTogether()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="classVanLeer.html">Template Class VanLeer</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="classVanLeer.html#inheritance-relationships">Inheritance Relationships</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="classVanLeer.html#base-type">Base Type</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="classVanLeer.html#class-documentation">Class Documentation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="classVanLeer.html#_CPPv4I_12QuantityTypeE7VanLeer"><code class="docutils literal notranslate"><span class="pre">VanLeer</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="classVanLeer.html#_CPPv4N7VanLeer7VanLeerEv"><code class="docutils literal notranslate"><span class="pre">VanLeer()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classVanLeer.html#_CPPv4NK7VanLeerclERK1QRK1Q"><code class="docutils literal notranslate"><span class="pre">operator()()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classVanLeer.html#_CPPv4N7VanLeer1DE"><code class="docutils literal notranslate"><span class="pre">D</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classVanLeer.html#_CPPv4NK7VanLeer10single_varEK1DK1D"><code class="docutils literal notranslate"><span class="pre">single_var()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="classVanLeer.html#_CPPv4N7VanLeer1NE"><code class="docutils literal notranslate"><span class="pre">N</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+<section id="enums">
+<h3>Enums<a class="headerlink" href="#enums" title="Link to this heading"></a></h3>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="enum_common_8hpp_1a224b9163917ac32fc95a60d8c1eec3aa.html">Enum Direction</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="enum_common_8hpp_1a224b9163917ac32fc95a60d8c1eec3aa.html#enum-documentation">Enum Documentation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="enum_common_8hpp_1a224b9163917ac32fc95a60d8c1eec3aa.html#_CPPv49Direction"><code class="docutils literal notranslate"><span class="pre">Direction</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="enum_common_8hpp_1a224b9163917ac32fc95a60d8c1eec3aa.html#_CPPv4N9Direction6RadialE"><code class="docutils literal notranslate"><span class="pre">Radial</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enum_common_8hpp_1a224b9163917ac32fc95a60d8c1eec3aa.html#_CPPv4N9Direction10HorizontalE"><code class="docutils literal notranslate"><span class="pre">Horizontal</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="enum_config__params_8hpp_1a46c8a310cf4c094f8c80e1cb8dc1f911.html">Enum Mode</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="enum_config__params_8hpp_1a46c8a310cf4c094f8c80e1cb8dc1f911.html#enum-documentation">Enum Documentation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="enum_config__params_8hpp_1a46c8a310cf4c094f8c80e1cb8dc1f911.html#_CPPv44Mode"><code class="docutils literal notranslate"><span class="pre">Mode</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="enum_config__params_8hpp_1a46c8a310cf4c094f8c80e1cb8dc1f911.html#_CPPv4N4Mode9testing1DE"><code class="docutils literal notranslate"><span class="pre">testing1D</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enum_config__params_8hpp_1a46c8a310cf4c094f8c80e1cb8dc1f911.html#_CPPv4N4Mode9testing2DE"><code class="docutils literal notranslate"><span class="pre">testing2D</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="enum_namespacemodel_1a907c446eb5c73e13a7d76edd612fdfef.html">Enum Equation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="enum_namespacemodel_1a907c446eb5c73e13a7d76edd612fdfef.html#enum-documentation">Enum Documentation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="enum_namespacemodel_1a907c446eb5c73e13a7d76edd612fdfef.html#_CPPv4N5model8EquationE"><code class="docutils literal notranslate"><span class="pre">Equation</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="enum_namespacemodel_1a907c446eb5c73e13a7d76edd612fdfef.html#_CPPv4N5model8Equation9kScalar2dE"><code class="docutils literal notranslate"><span class="pre">kScalar2d</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enum_namespacemodel_1a907c446eb5c73e13a7d76edd612fdfef.html#_CPPv4N5model8Equation8kEuler2dE"><code class="docutils literal notranslate"><span class="pre">kEuler2d</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="enum_namespacemodel_1a3ae25a4a9f22dccaa99cdecb28ab4e0f.html">Enum InitialModel</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="enum_namespacemodel_1a3ae25a4a9f22dccaa99cdecb28ab4e0f.html#enum-documentation">Enum Documentation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="enum_namespacemodel_1a3ae25a4a9f22dccaa99cdecb28ab4e0f.html#_CPPv4N5model12InitialModelE"><code class="docutils literal notranslate"><span class="pre">InitialModel</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="enum_namespacemodel_1a3ae25a4a9f22dccaa99cdecb28ab4e0f.html#_CPPv4N5model12InitialModel16kKelvinHelmholtzE"><code class="docutils literal notranslate"><span class="pre">kKelvinHelmholtz</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enum_namespacemodel_1a3ae25a4a9f22dccaa99cdecb28ab4e0f.html#_CPPv4N5model12InitialModel9kConstantE"><code class="docutils literal notranslate"><span class="pre">kConstant</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="enum_namespacesolver__params_1a2b577686b8ffe76b030025b230938ef2.html">Enum FluxCalculator</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="enum_namespacesolver__params_1a2b577686b8ffe76b030025b230938ef2.html#enum-documentation">Enum Documentation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="enum_namespacesolver__params_1a2b577686b8ffe76b030025b230938ef2.html#_CPPv4N13solver_params14FluxCalculatorE"><code class="docutils literal notranslate"><span class="pre">FluxCalculator</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="enum_namespacesolver__params_1a2b577686b8ffe76b030025b230938ef2.html#_CPPv4N13solver_params14FluxCalculator19kLocalLaxFriedrichsE"><code class="docutils literal notranslate"><span class="pre">kLocalLaxFriedrichs</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enum_namespacesolver__params_1a2b577686b8ffe76b030025b230938ef2.html#_CPPv4N13solver_params14FluxCalculator7kUpwindE"><code class="docutils literal notranslate"><span class="pre">kUpwind</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="enum_namespacesolver__params_1ad745adffd0fab83afbaf692ea8165050.html">Enum Integrator</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="enum_namespacesolver__params_1ad745adffd0fab83afbaf692ea8165050.html#enum-documentation">Enum Documentation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="enum_namespacesolver__params_1ad745adffd0fab83afbaf692ea8165050.html#_CPPv4N13solver_params10IntegratorE"><code class="docutils literal notranslate"><span class="pre">Integrator</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="enum_namespacesolver__params_1ad745adffd0fab83afbaf692ea8165050.html#_CPPv4N13solver_params10Integrator15kSspRungeKutta2E"><code class="docutils literal notranslate"><span class="pre">kSspRungeKutta2</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enum_namespacesolver__params_1ad745adffd0fab83afbaf692ea8165050.html#_CPPv4N13solver_params10Integrator15kSspRungeKutta3E"><code class="docutils literal notranslate"><span class="pre">kSspRungeKutta3</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="enum_namespacesolver__params_1a8c444a3981a4189f632deff4104e1165.html">Enum Limiters</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="enum_namespacesolver__params_1a8c444a3981a4189f632deff4104e1165.html#enum-documentation">Enum Documentation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="enum_namespacesolver__params_1a8c444a3981a4189f632deff4104e1165.html#_CPPv4N13solver_params8LimitersE"><code class="docutils literal notranslate"><span class="pre">Limiters</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="enum_namespacesolver__params_1a8c444a3981a4189f632deff4104e1165.html#_CPPv4N13solver_params8Limiters8kVanLeerE"><code class="docutils literal notranslate"><span class="pre">kVanLeer</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enum_namespacesolver__params_1a8c444a3981a4189f632deff4104e1165.html#_CPPv4N13solver_params8Limiters7kMinModE"><code class="docutils literal notranslate"><span class="pre">kMinMod</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enum_namespacesolver__params_1a8c444a3981a4189f632deff4104e1165.html#_CPPv4N13solver_params8Limiters9kSuperbeeE"><code class="docutils literal notranslate"><span class="pre">kSuperbee</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="enum_namespacesolver__params_1abd53625bda2fa8124b0f37652e3340d1.html">Enum Reconstructor</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="enum_namespacesolver__params_1abd53625bda2fa8124b0f37652e3340d1.html#enum-documentation">Enum Documentation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="enum_namespacesolver__params_1abd53625bda2fa8124b0f37652e3340d1.html#_CPPv4N13solver_params13ReconstructorE"><code class="docutils literal notranslate"><span class="pre">Reconstructor</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="enum_namespacesolver__params_1abd53625bda2fa8124b0f37652e3340d1.html#_CPPv4N13solver_params13Reconstructor16kPiecewiseLinearE"><code class="docutils literal notranslate"><span class="pre">kPiecewiseLinear</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enum_namespacesolver__params_1abd53625bda2fa8124b0f37652e3340d1.html#_CPPv4N13solver_params13Reconstructor18kPiecewiseConstantE"><code class="docutils literal notranslate"><span class="pre">kPiecewiseConstant</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+<section id="functions">
+<h3>Functions<a class="headerlink" href="#functions" title="Link to this heading"></a></h3>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_compile__time__dispatcher_8hpp_1a7684c0cd12126ed58ee7bbe793fa95f4.html">Template Function createEquationTag</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_compile__time__dispatcher_8hpp_1a7684c0cd12126ed58ee7bbe793fa95f4.html#function-documentation">Function Documentation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="function_compile__time__dispatcher_8hpp_1a7684c0cd12126ed58ee7bbe793fa95f4.html#_CPPv4I0E17createEquationTagDa8EquationRR1T"><code class="docutils literal notranslate"><span class="pre">createEquationTag()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_compile__time__dispatcher_8hpp_1a3b8bbd535bd9258bfb39bfa6d6366434.html">Template Function createFluxTag</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_compile__time__dispatcher_8hpp_1a3b8bbd535bd9258bfb39bfa6d6366434.html#function-documentation">Function Documentation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="function_compile__time__dispatcher_8hpp_1a3b8bbd535bd9258bfb39bfa6d6366434.html#_CPPv4I0E13createFluxTagDa14FluxCalculatorRR1T"><code class="docutils literal notranslate"><span class="pre">createFluxTag()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_compile__time__dispatcher_8hpp_1af90bda6680729cad82f2e0e9e4850f47.html">Template Function createIntegratorTag</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_compile__time__dispatcher_8hpp_1af90bda6680729cad82f2e0e9e4850f47.html#function-documentation">Function Documentation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="function_compile__time__dispatcher_8hpp_1af90bda6680729cad82f2e0e9e4850f47.html#_CPPv4I0E19createIntegratorTagDa10IntegratorRR1T"><code class="docutils literal notranslate"><span class="pre">createIntegratorTag()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_compile__time__dispatcher_8hpp_1a6f98987fd5ae02bb483df5a4869cd98f.html">Template Function createLimiterTag</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_compile__time__dispatcher_8hpp_1a6f98987fd5ae02bb483df5a4869cd98f.html#function-documentation">Function Documentation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="function_compile__time__dispatcher_8hpp_1a6f98987fd5ae02bb483df5a4869cd98f.html#_CPPv4I0E16createLimiterTagDa8LimitersRR1T"><code class="docutils literal notranslate"><span class="pre">createLimiterTag()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_compile__time__dispatcher_8hpp_1a9978be9ec33b3d779b636e8fe222ade0.html">Template Function createReconstructionTag</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_compile__time__dispatcher_8hpp_1a9978be9ec33b3d779b636e8fe222ade0.html#function-documentation">Function Documentation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="function_compile__time__dispatcher_8hpp_1a9978be9ec33b3d779b636e8fe222ade0.html#_CPPv4I0E23createReconstructionTagDa13ReconstructorRR1T"><code class="docutils literal notranslate"><span class="pre">createReconstructionTag()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_envelope__builder_8hpp_1a717c924bff07df3804ba31d1fc4a36af.html">Function envelope::build_static_envelope</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_envelope__builder_8hpp_1a717c924bff07df3804ba31d1fc4a36af.html#function-documentation">Function Documentation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="function_envelope__builder_8hpp_1a717c924bff07df3804ba31d1fc4a36af.html#_CPPv4N8envelope21build_static_envelopeER4GridRK12StellarInput"><code class="docutils literal notranslate"><span class="pre">build_static_envelope()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_compile__time__dispatcher_8hpp_1a27a2ed4213b0d1fb6f6e5ca671406f1a.html">Function generateFromConfig</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_compile__time__dispatcher_8hpp_1a27a2ed4213b0d1fb6f6e5ca671406f1a.html#function-documentation">Function Documentation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="function_compile__time__dispatcher_8hpp_1a27a2ed4213b0d1fb6f6e5ca671406f1a.html#_CPPv418generateFromConfig8Equation12SolverConfig12Grid2Dconfig"><code class="docutils literal notranslate"><span class="pre">generateFromConfig()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_grid__builder_8hpp_1ae486fd2de65542bc1ee22e82a31f7f51.html">Function grid::build</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_grid__builder_8hpp_1ae486fd2de65542bc1ee22e82a31f7f51.html#function-documentation">Function Documentation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="function_grid__builder_8hpp_1ae486fd2de65542bc1ee22e82a31f7f51.html#_CPPv4N4grid5buildERK12StellarInput"><code class="docutils literal notranslate"><span class="pre">build()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_compile__time__dispatcher_8hpp_1a7438b4836635fc284ebf915aceb3ff55.html">Template Function grid_dim_generator</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_compile__time__dispatcher_8hpp_1a7438b4836635fc284ebf915aceb3ff55.html#function-documentation">Function Documentation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="function_compile__time__dispatcher_8hpp_1a7438b4836635fc284ebf915aceb3ff55.html#_CPPv4I0E18grid_dim_generatorP16GridDimensions2dIN14QuantityTraitsIN13simulation_2d14EquationTraitsI5EqTagE1QEE1DEE5EqTag12Grid2Dconfig"><code class="docutils literal notranslate"><span class="pre">grid_dim_generator()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_compile__time__dispatcher_8hpp_1acd37447c36d81154e4ad2aeb6795c4f8.html">Template Function grid_generator</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_compile__time__dispatcher_8hpp_1acd37447c36d81154e4ad2aeb6795c4f8.html#function-documentation">Function Documentation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="function_compile__time__dispatcher_8hpp_1acd37447c36d81154e4ad2aeb6795c4f8.html#_CPPv4I0E14grid_generatorP6Grid2dIN13simulation_2d14EquationTraitsI5EqTagE1QEE5EqTag12Grid2Dconfig"><code class="docutils literal notranslate"><span class="pre">grid_generator()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_print__console_8hpp_1a4342d8164f753f333c53321e183903bd.html">Function io::initializeRun</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_print__console_8hpp_1a4342d8164f753f333c53321e183903bd.html#function-documentation">Function Documentation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="function_print__console_8hpp_1a4342d8164f753f333c53321e183903bd.html#_CPPv4N2io13initializeRunE6size_t"><code class="docutils literal notranslate"><span class="pre">initializeRun()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_print__console_8hpp_1a7d92cb77870273584c8475f1e6ce7d76.html">Function io::log_surface_boundary_summary</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_print__console_8hpp_1a7d92cb77870273584c8475f1e6ce7d76.html#function-documentation">Function Documentation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="function_print__console_8hpp_1a7d92cb77870273584c8475f1e6ce7d76.html#_CPPv4N2io28log_surface_boundary_summaryEddddd"><code class="docutils literal notranslate"><span class="pre">log_surface_boundary_summary()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_print__console_8hpp_1a6fb0c84c52a53213fc01bd866221b2a5.html">Function io::placeholder_warning</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_print__console_8hpp_1a6fb0c84c52a53213fc01bd866221b2a5.html#function-documentation">Function Documentation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="function_print__console_8hpp_1a6fb0c84c52a53213fc01bd866221b2a5.html#_CPPv4N2io19placeholder_warningERKNSt6stringERKNSt6stringERKNSt6stringE"><code class="docutils literal notranslate"><span class="pre">placeholder_warning()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_print__console_8hpp_1ae70a37091917cb7b82ac872b190b33a3.html">Function io::unimplemented_warning</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_print__console_8hpp_1ae70a37091917cb7b82ac872b190b33a3.html#function-documentation">Function Documentation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="function_print__console_8hpp_1ae70a37091917cb7b82ac872b190b33a3.html#_CPPv4N2io21unimplemented_warningERKNSt6stringERKNSt6stringE"><code class="docutils literal notranslate"><span class="pre">unimplemented_warning()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_initial__models_8hpp_1ae38657604bb2a021940106bf18eca18d.html">Function KelvinHelmholtzInitialCondition</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_initial__models_8hpp_1ae38657604bb2a021940106bf18eca18d.html#function-documentation">Function Documentation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="function_initial__models_8hpp_1ae38657604bb2a021940106bf18eca18d.html#_CPPv431KelvinHelmholtzInitialConditionR6Grid2dI12QuantityBaseIdXL4EEEE16GridDimensions2dIdEdddddddd"><code class="docutils literal notranslate"><span class="pre">KelvinHelmholtzInitialCondition()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_config__parser_8hpp_1ab2d3612c42f5e2c0ca7d6c3fc24f0614.html">Function loadConfig</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_config__parser_8hpp_1ab2d3612c42f5e2c0ca7d6c3fc24f0614.html#function-documentation">Function Documentation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="function_config__parser_8hpp_1ab2d3612c42f5e2c0ca7d6c3fc24f0614.html#_CPPv410loadConfigRKNSt6stringE"><code class="docutils literal notranslate"><span class="pre">loadConfig()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_simulation2d_8hpp_1a50087ef639129db722c485e48f7b8f52.html">Template Function simulation_2d::createEquation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_simulation2d_8hpp_1a50087ef639129db722c485e48f7b8f52.html#function-documentation">Function Documentation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="function_simulation2d_8hpp_1a50087ef639129db722c485e48f7b8f52.html#_CPPv4I0EN13simulation_2d14createEquationEDa6eqType"><code class="docutils literal notranslate"><span class="pre">createEquation()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_simulation2d_8hpp_1add0bbce5253a56fd01b6eaccd26798e4.html">Template Function simulation_2d::createFluxCalculator</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_simulation2d_8hpp_1add0bbce5253a56fd01b6eaccd26798e4.html#function-documentation">Function Documentation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="function_simulation2d_8hpp_1add0bbce5253a56fd01b6eaccd26798e4.html#_CPPv4I00_9Direction0EN13simulation_2d20createFluxCalculatorEDa7fluxtagR6eqType"><code class="docutils literal notranslate"><span class="pre">createFluxCalculator()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_simulation2d_8hpp_1ad0c0db2ca932178a8409c41eb8fd41ac.html">Template Function simulation_2d::createLimiter</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_simulation2d_8hpp_1ad0c0db2ca932178a8409c41eb8fd41ac.html#function-documentation">Function Documentation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="function_simulation2d_8hpp_1ad0c0db2ca932178a8409c41eb8fd41ac.html#_CPPv4I00EN13simulation_2d13createLimiterEDav"><code class="docutils literal notranslate"><span class="pre">createLimiter()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_simulation2d_8hpp_1a484cc9916a24c5f348ba5c3dc1411803.html">Template Function simulation_2d::createReconstruction</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_simulation2d_8hpp_1a484cc9916a24c5f348ba5c3dc1411803.html#function-documentation">Function Documentation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="function_simulation2d_8hpp_1a484cc9916a24c5f348ba5c3dc1411803.html#_CPPv4I_9Direction0I0E0_12QuantityTypeEN13simulation_2d20createReconstructionEDa10reconstTagR7LimiterI1QER16GridDimensions2dIN14QuantityTraitsI1QE1DEE"><code class="docutils literal notranslate"><span class="pre">createReconstruction()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_simulation2d_8hpp_1a50879ceb8176df5414e6b6bded61d1c5.html">Template Function simulation_2d::createTimeSolver</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_simulation2d_8hpp_1a50879ceb8176df5414e6b6bded61d1c5.html#function-documentation">Function Documentation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="function_simulation2d_8hpp_1a50879ceb8176df5414e6b6bded61d1c5.html#_CPPv4I0DpEN13simulation_2d16createTimeSolverEDa13TimeSolverTagDpRR4Args"><code class="docutils literal notranslate"><span class="pre">createTimeSolver()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_simulation2d_8hpp_1add987f6758214e6b394039ef157a6573.html">Template Function simulation_2d::getQfromEq</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_simulation2d_8hpp_1add987f6758214e6b394039ef157a6573.html#function-documentation">Function Documentation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="function_simulation2d_8hpp_1add987f6758214e6b394039ef157a6573.html#_CPPv4I0EN13simulation_2d10getQfromEqEDa6eqType"><code class="docutils literal notranslate"><span class="pre">getQfromEq()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_simulation2d_8hpp_1ad8ed7bbcf51a98c91f1725d21cc2123e.html">Template Function simulation_2d::solver_factory</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_simulation2d_8hpp_1ad8ed7bbcf51a98c91f1725d21cc2123e.html#function-documentation">Function Documentation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="function_simulation2d_8hpp_1ad8ed7bbcf51a98c91f1725d21cc2123e.html#_CPPv4I000000_12QuantityTypeEN13simulation_2d14solver_factoryEDa5EqTag4flux7limiter7reconst6solverbR16GridDimensions2dI1DER6Grid2dI1QER6Grid2dI1QE1D"><code class="docutils literal notranslate"><span class="pre">solver_factory()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_initial__models_8hpp_1a5e76af92416c0cab11bcea98fe6666e6.html">Function staticModelInitialCondition</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_initial__models_8hpp_1a5e76af92416c0cab11bcea98fe6666e6.html#function-documentation">Function Documentation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="function_initial__models_8hpp_1a5e76af92416c0cab11bcea98fe6666e6.html#_CPPv427staticModelInitialConditionR6Grid2dI12QuantityBaseIdXL4EEEE16GridDimensions2dIdEddd"><code class="docutils literal notranslate"><span class="pre">staticModelInitialCondition()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_profile__writer_8hpp_1a92e39358f1c190b8a7459afb2fa3f2df.html">Function write2DQuantityProfileToHdf5</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_profile__writer_8hpp_1a92e39358f1c190b8a7459afb2fa3f2df.html#function-documentation">Function Documentation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="function_profile__writer_8hpp_1a92e39358f1c190b8a7459afb2fa3f2df.html#_CPPv428write2DQuantityProfileToHdf5RKNSt6stringERKNSt6vectorIdEERKNSt6vectorIdEERKNSt6vectorIdEEK6size_t"><code class="docutils literal notranslate"><span class="pre">write2DQuantityProfileToHdf5()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_profile__writer_8hpp_1a21ce09ebf264d1fdb91135863cec2133.html">Function write2DScalarProfileToHdf5</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_profile__writer_8hpp_1a21ce09ebf264d1fdb91135863cec2133.html#function-documentation">Function Documentation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="function_profile__writer_8hpp_1a21ce09ebf264d1fdb91135863cec2133.html#_CPPv426write2DScalarProfileToHdf5RKNSt6stringERKNSt6vectorIdEERKNSt6vectorIdEERKNSt6vectorIdEE"><code class="docutils literal notranslate"><span class="pre">write2DScalarProfileToHdf5()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_profile__writer_8hpp_1a9d030f6947c666a5d614e062847b47e7.html">Function writeProfileToHdf5</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_profile__writer_8hpp_1a9d030f6947c666a5d614e062847b47e7.html#function-documentation">Function Documentation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="function_profile__writer_8hpp_1a9d030f6947c666a5d614e062847b47e7.html#_CPPv418writeProfileToHdf5RKNSt6stringERKNSt6vectorIdEERKNSt6vectorIdEERKNSt6vectorIdEERKNSt6vectorIdEE"><code class="docutils literal notranslate"><span class="pre">writeProfileToHdf5()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+<section id="variables">
+<h3>Variables<a class="headerlink" href="#variables" title="Link to this heading"></a></h3>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="variable_namespaceconstants_1a27895881bf36c2968dada68de7fff4df.html">Variable constants::kEddingtonFactor</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="variable_namespaceconstants_1a27895881bf36c2968dada68de7fff4df.html#variable-documentation">Variable Documentation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="variable_namespaceconstants_1a27895881bf36c2968dada68de7fff4df.html#_CPPv4N9constants16kEddingtonFactorE"><code class="docutils literal notranslate"><span class="pre">kEddingtonFactor</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="variable_namespaceconstants_1aef6a70bf5e02077c823bda1eba37a769.html">Variable constants::kLSun</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="variable_namespaceconstants_1aef6a70bf5e02077c823bda1eba37a769.html#variable-documentation">Variable Documentation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="variable_namespaceconstants_1aef6a70bf5e02077c823bda1eba37a769.html#_CPPv4N9constants5kLSunE"><code class="docutils literal notranslate"><span class="pre">kLSun</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="variable_namespaceconstants_1acc33c8ba80741ed46691ee05503fb81e.html">Variable constants::kMSun</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="variable_namespaceconstants_1acc33c8ba80741ed46691ee05503fb81e.html#variable-documentation">Variable Documentation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="variable_namespaceconstants_1acc33c8ba80741ed46691ee05503fb81e.html#_CPPv4N9constants5kMSunE"><code class="docutils literal notranslate"><span class="pre">kMSun</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="variable_namespaceconstants_1ac46ad396847a4e15973762f39350eaf0.html">Variable constants::kPi</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="variable_namespaceconstants_1ac46ad396847a4e15973762f39350eaf0.html#variable-documentation">Variable Documentation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="variable_namespaceconstants_1ac46ad396847a4e15973762f39350eaf0.html#_CPPv4N9constants3kPiE"><code class="docutils literal notranslate"><span class="pre">kPi</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="variable_namespaceconstants_1a1f9529591ca6dbdc20aaa3b8105da607.html">Variable constants::kStefanBoltzmann</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="variable_namespaceconstants_1a1f9529591ca6dbdc20aaa3b8105da607.html#variable-documentation">Variable Documentation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="variable_namespaceconstants_1a1f9529591ca6dbdc20aaa3b8105da607.html#_CPPv4N9constants16kStefanBoltzmannE"><code class="docutils literal notranslate"><span class="pre">kStefanBoltzmann</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="variable_common_8hpp_1aa978754ca655ef66eff1586405d394e2.html">Variable is_2D</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="variable_common_8hpp_1aa978754ca655ef66eff1586405d394e2.html#variable-documentation">Variable Documentation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="variable_common_8hpp_1aa978754ca655ef66eff1586405d394e2.html#_CPPv4I0E5is_2D"><code class="docutils literal notranslate"><span class="pre">is_2D</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="variable_common_8hpp_1aeaa45c68beb95f9860a4b00f3491dfe9.html">Variable is_horizontal</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="variable_common_8hpp_1aeaa45c68beb95f9860a4b00f3491dfe9.html#variable-documentation">Variable Documentation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="variable_common_8hpp_1aeaa45c68beb95f9860a4b00f3491dfe9.html#_CPPv4I_9DirectionE13is_horizontal"><code class="docutils literal notranslate"><span class="pre">is_horizontal</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="variable_common_8hpp_1a6cc92b784171808c91b212208136e428.html">Variable is_radial</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="variable_common_8hpp_1a6cc92b784171808c91b212208136e428.html#variable-documentation">Variable Documentation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="variable_common_8hpp_1a6cc92b784171808c91b212208136e428.html#_CPPv4I_9DirectionE9is_radial"><code class="docutils literal notranslate"><span class="pre">is_radial</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="variable_version_8hpp_1a8d83916e0be66a5e4a8302b0ffbb8174.html">Variable mpuls::author</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="variable_version_8hpp_1a8d83916e0be66a5e4a8302b0ffbb8174.html#variable-documentation">Variable Documentation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="variable_version_8hpp_1a8d83916e0be66a5e4a8302b0ffbb8174.html#_CPPv4N5mpuls6authorE"><code class="docutils literal notranslate"><span class="pre">author</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="variable_version_8hpp_1a069e767c98d300d7a55a28e40e0c0d8a.html">Variable mpuls::version</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="variable_version_8hpp_1a069e767c98d300d7a55a28e40e0c0d8a.html#variable-documentation">Variable Documentation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="variable_version_8hpp_1a069e767c98d300d7a55a28e40e0c0d8a.html#_CPPv4N5mpuls7versionE"><code class="docutils literal notranslate"><span class="pre">version</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../manual/numerics/time_integration.html" class="btn btn-neutral float-left" title="Time integration" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="namespace_component_tags.html" class="btn btn-neutral float-right" title="Namespace component_tags" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright .</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

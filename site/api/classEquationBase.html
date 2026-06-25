@@ -1,0 +1,302 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Template Class EquationBase &mdash; Modular PULsation Suite  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=7ab3649f" />
+      <link rel="stylesheet" type="text/css" href="../_static/collapsible-lists/css/tree_view.css?v=a885cde7" />
+      <link rel="stylesheet" type="text/css" href="../_static/compact-api.css?v=bfcdbbe1" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script src="../_static/collapsible-lists/js/CollapsibleLists.compressed.js?v=73120307"></script>
+      <script src="../_static/collapsible-lists/js/apply-collapsible-lists.js?v=660e4f45"></script>
+      <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+      <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Template Class Euler2d" href="classEuler2d.html" />
+    <link rel="prev" title="Template Class Diffusion2d" href="classDiffusion2d.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Modular PULsation Suite
+              <img src="../_static/logo-mpuls.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../guide/index.html">MPULS User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../manual/index.html">MPULS User Manual</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference Manual</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="library_root.html">MPULS API reference</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="library_root.html#page-hierarchy">Page Hierarchy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="library_root.html#class-hierarchy">Class Hierarchy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="library_root.html#file-hierarchy">File Hierarchy</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="library_root.html#full-api">Full API</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="library_root.html#namespaces">Namespaces</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="library_root.html#classes-and-structs">Classes and Structs</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="structCellCenter.html">Struct CellCenter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structCellInterface.html">Struct CellInterface</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structConfig.html">Struct Config</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structGrid.html">Struct Grid</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structGrid2Dconfig.html">Struct Grid2Dconfig</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structGridConfig.html">Struct GridConfig</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structmodel_1_1ModelConfig.html">Struct ModelConfig</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structQuantityTraits.html">Template Struct QuantityTraits</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structsimulation__2d_1_1always__false.html">Template Struct always_false</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structsimulation__2d_1_1EquationTraits.html">Template Struct EquationTraits</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structSolverConfig.html">Struct SolverConfig</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structStellarInput.html">Struct StellarInput</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structStellarParameters.html">Struct StellarParameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classBoundary2DPerHorRigidRad.html">Template Class Boundary2DPerHorRigidRad</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classBoundary2DPeriodic.html">Template Class Boundary2DPeriodic</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classCFL.html">Template Class CFL</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classCIRFlux.html">Template Class CIRFlux</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classDiffusion2d.html">Template Class Diffusion2d</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Template Class EquationBase</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classEuler2d.html">Template Class Euler2d</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classFluxOperator.html">Template Class FluxOperator</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classGrid2d.html">Template Class Grid2d</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classGridDimensions2d.html">Template Class GridDimensions2d</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classHyperDiffusion.html">Template Class HyperDiffusion</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classLimiterBase.html">Template Class LimiterBase</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classLLFflux.html">Template Class LLFflux</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classMinMod.html">Template Class MinMod</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classPCM.html">Template Class PCM</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classPLM.html">Template Class PLM</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classQuantityBase.html">Template Class QuantityBase</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classReconstructionBase.html">Template Class ReconstructionBase</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classRightHandSide.html">Template Class RightHandSide</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classRightHandSideDecorator.html">Template Class RightHandSideDecorator</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classScalarTransport2d.html">Template Class ScalarTransport2d</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classSimpleSource.html">Template Class SimpleSource</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classsimulation__2d_1_1ComponentBase.html">Class ComponentBase</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classsimulation__2d_1_1ComponentWrapper.html">Template Class ComponentWrapper</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classsimulation__2d_1_1Simulation2d.html">Class Simulation2d</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classsimulation__2d_1_1SolverBase.html">Class SolverBase</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classsimulation__2d_1_1SolverWrapper.html">Template Class SolverWrapper</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classSSP__RK2.html">Template Class SSP_RK2</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classSSP__RK3.html">Template Class SSP_RK3</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classSuperbee.html">Template Class Superbee</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classTimeSolverBase.html">Template Class TimeSolverBase</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classUnimplementedError.html">Class UnimplementedError</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classVanLeer.html">Template Class VanLeer</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="library_root.html#enums">Enums</a></li>
+<li class="toctree-l3"><a class="reference internal" href="library_root.html#functions">Functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="library_root.html#variables">Variables</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Modular PULsation Suite</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="library_root.html">MPULS API reference</a></li>
+      <li class="breadcrumb-item active">Template Class EquationBase</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/api/classEquationBase.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="template-class-equationbase">
+<span id="exhale-class-classequationbase"></span><h1>Template Class EquationBase<a class="headerlink" href="#template-class-equationbase" title="Link to this heading"></a></h1>
+<ul class="simple">
+<li><p>Defined in <a class="reference internal" href="file_include_equations_equations.hpp.html#file-include-equations-equations-hpp"><span class="std std-ref">File equations.hpp</span></a></p></li>
+</ul>
+<section id="inheritance-relationships">
+<h2>Inheritance Relationships<a class="headerlink" href="#inheritance-relationships" title="Link to this heading"></a></h2>
+<section id="derived-types">
+<h3>Derived Types<a class="headerlink" href="#derived-types" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">public</span> <span class="pre">Euler2d&lt;</span> <span class="pre">T,</span> <span class="pre">Q</span> <span class="pre">&gt;</span></code> (<a class="reference internal" href="classEuler2d.html#exhale-class-classeuler2d"><span class="std std-ref">Template Class Euler2d</span></a>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">public</span> <span class="pre">ScalarTransport2d&lt;</span> <span class="pre">T,</span> <span class="pre">Q</span> <span class="pre">&gt;</span></code> (<a class="reference internal" href="classScalarTransport2d.html#exhale-class-classscalartransport2d"><span class="std std-ref">Template Class ScalarTransport2d</span></a>)</p></li>
+</ul>
+</section>
+</section>
+<section id="class-documentation">
+<h2>Class Documentation<a class="headerlink" href="#class-documentation" title="Link to this heading"></a></h2>
+<dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv4I_12QuantityTypeE12EquationBase">
+<span id="_CPPv3I_12QuantityTypeE12EquationBase"></span><span id="_CPPv2I_12QuantityTypeE12EquationBase"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">QuantityType</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Q</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="classEquationBase"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">EquationBase</span></span></span><a class="headerlink" href="#_CPPv4I_12QuantityTypeE12EquationBase" title="Link to this definition"></a><br /></dt>
+<dd><p>Abstract class defining the Equations interface. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Template Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>Q</strong> – A <a class="reference internal" href="classQuantityBase.html#classQuantityBase"><span class="std std-ref">QuantityBase</span></a> class describing the state-vector </p>
+</dd>
+</dl>
+<p>Subclassed by <a class="reference internal" href="../manual/physics/equations.html#classEuler2d"><span class="std std-ref">Euler2d&lt; T, Q &gt;</span></a>, <a class="reference internal" href="../manual/physics/equations.html#classScalarTransport2d"><span class="std std-ref">ScalarTransport2d&lt; T, Q &gt;</span></a></p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N12EquationBaseD0Ev">
+<span id="_CPPv3N12EquationBaseD0Ev"></span><span id="_CPPv2N12EquationBaseD0Ev"></span><span id="EquationBase::~EquationBase"></span><span class="target" id="classEquationBase_1a000a368fe752e41483659ea8af681fb8"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">~EquationBase</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N12EquationBaseD0Ev" title="Link to this definition"></a><br /></dt>
+<dd><p>abstract destructor </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK12EquationBase11computeFluxERK1Q9DirectionNSt4spanIK1DEE">
+<span id="_CPPv3NK12EquationBase11computeFluxERK1Q9DirectionNSt4spanIK1DEE"></span><span id="_CPPv2NK12EquationBase11computeFluxERK1Q9DirectionNSt4spanIK1DEE"></span><span id="EquationBase::computeFlux__QCR.Direction.std::span:DC:C"></span><span class="target" id="classEquationBase_1a6d82694c6f45d03c5e4c8a2fc0cf28ea"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4I_12QuantityTypeE12EquationBase" title="EquationBase::Q"><span class="n"><span class="pre">Q</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">computeFlux</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4I_12QuantityTypeE12EquationBase" title="EquationBase::Q"><span class="n"><span class="pre">Q</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">quantity</span></span>, <a class="reference internal" href="enum_common_8hpp_1a224b9163917ac32fc95a60d8c1eec3aa.html#_CPPv49Direction" title="Direction"><span class="n"><span class="pre">Direction</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">dir</span></span>, <span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">span</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N12EquationBase1DE" title="EquationBase::D"><span class="n"><span class="pre">D</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">coords</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><a class="headerlink" href="#_CPPv4NK12EquationBase11computeFluxERK1Q9DirectionNSt4spanIK1DEE" title="Link to this definition"></a><br /></dt>
+<dd><p>calculates the flux vector in a given direction from the given state vector. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>quantity</strong> – The state-vector ( <a class="reference internal" href="classQuantityBase.html#classQuantityBase"><span class="std std-ref">QuantityBase</span></a> object) </p></li>
+<li><p><strong>dir</strong> – consntant describing the direction. </p></li>
+<li><p><strong>coords</strong> – The coordinates of the interface</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The (potentially) non-linear flux <span class="math notranslate nohighlight">\( \boldsymbol f(\boldsymbol q) \)</span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK12EquationBase14getMaxVelocityERK1Q9DirectionNSt4spanIK1DEE">
+<span id="_CPPv3NK12EquationBase14getMaxVelocityERK1Q9DirectionNSt4spanIK1DEE"></span><span id="_CPPv2NK12EquationBase14getMaxVelocityERK1Q9DirectionNSt4spanIK1DEE"></span><span id="EquationBase::getMaxVelocity__QCR.Direction.std::span:DC:C"></span><span class="target" id="classEquationBase_1a842ed38305d17356a9c6dddf97e22554"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N12EquationBase1DE" title="EquationBase::D"><span class="n"><span class="pre">D</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getMaxVelocity</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4I_12QuantityTypeE12EquationBase" title="EquationBase::Q"><span class="n"><span class="pre">Q</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">quantity</span></span>, <a class="reference internal" href="enum_common_8hpp_1a224b9163917ac32fc95a60d8c1eec3aa.html#_CPPv49Direction" title="Direction"><span class="n"><span class="pre">Direction</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">dir</span></span>, <span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">span</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N12EquationBase1DE" title="EquationBase::D"><span class="n"><span class="pre">D</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">coords</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><a class="headerlink" href="#_CPPv4NK12EquationBase14getMaxVelocityERK1Q9DirectionNSt4spanIK1DEE" title="Link to this definition"></a><br /></dt>
+<dd><p>Calculates the highest characteristic speed based on the given state-vector. </p>
+<p>Some solver needs the largest characteristic speed at the interface (see e.g. <a class="reference internal" href="classLLFflux.html#classLLFflux"><span class="std std-ref">LLFflux</span></a> ). This is e.g. for the Euler system is:   <div class="math notranslate nohighlight">
+\[  \max \left[ \vert u - c \vert , \vert u \vert , \vert u + c \vert \right]
+\]</div>
+</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>quantity</strong> – State-vector ( <a class="reference internal" href="classQuantityBase.html#classQuantityBase"><span class="std std-ref">QuantityBase</span></a> object reference) </p></li>
+<li><p><strong>dir</strong> – direction of the interface </p></li>
+<li><p><strong>coords</strong> – interface coordinates</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The maximum characterisctic speed ( <span class="math notranslate nohighlight">\( \max \vert {\rm eig }  \partial F / \partial q \vert \)</span> ) </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK12EquationBase8getSpeedERK1Q9DirectionNSt4spanIK1DEE">
+<span id="_CPPv3NK12EquationBase8getSpeedERK1Q9DirectionNSt4spanIK1DEE"></span><span id="_CPPv2NK12EquationBase8getSpeedERK1Q9DirectionNSt4spanIK1DEE"></span><span id="EquationBase::getSpeed__QCR.Direction.std::span:DC:C"></span><span class="target" id="classEquationBase_1ac116268e107b03cf59712117415a80e5"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N12EquationBase1DE" title="EquationBase::D"><span class="n"><span class="pre">D</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getSpeed</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4I_12QuantityTypeE12EquationBase" title="EquationBase::Q"><span class="n"><span class="pre">Q</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">quantity</span></span>, <a class="reference internal" href="enum_common_8hpp_1a224b9163917ac32fc95a60d8c1eec3aa.html#_CPPv49Direction" title="Direction"><span class="n"><span class="pre">Direction</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">dir</span></span>, <span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">span</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N12EquationBase1DE" title="EquationBase::D"><span class="n"><span class="pre">D</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">coords</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><a class="headerlink" href="#_CPPv4NK12EquationBase8getSpeedERK1Q9DirectionNSt4spanIK1DEE" title="Link to this definition"></a><br /></dt>
+<dd><p>calculate the current speed at the interface. It is used in the <a class="reference internal" href="classCIRFlux.html#classCIRFlux"><span class="std std-ref">CIRFlux</span></a> class. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>quantity</strong> – State-vector ( <a class="reference internal" href="classQuantityBase.html#classQuantityBase"><span class="std std-ref">QuantityBase</span></a> object reference) </p></li>
+<li><p><strong>dir</strong> – direction of the interface </p></li>
+<li><p><strong>coords</strong> – interface coordinates</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The current speed at the interface </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK12EquationBase13computeSourceERK1QNSt4spanIK1DEE">
+<span id="_CPPv3NK12EquationBase13computeSourceERK1QNSt4spanIK1DEE"></span><span id="_CPPv2NK12EquationBase13computeSourceERK1QNSt4spanIK1DEE"></span><span id="EquationBase::computeSource__QCR.std::span:DC:C"></span><span class="target" id="classEquationBase_1a5241edd8cacd4ee997d019297e51871f"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4I_12QuantityTypeE12EquationBase" title="EquationBase::Q"><span class="n"><span class="pre">Q</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">computeSource</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4I_12QuantityTypeE12EquationBase" title="EquationBase::Q"><span class="n"><span class="pre">Q</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">quantity</span></span>, <span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">span</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N12EquationBase1DE" title="EquationBase::D"><span class="n"><span class="pre">D</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">coords</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><a class="headerlink" href="#_CPPv4NK12EquationBase13computeSourceERK1QNSt4spanIK1DEE" title="Link to this definition"></a><br /></dt>
+<dd><p>Calculates the source term of the equation ( <span class="math notranslate nohighlight">\( \mathcal S (\boldsymbol q) \)</span>) for the given state-vector. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>quantity</strong> – State-vector ( <a class="reference internal" href="classQuantityBase.html#classQuantityBase"><span class="std std-ref">QuantityBase</span></a> object reference) </p></li>
+<li><p><strong>coords</strong> – cell center coordinates</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The value of the <span class="math notranslate nohighlight">\(\mathcal S \)</span> source term. </p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-protected-types">Protected Types</p>
+<dl class="cpp type">
+<dt class="sig sig-object cpp" id="_CPPv4N12EquationBase1DE">
+<span id="_CPPv3N12EquationBase1DE"></span><span id="_CPPv2N12EquationBase1DE"></span><span class="target" id="classEquationBase_1a5a256a57bd23df7da96218502cc480d5"></span><span class="k"><span class="pre">using</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">D</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">typename</span></span><span class="w"> </span><a class="reference internal" href="structQuantityTraits.html#_CPPv4I0E14QuantityTraits" title="QuantityTraits"><span class="n"><span class="pre">QuantityTraits</span></span></a><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4I_12QuantityTypeE12EquationBase" title="EquationBase::Q"><span class="n"><span class="pre">Q</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">D</span></span><a class="headerlink" href="#_CPPv4N12EquationBase1DE" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="classDiffusion2d.html" class="btn btn-neutral float-left" title="Template Class Diffusion2d" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="classEuler2d.html" class="btn btn-neutral float-right" title="Template Class Euler2d" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright .</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

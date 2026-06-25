@@ -8,7 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Template Class LLFflux &mdash; Modular PULsation Suite  documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
-      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=7ab3649f" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
       <link rel="stylesheet" type="text/css" href="../_static/collapsible-lists/css/tree_view.css?v=a885cde7" />
       <link rel="stylesheet" type="text/css" href="../_static/compact-api.css?v=bfcdbbe1" />
 
@@ -157,7 +157,8 @@
 <dd><p>Local Lax-Friedrichs flux. </p>
 <p>It is by definition:</p>
 <p><div class="math notranslate nohighlight">
-\[F_{i+1/2} = 1\over 2 \left[ f(q_{i+1/2}^+) + f(q_{i+1/2}^-) - \lambda (q_{i+1/2}^+ - q_{i-1/2}^-) \right]
+\[ 
+F_{i+1/2} = 1\over 2 \left[ f(q_{i+1/2}^+) + f(q_{i+1/2}^-) - \lambda (q_{i+1/2}^+ - q_{i-1/2}^-) \right]
 \]</div>
 </p>
 <p>Where <span class="math notranslate nohighlight">\(\lambda\)</span> is the largest characteristic speed at the interface i.e. <span class="math notranslate nohighlight">\( \max [ F'_+ , F'_-]]\)</span>, where <span class="math notranslate nohighlight">\(F' = (\partial F / \partial q)\)</span> eigenvalues. And +,- means the two sides of the interface. </p>

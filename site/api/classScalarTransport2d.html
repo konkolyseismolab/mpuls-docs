@@ -8,7 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Template Class ScalarTransport2d &mdash; Modular PULsation Suite  documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
-      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=7ab3649f" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
       <link rel="stylesheet" type="text/css" href="../_static/collapsible-lists/css/tree_view.css?v=a885cde7" />
       <link rel="stylesheet" type="text/css" href="../_static/compact-api.css?v=bfcdbbe1" />
 
@@ -164,8 +164,9 @@
 <dt class="sig sig-object cpp" id="_CPPv4I_14TwoDimensional_12QuantityTypeE17ScalarTransport2d">
 <span id="_CPPv3I_14TwoDimensional_12QuantityTypeE17ScalarTransport2d"></span><span id="_CPPv2I_14TwoDimensional_12QuantityTypeE17ScalarTransport2d"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">TwoDimensional</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">T</span></span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">QuantityType</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Q</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="classScalarTransport2d"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ScalarTransport2d</span></span></span><span class="w"> </span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="k"><span class="pre">public</span></span><span class="w"> </span><a class="reference internal" href="classEquationBase.html#_CPPv4I_12QuantityTypeE12EquationBase" title="EquationBase"><span class="n"><span class="pre">EquationBase</span></span></a><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4I_14TwoDimensional_12QuantityTypeE17ScalarTransport2d" title="ScalarTransport2d::Q"><span class="n"><span class="pre">Q</span></span></a><span class="p"><span class="pre">&gt;</span></span><a class="headerlink" href="#_CPPv4I_14TwoDimensional_12QuantityTypeE17ScalarTransport2d" title="Link to this definition"></a><br /></dt>
 <dd><p>Example equationsystem for twodimensional scalar transport.</p>
-<p>It describes the   <div class="math notranslate nohighlight">
-\[ \frac{\partial q}{\partial t} + a \nabla q =0
+<p>It describes the  <div class="math notranslate nohighlight">
+\[
+ \frac{\partial q}{\partial t} + a \nabla q =0
 \]</div>
 </p>
 <p>equation. </p>
@@ -218,8 +219,9 @@
 <dt class="sig sig-object cpp" id="_CPPv4NK17ScalarTransport2d14getMaxVelocityERK1Q9DirectionNSt4spanIK1DEE">
 <span id="_CPPv3NK17ScalarTransport2d14getMaxVelocityERK1Q9DirectionNSt4spanIK1DEE"></span><span id="_CPPv2NK17ScalarTransport2d14getMaxVelocityERK1Q9DirectionNSt4spanIK1DEE"></span><span id="ScalarTransport2d::getMaxVelocity__QCR.Direction.std::span:DC:C"></span><span class="target" id="classScalarTransport2d_1af1e6944e7d06d913eb0609c0e1c39035"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N17ScalarTransport2d1DE" title="ScalarTransport2d::D"><span class="n"><span class="pre">D</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getMaxVelocity</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4I_14TwoDimensional_12QuantityTypeE17ScalarTransport2d" title="ScalarTransport2d::Q"><span class="n"><span class="pre">Q</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">quantity</span></span>, <a class="reference internal" href="enum_common_8hpp_1a224b9163917ac32fc95a60d8c1eec3aa.html#_CPPv49Direction" title="Direction"><span class="n"><span class="pre">Direction</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">dir</span></span>, <span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">span</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N17ScalarTransport2d1DE" title="ScalarTransport2d::D"><span class="n"><span class="pre">D</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">coords</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4NK17ScalarTransport2d14getMaxVelocityERK1Q9DirectionNSt4spanIK1DEE" title="Link to this definition"></a><br /></dt>
 <dd><p>Calculates the highest characteristic speed based on the given state-vector. </p>
-<p>Some solver needs the largest characteristic speed at the interface (see e.g. <a class="reference internal" href="classLLFflux.html#classLLFflux"><span class="std std-ref">LLFflux</span></a> ). This is e.g. for the Euler system is:   <div class="math notranslate nohighlight">
-\[  \max \left[ \vert u - c \vert , \vert u \vert , \vert u + c \vert \right]
+<p>Some solver needs the largest characteristic speed at the interface (see e.g. <a class="reference internal" href="classLLFflux.html#classLLFflux"><span class="std std-ref">LLFflux</span></a> ). This is e.g. for the Euler system is:  <div class="math notranslate nohighlight">
+\[ 
+  \max \left[ \vert u - c \vert , \vert u \vert , \vert u + c \vert \right]
 \]</div>
 </p>
 <dl class="field-list simple">

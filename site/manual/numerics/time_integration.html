@@ -8,7 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Time integration &mdash; Modular PULsation Suite  documentation</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
-      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=7ab3649f" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
       <link rel="stylesheet" type="text/css" href="../../_static/collapsible-lists/css/tree_view.css?v=a885cde7" />
       <link rel="stylesheet" type="text/css" href="../../_static/compact-api.css?v=bfcdbbe1" />
 
@@ -134,8 +134,9 @@ each grid points. Therefore the whole system for the <span class="math notransla
 <dd><div class="docutils container">
 <em>#include &lt;time_solver/time_solver.hpp&gt;</em></div>
 <p>Strong Stability Preseving Runge Kutta 2nd order. </p>
-<p>This solver implements the SSP-RK2 method, also known as Heun method for ordinary differential equations, in the method of lines sense. The method is described in 2 steps. Giving the following formula:       <div class="math notranslate nohighlight">
-\[\begin{split}     \begin{array}{c}
+<p>This solver implements the SSP-RK2 method, also known as Heun method for ordinary differential equations, in the method of lines sense. The method is described in 2 steps. Giving the following formula:  <div class="math notranslate nohighlight">
+\[\begin{split} 
+     \begin{array}{c}
      \displaystyle \boldsymbol{k}_1 = h \boldsymbol{f}(\boldsymbol{q}^n) \\
      \displaystyle \boldsymbol{k}_2 = h \boldsymbol{f}(\boldsymbol{q}^n + k_1) \\
      \displaystyle \boldsymbol{q}^{n+1} = \boldsymbol{q}^n + \frac 1 2 (\boldsymbol k_1 + \boldsymbol k_2)
@@ -160,8 +161,9 @@ each grid points. Therefore the whole system for the <span class="math notransla
 <dd><div class="docutils container">
 <em>#include &lt;time_solver/time_solver.hpp&gt;</em></div>
 <p>Strong Stability Preseving Runge Kutta 3rd order. </p>
-<p>This solver implements the SSP-RK3 method for ordinary differential equations, in the method of lines sense. The method is described in three steps. Giving the following formula:        <div class="math notranslate nohighlight">
-\[\begin{split}     \begin{array}{c}
+<p>This solver implements the SSP-RK3 method for ordinary differential equations, in the method of lines sense. The method is described in three steps. Giving the following formula:  <div class="math notranslate nohighlight">
+\[\begin{split} 
+     \begin{array}{c}
      \displaystyle \boldsymbol{k}_1 = h \boldsymbol{f}(\boldsymbol{q}^n) \\
      \displaystyle \boldsymbol{k}_2 = h \boldsymbol{f}(\boldsymbol{q}^n + k_1) \\
      \displaystyle \boldsymbol{k}_3 = h \boldsymbol{f}(\boldsymbol{q}^n + \frac 1 4 (\boldsymbol k_1 +\boldsymbol k_2 ))

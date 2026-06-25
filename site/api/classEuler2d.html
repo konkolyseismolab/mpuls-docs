@@ -8,7 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Template Class Euler2d &mdash; Modular PULsation Suite  documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
-      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=7ab3649f" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
       <link rel="stylesheet" type="text/css" href="../_static/collapsible-lists/css/tree_view.css?v=a885cde7" />
       <link rel="stylesheet" type="text/css" href="../_static/compact-api.css?v=bfcdbbe1" />
 
@@ -163,16 +163,7 @@
 <dl class="cpp class">
 <dt class="sig sig-object cpp" id="_CPPv4I_14TwoDimensional_12QuantityTypeE7Euler2d">
 <span id="_CPPv3I_14TwoDimensional_12QuantityTypeE7Euler2d"></span><span id="_CPPv2I_14TwoDimensional_12QuantityTypeE7Euler2d"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">TwoDimensional</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">T</span></span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">QuantityType</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Q</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="classEuler2d"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Euler2d</span></span></span><span class="w"> </span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="k"><span class="pre">public</span></span><span class="w"> </span><a class="reference internal" href="classEquationBase.html#_CPPv4I_12QuantityTypeE12EquationBase" title="EquationBase"><span class="n"><span class="pre">EquationBase</span></span></a><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4I_14TwoDimensional_12QuantityTypeE7Euler2d" title="Euler2d::Q"><span class="n"><span class="pre">Q</span></span></a><span class="p"><span class="pre">&gt;</span></span><a class="headerlink" href="#_CPPv4I_14TwoDimensional_12QuantityTypeE7Euler2d" title="Link to this definition"></a><br /></dt>
-<dd><p>Euler equation system 2<a class="reference internal" href="#classEuler2d_1a28326ee57f6c8cb41ff856b4d5c3a9cd"><span class="std std-ref">D</span></a> implementation: </p>
-<p>The equations are the following ( conservative variables):</p>
-<p><div class="math notranslate nohighlight">
-\[\begin{split}      \boldsymbol q =\left(\begin{array}{c} \rho \\ m_u \\ m_v \\ E\end{array} \right)  \qquad
-      \boldsymbol F = \left( \begin{array}{c} m_u \\ \frac{m_u^2}{\rho} + p \\ \frac{m_v m_u}{\rho} \\ \frac{m_u}{\rho} (E+p)\end{array} \right) \qquad 
-      \boldsymbol G = \left( \begin{array}{c} m_v \\ \frac{m_v m_u}{\rho} \\ \frac{m_v^2}{\rho} + p \\ \frac{m_v}{\rho} (E+p)\end{array}\right)
-\end{split}\]</div>
-</p>
-<p>Its template parameter: </p>
-<div class="breathe-sectiondef docutils container">
+<dd><div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N7Euler2d7Euler2dEv">
@@ -212,8 +203,9 @@
 <dt class="sig sig-object cpp" id="_CPPv4NK7Euler2d14getMaxVelocityERK1Q9DirectionNSt4spanIK1DEE">
 <span id="_CPPv3NK7Euler2d14getMaxVelocityERK1Q9DirectionNSt4spanIK1DEE"></span><span id="_CPPv2NK7Euler2d14getMaxVelocityERK1Q9DirectionNSt4spanIK1DEE"></span><span id="Euler2d::getMaxVelocity__QCR.Direction.std::span:DC:C"></span><span class="target" id="classEuler2d_1a939d04351ca50b4b64c9079ca8e76f0d"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N7Euler2d1DE" title="Euler2d::D"><span class="n"><span class="pre">D</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getMaxVelocity</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4I_14TwoDimensional_12QuantityTypeE7Euler2d" title="Euler2d::Q"><span class="n"><span class="pre">Q</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">quantity</span></span>, <a class="reference internal" href="enum_common_8hpp_1a224b9163917ac32fc95a60d8c1eec3aa.html#_CPPv49Direction" title="Direction"><span class="n"><span class="pre">Direction</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">dir</span></span>, <span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">span</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N7Euler2d1DE" title="Euler2d::D"><span class="n"><span class="pre">D</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">coords</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4NK7Euler2d14getMaxVelocityERK1Q9DirectionNSt4spanIK1DEE" title="Link to this definition"></a><br /></dt>
 <dd><p>Calculates the highest characteristic speed based on the given state-vector. </p>
-<p>Some solver needs the largest characteristic speed at the interface (see e.g. <a class="reference internal" href="classLLFflux.html#classLLFflux"><span class="std std-ref">LLFflux</span></a> ). This is e.g. for the Euler system is:   <div class="math notranslate nohighlight">
-\[  \max \left[ \vert u - c \vert , \vert u \vert , \vert u + c \vert \right]
+<p>Some solver needs the largest characteristic speed at the interface (see e.g. <a class="reference internal" href="classLLFflux.html#classLLFflux"><span class="std std-ref">LLFflux</span></a> ). This is e.g. for the Euler system is:  <div class="math notranslate nohighlight">
+\[ 
+  \max \left[ \vert u - c \vert , \vert u \vert , \vert u + c \vert \right]
 \]</div>
 </p>
 <dl class="field-list simple">
@@ -289,8 +281,9 @@
 <dt class="sig sig-object cpp" id="_CPPv4N7Euler2d5gammaE">
 <span id="_CPPv3N7Euler2d5gammaE"></span><span id="_CPPv2N7Euler2d5gammaE"></span><span id="Euler2d::gamma__D"></span><span class="target" id="classEuler2d_1a6ff56339fb87af0121ae255a68aea008"></span><a class="reference internal" href="#_CPPv4N7Euler2d1DE" title="Euler2d::D"><span class="n"><span class="pre">D</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">gamma</span></span></span><a class="headerlink" href="#_CPPv4N7Euler2d5gammaE" title="Link to this definition"></a><br /></dt>
 <dd><p>The adiabatic exponent <span class="math notranslate nohighlight">\( \gamma\)</span>. </p>
-<p>This is used in the equation of state   <div class="math notranslate nohighlight">
-\[p = e (\gamma-1)\rho 
+<p>This is used in the equation of state  <div class="math notranslate nohighlight">
+\[ 
+p = e (\gamma-1)\rho 
 \]</div>
 </p>
 </dd></dl>

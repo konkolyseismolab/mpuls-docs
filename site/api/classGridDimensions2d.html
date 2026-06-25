@@ -8,7 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Template Class GridDimensions2d &mdash; Modular PULsation Suite  documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
-      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=7ab3649f" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
       <link rel="stylesheet" type="text/css" href="../_static/collapsible-lists/css/tree_view.css?v=a885cde7" />
       <link rel="stylesheet" type="text/css" href="../_static/compact-api.css?v=bfcdbbe1" />
 
@@ -218,8 +218,9 @@
 <dt class="sig sig-object cpp" id="_CPPv4N16GridDimensions2d19interfaceAreaIphalfE6size_t6size_t">
 <span id="_CPPv3N16GridDimensions2d19interfaceAreaIphalfE6size_t6size_t"></span><span id="_CPPv2N16GridDimensions2d19interfaceAreaIphalfE6size_t6size_t"></span><span id="GridDimensions2d::interfaceAreaIphalf__s.s"></span><span class="target" id="classGridDimensions2d_1a1d3b6a685425c4c5b0af48f192956602"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4I0E16GridDimensions2d" title="GridDimensions2d::D"><span class="n"><span class="pre">D</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">interfaceAreaIphalf</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">i</span></span>, <span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">j</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N16GridDimensions2d19interfaceAreaIphalfE6size_t6size_t" title="Link to this definition"></a><br /></dt>
 <dd><p>Calculates interface are at half index vertical coordinate. </p>
-<p>The area on the 2D grid (in the current implementation)   <div class="math notranslate nohighlight">
-\[A_{i+1/2,j} = 2 \pi r_{i+1/2}^2 \sin \theta_j \Delta \theta 
+<p>The area on the 2D grid (in the current implementation)  <div class="math notranslate nohighlight">
+\[
+A_{i+1/2,j} = 2 \pi r_{i+1/2}^2 \sin \theta_j \Delta \theta 
 \]</div>
 </p>
 <dl class="field-list simple">
@@ -236,8 +237,9 @@
 <dt class="sig sig-object cpp" id="_CPPv4N16GridDimensions2d19interfaceAreaJphalfE6size_t6size_t">
 <span id="_CPPv3N16GridDimensions2d19interfaceAreaJphalfE6size_t6size_t"></span><span id="_CPPv2N16GridDimensions2d19interfaceAreaJphalfE6size_t6size_t"></span><span id="GridDimensions2d::interfaceAreaJphalf__s.s"></span><span class="target" id="classGridDimensions2d_1a2adf149f3f06b96e6931e7a2f733b33b"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4I0E16GridDimensions2d" title="GridDimensions2d::D"><span class="n"><span class="pre">D</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">interfaceAreaJphalf</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">i</span></span>, <span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">j</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N16GridDimensions2d19interfaceAreaJphalfE6size_t6size_t" title="Link to this definition"></a><br /></dt>
 <dd><p>Computes the are at half-j indices. </p>
-<p>At <span class="math notranslate nohighlight">\(j+1/2\)</span> the area is:   <div class="math notranslate nohighlight">
-\[A_{i,j+1/2} = 2 \pi r_{i}^2 \sin \theta_{j+1/2} \Delta r_i 
+<p>At <span class="math notranslate nohighlight">\(j+1/2\)</span> the area is:  <div class="math notranslate nohighlight">
+\[
+A_{i,j+1/2} = 2 \pi r_{i}^2 \sin \theta_{j+1/2} \Delta r_i 
 \]</div>
 </p>
 <dl class="field-list simple">
@@ -254,8 +256,9 @@
 <dt class="sig sig-object cpp" id="_CPPv4N16GridDimensions2d10cellVolumeE6size_t6size_t">
 <span id="_CPPv3N16GridDimensions2d10cellVolumeE6size_t6size_t"></span><span id="_CPPv2N16GridDimensions2d10cellVolumeE6size_t6size_t"></span><span id="GridDimensions2d::cellVolume__s.s"></span><span class="target" id="classGridDimensions2d_1a572841579ad3653bfc19d3f6db66189f"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4I0E16GridDimensions2d" title="GridDimensions2d::D"><span class="n"><span class="pre">D</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">cellVolume</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">i</span></span>, <span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">j</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N16GridDimensions2d10cellVolumeE6size_t6size_t" title="Link to this definition"></a><br /></dt>
 <dd><p>Computes the cell control volume. </p>
-<p>At <span class="math notranslate nohighlight">\(j+1/2\)</span> the area is:   <div class="math notranslate nohighlight">
-\[V_{i,j} = 2 \pi r_{i}^2 \sin \theta_{j} \Delta \theta_j \Delta r_i 
+<p>At <span class="math notranslate nohighlight">\(j+1/2\)</span> the area is:  <div class="math notranslate nohighlight">
+\[
+V_{i,j} = 2 \pi r_{i}^2 \sin \theta_{j} \Delta \theta_j \Delta r_i 
 \]</div>
 </p>
 <dl class="field-list simple">

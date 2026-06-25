@@ -8,7 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Template Class MinMod &mdash; Modular PULsation Suite  documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
-      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=7ab3649f" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
       <link rel="stylesheet" type="text/css" href="../_static/collapsible-lists/css/tree_view.css?v=a885cde7" />
       <link rel="stylesheet" type="text/css" href="../_static/compact-api.css?v=bfcdbbe1" />
 
@@ -166,7 +166,8 @@
 <dd><p>Minmod type limiter, which returns the smallest second order accurate TVD slope. </p>
 <p>The minmod limited slope is:</p>
 <p><div class="math notranslate nohighlight">
-\[\phi(\delta q_{i+1/2},\delta q_{i-1/2}) = \min [ \max (\delta q_{i-1/2}, 0) , \max (\delta q_{i+1/2}, 0) ] +
+\[
+\phi(\delta q_{i+1/2},\delta q_{i-1/2}) = \min [ \max (\delta q_{i-1/2}, 0) , \max (\delta q_{i+1/2}, 0) ] +
 \max [ \min (\delta q_{i-1/2}, 0) , \min (\delta q_{i+1/2}, 0) ]
 \]</div>
 </p>

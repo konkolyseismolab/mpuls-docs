@@ -8,7 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Template Class SSP_RK2 &mdash; Modular PULsation Suite  documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
-      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=7ab3649f" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
       <link rel="stylesheet" type="text/css" href="../_static/collapsible-lists/css/tree_view.css?v=a885cde7" />
       <link rel="stylesheet" type="text/css" href="../_static/compact-api.css?v=bfcdbbe1" />
 
@@ -164,8 +164,9 @@
 <dt class="sig sig-object cpp" id="_CPPv4I_12QuantityType000E7SSP_RK2">
 <span id="_CPPv3I_12QuantityType000E7SSP_RK2"></span><span id="_CPPv2I_12QuantityType000E7SSP_RK2"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">QuantityType</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Q</span></span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">RHS</span></span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CFL</span></span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Boundary</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="classSSP__RK2"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">SSP_RK2</span></span></span><span class="w"> </span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="k"><span class="pre">public</span></span><span class="w"> </span><a class="reference internal" href="classTimeSolverBase.html#_CPPv4I_12QuantityTypeE14TimeSolverBase" title="TimeSolverBase"><span class="n"><span class="pre">TimeSolverBase</span></span></a><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4I_12QuantityType000E7SSP_RK2" title="SSP_RK2::Q"><span class="n"><span class="pre">Q</span></span></a><span class="p"><span class="pre">&gt;</span></span><a class="headerlink" href="#_CPPv4I_12QuantityType000E7SSP_RK2" title="Link to this definition"></a><br /></dt>
 <dd><p>Strong Stability Preseving Runge Kutta 2nd order. </p>
-<p>This solver implements the SSP-RK2 method, also known as Heun method for ordinary differential equations, in the method of lines sense. The method is described in 2 steps. Giving the following formula:       <div class="math notranslate nohighlight">
-\[\begin{split}     \begin{array}{c}
+<p>This solver implements the SSP-RK2 method, also known as Heun method for ordinary differential equations, in the method of lines sense. The method is described in 2 steps. Giving the following formula:  <div class="math notranslate nohighlight">
+\[\begin{split} 
+     \begin{array}{c}
      \displaystyle \boldsymbol{k}_1 = h \boldsymbol{f}(\boldsymbol{q}^n) \\
      \displaystyle \boldsymbol{k}_2 = h \boldsymbol{f}(\boldsymbol{q}^n + k_1) \\
      \displaystyle \boldsymbol{q}^{n+1} = \boldsymbol{q}^n + \frac 1 2 (\boldsymbol k_1 + \boldsymbol k_2)
@@ -310,25 +311,25 @@
 <dl class="cpp var">
 <dt class="sig sig-object cpp" id="_CPPv4N7SSP_RK28old_gridE">
 <span id="_CPPv3N7SSP_RK28old_gridE"></span><span id="_CPPv2N7SSP_RK28old_gridE"></span><span id="SSP_RK2::old_grid__Grid2d:Q:R"></span><span class="target" id="classSSP__RK2_1a3828afabf7536d453af7f0737c38a7e8"></span><a class="reference internal" href="classGrid2d.html#_CPPv4I_12QuantityTypeE6Grid2d" title="Grid2d"><span class="n"><span class="pre">Grid2d</span></span></a><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4I_12QuantityType000E7SSP_RK2" title="SSP_RK2::Q"><span class="n"><span class="pre">Q</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">old_grid</span></span></span><a class="headerlink" href="#_CPPv4N7SSP_RK28old_gridE" title="Link to this definition"></a><br /></dt>
-<dd><p><a class="reference internal" href="classGrid2d.html#classGrid2d"><span class="std std-ref">Grid2d&lt;Q&gt;</span></a> object containing <span class="math notranslate nohighlight">\(\boldsymbol q^n\)</span>. </p>
+<dd><p>Grid2d&lt;Q&gt; object containing <span class="math notranslate nohighlight">\(\boldsymbol q^n\)</span>. </p>
 </dd></dl>
 
 <dl class="cpp var">
 <dt class="sig sig-object cpp" id="_CPPv4N7SSP_RK28new_gridE">
 <span id="_CPPv3N7SSP_RK28new_gridE"></span><span id="_CPPv2N7SSP_RK28new_gridE"></span><span id="SSP_RK2::new_grid__Grid2d:Q:R"></span><span class="target" id="classSSP__RK2_1a322ad2c3aba24e81f2cceb0a791cb596"></span><a class="reference internal" href="classGrid2d.html#_CPPv4I_12QuantityTypeE6Grid2d" title="Grid2d"><span class="n"><span class="pre">Grid2d</span></span></a><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4I_12QuantityType000E7SSP_RK2" title="SSP_RK2::Q"><span class="n"><span class="pre">Q</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">new_grid</span></span></span><a class="headerlink" href="#_CPPv4N7SSP_RK28new_gridE" title="Link to this definition"></a><br /></dt>
-<dd><p><a class="reference internal" href="classGrid2d.html#classGrid2d"><span class="std std-ref">Grid2d&lt;Q&gt;</span></a> object containing <span class="math notranslate nohighlight">\(\boldsymbol q^{n+1}\)</span>. </p>
+<dd><p>Grid2d&lt;Q&gt; object containing <span class="math notranslate nohighlight">\(\boldsymbol q^{n+1}\)</span>. </p>
 </dd></dl>
 
 <dl class="cpp var">
 <dt class="sig sig-object cpp" id="_CPPv4N7SSP_RK29temp_gridE">
 <span id="_CPPv3N7SSP_RK29temp_gridE"></span><span id="_CPPv2N7SSP_RK29temp_gridE"></span><span id="SSP_RK2::temp_grid__Grid2d:Q:"></span><span class="target" id="classSSP__RK2_1a73a9cef4c941e5ab9693acb54261978b"></span><a class="reference internal" href="classGrid2d.html#_CPPv4I_12QuantityTypeE6Grid2d" title="Grid2d"><span class="n"><span class="pre">Grid2d</span></span></a><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4I_12QuantityType000E7SSP_RK2" title="SSP_RK2::Q"><span class="n"><span class="pre">Q</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">temp_grid</span></span></span><a class="headerlink" href="#_CPPv4N7SSP_RK29temp_gridE" title="Link to this definition"></a><br /></dt>
-<dd><p><a class="reference internal" href="classGrid2d.html#classGrid2d"><span class="std std-ref">Grid2d&lt;Q&gt;</span></a> object containing <span class="math notranslate nohighlight">\(\boldsymbol q^n + \boldsymbol k_1\)</span>. </p>
+<dd><p>Grid2d&lt;Q&gt; object containing <span class="math notranslate nohighlight">\(\boldsymbol q^n + \boldsymbol k_1\)</span>. </p>
 </dd></dl>
 
 <dl class="cpp var">
 <dt class="sig sig-object cpp" id="_CPPv4N7SSP_RK27k1_gridE">
 <span id="_CPPv3N7SSP_RK27k1_gridE"></span><span id="_CPPv2N7SSP_RK27k1_gridE"></span><span id="SSP_RK2::k1_grid__Grid2d:Q:"></span><span class="target" id="classSSP__RK2_1af825741ffadb9bb471aa18ff2abcf087"></span><a class="reference internal" href="classGrid2d.html#_CPPv4I_12QuantityTypeE6Grid2d" title="Grid2d"><span class="n"><span class="pre">Grid2d</span></span></a><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4I_12QuantityType000E7SSP_RK2" title="SSP_RK2::Q"><span class="n"><span class="pre">Q</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">k1_grid</span></span></span><a class="headerlink" href="#_CPPv4N7SSP_RK27k1_gridE" title="Link to this definition"></a><br /></dt>
-<dd><p><a class="reference internal" href="classGrid2d.html#classGrid2d"><span class="std std-ref">Grid2d&lt;Q&gt;</span></a> object containing <span class="math notranslate nohighlight">\(\boldsymbol k_1\)</span>. </p>
+<dd><p>Grid2d&lt;Q&gt; object containing <span class="math notranslate nohighlight">\(\boldsymbol k_1\)</span>. </p>
 </dd></dl>
 
 </div>

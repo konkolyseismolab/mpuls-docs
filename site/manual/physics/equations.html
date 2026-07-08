@@ -54,6 +54,7 @@
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">MPULS User Manual</a><ul class="current">
 <li class="toctree-l2 current"><a class="reference internal" href="physics.html">Physical background</a><ul class="current">
 <li class="toctree-l3 current"><a class="current reference internal" href="#">PDE Systems</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv4I0_iE12QuantityBase"><code class="docutils literal notranslate"><span class="pre">QuantityBase</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#_CPPv4I_12QuantityTypeE12EquationBase"><code class="docutils literal notranslate"><span class="pre">EquationBase</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#_CPPv4I_14TwoDimensional_12QuantityTypeE17ScalarTransport2d"><code class="docutils literal notranslate"><span class="pre">ScalarTransport2d</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#_CPPv4I_14TwoDimensional_12QuantityTypeE7Euler2d"><code class="docutils literal notranslate"><span class="pre">Euler2d</span></code></a></li>
@@ -116,17 +117,49 @@ internal energy and <span class="math notranslate nohighlight">\(F_{\text rad}\)
 <p>Converting these equations into conservation form, we arrive at a partial differential equation systems, with the generic form:</p>
 <div class="math notranslate nohighlight" id="equation-generic-pde">
 <span class="eqno">(2)<a class="headerlink" href="#equation-generic-pde" title="Link to this equation"></a></span>\[\frac{\partial q}{\partial t} + \boldsymbol \nabla \cdot \boldsymbol F_{\text adv}(q) + \boldsymbol \nabla \cdot\boldsymbol F_{\text diff}(q) = S (q)\]</div>
-<p>In this generic form, one can define the so called state-vector as <span class="math notranslate nohighlight">\(\boldsymbol q = (\rho, \rho u , \rho v, \rho w, \rho e_{\rm tot} )\)</span>.</p>
-<div class="admonition-implementation admonition">
-<p class="admonition-title">Implementation</p>
+<p>In this generic form, one can define the so called state-vector as <span class="math notranslate nohighlight">\(\boldsymbol q = (\rho, \rho u , \rho v, \rho w, \rho e_{\rm tot} )\)</span>. Using this form for
+the PDE’s variables ease us to formulate a numerical solution.</p>
+<details class="admonition-implementation admonition">
+<summary class="admonition-title">Implementation</summary>
 <p>Since the state-vector couples all information that is available in a grid point, it should be implemented together.
 Therefore, we implement it as an array-based templated format, called <a class="reference internal" href="../../api/classQuantityBase.html#exhale-class-classquantitybase"><span class="std std-ref">QuantityBase</span></a>:</p>
-<p>These are implemented through the various classes (see <a class="reference internal" href="../../api/file_include_equations_equations.hpp.html#file-include-equations-equations-hpp"><span class="std std-ref">File equations.hpp</span></a> header documentation).</p>
+<dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv4I0_iE12QuantityBase">
+<span id="_CPPv3I0_iE12QuantityBase"></span><span id="_CPPv2I0_iE12QuantityBase"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">typename</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">D</span></span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">N</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="classQuantityBase"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">QuantityBase</span></span></span><br /></dt>
+<dd><p><p>The base class that can be used to define simple state-vectors.</p>
+<p>Basic operations (+,-,*,/) are overloaded for clarity. Mathematically this is a templated implementation of e.g.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split} \boldsymbol q = \left( \begin{array}{c}
+  \rho \\
+  u \\
+  v \\
+  p  
+  \end{array} \right)
+  \end{split}\]</div>
+</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The actual meaning of the values inside <a class="reference internal" href="../../api/classQuantityBase.html#classQuantityBase_1a5ff85bd7d39ed5721683882b327d701e"><span class="std std-ref">state_vector</span></a> depends on the user context of the actual object that uses it.</p>
 </div>
-<dl>
-<dt class="sig sig-object cpp">
-<span class="target" id="group__Equations"></span><em><span class="pre">group</span></em> <span class="sig-name descname"><span class="pre">Equations</span></span></dt>
-<dd><dl class="cpp class">
+<dl class="field-list simple">
+<dt class="field-odd">Template Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>D</strong> – The floating point type </p></li>
+<li><p><strong>N</strong> – The size of the state-vector</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</details>
+<p>In MPULS we implemented a number of different PDE systems, all reflecting some aspects of the problem.</p>
+<p>These are implemented through the various classes (see <a class="reference internal" href="../../api/file_include_equations_equations.hpp.html#file-include-equations-equations-hpp"><span class="std std-ref">equations.hpp</span></a> header documentation).</p>
+<details class="admonition-implementation admonition">
+<summary class="admonition-title">Implementation</summary>
+<p>All equation system have to comform a common interface, through wich the solver can get various informations
+such as flux calculation, source and diffusion terms. These are coded into the abstract class <a class="reference internal" href="../../api/classEquationBase.html#exhale-class-classequationbase"><span class="std std-ref">EquationBase&lt;Q&gt;</span></a>.
+The list of decendant classes in the reference implementation is the following:</p>
+<dl class="cpp class">
 <dt class="sig sig-object cpp" id="_CPPv4I_12QuantityTypeE12EquationBase">
 <span id="_CPPv3I_12QuantityTypeE12EquationBase"></span><span id="_CPPv2I_12QuantityTypeE12EquationBase"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">QuantityType</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Q</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="classEquationBase"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">EquationBase</span></span></span><br /></dt>
 <dd><p>Subclassed by <a class="reference internal" href="#classEuler2d"><span class="std std-ref">Euler2d&lt; T, Q &gt;</span></a>, <a class="reference internal" href="#classScalarTransport2d"><span class="std std-ref">ScalarTransport2d&lt; T, Q &gt;</span></a></p>
@@ -142,8 +175,7 @@ Therefore, we implement it as an array-based templated format, called <a class="
 <span id="_CPPv3I_14TwoDimensional_12QuantityTypeE7Euler2d"></span><span id="_CPPv2I_14TwoDimensional_12QuantityTypeE7Euler2d"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">TwoDimensional</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">T</span></span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">QuantityType</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Q</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="classEuler2d"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Euler2d</span></span></span><span class="w"> </span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="k"><span class="pre">public</span></span><span class="w"> </span><a class="reference internal" href="../../api/classEquationBase.html#_CPPv4I_12QuantityTypeE12EquationBase" title="EquationBase"><span class="n"><span class="pre">EquationBase</span></span></a><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="../../api/classEuler2d.html#_CPPv4I_14TwoDimensional_12QuantityTypeE7Euler2d" title="Euler2d::Q"><span class="n"><span class="pre">Q</span></span></a><span class="p"><span class="pre">&gt;</span></span><br /></dt>
 <dd></dd></dl>
 
-</dd></dl>
-
+</details>
 </section>
 
 

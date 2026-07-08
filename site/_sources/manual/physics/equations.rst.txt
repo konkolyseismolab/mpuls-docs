@@ -27,17 +27,30 @@ Converting these equations into conservation form, we arrive at a partial differ
 .. math:: \frac{\partial q}{\partial t} + \boldsymbol \nabla \cdot \boldsymbol F_{\text adv}(q) + \boldsymbol \nabla \cdot\boldsymbol F_{\text diff}(q) = S (q)
    :label: generic-pde
 
-In this generic form, one can define the so called state-vector as :math:`\boldsymbol q = (\rho, \rho u , \rho v, \rho w, \rho e_{\rm tot} )`. 
+In this generic form, one can define the so called state-vector as :math:`\boldsymbol q = (\rho, \rho u , \rho v, \rho w, \rho e_{\rm tot} )`. Using this form for
+the PDE's variables ease us to formulate a numerical solution. 
 
 .. admonition:: Implementation
+   :collapsible: closed
 
    Since the state-vector couples all information that is available in a grid point, it should be implemented together.
    Therefore, we implement it as an array-based templated format, called :ref:`QuantityBase<exhale_class_classQuantityBase>`:
 
-   These are implemented through the various classes (see :ref:`file_include_equations_equations.hpp` header documentation).
+   .. doxygenclass:: QuantityBase
+      :project: MPULS
+      
+In MPULS we implemented a number of different PDE systems, all reflecting some aspects of the problem.
 
+These are implemented through the various classes (see :ref:`equations.hpp <file_include_equations_equations.hpp>` header documentation).
 
+.. admonition:: Implementation
+   :collapsible: closed
 
-.. doxygengroup:: Equations
-   :project: MPULS
-   :outline:
+   All equation system have to comform a common interface, through wich the solver can get various informations
+   such as flux calculation, source and diffusion terms. These are coded into the abstract class :ref:`EquationBase\<Q\><exhale_class_classEquationBase>`.
+   The list of decendant classes in the reference implementation is the following:
+
+   .. doxygengroup:: Equations
+       :project: MPULS
+       :content-only:
+       :outline:

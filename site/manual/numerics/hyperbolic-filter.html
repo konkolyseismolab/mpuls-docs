@@ -20,6 +20,8 @@
       <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
       <script src="../../_static/collapsible-lists/js/CollapsibleLists.compressed.js?v=73120307"></script>
       <script src="../../_static/collapsible-lists/js/apply-collapsible-lists.js?v=660e4f45"></script>
+      <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+      <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -96,12 +98,42 @@
              
   <section class="tex2jax_ignore mathjax_ignore" id="solution-filtering">
 <h1>Solution filtering<a class="headerlink" href="#solution-filtering" title="Link to this heading"></a></h1>
-<p>Although the Kurganov-Tadmor scheme is TVD by itself, the use of difference form geometry and 2nd order accurate source calculation create numeric oscillations. Therefore we filter hign wavenumber oscillations of the solutions. For this we use a Nordlund<a class="footnote-reference brackets" href="#id2" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a> type filter.</p>
+<p>Although the Kurganov-Tadmor scheme is TVD by itself, the use of difference form geometry and 2nd order accurate source calculation create numeric oscillations. Therefore we filter hign wavenumber oscillations of the solutions. For this we use a Nordlund<a class="footnote-reference brackets" href="#id3" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a> type filter.</p>
+<p>For every quantity of the sate-vector <span class="math notranslate nohighlight">\(\boldsymbol q\)</span> we define a hyperdiffusivity as the diffusion:</p>
+<div class="math notranslate nohighlight" id="equation-filtering">
+<span class="eqno">(1)<a class="headerlink" href="#equation-filtering" title="Link to this equation"></a></span>\[ \left(\frac{\partial q^l}{\partial t}\right)_{\rm diff} = \sum\limits_i^N \frac{\partial}{\partial x_i} 
+   \left[ \nu_i(q^l)) \frac{\partial q^l}{\partial x_i}\right],
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(\nu\)</span> is the hyperdiffusive coeeficient described as:</p>
+<div class="math notranslate nohighlight" id="equation-nu-def">
+<span class="eqno">(2)<a class="headerlink" href="#equation-nu-def" title="Link to this equation"></a></span>\[
+ \nu_i = c_{\rm hyp} \Delta x_i \lambda_{\rm max}(\boldsymbol q) \frac{\underset{3}{\max} \vert \Delta_i^3 q^l \vert}{\underset{3}{\max} \vert \Delta_i^1 q^l \vert},
+\]</div>
+<p>where the term <span class="math notranslate nohighlight">\(\underset{3}{\max} \vert \Delta_i^3 q^l \vert\)</span> is the maximum third-order finite difference on three neigbouring cells. The difference formulae<a class="footnote-reference brackets" href="#id4" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a> are</p>
+<div class="math notranslate nohighlight" id="equation-diff-formulae">
+<span class="eqno">(3)<a class="headerlink" href="#equation-diff-formulae" title="Link to this equation"></a></span>\[\begin{split} (\Delta_i^3 q^l)_{j+1/2}  = &amp; 3 (q^l_{j+1}-q^l_j)- (q^l_{j+2} - q^l_{j-1}) \\
+ (\Delta_i^1 q^l)_{j+1/2}  = &amp; q_{j+1}^l - q_j^l \\\end{split}\]</div>
+<details class="admonition-implementation admonition">
+<summary class="admonition-title">Implementation</summary>
+<p>The filtering is directly applied in the <a class="reference internal" href="../../api/classRightHandSide.html#exhale-class-classrighthandside"><span class="std std-ref">RightHandSide</span></a> class through the <a class="reference internal" href="../../api/classHyperDiffusion.html#exhale-class-classhyperdiffusion"><span class="std std-ref">HyperDiffusion</span></a> and <a class="reference internal" href="../../api/classDiffusion2d.html#exhale-class-classdiffusion2d"><span class="std std-ref">Diffusion2D</span></a> classes. The former ipmlements the hyperdiffusion coeffitient and the latter implements the truncated diffusion operator. The standard <a class="reference internal" href="../../api/classRightHandSide.html#exhale-class-classrighthandside"><span class="std std-ref">RightHandSide</span></a> not uses the diffusion operator, this
+is reached by using <a class="reference internal" href="../../api/classRightHandSideDecorator.html#exhale-class-classrighthandsidedecorator"><span class="std std-ref">RightHandSideDecorator</span></a>.</p>
+</details>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>It should be noted, that in this particular case vector-derivatives are not propagated mathematically, i.e.,
+this is a truncated version of the true diffusion operator, and additional source terms are emitted. Also note,
+that this type of filtering is applied on <strong>all</strong> variables, and its sole purpose is to supress numerical noise.</p>
+</div>
 </section>
 <hr class="footnotes docutils" />
 <aside class="footnote-list brackets">
-<aside class="footnote brackets" id="id2" role="doc-footnote">
+<aside class="footnote brackets" id="id3" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
+<p><a class="reference external" href="https://doi.org/10.1086/305678">Stein, R.F., Nordlund, A., 1998. ApJ 499, 914.</a></p>
+</aside>
+<aside class="footnote brackets" id="id4" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">2</a><span class="fn-bracket">]</span></span>
+<p><a class="reference external" href="https://doi.org/10.1051/0004-6361:20041507">Vögler, A. et al., 2005. A&amp;A 429, 335.</a></p>
 </aside>
 </aside>
 

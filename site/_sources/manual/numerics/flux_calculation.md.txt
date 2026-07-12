@@ -1,2 +1,31 @@
 Hyperbolic equation solving
 ============================
+
+In MPULS we follow a Method of Lines Godunov-type approach in solving the hyperbolic part of the equations.
+
+Method of Lines
+---------------
+
+The PDE system in the form of {math:numref}`generic-pde` can be discretized fully, in which case numerical viscosity will be coupled both to spatial and temporal resolution. This can reduce accuracy at $\Delta t \rightarrow 0$ which occours at stiff parabolic parts of the PDE. Instead we follow this approcach:
+
+1. Discretize hyperbolic and parabolic parts of the equations **only spatially**.
+2. Write up the resulting system as $\partial \boldsymbol q / \partial t = \boldsymbol f (t, \boldsymbol q)$
+3. Solve the temporal problem with a Ordenary differential equation solver, such as Runge-Kutta method.
+
+This approach is called *method of lines*, because we follow the solution trajectories through the lines determined from the spatial grid. 
+
+Godunov-solver
+--------------
+
+In the finite-volume framework we solve the so-called Riemann-problem at every cell interfaces following this approach:
+
+1. From the known cell averages, reconstruct the solution $q(\xi)$ at the cell interface.
+2. Doing this with both cells, we end up with two different states on the two sides of the interface. This formulates a Riemann-problem.
+3. The solution of the above problem gives us numerical fluxes, which is time averaged and then the cell averages can be updated.
+
+The last averaging step is omitted in the method of lines approach. This an be done because higher order temporal solution is achieved by the ODE solver, so we can use fluxes directly. 
+
+```{note}
+
+   Usually conservative variables are converted to primitive variables to achieve higher numerical stability. 
+```

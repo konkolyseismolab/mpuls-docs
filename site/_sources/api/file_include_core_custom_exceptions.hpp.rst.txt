@@ -17,11 +17,6 @@ Definition (``include/core/custom_exceptions.hpp``)
 ---------------------------------------------------
 
 
-.. toctree::
-   :maxdepth: 1
-
-   program_listing_file_include_core_custom_exceptions.hpp.rst
-
 
 
 

@@ -17,11 +17,6 @@ Definition (``include/dev/opacity.hpp``)
 ----------------------------------------
 
 
-.. toctree::
-   :maxdepth: 1
-
-   program_listing_file_include_dev_opacity.hpp.rst
-
 
 
 

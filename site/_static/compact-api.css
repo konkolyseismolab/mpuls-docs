@@ -10,3 +10,11 @@
 .rst-content dl.c:has(> dd:empty) {
     margin-bottom: 0 !important;
 }
+
+span.eqno {
+    float: right;
+}
+span.eqno a.headerlink {
+    position: relative;
+    z-index: 1;
+}

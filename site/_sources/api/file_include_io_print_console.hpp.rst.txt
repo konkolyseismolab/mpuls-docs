@@ -22,11 +22,6 @@ Definition (``include/io/print_console.hpp``)
 ---------------------------------------------
 
 
-.. toctree::
-   :maxdepth: 1
-
-   program_listing_file_include_io_print_console.hpp.rst
-
 
 
 Detailed Description

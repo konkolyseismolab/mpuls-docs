@@ -17,11 +17,6 @@ Definition (``include/io/profile_writer.hpp``)
 ----------------------------------------------
 
 
-.. toctree::
-   :maxdepth: 1
-
-   program_listing_file_include_io_profile_writer.hpp.rst
-
 
 
 

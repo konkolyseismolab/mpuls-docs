@@ -17,11 +17,6 @@ Definition (``include/core/config_parser.hpp``)
 -----------------------------------------------
 
 
-.. toctree::
-   :maxdepth: 1
-
-   program_listing_file_include_core_config_parser.hpp.rst
-
 
 
 

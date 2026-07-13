@@ -17,11 +17,6 @@ Definition (``include/physics/opal_table.hpp``)
 -----------------------------------------------
 
 
-.. toctree::
-   :maxdepth: 1
-
-   program_listing_file_include_physics_opal_table.hpp.rst
-
 
 
 

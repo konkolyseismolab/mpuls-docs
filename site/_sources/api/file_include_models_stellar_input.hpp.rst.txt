@@ -17,11 +17,6 @@ Definition (``include/models/stellar_input.hpp``)
 -------------------------------------------------
 
 
-.. toctree::
-   :maxdepth: 1
-
-   program_listing_file_include_models_stellar_input.hpp.rst
-
 
 
 

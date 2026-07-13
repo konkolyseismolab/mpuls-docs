@@ -17,11 +17,6 @@ Definition (``include/grid/grid.hpp``)
 --------------------------------------
 
 
-.. toctree::
-   :maxdepth: 1
-
-   program_listing_file_include_grid_grid.hpp.rst
-
 
 
 

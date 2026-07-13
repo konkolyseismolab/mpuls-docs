@@ -22,11 +22,6 @@ Definition (``include/core/compile_time_dispatcher.hpp``)
 ---------------------------------------------------------
 
 
-.. toctree::
-   :maxdepth: 1
-
-   program_listing_file_include_core_compile_time_dispatcher.hpp.rst
-
 
 
 Detailed Description

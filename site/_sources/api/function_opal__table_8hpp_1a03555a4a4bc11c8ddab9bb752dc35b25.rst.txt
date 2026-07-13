@@ -1,0 +1,14 @@
+.. _exhale_function_opal__table_8hpp_1a03555a4a4bc11c8ddab9bb752dc35b25:
+
+Function opacity::interpolate
+=============================
+
+- Defined in :ref:`file_include_physics_opal_table.hpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: opacity::interpolate(const OpacityTable&, double, double)
+   :project: MPULS

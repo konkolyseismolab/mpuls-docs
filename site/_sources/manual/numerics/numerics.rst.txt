@@ -11,5 +11,4 @@ In the following topic we review those aspects of the matter, that are related t
    flux_calculation
    Reconstruction
    Limiters
-   hyperbolic-filter
    time_integration

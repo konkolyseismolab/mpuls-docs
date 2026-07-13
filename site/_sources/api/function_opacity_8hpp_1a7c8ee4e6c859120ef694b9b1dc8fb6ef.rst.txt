@@ -1,0 +1,14 @@
+.. _exhale_function_opacity_8hpp_1a7c8ee4e6c859120ef694b9b1dc8fb6ef:
+
+Function selectTable
+====================
+
+- Defined in :ref:`file_include_dev_opacity.hpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: selectTable(const std::vector<OpacityTable>&, double, double, double, double, double)
+   :project: MPULS

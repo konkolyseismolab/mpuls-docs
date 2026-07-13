@@ -1,0 +1,176 @@
+
+.. _program_listing_file_include_advection_hyperdiffusion.hpp:
+
+Program Listing for File hyperdiffusion.hpp
+===========================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file_include_advection_hyperdiffusion.hpp>` (``include/advection/hyperdiffusion.hpp``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   #pragma once
+   #include "grid/grid.hpp"
+   #include "grid/quantity.hpp"
+   #include "core/common.hpp"
+   #include "equations/equations.hpp"
+   
+   template< QuantityType Q, EquationType<Q> Eq>
+   class HyperDiffusion
+   {
+   private:
+       using D = typename QuantityTraits<Q>::D;
+       static constexpr int N = QuantityTraits<Q>::N;
+       GridDimensions2d<D>& grid_dims;
+       D coeff;
+       Eq& eq;
+   
+       Q firstOrderDifference(const Grid2d<Q>& grid, size_t i, size_t j, Direction dir)
+       {
+   
+           if(dir == Direction::Horizontal)
+           {
+               auto Q_n = grid.getQuantity(i,j+1);
+               auto Q_nm1 = grid.getQuantity(i,j);
+               return (Q_n-Q_nm1 );// / (grid_dims.radialCoord(i)*
+               // (grid_dims.horizontalCoord(j+1) - grid_dims.horizontalCoord(j)));
+           }
+           else
+           {
+               auto Q_n = grid.getQuantity(i+1,j);
+               auto Q_nm1 = grid.getQuantity(i,j);
+               return (Q_n-Q_nm1 );// / (grid_dims.radialCoord(i+1)-grid_dims.radialCoord(i));
+           }
+   
+       }
+   
+       Q thirdOrderDifference(const Grid2d<Q>& grid, size_t i, size_t j, Direction dir)
+       {
+           if(dir == Direction::Horizontal)
+           {
+               auto Q_np2 = grid.getQuantity(i,j+2);
+               auto Q_np1 = grid.getQuantity(i,j+1);
+               auto Q_n   = grid.getQuantity(i,j);
+               auto Q_nm1 = grid.getQuantity(i,j-1);
+               auto Delta_Q = -1.*Q_np2 + 3. * Q_np1 - 3.* Q_n + Q_nm1;
+               //auto h = grid_dims.radialCoord(i)*0.33*(grid_dims.horizontalCoord(j+2)-grid_dims.horizontalCoord(j-1));
+               return Delta_Q;// /h/h/h;
+           }
+           else
+           {
+               auto Q_np2 = grid.getQuantity(i+2,j);
+               auto Q_np1 = grid.getQuantity(i+1,j);
+               auto Q_n   = grid.getQuantity(i,j);
+               auto Q_nm1 = grid.getQuantity(i-1,j);
+               auto Delta_Q = -1.*Q_np2 + 3. * Q_np1 - 3.* Q_n + Q_nm1;
+               //auto h = 0.33*(grid_dims.radialCoord(i+2)-grid_dims.radialCoord(i-1));
+               return Delta_Q;// /h/h/h;
+           }
+       }
+   public:
+       HyperDiffusion(GridDimensions2d<D>& g_d, Eq& e) : grid_dims(g_d), coeff(0), eq(e) {}
+       ~HyperDiffusion() {}
+   
+       void setCoeff(const D c) {this->coeff = c;}
+       D getCoeff() const {return this->coeff;}
+   
+       
+   
+       Q operator()(const Grid2d<Q>& grid, size_t i, size_t j, Direction dir)
+       {
+           Q nu_val{};
+           Q diff_left_3{};
+           Q diff_middle_3{};
+           Q diff_right_3{};
+           Q diff_left_1{};
+           Q diff_middle_1{};
+           Q diff_right_1{};
+           D max_speed,delta;
+           if(dir == Direction::Horizontal)
+           {
+               diff_left_3 =   thirdOrderDifference(grid,i,j-1,dir); 
+               diff_middle_3 = thirdOrderDifference(grid,i,j,dir); 
+               diff_right_3 =  thirdOrderDifference(grid,i,j+1,dir);
+               diff_left_1 =   firstOrderDifference(grid,i,j-1,dir);
+               diff_middle_1 = firstOrderDifference(grid,i,j,dir);
+               diff_right_1 =  firstOrderDifference(grid,i,j+1,dir);
+               Q middle_state = 0.5 * (grid.getQuantity(i,j) + grid.getQuantity(i,j+1));
+               D coord = 0.5*(grid_dims.horizontalCoord(j) + grid_dims.horizontalCoord(j+1));
+               max_speed = eq.getMaxVelocity(middle_state,dir,std::array<D,2>{grid_dims.radialCoord(i),coord});
+               delta = grid_dims.radialCoord(i)*(grid_dims.horizontalCoord(j+1) -grid_dims.horizontalCoord(j)  );
+           }
+           else
+           {
+               diff_left_3 =   thirdOrderDifference(grid,i-1,j,dir); 
+               diff_middle_3 = thirdOrderDifference(grid,i,j,dir); 
+               diff_right_3 =  thirdOrderDifference(grid,i+1,j,dir);
+               diff_left_1 =   firstOrderDifference(grid,i-1,j,dir);
+               diff_middle_1 = firstOrderDifference(grid,i,j,dir);
+               diff_right_1 =  firstOrderDifference(grid,i+1,j,dir);
+               Q middle_state = 0.5 * (grid.getQuantity(i,j) + grid.getQuantity(i+1,j));
+               D coord = 0.5*(grid_dims.radialCoord(i) + grid_dims.radialCoord(i+1));
+               max_speed = eq.getMaxVelocity(middle_state,dir,std::array<D,2>{coord,grid_dims.horizontalCoord(j)});
+               delta = grid_dims.radialCoord(i+1) -grid_dims.radialCoord(i);    
+           }
+   
+           for(size_t i=0; i < N;i++)
+           {
+   
+               D nominator = std::max (std::abs(diff_left_1[i]), std::max(
+                                                                       std::abs(diff_middle_1[i]),
+                                                                       std::abs(diff_right_1[i])));
+               
+               nu_val[i] = nominator !=0 ? coeff * delta  * max_speed * std::max (std::abs(diff_left_3[i]), std::max(
+                                                                       std::abs(diff_middle_3[i]),
+                                                                       std::abs(diff_right_3[i])))/nominator : 0;
+                                                              
+           }
+           return nu_val;
+       }
+   
+   };
+   template<class DiffType, QuantityType Q>
+   class Diffusion2d
+   {
+       private:
+       using D = typename QuantityTraits<Q>::D;
+       DiffType& diffusivity;
+       GridDimensions2d<D>& grid_dims;
+   
+   
+       public:
+       Diffusion2d(DiffType& type, GridDimensions2d<D>& gd) : diffusivity(type), grid_dims(gd) {}
+   
+       Q operator()(const Grid2d<Q>& grid, size_t i, size_t j)
+       {
+           Q nu_iphalf_r = diffusivity(grid, i, j, Direction::Radial);
+           Q nu_imhalf_r = diffusivity(grid, i-1, j, Direction::Radial);
+           //Q nu_jphalf_r = diffusivity(grid, i, j, Direction::Radial);
+           //Q nu_jmhalf_r = diffusivity(grid, i, j-1, Direction::Radial);
+           
+           
+           //Q nu_iphalf_theta = diffusivity(grid, i, j, Direction::Horizontal);
+           //Q nu_imhalf_theta = diffusivity(grid, i-1, j, Direction::Horizontal);
+           Q nu_jphalf_theta = diffusivity(grid, i, j, Direction::Horizontal);
+           Q nu_jmhalf_theta = diffusivity(grid, i, j-1, Direction::Horizontal);
+           Q Q_ip1j =  grid.getQuantity(i+1,j);
+           Q Q_ij = grid.getQuantity(i,j);
+   
+           Q dQdy_iphalf = ( Q_ip1j - Q_ij )/ (grid_dims.radialCoord(i+1) - grid_dims.radialCoord(i));
+           Q dQdy_imhalf = (grid.getQuantity(i,j) - grid.getQuantity(i-1,j) )/ (grid_dims.radialCoord(i) - grid_dims.radialCoord(i-1));
+   
+           Q dQdx_jphalf = (grid.getQuantity(i,j+1) - grid.getQuantity(i,j))/grid_dims.radialCoord(i)/(grid_dims.horizontalCoord(j+1)-grid_dims.horizontalCoord(j));
+           Q dQdx_jmhalf = (grid.getQuantity(i,j) - grid.getQuantity(i,j-1))/grid_dims.radialCoord(i)/(grid_dims.horizontalCoord(j)-grid_dims.horizontalCoord(j-1));
+   
+           Q F_iphalf =dQdy_iphalf * nu_iphalf_r;
+           Q F_imhalf =dQdy_imhalf * nu_imhalf_r;
+           Q F_jphalf = dQdx_jphalf * nu_jphalf_theta;
+           Q F_jmhalf = dQdx_jmhalf * nu_jmhalf_theta;
+           return ((F_iphalf * grid_dims.interfaceAreaIphalf(i,j) - F_imhalf * grid_dims.interfaceAreaIphalf(i-1,j)) +
+                  (F_jphalf * grid_dims.interfaceAreaJphalf(i,j) - F_jmhalf * grid_dims.interfaceAreaJphalf(i,j-1)))
+                  / grid_dims.cellVolume(i,j);
+   
+       }
+   
+   };

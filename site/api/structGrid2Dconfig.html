@@ -10,7 +10,7 @@
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
       <link rel="stylesheet" type="text/css" href="../_static/collapsible-lists/css/tree_view.css?v=a885cde7" />
-      <link rel="stylesheet" type="text/css" href="../_static/compact-api.css?v=bfcdbbe1" />
+      <link rel="stylesheet" type="text/css" href="../_static/compact-api.css?v=8b703a59" />
 
   
       <script src="../_static/jquery.js?v=5d32c60e"></script>
@@ -63,10 +63,16 @@
 <li class="toctree-l4"><a class="reference internal" href="structCellCenter.html">Struct CellCenter</a></li>
 <li class="toctree-l4"><a class="reference internal" href="structCellInterface.html">Struct CellInterface</a></li>
 <li class="toctree-l4"><a class="reference internal" href="structConfig.html">Struct Config</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structConvectiveParameters.html">Struct ConvectiveParameters</a></li>
 <li class="toctree-l4"><a class="reference internal" href="structGrid.html">Struct Grid</a></li>
 <li class="toctree-l4 current"><a class="current reference internal" href="#">Struct Grid2Dconfig</a></li>
 <li class="toctree-l4"><a class="reference internal" href="structGridConfig.html">Struct GridConfig</a></li>
 <li class="toctree-l4"><a class="reference internal" href="structmodel_1_1ModelConfig.html">Struct ModelConfig</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structModelBuilderConfig.html">Struct ModelBuilderConfig</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structopacity_1_1OpacityTable.html">Struct OpacityTable</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structOpacityTable.html">Struct OpacityTable</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structphysics_1_1EosState.html">Struct EosState</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structPhysicsConfig.html">Struct PhysicsConfig</a></li>
 <li class="toctree-l4"><a class="reference internal" href="structQuantityTraits.html">Template Struct QuantityTraits</a></li>
 <li class="toctree-l4"><a class="reference internal" href="structsimulation__2d_1_1always__false.html">Template Struct always_false</a></li>
 <li class="toctree-l4"><a class="reference internal" href="structsimulation__2d_1_1EquationTraits.html">Template Struct EquationTraits</a></li>
@@ -152,12 +158,7 @@
 <dl class="cpp struct">
 <dt class="sig sig-object cpp" id="_CPPv412Grid2Dconfig">
 <span id="_CPPv312Grid2Dconfig"></span><span id="_CPPv212Grid2Dconfig"></span><span id="Grid2Dconfig"></span><span class="target" id="structGrid2Dconfig"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Grid2Dconfig</span></span></span><a class="headerlink" href="#_CPPv412Grid2Dconfig" title="Link to this definition"></a><br /></dt>
-<dd><p>Configuration struct of the grid.</p>
-<p><div class="admonition seealso">
-<p class="admonition-title">See also</p>
-<p><a class="reference internal" href="classsimulation__2d_1_1Simulation2d.html#classsimulation__2d_1_1Simulation2d"><span class="std std-ref">simulation_2d::Simulation2d</span></a> GridDimensions2d&lt;Q&gt; Grid2d&lt;Q&gt; </p>
-</div>
-</p>
+<dd><p><a class="reference internal" href="structGrid.html#structGrid"><span class="std std-ref">Grid</span></a> configuration for the 2D solver. </p>
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-types">Public Types</p>
 <dl class="cpp enum-class">
@@ -177,47 +178,56 @@
 <dl class="cpp var">
 <dt class="sig sig-object cpp" id="_CPPv4N12Grid2Dconfig4NradE">
 <span id="_CPPv3N12Grid2Dconfig4NradE"></span><span id="_CPPv2N12Grid2Dconfig4NradE"></span><span id="Grid2Dconfig::Nrad__s"></span><span class="target" id="structGrid2Dconfig_1a239ec198a28d7c9c663665bcc81d312f"></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Nrad</span></span></span><a class="headerlink" href="#_CPPv4N12Grid2Dconfig4NradE" title="Link to this definition"></a><br /></dt>
-<dd></dd></dl>
+<dd><p>Number of radial cells. </p>
+</dd></dl>
 
 <dl class="cpp var">
 <dt class="sig sig-object cpp" id="_CPPv4N12Grid2Dconfig4NhorE">
 <span id="_CPPv3N12Grid2Dconfig4NhorE"></span><span id="_CPPv2N12Grid2Dconfig4NhorE"></span><span id="Grid2Dconfig::Nhor__s"></span><span class="target" id="structGrid2Dconfig_1a6a264313be722ed75207494e88bec103"></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Nhor</span></span></span><a class="headerlink" href="#_CPPv4N12Grid2Dconfig4NhorE" title="Link to this definition"></a><br /></dt>
-<dd></dd></dl>
+<dd><p>Number of horizontal (theta) cells. </p>
+</dd></dl>
 
 <dl class="cpp var">
 <dt class="sig sig-object cpp" id="_CPPv4N12Grid2Dconfig10Nghost_radE">
 <span id="_CPPv3N12Grid2Dconfig10Nghost_radE"></span><span id="_CPPv2N12Grid2Dconfig10Nghost_radE"></span><span id="Grid2Dconfig::Nghost_rad__s"></span><span class="target" id="structGrid2Dconfig_1a5e02643a54de82808576fd4e703bd3b9"></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Nghost_rad</span></span></span><a class="headerlink" href="#_CPPv4N12Grid2Dconfig10Nghost_radE" title="Link to this definition"></a><br /></dt>
-<dd></dd></dl>
+<dd><p>Number of radial ghost cells. </p>
+</dd></dl>
 
 <dl class="cpp var">
 <dt class="sig sig-object cpp" id="_CPPv4N12Grid2Dconfig10Nghost_horE">
 <span id="_CPPv3N12Grid2Dconfig10Nghost_horE"></span><span id="_CPPv2N12Grid2Dconfig10Nghost_horE"></span><span id="Grid2Dconfig::Nghost_hor__s"></span><span class="target" id="structGrid2Dconfig_1af0987279d20ebe47e91f362e0a5b31d0"></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Nghost_hor</span></span></span><a class="headerlink" href="#_CPPv4N12Grid2Dconfig10Nghost_horE" title="Link to this definition"></a><br /></dt>
-<dd></dd></dl>
+<dd><p>Number of horizontal ghost cells. </p>
+</dd></dl>
 
 <dl class="cpp var">
 <dt class="sig sig-object cpp" id="_CPPv4N12Grid2Dconfig2r0E">
 <span id="_CPPv3N12Grid2Dconfig2r0E"></span><span id="_CPPv2N12Grid2Dconfig2r0E"></span><span id="Grid2Dconfig::r0__double"></span><span class="target" id="structGrid2Dconfig_1a4a28aa3fcedca2712fbe662a2b26b805"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">r0</span></span></span><a class="headerlink" href="#_CPPv4N12Grid2Dconfig2r0E" title="Link to this definition"></a><br /></dt>
-<dd></dd></dl>
+<dd><p>Inner radius. </p>
+</dd></dl>
 
 <dl class="cpp var">
 <dt class="sig sig-object cpp" id="_CPPv4N12Grid2Dconfig2rNE">
 <span id="_CPPv3N12Grid2Dconfig2rNE"></span><span id="_CPPv2N12Grid2Dconfig2rNE"></span><span id="Grid2Dconfig::rN__double"></span><span class="target" id="structGrid2Dconfig_1a224e208943e5a76f24e0b547a746b89a"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">rN</span></span></span><a class="headerlink" href="#_CPPv4N12Grid2Dconfig2rNE" title="Link to this definition"></a><br /></dt>
-<dd></dd></dl>
+<dd><p>Outer radius. </p>
+</dd></dl>
 
 <dl class="cpp var">
 <dt class="sig sig-object cpp" id="_CPPv4N12Grid2Dconfig6theta0E">
 <span id="_CPPv3N12Grid2Dconfig6theta0E"></span><span id="_CPPv2N12Grid2Dconfig6theta0E"></span><span id="Grid2Dconfig::theta0__double"></span><span class="target" id="structGrid2Dconfig_1a415460ce3b2c7aba9e8067d7ce80fd81"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">theta0</span></span></span><a class="headerlink" href="#_CPPv4N12Grid2Dconfig6theta0E" title="Link to this definition"></a><br /></dt>
-<dd></dd></dl>
+<dd><p>Lower theta boundary. </p>
+</dd></dl>
 
 <dl class="cpp var">
 <dt class="sig sig-object cpp" id="_CPPv4N12Grid2Dconfig6thetaNE">
 <span id="_CPPv3N12Grid2Dconfig6thetaNE"></span><span id="_CPPv2N12Grid2Dconfig6thetaNE"></span><span id="Grid2Dconfig::thetaN__double"></span><span class="target" id="structGrid2Dconfig_1a06f1ed52cce091206e94ecd77a239069"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">thetaN</span></span></span><a class="headerlink" href="#_CPPv4N12Grid2Dconfig6thetaNE" title="Link to this definition"></a><br /></dt>
-<dd></dd></dl>
+<dd><p>Upper theta boundary. </p>
+</dd></dl>
 
 <dl class="cpp var">
 <dt class="sig sig-object cpp" id="_CPPv4N12Grid2Dconfig4typeE">
 <span id="_CPPv3N12Grid2Dconfig4typeE"></span><span id="_CPPv2N12Grid2Dconfig4typeE"></span><span id="Grid2Dconfig::type__GridType"></span><span class="target" id="structGrid2Dconfig_1acca2613d748ad3376eedd7b42c38cb4f"></span><a class="reference internal" href="#_CPPv4N12Grid2Dconfig8GridTypeE" title="Grid2Dconfig::GridType"><span class="n"><span class="pre">GridType</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">type</span></span></span><a class="headerlink" href="#_CPPv4N12Grid2Dconfig4typeE" title="Link to this definition"></a><br /></dt>
-<dd></dd></dl>
+<dd><p><a class="reference internal" href="structGrid.html#structGrid"><span class="std std-ref">Grid</span></a> type (currently only Uniform) </p>
+</dd></dl>
 
 </div>
 </dd></dl>

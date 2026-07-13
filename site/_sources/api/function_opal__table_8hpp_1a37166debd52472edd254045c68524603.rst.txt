@@ -1,0 +1,14 @@
+.. _exhale_function_opal__table_8hpp_1a37166debd52472edd254045c68524603:
+
+Function opacity::load
+======================
+
+- Defined in :ref:`file_include_physics_opal_table.hpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: opacity::load(const std::string&, TableType)
+   :project: MPULS

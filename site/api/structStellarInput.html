@@ -10,7 +10,7 @@
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
       <link rel="stylesheet" type="text/css" href="../_static/collapsible-lists/css/tree_view.css?v=a885cde7" />
-      <link rel="stylesheet" type="text/css" href="../_static/compact-api.css?v=bfcdbbe1" />
+      <link rel="stylesheet" type="text/css" href="../_static/compact-api.css?v=8b703a59" />
 
   
       <script src="../_static/jquery.js?v=5d32c60e"></script>
@@ -63,10 +63,16 @@
 <li class="toctree-l4"><a class="reference internal" href="structCellCenter.html">Struct CellCenter</a></li>
 <li class="toctree-l4"><a class="reference internal" href="structCellInterface.html">Struct CellInterface</a></li>
 <li class="toctree-l4"><a class="reference internal" href="structConfig.html">Struct Config</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structConvectiveParameters.html">Struct ConvectiveParameters</a></li>
 <li class="toctree-l4"><a class="reference internal" href="structGrid.html">Struct Grid</a></li>
 <li class="toctree-l4"><a class="reference internal" href="structGrid2Dconfig.html">Struct Grid2Dconfig</a></li>
 <li class="toctree-l4"><a class="reference internal" href="structGridConfig.html">Struct GridConfig</a></li>
 <li class="toctree-l4"><a class="reference internal" href="structmodel_1_1ModelConfig.html">Struct ModelConfig</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structModelBuilderConfig.html">Struct ModelBuilderConfig</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structopacity_1_1OpacityTable.html">Struct OpacityTable</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structOpacityTable.html">Struct OpacityTable</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structphysics_1_1EosState.html">Struct EosState</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structPhysicsConfig.html">Struct PhysicsConfig</a></li>
 <li class="toctree-l4"><a class="reference internal" href="structQuantityTraits.html">Template Struct QuantityTraits</a></li>
 <li class="toctree-l4"><a class="reference internal" href="structsimulation__2d_1_1always__false.html">Template Struct always_false</a></li>
 <li class="toctree-l4"><a class="reference internal" href="structsimulation__2d_1_1EquationTraits.html">Template Struct EquationTraits</a></li>
@@ -152,32 +158,39 @@
 <dl class="cpp struct">
 <dt class="sig sig-object cpp" id="_CPPv412StellarInput">
 <span id="_CPPv312StellarInput"></span><span id="_CPPv212StellarInput"></span><span id="StellarInput"></span><span class="target" id="structStellarInput"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">StellarInput</span></span></span><a class="headerlink" href="#_CPPv412StellarInput" title="Link to this definition"></a><br /></dt>
-<dd><p>Minimal, physics-only input structure for stellar model construction. </p>
-<p>The <a class="reference internal" href="#structStellarInput"><span class="std std-ref">StellarInput</span></a> structure contains only the physical quantities required to build the stellar model (mass, radius, luminosity, effective temperature, metallicity, and grid configuration). It is intentionally separated from the <a class="reference internal" href="structConfig.html#structConfig"><span class="std std-ref">Config</span></a> and <a class="reference internal" href="structStellarParameters.html#structStellarParameters"><span class="std std-ref">StellarParameters</span></a> structures for architectural clarity.</p>
+<dd><p>Physical input parameters required for building a stellar envelope. </p>
+<p>This structure contains all validated, unit-consistent quantities needed by the envelope builder: stellar properties, grid configuration, model builder parameters, convection coefficients, and EOS/opacity settings.</p>
+<p>All values are assumed to be pre-validated and converted to internal units. </p>
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
 <dl class="cpp var">
 <dt class="sig sig-object cpp" id="_CPPv4N12StellarInput4massE">
 <span id="_CPPv3N12StellarInput4massE"></span><span id="_CPPv2N12StellarInput4massE"></span><span id="StellarInput::mass__double"></span><span class="target" id="structStellarInput_1aae125e416d4c686d20e812e4e074ff09"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">mass</span></span></span><a class="headerlink" href="#_CPPv4N12StellarInput4massE" title="Link to this definition"></a><br /></dt>
-<dd><p>Stellar mass in grams. </p>
+<dd><p>Stellar mass [g]. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N12StellarInput13mass_in_gramsE">
+<span id="_CPPv3N12StellarInput13mass_in_gramsE"></span><span id="_CPPv2N12StellarInput13mass_in_gramsE"></span><span id="StellarInput::mass_in_grams__double"></span><span class="target" id="structStellarInput_1a689d401b367a958e36a80f0a3d1c497c"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">mass_in_grams</span></span></span><a class="headerlink" href="#_CPPv4N12StellarInput13mass_in_gramsE" title="Link to this definition"></a><br /></dt>
+<dd><p>Redundant explicit mass field [g]. </p>
 </dd></dl>
 
 <dl class="cpp var">
 <dt class="sig sig-object cpp" id="_CPPv4N12StellarInput6radiusE">
 <span id="_CPPv3N12StellarInput6radiusE"></span><span id="_CPPv2N12StellarInput6radiusE"></span><span id="StellarInput::radius__double"></span><span class="target" id="structStellarInput_1a87c389f8759cc375803aa43399eeef61"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">radius</span></span></span><a class="headerlink" href="#_CPPv4N12StellarInput6radiusE" title="Link to this definition"></a><br /></dt>
-<dd><p>Stellar radius in cm. </p>
+<dd><p>Stellar radius [cm]. </p>
 </dd></dl>
 
 <dl class="cpp var">
 <dt class="sig sig-object cpp" id="_CPPv4N12StellarInput10luminosityE">
 <span id="_CPPv3N12StellarInput10luminosityE"></span><span id="_CPPv2N12StellarInput10luminosityE"></span><span id="StellarInput::luminosity__double"></span><span class="target" id="structStellarInput_1ad904ffb4da5521cbb141182171e67d75"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">luminosity</span></span></span><a class="headerlink" href="#_CPPv4N12StellarInput10luminosityE" title="Link to this definition"></a><br /></dt>
-<dd><p>Luminosity (internal units) </p>
+<dd><p>Luminosity [erg/s]. </p>
 </dd></dl>
 
 <dl class="cpp var">
 <dt class="sig sig-object cpp" id="_CPPv4N12StellarInput5t_effE">
 <span id="_CPPv3N12StellarInput5t_effE"></span><span id="_CPPv2N12StellarInput5t_effE"></span><span id="StellarInput::t_eff__double"></span><span class="target" id="structStellarInput_1aa53a197a6218eb389f67aa94bab0e468"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">t_eff</span></span></span><a class="headerlink" href="#_CPPv4N12StellarInput5t_effE" title="Link to this definition"></a><br /></dt>
-<dd><p>Effective temperature in Kelvin. </p>
+<dd><p>Effective temperature [K]. </p>
 </dd></dl>
 
 <dl class="cpp var">
@@ -189,7 +202,49 @@
 <dl class="cpp var">
 <dt class="sig sig-object cpp" id="_CPPv4N12StellarInput8grid_cfgE">
 <span id="_CPPv3N12StellarInput8grid_cfgE"></span><span id="_CPPv2N12StellarInput8grid_cfgE"></span><span id="StellarInput::grid_cfg__GridConfig"></span><span class="target" id="structStellarInput_1aea785bb1a55afef2be8bda911caeaf46"></span><a class="reference internal" href="structGridConfig.html#_CPPv410GridConfig" title="GridConfig"><span class="n"><span class="pre">GridConfig</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">grid_cfg</span></span></span><a class="headerlink" href="#_CPPv4N12StellarInput8grid_cfgE" title="Link to this definition"></a><br /></dt>
-<dd><p><a class="reference internal" href="structGrid.html#structGrid"><span class="std std-ref">Grid</span></a> configuration for model construction. </p>
+<dd><p>Radial grid configuration. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N12StellarInput8t_anchorE">
+<span id="_CPPv3N12StellarInput8t_anchorE"></span><span id="_CPPv2N12StellarInput8t_anchorE"></span><span id="StellarInput::t_anchor__double"></span><span class="target" id="structStellarInput_1abf5c882e71a5a3365be90ea35b7c6e24"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">t_anchor</span></span></span><a class="headerlink" href="#_CPPv4N12StellarInput8t_anchorE" title="Link to this definition"></a><br /></dt>
+<dd><p>Target temperature at anchor zone [K]. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N12StellarInput7t_innerE">
+<span id="_CPPv3N12StellarInput7t_innerE"></span><span id="_CPPv2N12StellarInput7t_innerE"></span><span id="StellarInput::t_inner__double"></span><span class="target" id="structStellarInput_1af4d62110620ea2a2d093822b6c87cf58"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">t_inner</span></span></span><a class="headerlink" href="#_CPPv4N12StellarInput7t_innerE" title="Link to this definition"></a><br /></dt>
+<dd><p>Target central temperature [K]. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N12StellarInput14n_anchor_zonesE">
+<span id="_CPPv3N12StellarInput14n_anchor_zonesE"></span><span id="_CPPv2N12StellarInput14n_anchor_zonesE"></span><span id="StellarInput::n_anchor_zones__i"></span><span class="target" id="structStellarInput_1a3d9d75fecdf38aaa59c43ae2524329b4"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">n_anchor_zones</span></span></span><a class="headerlink" href="#_CPPv4N12StellarInput14n_anchor_zonesE" title="Link to this definition"></a><br /></dt>
+<dd><p>Number of equal-mass zones above anchor. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N12StellarInput23initial_outer_zone_massE">
+<span id="_CPPv3N12StellarInput23initial_outer_zone_massE"></span><span id="_CPPv2N12StellarInput23initial_outer_zone_massE"></span><span id="StellarInput::initial_outer_zone_mass__double"></span><span class="target" id="structStellarInput_1aeb222710cbff03a44cdc87d3e9e76d6f"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">initial_outer_zone_mass</span></span></span><a class="headerlink" href="#_CPPv4N12StellarInput23initial_outer_zone_massE" title="Link to this definition"></a><br /></dt>
+<dd><p>Initial guess for DM_N [M_sun]. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N12StellarInput24inner_mass_ratio_initialE">
+<span id="_CPPv3N12StellarInput24inner_mass_ratio_initialE"></span><span id="_CPPv2N12StellarInput24inner_mass_ratio_initialE"></span><span id="StellarInput::inner_mass_ratio_initial__double"></span><span class="target" id="structStellarInput_1af4adf0e9a5c65930714985ff57a6ea7c"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">inner_mass_ratio_initial</span></span></span><a class="headerlink" href="#_CPPv4N12StellarInput24inner_mass_ratio_initialE" title="Link to this definition"></a><br /></dt>
+<dd><p>Initial guess for inner mass ratio. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N12StellarInput21convective_parametersE">
+<span id="_CPPv3N12StellarInput21convective_parametersE"></span><span id="_CPPv2N12StellarInput21convective_parametersE"></span><span id="StellarInput::convective_parameters__ConvectiveParameters"></span><span class="target" id="structStellarInput_1a28962b01d86c5974b17ac193829b7a3c"></span><a class="reference internal" href="structConvectiveParameters.html#_CPPv420ConvectiveParameters" title="ConvectiveParameters"><span class="n"><span class="pre">ConvectiveParameters</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">convective_parameters</span></span></span><a class="headerlink" href="#_CPPv4N12StellarInput21convective_parametersE" title="Link to this definition"></a><br /></dt>
+<dd><p>Convection/turbulence α-coefficients. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N12StellarInput11physics_cfgE">
+<span id="_CPPv3N12StellarInput11physics_cfgE"></span><span id="_CPPv2N12StellarInput11physics_cfgE"></span><span id="StellarInput::physics_cfg__PhysicsConfig"></span><span class="target" id="structStellarInput_1a63d63196deb30c7ac7107dec0375faec"></span><a class="reference internal" href="structPhysicsConfig.html#_CPPv413PhysicsConfig" title="PhysicsConfig"><span class="n"><span class="pre">PhysicsConfig</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">physics_cfg</span></span></span><a class="headerlink" href="#_CPPv4N12StellarInput11physics_cfgE" title="Link to this definition"></a><br /></dt>
+<dd><p>EOS + opacity configuration. </p>
 </dd></dl>
 
 </div>

@@ -17,6 +17,11 @@ Definition (``include/io/profile_writer.hpp``)
 ----------------------------------------------
 
 
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_include_io_profile_writer.hpp.rst
+
 
 
 
@@ -42,5 +47,5 @@ Functions
 
 - :ref:`exhale_function_profile__writer_8hpp_1a21ce09ebf264d1fdb91135863cec2133`
 
-- :ref:`exhale_function_profile__writer_8hpp_1a9d030f6947c666a5d614e062847b47e7`
+- :ref:`exhale_function_profile__writer_8hpp_1a8d61ea3b78b7717da964a9f714495fae`
 

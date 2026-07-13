@@ -9,7 +9,7 @@ reader how to use MPULS and its modules in various environments.
 .. toctree::
    :maxdepth: 2 
 
-   install
-   getting-started
-   input_config
-   output
+   install.md
+   getting_started.md
+   input_config.md
+   output.md

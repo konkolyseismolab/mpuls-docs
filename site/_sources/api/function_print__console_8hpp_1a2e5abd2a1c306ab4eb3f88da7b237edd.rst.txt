@@ -1,0 +1,14 @@
+.. _exhale_function_print__console_8hpp_1a2e5abd2a1c306ab4eb3f88da7b237edd:
+
+Function io::printZoneStatus
+============================
+
+- Defined in :ref:`file_include_io_print_console.hpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: io::printZoneStatus(int, double, double, double, double, double)
+   :project: MPULS

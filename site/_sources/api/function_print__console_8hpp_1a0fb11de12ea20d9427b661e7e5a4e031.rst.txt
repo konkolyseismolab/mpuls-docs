@@ -1,0 +1,14 @@
+.. _exhale_function_print__console_8hpp_1a0fb11de12ea20d9427b661e7e5a4e031:
+
+Function io::noteWarning
+========================
+
+- Defined in :ref:`file_include_io_print_console.hpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: io::noteWarning(const std::string&, const std::string&, const std::string&)
+   :project: MPULS

@@ -1,0 +1,14 @@
+.. _exhale_variable_print__console_8hpp_1ab1553bec8efb109ecf49dd585408ef0a:
+
+Variable io::warning_log
+========================
+
+- Defined in :ref:`file_include_io_print_console.hpp`
+
+
+Variable Documentation
+----------------------
+
+
+.. doxygenvariable:: io::warning_log
+   :project: MPULS

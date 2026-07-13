@@ -1,0 +1,174 @@
+
+.. _program_listing_file_include_equations_equations.hpp:
+
+Program Listing for File equations.hpp
+======================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file_include_equations_equations.hpp>` (``include/equations/equations.hpp``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   #pragma once
+   #include "core/common.hpp"
+   #include "grid/quantity.hpp"
+   #include <concepts>
+   #include <span>
+   #include <cmath>
+   
+   
+   template <QuantityType Q>
+   class EquationBase
+   {
+   protected:
+       using D = typename QuantityTraits<Q>::D;
+   public:
+       virtual ~EquationBase() {} 
+       virtual Q computeFlux(const Q& quantity, Direction dir, [[maybe_unused]] std::span<const D> coords) const = 0;
+       virtual D getMaxVelocity([[maybe_unused]] const Q& quantity, Direction dir,  [[maybe_unused]] std::span<const D> coords) const = 0;
+       virtual D getSpeed([[maybe_unused]] const Q& quantity, Direction dir,  [[maybe_unused]] std::span<const D> coords) const = 0;
+       virtual Q computeSource([[maybe_unused]] const Q& quantity,  [[maybe_unused]] std::span<const D> coords ) const = 0;
+   
+   };
+   
+   template<typename T, typename Q>
+   concept EquationType = std::derived_from<T, EquationBase<Q>> && ! std::same_as<T,EquationBase<Q>>;
+   
+   template <TwoDimensional T, QuantityType Q>
+   class ScalarTransport2d : public EquationBase<Q>
+   {
+   private:
+       using D = typename QuantityTraits<Q>::D;
+       QuantityBase<D,2> velocity; // Ratio of specific heats
+   public:
+       ScalarTransport2d() = default;
+       ScalarTransport2d(QuantityBase<D,2> velocity) : EquationBase<Q>(), velocity(velocity) {}
+       ScalarTransport2d(D x_vel, D y_vel) : EquationBase<Q>(), velocity({x_vel, y_vel}) {}
+   
+       QuantityBase<D,2> getVelocity() const { return velocity; }
+       void setVelocity(QuantityBase<D,2> vel) { velocity = vel; }
+   
+       Q computeFlux(const Q& quantity, Direction dir, [[maybe_unused]] std::span<const D> coords) const override
+       {
+           if (dir == Direction::Radial) {
+               return velocity[0] * quantity; // Advection in radial direction
+           } else {
+               return velocity[1] * quantity; // Advection in horizontal direction
+           } // Simple advection flux
+       }
+       D getMaxVelocity([[maybe_unused]] const Q& quantity, Direction dir,  [[maybe_unused]] std::span<const D> coords) const override
+       {
+           if (dir == Direction::Radial) {
+               return std::abs(velocity[0]);
+           } else {
+               return std::abs(velocity[1]);
+           }
+       }
+   
+       D getSpeed([[maybe_unused]] const Q& quantity, Direction dir,  [[maybe_unused]] std::span<const D> coords) const override
+       {
+           if (dir == Direction::Radial) {
+               return (velocity[0]);
+           } else {
+               return (velocity[1]);
+           }
+       }
+   
+       Q computeSource([[maybe_unused]] const Q& quantity,  [[maybe_unused]] std::span<const D> coords ) const override
+       {
+           return Q(); // No source term for pure advection
+       }
+   };
+   
+   template <TwoDimensional T, QuantityType Q>
+   class Euler2d : public EquationBase<Q>
+   {
+       private:
+       using D = typename QuantityTraits<Q>::D; 
+       D gamma;
+   
+       D pressure(const Q state) const
+       {
+           D rho = state[0];
+           D m_u = state[1];
+           D m_v = state[2];
+           D E   = state[3];
+           return (gamma-1)*(E-(m_u*m_u+m_v*m_v)/rho);
+       }
+   
+       public:
+           Euler2d() : EquationBase<Q>(), gamma(0.) {}
+       
+       D getGamma() const { return gamma; } 
+       void setGamma(D vel) { gamma = vel; }
+       
+       Q computeFlux(const Q& quantity, Direction dir, [[maybe_unused]] std::span<const D> coords) const override
+       {
+           Q flux{};
+           D rho = quantity[0];
+           D m_u = quantity[1];
+           D m_v = quantity[2];
+           D E   = quantity[3];
+           D P = pressure(quantity);
+           if (dir == Direction::Radial)
+           {
+               flux[0] = m_u;
+               flux[1] = m_u*m_u/rho+P;
+               flux[2] = m_u*m_v/rho;
+               flux[3] = m_u/rho * (E + P);
+           } else {
+               flux[0] = m_v;
+               flux[1] = m_v* m_u / rho;
+               flux[2] = m_v* m_v /rho + P;
+               flux[3] = m_v/rho * (E+P); 
+           }
+           return flux; // Simple advection flux
+       }
+       D getMaxVelocity([[maybe_unused]] const Q& quantity, Direction dir,  [[maybe_unused]] std::span<const D> coords) const override
+       {
+           D rho = quantity[0];
+           D m_u = quantity[1];
+           D m_v = quantity[2];
+           D E   = quantity[3];
+           D c = std::sqrt(gamma*pressure(quantity)/rho);
+           
+           if (dir == Direction::Radial) {
+               D u = m_u /rho;
+               D lambda_0, lambda_1, lambda_2;
+               lambda_0 = std::abs(u-c);
+               lambda_1 = std::abs(u);
+               lambda_2 = std::abs(u+c);
+               
+               return std::max(lambda_0, std::max(lambda_1,lambda_2));
+           } else {
+               D v = m_v /rho;
+               D lambda_0, lambda_1, lambda_2;
+               lambda_0 = std::abs(v-c);
+               lambda_1 = std::abs(v);
+               lambda_2 = std::abs(v+c);
+               
+               return std::max(lambda_0, std::max(lambda_1,lambda_2));
+           }
+       }
+   
+       D getSpeed([[maybe_unused]] const Q& quantity, Direction dir,  [[maybe_unused]] std::span<const D> coords) const override
+       {
+           if (dir == Direction::Radial) {
+               return (quantity[1]/quantity[0]);
+           } else {
+               return (quantity[2]/quantity[0]);
+           }
+       }
+   
+       Q computeSource([[maybe_unused]] const Q& quantity,  [[maybe_unused]] std::span<const D> coords ) const override
+       {
+           D p = pressure(quantity);
+           D rho = quantity[0];
+           D m_u = quantity[1];
+           D m_v = quantity[2];
+           D r = coords[0];
+           D theta = coords[1];
+           return Q(std::array<double,4>{0.,m_v*m_v/rho/r+2*p/r,-m_u*m_v/rho/r+p/r/std::tan(theta),0}); // Only geometric source term for pure advection
+       }
+   };

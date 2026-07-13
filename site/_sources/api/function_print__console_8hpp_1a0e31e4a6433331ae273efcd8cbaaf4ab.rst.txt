@@ -1,0 +1,14 @@
+.. _exhale_function_print__console_8hpp_1a0e31e4a6433331ae273efcd8cbaaf4ab:
+
+Function io::error
+==================
+
+- Defined in :ref:`file_include_io_print_console.hpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: io::error(const std::string&, const char *, const char *)
+   :project: MPULS

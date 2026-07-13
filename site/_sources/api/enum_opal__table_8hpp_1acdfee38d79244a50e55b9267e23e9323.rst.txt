@@ -1,0 +1,14 @@
+.. _exhale_enum_opal__table_8hpp_1acdfee38d79244a50e55b9267e23e9323:
+
+Enum TableType
+==============
+
+- Defined in :ref:`file_include_physics_opal_table.hpp`
+
+
+Enum Documentation
+------------------
+
+
+.. doxygenenum:: opacity::TableType
+   :project: MPULS

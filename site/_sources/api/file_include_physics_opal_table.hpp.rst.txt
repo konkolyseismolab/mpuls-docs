@@ -1,0 +1,70 @@
+
+.. _file_include_physics_opal_table.hpp:
+
+File opal_table.hpp
+===================
+
+|exhale_lsh| :ref:`Parent directory <dir_include_physics>` (``include/physics``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``include/physics/opal_table.hpp``)
+-----------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_include_physics_opal_table.hpp.rst
+
+
+
+
+
+Includes
+--------
+
+
+- ``string``
+
+- ``vector``
+
+
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_opacity`
+
+
+Classes
+-------
+
+
+- :ref:`exhale_struct_structopacity_1_1OpacityTable`
+
+
+Enums
+-----
+
+
+- :ref:`exhale_enum_opal__table_8hpp_1acdfee38d79244a50e55b9267e23e9323`
+
+
+Functions
+---------
+
+
+- :ref:`exhale_function_opal__table_8hpp_1a03555a4a4bc11c8ddab9bb752dc35b25`
+
+- :ref:`exhale_function_opal__table_8hpp_1a37166debd52472edd254045c68524603`
+

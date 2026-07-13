@@ -16,6 +16,7 @@ Directory models
 Files
 -----
 
+- :ref:`file_include_models_convective_parameters.hpp`
 - :ref:`file_include_models_envelope_builder.hpp`
 - :ref:`file_include_models_initial_models.hpp`
 - :ref:`file_include_models_stellar_input.hpp`

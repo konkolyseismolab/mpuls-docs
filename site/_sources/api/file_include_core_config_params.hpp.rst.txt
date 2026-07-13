@@ -17,6 +17,11 @@ Definition (``include/core/config_params.hpp``)
 -----------------------------------------------
 
 
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_include_core_config_params.hpp.rst
+
 
 
 
@@ -24,6 +29,10 @@ Definition (``include/core/config_params.hpp``)
 Includes
 --------
 
+
+- ``core/config_params.hpp`` (:ref:`file_include_core_config_params.hpp`)
+
+- ``models/convective_parameters.hpp`` (:ref:`file_include_models_convective_parameters.hpp`)
 
 - ``string``
 
@@ -36,6 +45,8 @@ Included By
 
 
 - :ref:`file_include_core_compile_time_dispatcher.hpp`
+
+- :ref:`file_include_core_config_params.hpp`
 
 - :ref:`file_include_core_config_parser.hpp`
 
@@ -65,6 +76,10 @@ Classes
 
 - :ref:`exhale_struct_structmodel_1_1ModelConfig`
 
+- :ref:`exhale_struct_structModelBuilderConfig`
+
+- :ref:`exhale_struct_structPhysicsConfig`
+
 - :ref:`exhale_struct_structSolverConfig`
 
 - :ref:`exhale_struct_structStellarParameters`
@@ -76,15 +91,15 @@ Enums
 
 - :ref:`exhale_enum_config__params_8hpp_1a46c8a310cf4c094f8c80e1cb8dc1f911`
 
-- :ref:`exhale_enum_namespacemodel_1a907c446eb5c73e13a7d76edd612fdfef`
+- :ref:`exhale_enum_config__params_8hpp_1a907c446eb5c73e13a7d76edd612fdfef`
 
-- :ref:`exhale_enum_namespacemodel_1a3ae25a4a9f22dccaa99cdecb28ab4e0f`
+- :ref:`exhale_enum_config__params_8hpp_1a3ae25a4a9f22dccaa99cdecb28ab4e0f`
 
-- :ref:`exhale_enum_namespacesolver__params_1a2b577686b8ffe76b030025b230938ef2`
+- :ref:`exhale_enum_config__params_8hpp_1a2b577686b8ffe76b030025b230938ef2`
 
-- :ref:`exhale_enum_namespacesolver__params_1ad745adffd0fab83afbaf692ea8165050`
+- :ref:`exhale_enum_config__params_8hpp_1ad745adffd0fab83afbaf692ea8165050`
 
-- :ref:`exhale_enum_namespacesolver__params_1a8c444a3981a4189f632deff4104e1165`
+- :ref:`exhale_enum_config__params_8hpp_1a8c444a3981a4189f632deff4104e1165`
 
-- :ref:`exhale_enum_namespacesolver__params_1abd53625bda2fa8124b0f37652e3340d1`
+- :ref:`exhale_enum_config__params_8hpp_1abd53625bda2fa8124b0f37652e3340d1`
 

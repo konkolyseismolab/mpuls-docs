@@ -1,0 +1,14 @@
+.. _exhale_function_print__console_8hpp_1aa238fd58bcb86bebfb856adf1c8cc67b:
+
+Function io::unimplementedWarning
+=================================
+
+- Defined in :ref:`file_include_io_print_console.hpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: io::unimplementedWarning(const std::string&, const std::string&)
+   :project: MPULS

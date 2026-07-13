@@ -1,0 +1,252 @@
+
+.. _program_listing_file_include_io_print_console.hpp:
+
+Program Listing for File print_console.hpp
+==========================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file_include_io_print_console.hpp>` (``include/io/print_console.hpp``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   #pragma once
+   #include <iostream>
+   #include <string>
+   #include <unordered_set>
+   
+   #include "core/constants.hpp"
+   #include "core/version.hpp"
+   #include "models/stellar_input.hpp"
+   #include "grid/grid_builder.hpp"
+   
+   namespace io {
+   
+   // ============================================================================
+   // FATAL ERROR
+   // ============================================================================
+   
+   inline void error(const std::string& msg,
+                     const char* file,
+                     const char* func)
+   {
+       std::cerr
+           << "\n===========================================\n"
+           << "                 FATAL ERROR               \n"
+           << "===========================================\n"
+           << "File: " << file << "\n"
+           << "Func: " << func << "\n"
+           << "-------------------------------------------\n"
+           << msg << "\n"
+           << "===========================================\n\n";
+   }
+   
+   // ============================================================================
+   // WARNING LOGGING
+   // ============================================================================
+   
+   inline std::vector<std::string> warning_log;
+   
+   inline std::string baseName(const std::string& path) {
+       size_t pos = path.find_last_of("/\\");
+       return (pos == std::string::npos) ? path : path.substr(pos + 1);
+   }
+   
+   inline void placeholderWarning(const std::string& parameter,
+                                  const std::string& file,
+                                  const std::string& function)
+   {
+       static std::unordered_set<std::string> already_reported;
+   
+       if (already_reported.count(parameter))
+           return;
+   
+       already_reported.insert(parameter);
+   
+       std::string msg =
+           "[PLACEHOLDER] " + parameter +
+           "  (" + baseName(file) + " :: " + function + ")";
+   
+       io::warning_log.push_back(msg);
+   }
+   
+   inline void unimplementedWarning(const std::string& function_name,
+                                    const std::string& file)
+   {
+       static std::unordered_set<std::string> reported;
+   
+       std::string key = function_name + "|" + file;
+       if (reported.count(key))
+           return;
+   
+       reported.insert(key);
+   
+       std::string msg =
+           "[UNIMPLEMENTED] function " + function_name +
+           " in file " + baseName(file) + " is declared but not yet implemented.";
+   
+       io::warning_log.push_back(msg);
+   }
+   
+   inline void todoWarning(const std::string& message,
+                           const std::string& file,
+                           const std::string& function)
+   {
+       static std::unordered_set<std::string> already_reported;
+   
+       std::string key = message + "|" + file + "|" + function;
+       if (already_reported.count(key))
+           return;
+   
+       already_reported.insert(key);
+   
+       std::string msg =
+           "[TODO] " + message +
+           "  (" + baseName(file) + " :: " + function + ")";
+   
+       io::warning_log.push_back(msg);
+   }
+   
+   inline void noteWarning(const std::string& message,
+                           const std::string& file,
+                           const std::string& function)
+   {
+       static std::unordered_set<std::string> already_reported;
+   
+       std::string key = message + "|" + file + "|" + function;
+       if (already_reported.count(key))
+           return;
+   
+       already_reported.insert(key);
+   
+       std::string msg =
+           "[NOTE] " + message +
+           "  (" + baseName(file) + " :: " + function + ")";
+   
+       io::warning_log.push_back(msg);
+   }
+   
+   // ============================================================================
+   // WARNING SUMMARY
+   // ============================================================================
+   
+   inline void printWarningSummary()
+   {
+       std::cout
+           << "\n\n===========================================\n"
+           << "=== MODEL BUILD WARNING SUMMARY ===\n"
+           << "===========================================\n";
+   
+       if (io::warning_log.empty()) {
+           std::cout << "No warnings. Clean run.\n";
+           std::cout << "===========================================\n\n";
+           return;
+       }
+   
+       std::vector<std::string> notes;
+       std::vector<std::string> todos;
+       std::vector<std::string> placeholders;
+       std::vector<std::string> unimplemented;
+   
+       for (const auto& w : io::warning_log) {
+           if (w.find("[NOTE]") != std::string::npos) notes.push_back(w);
+           else if (w.find("[TODO]") != std::string::npos) todos.push_back(w);
+           else if (w.find("[PLACEHOLDER]") != std::string::npos) placeholders.push_back(w);
+           else if (w.find("[UNIMPLEMENTED]") != std::string::npos) unimplemented.push_back(w);
+       }
+   
+       int index = 1;
+   
+       auto print_group = [&](const std::string& title, const auto& group) {
+           if (!group.empty()) {
+               std::cout << "\n--- " << title << " ---\n";
+               for (const auto& w : group) {
+                   std::cout << index << ". " << w << "\n";
+                   index++;
+               }
+           }
+       };
+   
+       print_group("UNIMPLEMENTED FUNCTIONS", unimplemented);
+       print_group("TODO ITEMS", todos);
+       print_group("PLACEHOLDERS", placeholders);
+       print_group("NOTES", notes);
+   
+       std::cout << "===========================================\n\n";
+   }
+   
+   // ============================================================================
+   // RUN INITIALIZATION
+   // ============================================================================
+   
+   inline void initializeRun(size_t width = 60) {
+       std::cout << "\n\n";
+   
+       std::string line(width, '=');
+       std::cout << line << "\n";
+   
+       auto printCentered = [width](const std::string& text) {
+           size_t padding = (width > text.size()) ? (width - text.size()) / 2 : 0;
+           std::cout << std::string(padding, ' ') << text << "\n";
+       };
+   
+       printCentered("MPULS - Modules for Stellar Pulsations - 1D module");
+       printCentered("Version: " + mpuls::version);
+       printCentered("Author: " + mpuls::author);
+   
+       std::cout << line << "\n\n";
+   }
+   
+   // ============================================================================
+   // ENVELOPE DIAGNOSTICS
+   // ============================================================================
+   
+   inline void logSurfaceBoundarySummary(double r_surface,
+                                         double t_surface,
+                                         double pressure,
+                                         double density,
+                                         double luminosity)
+   {
+       std::cout
+           << "===========================================\n"
+           << "=== INITIAL SURFACE BOUNDARY CONDITIONS ===\n"
+           << "===========================================\n"
+           << "   r_surface = " << r_surface   << " cm\n"
+           << "   t_surface = " << t_surface   << " K (Eddington approximation)\n"
+           << "   t_eff     = " << t_surface / constants::kEddingtonFactor << " K\n"
+           << "   pressure  = " << pressure    << " dyn/cm^2\n"
+           << "   density   = " << density     << " g/cm^3\n"
+           << "   luminosity= " << luminosity/constants::kLSun << " L☉  (" << luminosity << " erg/s)\n"
+           << "===========================================\n\n";
+   }
+   
+   inline void logOuterZoneSummary(double r_outer_zone, double rNm1,
+                                   double pN, double outer_temperature,
+                                   double rhoN, double DMN,
+                                   double luminosity)
+   {
+       std::cout
+           << "===========================================\n"
+           << "=== OUTER ZONE (N-1) PHYSICAL SUMMARY =====\n"
+           << "===========================================\n"
+           << "   r_outer_zone = " << r_outer_zone / constants::kCmToRSun << " R☉\n"
+           << "   r_N-1        = " << rNm1        / constants::kCmToRSun << " R☉\n"
+           << "   p_N          = " << pN          << " dyn/cm^2\n"
+           << "   T_outer      = " << outer_temperature << " K\n"
+           << "   rho_N        = " << rhoN        << " g/cm^3\n"
+           << "   DM_N         = " << DMN         << " g\n"
+           << "   L_r          = " << luminosity  << " erg/s\n"
+           << "===========================================\n\n";
+   }
+   
+   // ============================================================================
+   // DECLARATIONS FOR NON-INLINE FUNCTIONS
+   // ============================================================================
+   
+   void printDebugIteration(int iter, double val);
+   void printRunConfiguration(const StellarInput& input);
+   void printZoneStatus(int index, double r, double t, double p, double rho, double kappa);
+   void printProgressBox(int iter, int max_iter, double dm_N, double h, int i_anchor);
+   void printFatalEnvelopeError(const char* reason, int i_anchor, double dm_N, double h, const Grid& grid);
+   
+   } // namespace io

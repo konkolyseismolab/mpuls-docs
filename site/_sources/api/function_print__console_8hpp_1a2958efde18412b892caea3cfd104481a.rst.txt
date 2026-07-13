@@ -1,0 +1,14 @@
+.. _exhale_function_print__console_8hpp_1a2958efde18412b892caea3cfd104481a:
+
+Function io::printRunConfiguration
+==================================
+
+- Defined in :ref:`file_include_io_print_console.hpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: io::printRunConfiguration(const StellarInput&)
+   :project: MPULS

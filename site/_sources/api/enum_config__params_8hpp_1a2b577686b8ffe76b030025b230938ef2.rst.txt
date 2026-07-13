@@ -1,0 +1,14 @@
+.. _exhale_enum_config__params_8hpp_1a2b577686b8ffe76b030025b230938ef2:
+
+Enum FluxCalculator
+===================
+
+- Defined in :ref:`file_include_core_config_params.hpp`
+
+
+Enum Documentation
+------------------
+
+
+.. doxygenenum:: solver_params::FluxCalculator
+   :project: MPULS

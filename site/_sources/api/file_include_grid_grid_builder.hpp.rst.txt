@@ -17,6 +17,11 @@ Definition (``include/grid/grid_builder.hpp``)
 ----------------------------------------------
 
 
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_include_grid_grid_builder.hpp.rst
+
 
 
 
@@ -34,6 +39,8 @@ Includes
 Included By
 -----------
 
+
+- :ref:`file_include_io_print_console.hpp`
 
 - :ref:`file_include_models_envelope_builder.hpp`
 

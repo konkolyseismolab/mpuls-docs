@@ -1,0 +1,14 @@
+.. _exhale_function_eos_8hpp_1abd49d98ca2386d965d1968eae37032db:
+
+Function physics::eosIdealGas
+=============================
+
+- Defined in :ref:`file_include_physics_eos.hpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: physics::eosIdealGas(double, double, const StellarInput&)
+   :project: MPULS

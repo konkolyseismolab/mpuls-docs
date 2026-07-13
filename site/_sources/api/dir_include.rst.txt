@@ -12,10 +12,12 @@ Subdirectories
 
 - :ref:`dir_include_advection`
 - :ref:`dir_include_core`
+- :ref:`dir_include_dev`
 - :ref:`dir_include_equations`
 - :ref:`dir_include_grid`
 - :ref:`dir_include_io`
 - :ref:`dir_include_models`
+- :ref:`dir_include_physics`
 - :ref:`dir_include_time_solver`
 
 

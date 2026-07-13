@@ -26,6 +26,11 @@ Directories
 .. toctree::
    :maxdepth: 5
 
+   dir_include_dev.rst
+
+.. toctree::
+   :maxdepth: 5
+
    dir_include_equations.rst
 
 .. toctree::
@@ -42,6 +47,11 @@ Directories
    :maxdepth: 5
 
    dir_include_models.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   dir_include_physics.rst
 
 .. toctree::
    :maxdepth: 5
@@ -90,12 +100,22 @@ Files
 .. toctree::
    :maxdepth: 5
 
+   file_include_models_convective_parameters.hpp.rst
+
+.. toctree::
+   :maxdepth: 5
+
    file_include_core_custom_exceptions.hpp.rst
 
 .. toctree::
    :maxdepth: 5
 
    file_include_models_envelope_builder.hpp.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_include_physics_eos.hpp.rst
 
 .. toctree::
    :maxdepth: 5
@@ -131,6 +151,16 @@ Files
    :maxdepth: 5
 
    file_include_models_initial_models.hpp.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_include_dev_opacity.hpp.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_include_physics_opal_table.hpp.rst
 
 .. toctree::
    :maxdepth: 5

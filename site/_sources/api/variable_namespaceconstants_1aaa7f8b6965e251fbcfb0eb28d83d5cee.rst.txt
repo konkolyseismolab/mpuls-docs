@@ -1,0 +1,14 @@
+.. _exhale_variable_namespaceconstants_1aaa7f8b6965e251fbcfb0eb28d83d5cee:
+
+Variable constants::kSpeedOfLight
+=================================
+
+- Defined in :ref:`file_include_core_constants.hpp`
+
+
+Variable Documentation
+----------------------
+
+
+.. doxygenvariable:: constants::kSpeedOfLight
+   :project: MPULS

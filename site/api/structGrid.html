@@ -10,7 +10,7 @@
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
       <link rel="stylesheet" type="text/css" href="../_static/collapsible-lists/css/tree_view.css?v=a885cde7" />
-      <link rel="stylesheet" type="text/css" href="../_static/compact-api.css?v=bfcdbbe1" />
+      <link rel="stylesheet" type="text/css" href="../_static/compact-api.css?v=8b703a59" />
 
   
       <script src="../_static/jquery.js?v=5d32c60e"></script>
@@ -24,7 +24,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Struct Grid2Dconfig" href="structGrid2Dconfig.html" />
-    <link rel="prev" title="Struct Config" href="structConfig.html" /> 
+    <link rel="prev" title="Struct ConvectiveParameters" href="structConvectiveParameters.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -63,10 +63,16 @@
 <li class="toctree-l4"><a class="reference internal" href="structCellCenter.html">Struct CellCenter</a></li>
 <li class="toctree-l4"><a class="reference internal" href="structCellInterface.html">Struct CellInterface</a></li>
 <li class="toctree-l4"><a class="reference internal" href="structConfig.html">Struct Config</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structConvectiveParameters.html">Struct ConvectiveParameters</a></li>
 <li class="toctree-l4 current"><a class="current reference internal" href="#">Struct Grid</a></li>
 <li class="toctree-l4"><a class="reference internal" href="structGrid2Dconfig.html">Struct Grid2Dconfig</a></li>
 <li class="toctree-l4"><a class="reference internal" href="structGridConfig.html">Struct GridConfig</a></li>
 <li class="toctree-l4"><a class="reference internal" href="structmodel_1_1ModelConfig.html">Struct ModelConfig</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structModelBuilderConfig.html">Struct ModelBuilderConfig</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structopacity_1_1OpacityTable.html">Struct OpacityTable</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structOpacityTable.html">Struct OpacityTable</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structphysics_1_1EosState.html">Struct EosState</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structPhysicsConfig.html">Struct PhysicsConfig</a></li>
 <li class="toctree-l4"><a class="reference internal" href="structQuantityTraits.html">Template Struct QuantityTraits</a></li>
 <li class="toctree-l4"><a class="reference internal" href="structsimulation__2d_1_1always__false.html">Template Struct always_false</a></li>
 <li class="toctree-l4"><a class="reference internal" href="structsimulation__2d_1_1EquationTraits.html">Template Struct EquationTraits</a></li>
@@ -152,17 +158,45 @@
 <dl class="cpp struct">
 <dt class="sig sig-object cpp" id="_CPPv44Grid">
 <span id="_CPPv34Grid"></span><span id="_CPPv24Grid"></span><span id="Grid"></span><span class="target" id="structGrid"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Grid</span></span></span><a class="headerlink" href="#_CPPv44Grid" title="Link to this definition"></a><br /></dt>
-<dd><div class="breathe-sectiondef docutils container">
+<dd><p>Lagrangian (mass-based) 1D grid structure. </p>
+<p>The grid consists of:<ul class="simple">
+<li><p>N cell centers (<code class="docutils literal notranslate"><span class="pre">centers</span></code>)</p></li>
+<li><p>N+1 cell interfaces (<code class="docutils literal notranslate"><span class="pre">faces</span></code>)</p></li>
+</ul>
+</p>
+<p>This is the standard layout for a 1D Lagrangian stellar envelope model:</p>
+<p><ul class="simple">
+<li><p>Each <a class="reference internal" href="structCellCenter.html#structCellCenter"><span class="std std-ref">CellCenter</span></a> stores the physical state of a zone (pressure, temperature, density, specific volume, luminosities, etc.).</p></li>
+<li><p>Each <a class="reference internal" href="structCellInterface.html#structCellInterface"><span class="std std-ref">CellInterface</span></a> stores geometric and mass-related quantities such as radius and enclosed mass.</p></li>
+</ul>
+</p>
+<p>The grid is allocated by grid::build(), which creates the correct number of faces and centers but leaves all physical quantities zeroed. The envelope builder (setSurfaceBoundary, computeOuterZone, stepInwardZone) fills in the physical values during inward integration.</p>
+<p><div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>grid::build </p>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="structCellCenter.html#structCellCenter"><span class="std std-ref">CellCenter</span></a></p>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="structCellInterface.html#structCellInterface"><span class="std std-ref">CellInterface</span></a></p>
+</div>
+</p>
+<div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
 <dl class="cpp var">
 <dt class="sig sig-object cpp" id="_CPPv4N4Grid7centersE">
 <span id="_CPPv3N4Grid7centersE"></span><span id="_CPPv2N4Grid7centersE"></span><span id="Grid::centers__std::vector:CellCenter:"></span><span class="target" id="structGrid_1a8edbcee25307434ccebda60b2215b251"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="structCellCenter.html#_CPPv410CellCenter" title="CellCenter"><span class="n"><span class="pre">CellCenter</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">centers</span></span></span><a class="headerlink" href="#_CPPv4N4Grid7centersE" title="Link to this definition"></a><br /></dt>
-<dd></dd></dl>
+<dd><p>N cell centers (zone-averaged physical state) </p>
+</dd></dl>
 
 <dl class="cpp var">
 <dt class="sig sig-object cpp" id="_CPPv4N4Grid5facesE">
 <span id="_CPPv3N4Grid5facesE"></span><span id="_CPPv2N4Grid5facesE"></span><span id="Grid::faces__std::vector:CellInterface:"></span><span class="target" id="structGrid_1aba8e3b6986c00259478a6bba51d2498b"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="structCellInterface.html#_CPPv413CellInterface" title="CellInterface"><span class="n"><span class="pre">CellInterface</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">faces</span></span></span><a class="headerlink" href="#_CPPv4N4Grid5facesE" title="Link to this definition"></a><br /></dt>
-<dd></dd></dl>
+<dd><p>N+1 cell interfaces (geometric boundaries) </p>
+</dd></dl>
 
 </div>
 </dd></dl>
@@ -174,7 +208,7 @@
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="structConfig.html" class="btn btn-neutral float-left" title="Struct Config" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="structConvectiveParameters.html" class="btn btn-neutral float-left" title="Struct ConvectiveParameters" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
         <a href="structGrid2Dconfig.html" class="btn btn-neutral float-right" title="Struct Grid2Dconfig" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 

@@ -10,7 +10,7 @@
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
       <link rel="stylesheet" type="text/css" href="../_static/collapsible-lists/css/tree_view.css?v=a885cde7" />
-      <link rel="stylesheet" type="text/css" href="../_static/compact-api.css?v=bfcdbbe1" />
+      <link rel="stylesheet" type="text/css" href="../_static/compact-api.css?v=8b703a59" />
 
   
       <script src="../_static/jquery.js?v=5d32c60e"></script>
@@ -23,7 +23,7 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Template Struct QuantityTraits" href="structQuantityTraits.html" />
+    <link rel="next" title="Struct ModelBuilderConfig" href="structModelBuilderConfig.html" />
     <link rel="prev" title="Struct GridConfig" href="structGridConfig.html" /> 
 </head>
 
@@ -63,10 +63,16 @@
 <li class="toctree-l4"><a class="reference internal" href="structCellCenter.html">Struct CellCenter</a></li>
 <li class="toctree-l4"><a class="reference internal" href="structCellInterface.html">Struct CellInterface</a></li>
 <li class="toctree-l4"><a class="reference internal" href="structConfig.html">Struct Config</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structConvectiveParameters.html">Struct ConvectiveParameters</a></li>
 <li class="toctree-l4"><a class="reference internal" href="structGrid.html">Struct Grid</a></li>
 <li class="toctree-l4"><a class="reference internal" href="structGrid2Dconfig.html">Struct Grid2Dconfig</a></li>
 <li class="toctree-l4"><a class="reference internal" href="structGridConfig.html">Struct GridConfig</a></li>
 <li class="toctree-l4 current"><a class="current reference internal" href="#">Struct ModelConfig</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structModelBuilderConfig.html">Struct ModelBuilderConfig</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structopacity_1_1OpacityTable.html">Struct OpacityTable</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structOpacityTable.html">Struct OpacityTable</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structphysics_1_1EosState.html">Struct EosState</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structPhysicsConfig.html">Struct PhysicsConfig</a></li>
 <li class="toctree-l4"><a class="reference internal" href="structQuantityTraits.html">Template Struct QuantityTraits</a></li>
 <li class="toctree-l4"><a class="reference internal" href="structsimulation__2d_1_1always__false.html">Template Struct always_false</a></li>
 <li class="toctree-l4"><a class="reference internal" href="structsimulation__2d_1_1EquationTraits.html">Template Struct EquationTraits</a></li>
@@ -152,22 +158,26 @@
 <dl class="cpp struct">
 <dt class="sig sig-object cpp" id="_CPPv4N5model11ModelConfigE">
 <span id="_CPPv3N5model11ModelConfigE"></span><span id="_CPPv2N5model11ModelConfigE"></span><span id="model::ModelConfig"></span><span class="target" id="structmodel_1_1ModelConfig"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ModelConfig</span></span></span><a class="headerlink" href="#_CPPv4N5model11ModelConfigE" title="Link to this definition"></a><br /></dt>
-<dd><div class="breathe-sectiondef docutils container">
+<dd><p>Model configuration for 2D tests. </p>
+<div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
 <dl class="cpp var">
 <dt class="sig sig-object cpp" id="_CPPv4N5model11ModelConfig4typeE">
-<span id="_CPPv3N5model11ModelConfig4typeE"></span><span id="_CPPv2N5model11ModelConfig4typeE"></span><span id="model::ModelConfig::type__Equation"></span><span class="target" id="structmodel_1_1ModelConfig_1af03a3eeb29ed92db2afe489cee4e5689"></span><a class="reference internal" href="enum_namespacemodel_1a907c446eb5c73e13a7d76edd612fdfef.html#_CPPv4N5model8EquationE" title="model::Equation"><span class="n"><span class="pre">Equation</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">type</span></span></span><a class="headerlink" href="#_CPPv4N5model11ModelConfig4typeE" title="Link to this definition"></a><br /></dt>
-<dd></dd></dl>
+<span id="_CPPv3N5model11ModelConfig4typeE"></span><span id="_CPPv2N5model11ModelConfig4typeE"></span><span id="model::ModelConfig::type__Equation"></span><span class="target" id="structmodel_1_1ModelConfig_1af03a3eeb29ed92db2afe489cee4e5689"></span><a class="reference internal" href="enum_config__params_8hpp_1a907c446eb5c73e13a7d76edd612fdfef.html#_CPPv4N5model8EquationE" title="model::Equation"><span class="n"><span class="pre">Equation</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">type</span></span></span><a class="headerlink" href="#_CPPv4N5model11ModelConfig4typeE" title="Link to this definition"></a><br /></dt>
+<dd><p>Governing equation. </p>
+</dd></dl>
 
 <dl class="cpp var">
 <dt class="sig sig-object cpp" id="_CPPv4N5model11ModelConfig13initial_modelE">
-<span id="_CPPv3N5model11ModelConfig13initial_modelE"></span><span id="_CPPv2N5model11ModelConfig13initial_modelE"></span><span id="model::ModelConfig::initial_model__InitialModel"></span><span class="target" id="structmodel_1_1ModelConfig_1a4506b831e5310173880a8ee6351f44dd"></span><a class="reference internal" href="enum_namespacemodel_1a3ae25a4a9f22dccaa99cdecb28ab4e0f.html#_CPPv4N5model12InitialModelE" title="model::InitialModel"><span class="n"><span class="pre">InitialModel</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">initial_model</span></span></span><a class="headerlink" href="#_CPPv4N5model11ModelConfig13initial_modelE" title="Link to this definition"></a><br /></dt>
-<dd></dd></dl>
+<span id="_CPPv3N5model11ModelConfig13initial_modelE"></span><span id="_CPPv2N5model11ModelConfig13initial_modelE"></span><span id="model::ModelConfig::initial_model__InitialModel"></span><span class="target" id="structmodel_1_1ModelConfig_1a4506b831e5310173880a8ee6351f44dd"></span><a class="reference internal" href="enum_config__params_8hpp_1a3ae25a4a9f22dccaa99cdecb28ab4e0f.html#_CPPv4N5model12InitialModelE" title="model::InitialModel"><span class="n"><span class="pre">InitialModel</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">initial_model</span></span></span><a class="headerlink" href="#_CPPv4N5model11ModelConfig13initial_modelE" title="Link to this definition"></a><br /></dt>
+<dd><p>Initial condition type. </p>
+</dd></dl>
 
 <dl class="cpp var">
 <dt class="sig sig-object cpp" id="_CPPv4N5model11ModelConfig6paramsE">
 <span id="_CPPv3N5model11ModelConfig6paramsE"></span><span id="_CPPv2N5model11ModelConfig6paramsE"></span><span id="model::ModelConfig::params__std::vector:double:"></span><span class="target" id="structmodel_1_1ModelConfig_1a9c0672959173ad21951adaaf3df49c05"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">double</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">params</span></span></span><a class="headerlink" href="#_CPPv4N5model11ModelConfig6paramsE" title="Link to this definition"></a><br /></dt>
-<dd></dd></dl>
+<dd><p>Initial condition parameters. </p>
+</dd></dl>
 
 </div>
 </dd></dl>
@@ -180,7 +190,7 @@
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="structGridConfig.html" class="btn btn-neutral float-left" title="Struct GridConfig" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="structQuantityTraits.html" class="btn btn-neutral float-right" title="Template Struct QuantityTraits" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="structModelBuilderConfig.html" class="btn btn-neutral float-right" title="Struct ModelBuilderConfig" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

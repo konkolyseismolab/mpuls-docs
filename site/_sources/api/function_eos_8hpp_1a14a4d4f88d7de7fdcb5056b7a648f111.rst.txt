@@ -1,0 +1,14 @@
+.. _exhale_function_eos_8hpp_1a14a4d4f88d7de7fdcb5056b7a648f111:
+
+Function physics::calculateEos
+==============================
+
+- Defined in :ref:`file_include_physics_eos.hpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: physics::calculateEos(double, double, const StellarInput&)
+   :project: MPULS

@@ -17,6 +17,11 @@ Definition (``include/models/stellar_input.hpp``)
 -------------------------------------------------
 
 
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_include_models_stellar_input.hpp.rst
+
 
 
 
@@ -27,6 +32,8 @@ Includes
 
 - ``core/config_parser.hpp`` (:ref:`file_include_core_config_parser.hpp`)
 
+- ``models/convective_parameters.hpp`` (:ref:`file_include_models_convective_parameters.hpp`)
+
 
 
 Included By
@@ -35,7 +42,11 @@ Included By
 
 - :ref:`file_include_grid_grid_builder.hpp`
 
+- :ref:`file_include_io_print_console.hpp`
+
 - :ref:`file_include_models_envelope_builder.hpp`
+
+- :ref:`file_include_physics_eos.hpp`
 
 
 

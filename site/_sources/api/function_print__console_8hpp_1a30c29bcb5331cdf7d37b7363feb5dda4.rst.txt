@@ -1,0 +1,14 @@
+.. _exhale_function_print__console_8hpp_1a30c29bcb5331cdf7d37b7363feb5dda4:
+
+Function io::printWarningSummary
+================================
+
+- Defined in :ref:`file_include_io_print_console.hpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: io::printWarningSummary()
+   :project: MPULS

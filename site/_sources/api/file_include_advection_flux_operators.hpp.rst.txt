@@ -17,6 +17,11 @@ Definition (``include/advection/flux_operators.hpp``)
 -----------------------------------------------------
 
 
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_include_advection_flux_operators.hpp.rst
+
 
 
 Detailed Description

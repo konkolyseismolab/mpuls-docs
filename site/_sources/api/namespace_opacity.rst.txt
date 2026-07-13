@@ -1,0 +1,36 @@
+
+.. _namespace_opacity:
+
+Namespace opacity
+=================
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+
+
+
+
+Classes
+-------
+
+
+- :ref:`exhale_struct_structopacity_1_1OpacityTable`
+
+
+Enums
+-----
+
+
+- :ref:`exhale_enum_opal__table_8hpp_1acdfee38d79244a50e55b9267e23e9323`
+
+
+Functions
+---------
+
+
+- :ref:`exhale_function_opal__table_8hpp_1a03555a4a4bc11c8ddab9bb752dc35b25`
+
+- :ref:`exhale_function_opal__table_8hpp_1a37166debd52472edd254045c68524603`

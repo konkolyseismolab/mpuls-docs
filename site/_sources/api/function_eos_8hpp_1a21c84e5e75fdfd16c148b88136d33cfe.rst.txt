@@ -1,0 +1,14 @@
+.. _exhale_function_eos_8hpp_1a21c84e5e75fdfd16c148b88136d33cfe:
+
+Function physics::eosPolytrope
+==============================
+
+- Defined in :ref:`file_include_physics_eos.hpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: physics::eosPolytrope(double, const StellarInput&)
+   :project: MPULS

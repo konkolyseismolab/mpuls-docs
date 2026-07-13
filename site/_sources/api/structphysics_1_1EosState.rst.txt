@@ -1,0 +1,18 @@
+.. _exhale_struct_structphysics_1_1EosState:
+
+Struct EosState
+===============
+
+- Defined in :ref:`file_include_physics_eos.hpp`
+
+
+Struct Documentation
+--------------------
+
+
+.. doxygenstruct:: physics::EosState
+   :project: MPULS
+   :members:
+   :protected-members:
+   :private-members:
+   :undoc-members:

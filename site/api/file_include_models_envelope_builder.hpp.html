@@ -10,7 +10,7 @@
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
       <link rel="stylesheet" type="text/css" href="../_static/collapsible-lists/css/tree_view.css?v=a885cde7" />
-      <link rel="stylesheet" type="text/css" href="../_static/compact-api.css?v=bfcdbbe1" />
+      <link rel="stylesheet" type="text/css" href="../_static/compact-api.css?v=8b703a59" />
 
   
       <script src="../_static/jquery.js?v=5d32c60e"></script>
@@ -81,17 +81,34 @@
   <section id="file-envelope-builder-hpp">
 <span id="file-include-models-envelope-builder-hpp"></span><h1>File envelope_builder.hpp<a class="headerlink" href="#file-envelope-builder-hpp" title="Link to this heading"></a></h1>
 <p>↰ <a class="reference internal" href="dir_include_models.html#dir-include-models"><span class="std std-ref">Parent directory</span></a> (<code class="docutils literal notranslate"><span class="pre">include/models</span></code>)</p>
+<p>High-level routines for constructing a static stellar envelope.</p>
 <nav class="contents local" id="contents">
 <p class="topic-title">Contents</p>
 <ul class="simple">
 <li><p><a class="reference internal" href="#definition-include-models-envelope-builder-hpp" id="id1">Definition (<code class="docutils literal notranslate"><span class="pre">include/models/envelope_builder.hpp</span></code>)</a></p></li>
-<li><p><a class="reference internal" href="#includes" id="id2">Includes</a></p></li>
-<li><p><a class="reference internal" href="#namespaces" id="id3">Namespaces</a></p></li>
-<li><p><a class="reference internal" href="#functions" id="id4">Functions</a></p></li>
+<li><p><a class="reference internal" href="#detailed-description" id="id2">Detailed Description</a></p></li>
+<li><p><a class="reference internal" href="#includes" id="id3">Includes</a></p></li>
+<li><p><a class="reference internal" href="#namespaces" id="id4">Namespaces</a></p></li>
+<li><p><a class="reference internal" href="#functions" id="id5">Functions</a></p></li>
 </ul>
 </nav>
 <section id="definition-include-models-envelope-builder-hpp">
 <h2>Definition (<code class="docutils literal notranslate"><span class="pre">include/models/envelope_builder.hpp</span></code>)<a class="headerlink" href="#definition-include-models-envelope-builder-hpp" title="Link to this heading"></a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="program_listing_file_include_models_envelope_builder.hpp.html">Program Listing for File envelope_builder.hpp</a></li>
+</ul>
+</div>
+</section>
+<section id="detailed-description">
+<h2>Detailed Description<a class="headerlink" href="#detailed-description" title="Link to this heading"></a></h2>
+<p>This module provides:</p>
+<ul class="simple">
+<li><p>A full static envelope builder (buildStaticEnvelope)</p></li>
+<li><p>Bisection-based calibration of the outer zone mass (DM_N)</p></li>
+<li><p>Bisection-based calibration of the temperature scaling parameter (h)</p></li>
+</ul>
+<p>The envelope is constructed on a Lagrangian (mass-based) grid produced by grid::build(), and uses the physics configuration stored in <a class="reference internal" href="structStellarInput.html#exhale-struct-structstellarinput"><span class="std std-ref">Struct StellarInput</span></a> and <a class="reference internal" href="structConfig.html#exhale-struct-structconfig"><span class="std std-ref">Struct Config</span></a>.</p>
 </section>
 <section id="includes">
 <h2>Includes<a class="headerlink" href="#includes" title="Link to this heading"></a></h2>
@@ -109,7 +126,9 @@
 <section id="functions">
 <h2>Functions<a class="headerlink" href="#functions" title="Link to this heading"></a></h2>
 <ul class="simple">
-<li><p><a class="reference internal" href="function_envelope__builder_8hpp_1a717c924bff07df3804ba31d1fc4a36af.html#exhale-function-envelope-builder-8hpp-1a717c924bff07df3804ba31d1fc4a36af"><span class="std std-ref">Function envelope::build_static_envelope</span></a></p></li>
+<li><p><a class="reference internal" href="function_envelope__builder_8hpp_1a481b59dd715d9d64a0fb26044d062648.html#exhale-function-envelope-builder-8hpp-1a481b59dd715d9d64a0fb26044d062648"><span class="std std-ref">Function envelope::buildStaticEnvelope</span></a></p></li>
+<li><p><a class="reference internal" href="function_envelope__builder_8hpp_1a2bc306ae2448400964b459725ffdbe22.html#exhale-function-envelope-builder-8hpp-1a2bc306ae2448400964b459725ffdbe22"><span class="std std-ref">Function envelope::calibrateDmN</span></a></p></li>
+<li><p><a class="reference internal" href="function_envelope__builder_8hpp_1a689831817079232958d8d6c7bdf5b4f3.html#exhale-function-envelope-builder-8hpp-1a689831817079232958d8d6c7bdf5b4f3"><span class="std std-ref">Function envelope::calibrateH</span></a></p></li>
 </ul>
 </section>
 </section>

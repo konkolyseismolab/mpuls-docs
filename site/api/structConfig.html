@@ -10,7 +10,7 @@
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
       <link rel="stylesheet" type="text/css" href="../_static/collapsible-lists/css/tree_view.css?v=a885cde7" />
-      <link rel="stylesheet" type="text/css" href="../_static/compact-api.css?v=bfcdbbe1" />
+      <link rel="stylesheet" type="text/css" href="../_static/compact-api.css?v=8b703a59" />
 
   
       <script src="../_static/jquery.js?v=5d32c60e"></script>
@@ -23,7 +23,7 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Struct Grid" href="structGrid.html" />
+    <link rel="next" title="Struct ConvectiveParameters" href="structConvectiveParameters.html" />
     <link rel="prev" title="Struct CellInterface" href="structCellInterface.html" /> 
 </head>
 
@@ -63,10 +63,16 @@
 <li class="toctree-l4"><a class="reference internal" href="structCellCenter.html">Struct CellCenter</a></li>
 <li class="toctree-l4"><a class="reference internal" href="structCellInterface.html">Struct CellInterface</a></li>
 <li class="toctree-l4 current"><a class="current reference internal" href="#">Struct Config</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structConvectiveParameters.html">Struct ConvectiveParameters</a></li>
 <li class="toctree-l4"><a class="reference internal" href="structGrid.html">Struct Grid</a></li>
 <li class="toctree-l4"><a class="reference internal" href="structGrid2Dconfig.html">Struct Grid2Dconfig</a></li>
 <li class="toctree-l4"><a class="reference internal" href="structGridConfig.html">Struct GridConfig</a></li>
 <li class="toctree-l4"><a class="reference internal" href="structmodel_1_1ModelConfig.html">Struct ModelConfig</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structModelBuilderConfig.html">Struct ModelBuilderConfig</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structopacity_1_1OpacityTable.html">Struct OpacityTable</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structOpacityTable.html">Struct OpacityTable</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structphysics_1_1EosState.html">Struct EosState</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structPhysicsConfig.html">Struct PhysicsConfig</a></li>
 <li class="toctree-l4"><a class="reference internal" href="structQuantityTraits.html">Template Struct QuantityTraits</a></li>
 <li class="toctree-l4"><a class="reference internal" href="structsimulation__2d_1_1always__false.html">Template Struct always_false</a></li>
 <li class="toctree-l4"><a class="reference internal" href="structsimulation__2d_1_1EquationTraits.html">Template Struct EquationTraits</a></li>
@@ -152,97 +158,141 @@
 <dl class="cpp struct">
 <dt class="sig sig-object cpp" id="_CPPv46Config">
 <span id="_CPPv36Config"></span><span id="_CPPv26Config"></span><span id="Config"></span><span class="target" id="structConfig"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Config</span></span></span><a class="headerlink" href="#_CPPv46Config" title="Link to this definition"></a><br /></dt>
-<dd><div class="breathe-sectiondef docutils container">
+<dd><p>Unified configuration struct for both 1D and 2D modules. </p>
+<p>This struct aggregates all runtime parameters, solver settings, grid configurations, stellar parameters, physics blocks, and envelope-builder settings. </p>
+<div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
 <dl class="cpp var">
 <dt class="sig sig-object cpp" id="_CPPv4N6Config10output_dirE">
 <span id="_CPPv3N6Config10output_dirE"></span><span id="_CPPv2N6Config10output_dirE"></span><span id="Config::output_dir__ss"></span><span class="target" id="structConfig_1acc64da6ba98fc325e5c93e082ae68f9c"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">output_dir</span></span></span><a class="headerlink" href="#_CPPv4N6Config10output_dirE" title="Link to this definition"></a><br /></dt>
-<dd></dd></dl>
+<dd><p>Output directory. </p>
+</dd></dl>
 
 <dl class="cpp var">
 <dt class="sig sig-object cpp" id="_CPPv4N6Config13output_formatE">
 <span id="_CPPv3N6Config13output_formatE"></span><span id="_CPPv2N6Config13output_formatE"></span><span id="Config::output_format__ss"></span><span class="target" id="structConfig_1aea0ff7e0dc3bf730dfe70f94aff313bb"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">output_format</span></span></span><a class="headerlink" href="#_CPPv4N6Config13output_formatE" title="Link to this definition"></a><br /></dt>
-<dd></dd></dl>
+<dd><p>Output format (“hdf5”) </p>
+</dd></dl>
 
 <dl class="cpp var">
 <dt class="sig sig-object cpp" id="_CPPv4N6Config19output_summary_nameE">
 <span id="_CPPv3N6Config19output_summary_nameE"></span><span id="_CPPv2N6Config19output_summary_nameE"></span><span id="Config::output_summary_name__ss"></span><span class="target" id="structConfig_1a72a8fbadf40301eb71d6ac0b2c620049"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">output_summary_name</span></span></span><a class="headerlink" href="#_CPPv4N6Config19output_summary_nameE" title="Link to this definition"></a><br /></dt>
-<dd></dd></dl>
+<dd><p>Output file base name. </p>
+</dd></dl>
 
 <dl class="cpp var">
 <dt class="sig sig-object cpp" id="_CPPv4N6Config13output_prefixE">
 <span id="_CPPv3N6Config13output_prefixE"></span><span id="_CPPv2N6Config13output_prefixE"></span><span id="Config::output_prefix__ss"></span><span class="target" id="structConfig_1a5a24110fdcdbdcb045fde4cd6d3c10b8"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">output_prefix</span></span></span><a class="headerlink" href="#_CPPv4N6Config13output_prefixE" title="Link to this definition"></a><br /></dt>
-<dd></dd></dl>
+<dd><p>Prefix for output files. </p>
+</dd></dl>
 
 <dl class="cpp var">
 <dt class="sig sig-object cpp" id="_CPPv4N6Config14inner_boundaryE">
 <span id="_CPPv3N6Config14inner_boundaryE"></span><span id="_CPPv2N6Config14inner_boundaryE"></span><span id="Config::inner_boundary__ss"></span><span class="target" id="structConfig_1a2b203d9fa4b9394d928a79f0d43902db"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">inner_boundary</span></span></span><a class="headerlink" href="#_CPPv4N6Config14inner_boundaryE" title="Link to this definition"></a><br /></dt>
-<dd></dd></dl>
+<dd><p>Inner boundary condition. </p>
+</dd></dl>
 
 <dl class="cpp var">
 <dt class="sig sig-object cpp" id="_CPPv4N6Config14outer_boundaryE">
 <span id="_CPPv3N6Config14outer_boundaryE"></span><span id="_CPPv2N6Config14outer_boundaryE"></span><span id="Config::outer_boundary__ss"></span><span class="target" id="structConfig_1a6dd8742bad7f452d78f0db279a5fe3bd"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">outer_boundary</span></span></span><a class="headerlink" href="#_CPPv4N6Config14outer_boundaryE" title="Link to this definition"></a><br /></dt>
-<dd></dd></dl>
+<dd><p>Outer boundary condition. </p>
+</dd></dl>
 
 <dl class="cpp var">
 <dt class="sig sig-object cpp" id="_CPPv4N6Config15integrator_typeE">
 <span id="_CPPv3N6Config15integrator_typeE"></span><span id="_CPPv2N6Config15integrator_typeE"></span><span id="Config::integrator_type__ss"></span><span class="target" id="structConfig_1a37cddb67598381bc85c68eb0099a3e82"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">integrator_type</span></span></span><a class="headerlink" href="#_CPPv4N6Config15integrator_typeE" title="Link to this definition"></a><br /></dt>
-<dd></dd></dl>
+<dd><p>Integrator type (string) </p>
+</dd></dl>
 
 <dl class="cpp var">
 <dt class="sig sig-object cpp" id="_CPPv4N6Config9time_stepE">
 <span id="_CPPv3N6Config9time_stepE"></span><span id="_CPPv2N6Config9time_stepE"></span><span id="Config::time_step__ss"></span><span class="target" id="structConfig_1ac583c6289c7a6c87129cdda0c70c9e36"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">time_step</span></span></span><a class="headerlink" href="#_CPPv4N6Config9time_stepE" title="Link to this definition"></a><br /></dt>
-<dd></dd></dl>
+<dd><p>Time step mode. </p>
+</dd></dl>
 
 <dl class="cpp var">
 <dt class="sig sig-object cpp" id="_CPPv4N6Config7delta_tE">
 <span id="_CPPv3N6Config7delta_tE"></span><span id="_CPPv2N6Config7delta_tE"></span><span id="Config::delta_t__double"></span><span class="target" id="structConfig_1a7d0d958497e2bd0b83ebc197d4b1765e"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">delta_t</span></span></span><a class="headerlink" href="#_CPPv4N6Config7delta_tE" title="Link to this definition"></a><br /></dt>
-<dd></dd></dl>
+<dd><p>Output timestep. </p>
+</dd></dl>
 
 <dl class="cpp var">
 <dt class="sig sig-object cpp" id="_CPPv4N6Config5t_maxE">
 <span id="_CPPv3N6Config5t_maxE"></span><span id="_CPPv2N6Config5t_maxE"></span><span id="Config::t_max__double"></span><span class="target" id="structConfig_1ad94c0fd807b089ea03c8dfbdd67ba8c6"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">t_max</span></span></span><a class="headerlink" href="#_CPPv4N6Config5t_maxE" title="Link to this definition"></a><br /></dt>
-<dd></dd></dl>
+<dd><p>Maximum simulation time. </p>
+</dd></dl>
 
 <dl class="cpp var">
 <dt class="sig sig-object cpp" id="_CPPv4N6Config6t_initE">
 <span id="_CPPv3N6Config6t_initE"></span><span id="_CPPv2N6Config6t_initE"></span><span id="Config::t_init__double"></span><span class="target" id="structConfig_1aca81a26af519d5b1d5a6530e9bf4cde1"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">t_init</span></span></span><a class="headerlink" href="#_CPPv4N6Config6t_initE" title="Link to this definition"></a><br /></dt>
-<dd></dd></dl>
+<dd><p>Initial simulation time. </p>
+</dd></dl>
 
 <dl class="cpp var">
 <dt class="sig sig-object cpp" id="_CPPv4N6Config10dimensionsE">
 <span id="_CPPv3N6Config10dimensionsE"></span><span id="_CPPv2N6Config10dimensionsE"></span><span id="Config::dimensions__short"></span><span class="target" id="structConfig_1ada4af1ef404fd02c83a9f3a6b7a23a90"></span><span class="kt"><span class="pre">short</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">dimensions</span></span></span><a class="headerlink" href="#_CPPv4N6Config10dimensionsE" title="Link to this definition"></a><br /></dt>
-<dd></dd></dl>
+<dd><p>1D or 2D </p>
+</dd></dl>
 
 <dl class="cpp var">
 <dt class="sig sig-object cpp" id="_CPPv4N6Config4modeE">
 <span id="_CPPv3N6Config4modeE"></span><span id="_CPPv2N6Config4modeE"></span><span id="Config::mode__Mode"></span><span class="target" id="structConfig_1a21a5e09bba8d02bc5eff7c8996536c87"></span><a class="reference internal" href="enum_config__params_8hpp_1a46c8a310cf4c094f8c80e1cb8dc1f911.html#_CPPv44Mode" title="Mode"><span class="n"><span class="pre">Mode</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">mode</span></span></span><a class="headerlink" href="#_CPPv4N6Config4modeE" title="Link to this definition"></a><br /></dt>
-<dd></dd></dl>
+<dd><p>Runtime mode. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N6Config10debug_modeE">
+<span id="_CPPv3N6Config10debug_modeE"></span><span id="_CPPv2N6Config10debug_modeE"></span><span id="Config::debug_mode__b"></span><span class="target" id="structConfig_1a81947bf203a6a2c21aca4d2e57d65b59"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">debug_mode</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">false</span></span><a class="headerlink" href="#_CPPv4N6Config10debug_modeE" title="Link to this definition"></a><br /></dt>
+<dd><p>Enable debug logging. </p>
+</dd></dl>
 
 <dl class="cpp var">
 <dt class="sig sig-object cpp" id="_CPPv4N6Config18stellar_parametersE">
 <span id="_CPPv3N6Config18stellar_parametersE"></span><span id="_CPPv2N6Config18stellar_parametersE"></span><span id="Config::stellar_parameters__StellarParameters"></span><span class="target" id="structConfig_1ab1fb58ae89ff2b9a342844e57e4f1f27"></span><a class="reference internal" href="structStellarParameters.html#_CPPv417StellarParameters" title="StellarParameters"><span class="n"><span class="pre">StellarParameters</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">stellar_parameters</span></span></span><a class="headerlink" href="#_CPPv4N6Config18stellar_parametersE" title="Link to this definition"></a><br /></dt>
-<dd></dd></dl>
+<dd><p>Stellar parameters. </p>
+</dd></dl>
 
 <dl class="cpp var">
 <dt class="sig sig-object cpp" id="_CPPv4N6Config5modelE">
 <span id="_CPPv3N6Config5modelE"></span><span id="_CPPv2N6Config5modelE"></span><span id="Config::model__model::ModelConfig"></span><span class="target" id="structConfig_1a78bbff60a77639df50d07e08f5d7e503"></span><a class="reference internal" href="#_CPPv4N6Config5modelE" title="Config::model"><span class="n"><span class="pre">model</span></span></a><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">ModelConfig</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">model</span></span></span><a class="headerlink" href="#_CPPv4N6Config5modelE" title="Link to this definition"></a><br /></dt>
-<dd></dd></dl>
+<dd><p>2D model configuration </p>
+</dd></dl>
 
 <dl class="cpp var">
 <dt class="sig sig-object cpp" id="_CPPv4N6Config10solver_cfgE">
 <span id="_CPPv3N6Config10solver_cfgE"></span><span id="_CPPv2N6Config10solver_cfgE"></span><span id="Config::solver_cfg__SolverConfig"></span><span class="target" id="structConfig_1af28f5062d80a0f74e849e4f88b9a2c5e"></span><a class="reference internal" href="structSolverConfig.html#_CPPv412SolverConfig" title="SolverConfig"><span class="n"><span class="pre">SolverConfig</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">solver_cfg</span></span></span><a class="headerlink" href="#_CPPv4N6Config10solver_cfgE" title="Link to this definition"></a><br /></dt>
-<dd></dd></dl>
+<dd><p>2D solver configuration </p>
+</dd></dl>
 
 <dl class="cpp var">
 <dt class="sig sig-object cpp" id="_CPPv4N6Config8grid_cfgE">
 <span id="_CPPv3N6Config8grid_cfgE"></span><span id="_CPPv2N6Config8grid_cfgE"></span><span id="Config::grid_cfg__GridConfig"></span><span class="target" id="structConfig_1a4400c4ca14dd0471693ac006a7c66713"></span><a class="reference internal" href="structGridConfig.html#_CPPv410GridConfig" title="GridConfig"><span class="n"><span class="pre">GridConfig</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">grid_cfg</span></span></span><a class="headerlink" href="#_CPPv4N6Config8grid_cfgE" title="Link to this definition"></a><br /></dt>
-<dd></dd></dl>
+<dd><p>1D grid configuration </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N6Config17model_builder_cfgE">
+<span id="_CPPv3N6Config17model_builder_cfgE"></span><span id="_CPPv2N6Config17model_builder_cfgE"></span><span id="Config::model_builder_cfg__ModelBuilderConfig"></span><span class="target" id="structConfig_1a625f5eeda264995ec6038e3077403325"></span><a class="reference internal" href="structModelBuilderConfig.html#_CPPv418ModelBuilderConfig" title="ModelBuilderConfig"><span class="n"><span class="pre">ModelBuilderConfig</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">model_builder_cfg</span></span></span><a class="headerlink" href="#_CPPv4N6Config17model_builder_cfgE" title="Link to this definition"></a><br /></dt>
+<dd><p>1D envelope builder configuration </p>
+</dd></dl>
 
 <dl class="cpp var">
 <dt class="sig sig-object cpp" id="_CPPv4N6Config11grid_2d_cfgE">
 <span id="_CPPv3N6Config11grid_2d_cfgE"></span><span id="_CPPv2N6Config11grid_2d_cfgE"></span><span id="Config::grid_2d_cfg__Grid2Dconfig"></span><span class="target" id="structConfig_1a2cd4600b8aa1b4383977533b6ce453ba"></span><a class="reference internal" href="structGrid2Dconfig.html#_CPPv412Grid2Dconfig" title="Grid2Dconfig"><span class="n"><span class="pre">Grid2Dconfig</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">grid_2d_cfg</span></span></span><a class="headerlink" href="#_CPPv4N6Config11grid_2d_cfgE" title="Link to this definition"></a><br /></dt>
-<dd></dd></dl>
+<dd><p>2D grid configuration </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N6Config21convective_parametersE">
+<span id="_CPPv3N6Config21convective_parametersE"></span><span id="_CPPv2N6Config21convective_parametersE"></span><span id="Config::convective_parameters__ConvectiveParameters"></span><span class="target" id="structConfig_1a569f75d415dc7c87cd5e6d5ca532edf2"></span><a class="reference internal" href="structConvectiveParameters.html#_CPPv420ConvectiveParameters" title="ConvectiveParameters"><span class="n"><span class="pre">ConvectiveParameters</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">convective_parameters</span></span></span><a class="headerlink" href="#_CPPv4N6Config21convective_parametersE" title="Link to this definition"></a><br /></dt>
+<dd><p>Convection parameters. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N6Config11physics_cfgE">
+<span id="_CPPv3N6Config11physics_cfgE"></span><span id="_CPPv2N6Config11physics_cfgE"></span><span id="Config::physics_cfg__PhysicsConfig"></span><span class="target" id="structConfig_1ac5f166068f20f80ebf9b2e7b6f1ee705"></span><a class="reference internal" href="structPhysicsConfig.html#_CPPv413PhysicsConfig" title="PhysicsConfig"><span class="n"><span class="pre">PhysicsConfig</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">physics_cfg</span></span></span><a class="headerlink" href="#_CPPv4N6Config11physics_cfgE" title="Link to this definition"></a><br /></dt>
+<dd><p>EOS + opacity configuration. </p>
+</dd></dl>
 
 </div>
 </dd></dl>
@@ -255,7 +305,7 @@
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="structCellInterface.html" class="btn btn-neutral float-left" title="Struct CellInterface" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="structGrid.html" class="btn btn-neutral float-right" title="Struct Grid" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="structConvectiveParameters.html" class="btn btn-neutral float-right" title="Struct ConvectiveParameters" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

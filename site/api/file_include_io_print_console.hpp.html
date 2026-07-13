@@ -10,7 +10,7 @@
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
       <link rel="stylesheet" type="text/css" href="../_static/collapsible-lists/css/tree_view.css?v=a885cde7" />
-      <link rel="stylesheet" type="text/css" href="../_static/compact-api.css?v=bfcdbbe1" />
+      <link rel="stylesheet" type="text/css" href="../_static/compact-api.css?v=8b703a59" />
 
   
       <script src="../_static/jquery.js?v=5d32c60e"></script>
@@ -81,24 +81,44 @@
   <section id="file-print-console-hpp">
 <span id="file-include-io-print-console-hpp"></span><h1>File print_console.hpp<a class="headerlink" href="#file-print-console-hpp" title="Link to this heading"></a></h1>
 <p>↰ <a class="reference internal" href="dir_include_io.html#dir-include-io"><span class="std std-ref">Parent directory</span></a> (<code class="docutils literal notranslate"><span class="pre">include/io</span></code>)</p>
+<p>Logging utilities for initialization, warnings, TODOs, and envelope diagnostics.</p>
 <nav class="contents local" id="contents">
 <p class="topic-title">Contents</p>
 <ul class="simple">
 <li><p><a class="reference internal" href="#definition-include-io-print-console-hpp" id="id1">Definition (<code class="docutils literal notranslate"><span class="pre">include/io/print_console.hpp</span></code>)</a></p></li>
-<li><p><a class="reference internal" href="#includes" id="id2">Includes</a></p></li>
-<li><p><a class="reference internal" href="#namespaces" id="id3">Namespaces</a></p></li>
-<li><p><a class="reference internal" href="#functions" id="id4">Functions</a></p></li>
+<li><p><a class="reference internal" href="#detailed-description" id="id2">Detailed Description</a></p></li>
+<li><p><a class="reference internal" href="#includes" id="id3">Includes</a></p></li>
+<li><p><a class="reference internal" href="#namespaces" id="id4">Namespaces</a></p></li>
+<li><p><a class="reference internal" href="#functions" id="id5">Functions</a></p></li>
+<li><p><a class="reference internal" href="#variables" id="id6">Variables</a></p></li>
 </ul>
 </nav>
 <section id="definition-include-io-print-console-hpp">
 <h2>Definition (<code class="docutils literal notranslate"><span class="pre">include/io/print_console.hpp</span></code>)<a class="headerlink" href="#definition-include-io-print-console-hpp" title="Link to this heading"></a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="program_listing_file_include_io_print_console.hpp.html">Program Listing for File print_console.hpp</a></li>
+</ul>
+</div>
+</section>
+<section id="detailed-description">
+<h2>Detailed Description<a class="headerlink" href="#detailed-description" title="Link to this heading"></a></h2>
+<p>This module provides:</p>
+<ul class="simple">
+<li><p>Fatal error reporting</p></li>
+<li><p>Development warnings (NOTE, TODO, PLACEHOLDER, UNIMPLEMENTED)</p></li>
+<li><p>Summary printing of warnings</p></li>
+<li><p>Formatted console output for envelope-building diagnostics</p></li>
+</ul>
 </section>
 <section id="includes">
 <h2>Includes<a class="headerlink" href="#includes" title="Link to this heading"></a></h2>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">core/constants.hpp</span></code> (<a class="reference internal" href="file_include_core_constants.hpp.html#file-include-core-constants-hpp"><span class="std std-ref">File constants.hpp</span></a>)</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">core/version.hpp</span></code> (<a class="reference internal" href="file_include_core_version.hpp.html#file-include-core-version-hpp"><span class="std std-ref">File version.hpp</span></a>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">grid/grid_builder.hpp</span></code> (<a class="reference internal" href="file_include_grid_grid_builder.hpp.html#file-include-grid-grid-builder-hpp"><span class="std std-ref">File grid_builder.hpp</span></a>)</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">iostream</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">models/stellar_input.hpp</span></code> (<a class="reference internal" href="file_include_models_stellar_input.hpp.html#file-include-models-stellar-input-hpp"><span class="std std-ref">File stellar_input.hpp</span></a>)</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">string</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">unordered_set</span></code></p></li>
 </ul>
@@ -112,10 +132,27 @@
 <section id="functions">
 <h2>Functions<a class="headerlink" href="#functions" title="Link to this heading"></a></h2>
 <ul class="simple">
+<li><p><a class="reference internal" href="function_print__console_8hpp_1a0fb04262fba5aecb24550b78c8fb79ed.html#exhale-function-print-console-8hpp-1a0fb04262fba5aecb24550b78c8fb79ed"><span class="std std-ref">Function io::baseName</span></a></p></li>
+<li><p><a class="reference internal" href="function_print__console_8hpp_1a0e31e4a6433331ae273efcd8cbaaf4ab.html#exhale-function-print-console-8hpp-1a0e31e4a6433331ae273efcd8cbaaf4ab"><span class="std std-ref">Function io::error</span></a></p></li>
 <li><p><a class="reference internal" href="function_print__console_8hpp_1a4342d8164f753f333c53321e183903bd.html#exhale-function-print-console-8hpp-1a4342d8164f753f333c53321e183903bd"><span class="std std-ref">Function io::initializeRun</span></a></p></li>
-<li><p><a class="reference internal" href="function_print__console_8hpp_1a7d92cb77870273584c8475f1e6ce7d76.html#exhale-function-print-console-8hpp-1a7d92cb77870273584c8475f1e6ce7d76"><span class="std std-ref">Function io::log_surface_boundary_summary</span></a></p></li>
-<li><p><a class="reference internal" href="function_print__console_8hpp_1a6fb0c84c52a53213fc01bd866221b2a5.html#exhale-function-print-console-8hpp-1a6fb0c84c52a53213fc01bd866221b2a5"><span class="std std-ref">Function io::placeholder_warning</span></a></p></li>
-<li><p><a class="reference internal" href="function_print__console_8hpp_1ae70a37091917cb7b82ac872b190b33a3.html#exhale-function-print-console-8hpp-1ae70a37091917cb7b82ac872b190b33a3"><span class="std std-ref">Function io::unimplemented_warning</span></a></p></li>
+<li><p><a class="reference internal" href="function_print__console_8hpp_1ac0f447179bfe9fbb434f8f177a8569a3.html#exhale-function-print-console-8hpp-1ac0f447179bfe9fbb434f8f177a8569a3"><span class="std std-ref">Function io::logOuterZoneSummary</span></a></p></li>
+<li><p><a class="reference internal" href="function_print__console_8hpp_1a12f5a1d5008a9254053ab719fb6f7889.html#exhale-function-print-console-8hpp-1a12f5a1d5008a9254053ab719fb6f7889"><span class="std std-ref">Function io::logSurfaceBoundarySummary</span></a></p></li>
+<li><p><a class="reference internal" href="function_print__console_8hpp_1a0fb11de12ea20d9427b661e7e5a4e031.html#exhale-function-print-console-8hpp-1a0fb11de12ea20d9427b661e7e5a4e031"><span class="std std-ref">Function io::noteWarning</span></a></p></li>
+<li><p><a class="reference internal" href="function_print__console_8hpp_1ac29b21aa8e3e864a45072ba09e8a0634.html#exhale-function-print-console-8hpp-1ac29b21aa8e3e864a45072ba09e8a0634"><span class="std std-ref">Function io::placeholderWarning</span></a></p></li>
+<li><p><a class="reference internal" href="function_print__console_8hpp_1a3ec0e8348fc8375c0483b69d1071b6e2.html#exhale-function-print-console-8hpp-1a3ec0e8348fc8375c0483b69d1071b6e2"><span class="std std-ref">Function io::printDebugIteration</span></a></p></li>
+<li><p><a class="reference internal" href="function_print__console_8hpp_1afbed3863019eb39993aa1616c3a5c054.html#exhale-function-print-console-8hpp-1afbed3863019eb39993aa1616c3a5c054"><span class="std std-ref">Function io::printFatalEnvelopeError</span></a></p></li>
+<li><p><a class="reference internal" href="function_print__console_8hpp_1aa2dab05686b287357d8484ea90b1a69d.html#exhale-function-print-console-8hpp-1aa2dab05686b287357d8484ea90b1a69d"><span class="std std-ref">Function io::printProgressBox</span></a></p></li>
+<li><p><a class="reference internal" href="function_print__console_8hpp_1a2958efde18412b892caea3cfd104481a.html#exhale-function-print-console-8hpp-1a2958efde18412b892caea3cfd104481a"><span class="std std-ref">Function io::printRunConfiguration</span></a></p></li>
+<li><p><a class="reference internal" href="function_print__console_8hpp_1a30c29bcb5331cdf7d37b7363feb5dda4.html#exhale-function-print-console-8hpp-1a30c29bcb5331cdf7d37b7363feb5dda4"><span class="std std-ref">Function io::printWarningSummary</span></a></p></li>
+<li><p><a class="reference internal" href="function_print__console_8hpp_1a2e5abd2a1c306ab4eb3f88da7b237edd.html#exhale-function-print-console-8hpp-1a2e5abd2a1c306ab4eb3f88da7b237edd"><span class="std std-ref">Function io::printZoneStatus</span></a></p></li>
+<li><p><a class="reference internal" href="function_print__console_8hpp_1a76430f47e189877b8509676b856a1cf5.html#exhale-function-print-console-8hpp-1a76430f47e189877b8509676b856a1cf5"><span class="std std-ref">Function io::todoWarning</span></a></p></li>
+<li><p><a class="reference internal" href="function_print__console_8hpp_1aa238fd58bcb86bebfb856adf1c8cc67b.html#exhale-function-print-console-8hpp-1aa238fd58bcb86bebfb856adf1c8cc67b"><span class="std std-ref">Function io::unimplementedWarning</span></a></p></li>
+</ul>
+</section>
+<section id="variables">
+<h2>Variables<a class="headerlink" href="#variables" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="variable_print__console_8hpp_1ab1553bec8efb109ecf49dd585408ef0a.html#exhale-variable-print-console-8hpp-1ab1553bec8efb109ecf49dd585408ef0a"><span class="std std-ref">Variable io::warning_log</span></a></p></li>
 </ul>
 </section>
 </section>

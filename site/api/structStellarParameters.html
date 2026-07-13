@@ -10,7 +10,7 @@
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
       <link rel="stylesheet" type="text/css" href="../_static/collapsible-lists/css/tree_view.css?v=a885cde7" />
-      <link rel="stylesheet" type="text/css" href="../_static/compact-api.css?v=bfcdbbe1" />
+      <link rel="stylesheet" type="text/css" href="../_static/compact-api.css?v=8b703a59" />
 
   
       <script src="../_static/jquery.js?v=5d32c60e"></script>
@@ -63,10 +63,16 @@
 <li class="toctree-l4"><a class="reference internal" href="structCellCenter.html">Struct CellCenter</a></li>
 <li class="toctree-l4"><a class="reference internal" href="structCellInterface.html">Struct CellInterface</a></li>
 <li class="toctree-l4"><a class="reference internal" href="structConfig.html">Struct Config</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structConvectiveParameters.html">Struct ConvectiveParameters</a></li>
 <li class="toctree-l4"><a class="reference internal" href="structGrid.html">Struct Grid</a></li>
 <li class="toctree-l4"><a class="reference internal" href="structGrid2Dconfig.html">Struct Grid2Dconfig</a></li>
 <li class="toctree-l4"><a class="reference internal" href="structGridConfig.html">Struct GridConfig</a></li>
 <li class="toctree-l4"><a class="reference internal" href="structmodel_1_1ModelConfig.html">Struct ModelConfig</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structModelBuilderConfig.html">Struct ModelBuilderConfig</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structopacity_1_1OpacityTable.html">Struct OpacityTable</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structOpacityTable.html">Struct OpacityTable</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structphysics_1_1EosState.html">Struct EosState</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structPhysicsConfig.html">Struct PhysicsConfig</a></li>
 <li class="toctree-l4"><a class="reference internal" href="structQuantityTraits.html">Template Struct QuantityTraits</a></li>
 <li class="toctree-l4"><a class="reference internal" href="structsimulation__2d_1_1always__false.html">Template Struct always_false</a></li>
 <li class="toctree-l4"><a class="reference internal" href="structsimulation__2d_1_1EquationTraits.html">Template Struct EquationTraits</a></li>
@@ -152,32 +158,39 @@
 <dl class="cpp struct">
 <dt class="sig sig-object cpp" id="_CPPv417StellarParameters">
 <span id="_CPPv317StellarParameters"></span><span id="_CPPv217StellarParameters"></span><span id="StellarParameters"></span><span class="target" id="structStellarParameters"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">StellarParameters</span></span></span><a class="headerlink" href="#_CPPv417StellarParameters" title="Link to this definition"></a><br /></dt>
-<dd><div class="breathe-sectiondef docutils container">
+<dd><p>Basic stellar parameters used by both 1D and 2D modules. </p>
+<p>Mass and luminosity are given in solar units, radius in cm, and metallicity is dimensionless (Z). </p>
+<div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
 <dl class="cpp var">
 <dt class="sig sig-object cpp" id="_CPPv4N17StellarParameters12stellar_massE">
 <span id="_CPPv3N17StellarParameters12stellar_massE"></span><span id="_CPPv2N17StellarParameters12stellar_massE"></span><span id="StellarParameters::stellar_mass__double"></span><span class="target" id="structStellarParameters_1ae8273298cd0cc5326541beb6eef189fb"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">stellar_mass</span></span></span><a class="headerlink" href="#_CPPv4N17StellarParameters12stellar_massE" title="Link to this definition"></a><br /></dt>
-<dd></dd></dl>
+<dd><p>Stellar mass [M_sun]. </p>
+</dd></dl>
 
 <dl class="cpp var">
 <dt class="sig sig-object cpp" id="_CPPv4N17StellarParameters14stellar_radiusE">
 <span id="_CPPv3N17StellarParameters14stellar_radiusE"></span><span id="_CPPv2N17StellarParameters14stellar_radiusE"></span><span id="StellarParameters::stellar_radius__double"></span><span class="target" id="structStellarParameters_1ac2c7fa7b5ead4d359f5c34cac6229c8d"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">stellar_radius</span></span></span><a class="headerlink" href="#_CPPv4N17StellarParameters14stellar_radiusE" title="Link to this definition"></a><br /></dt>
-<dd></dd></dl>
+<dd><p>Stellar radius [cm]. </p>
+</dd></dl>
 
 <dl class="cpp var">
 <dt class="sig sig-object cpp" id="_CPPv4N17StellarParameters5t_effE">
 <span id="_CPPv3N17StellarParameters5t_effE"></span><span id="_CPPv2N17StellarParameters5t_effE"></span><span id="StellarParameters::t_eff__double"></span><span class="target" id="structStellarParameters_1ae771f499cde2c60de608504ddd739ac7"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">t_eff</span></span></span><a class="headerlink" href="#_CPPv4N17StellarParameters5t_effE" title="Link to this definition"></a><br /></dt>
-<dd></dd></dl>
+<dd><p>Effective temperature [K]. </p>
+</dd></dl>
 
 <dl class="cpp var">
 <dt class="sig sig-object cpp" id="_CPPv4N17StellarParameters10luminosityE">
 <span id="_CPPv3N17StellarParameters10luminosityE"></span><span id="_CPPv2N17StellarParameters10luminosityE"></span><span id="StellarParameters::luminosity__double"></span><span class="target" id="structStellarParameters_1a7e0c717cacabac354458c52e9b477961"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">luminosity</span></span></span><a class="headerlink" href="#_CPPv4N17StellarParameters10luminosityE" title="Link to this definition"></a><br /></dt>
-<dd></dd></dl>
+<dd><p>Luminosity [L_sun]. </p>
+</dd></dl>
 
 <dl class="cpp var">
 <dt class="sig sig-object cpp" id="_CPPv4N17StellarParameters11metallicityE">
 <span id="_CPPv3N17StellarParameters11metallicityE"></span><span id="_CPPv2N17StellarParameters11metallicityE"></span><span id="StellarParameters::metallicity__double"></span><span class="target" id="structStellarParameters_1a8db813d43669e6fc6df51929a128e100"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">metallicity</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0.0</span></span><a class="headerlink" href="#_CPPv4N17StellarParameters11metallicityE" title="Link to this definition"></a><br /></dt>
-<dd></dd></dl>
+<dd><p>Metallicity (Z) </p>
+</dd></dl>
 
 </div>
 </dd></dl>

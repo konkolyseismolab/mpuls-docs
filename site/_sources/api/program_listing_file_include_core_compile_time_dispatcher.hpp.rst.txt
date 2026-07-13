@@ -1,0 +1,151 @@
+
+.. _program_listing_file_include_core_compile_time_dispatcher.hpp:
+
+Program Listing for File compile_time_dispatcher.hpp
+====================================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file_include_core_compile_time_dispatcher.hpp>` (``include/core/compile_time_dispatcher.hpp``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   
+   #pragma once
+   #include "core/simulation2d.hpp"
+   #include <stdexcept>
+   #include "grid/grid.hpp"
+   #include "core/config_params.hpp"
+   
+   using namespace model;
+   using namespace solver_params;
+   template<class T>
+   auto createLimiterTag(Limiters limiter_cfg ,T&& current)
+   {
+       switch (limiter_cfg)
+       {
+       case Limiters::kVanLeer :
+           /* code */
+           return std::forward<T>(current)(component_tags::limiter::VanLeer{});
+   
+       case Limiters::kSuperbee:
+           return std::forward<T>(current)(component_tags::limiter::Superbee{});
+   
+       case Limiters::kMinMod:
+           return std::forward<T>(current)(component_tags::limiter::Minmod{});
+   
+       default:
+           throw std::runtime_error("Not valid limiter");
+       }
+   }
+   template<class T>
+   auto createReconstructionTag(Reconstructor cfg, T&& current)
+   {
+       switch (cfg)
+       {
+       case Reconstructor::kPiecewiseLinear:
+   
+           return std::forward<T>(current)(component_tags::reconst::PLM{});
+   
+       case Reconstructor::kPiecewiseConstant:
+   
+           return std::forward<T>(current)(component_tags::reconst::PCM{});
+   
+       default:
+           throw std::runtime_error("Not valid reconstruction");
+       }
+   }
+   
+   template<class T>
+   auto createFluxTag(FluxCalculator cfg, T&& current)
+   {
+       switch (cfg)
+       {
+       case FluxCalculator::kLocalLaxFriedrichs:
+   
+           return std::forward<T>(current)(component_tags::flux::LlfFlux{});
+   
+       case FluxCalculator::kUpwind:
+   
+           return std::forward<T>(current)(component_tags::flux::CirFLux{});
+   
+       default:
+           throw std::runtime_error("Not valid flux calculation mode.");
+       }
+   }
+   
+   
+   template<class T>
+   auto createIntegratorTag(Integrator cfg, T&& current)
+   {
+       switch (cfg)
+       {
+       case Integrator::kSspRungeKutta2:
+   
+           return std::forward<T>(current)(component_tags::solver::SSP_RK2{});
+   
+       case Integrator::kSspRungeKutta3:
+   
+           return std::forward<T>(current)(component_tags::solver::SSP_RK3{});
+       default:
+           throw std::runtime_error("Not valid solver.");
+       }
+   }
+   
+   template<class T>
+   auto createEquationTag(Equation cfg, T&& current)
+   {
+       switch (cfg)
+       {
+       case Equation::kScalar2d:
+   
+           return std::forward<T>(current)(component_tags::equation::Scalar2D{});
+   
+       case Equation::kEuler2d:
+   
+           return std::forward<T>(current)(component_tags::equation::Euler{});
+   
+       default:
+           throw std::runtime_error("Not valid equation");
+       }
+   }
+   
+   template <class EqTag>
+   Grid2d<typename simulation_2d::EquationTraits<EqTag>::Q>* grid_generator([[maybe_unused]] EqTag eq, Grid2Dconfig cfg)
+   {
+       using Q= simulation_2d::EquationTraits<EqTag>::Q;
+       return new Grid2d<Q>(cfg.Nrad,cfg.Nhor,cfg.Nghost_rad,cfg.Nghost_hor);
+   }
+   
+   template <class EqTag>
+   GridDimensions2d<typename QuantityTraits<typename simulation_2d::EquationTraits<EqTag>::Q>::D>* grid_dim_generator([[maybe_unused]] EqTag eq, Grid2Dconfig cfg)
+   {
+       using D =QuantityTraits<typename simulation_2d::EquationTraits<EqTag>::Q>::D;
+   
+       return new GridDimensions2d<D>(cfg.Nrad+2*cfg.Nghost_rad, cfg.Nhor+cfg.Nghost_hor);
+   }
+   
+   simulation_2d::Simulation2d* generateFromConfig(Equation eq_cfg, SolverConfig solver_cfg, Grid2Dconfig grid_cfg)
+   {
+       auto sim = createEquationTag(eq_cfg, [&](auto eq_tag)
+       {
+           return createFluxTag(solver_cfg.flux_calculator, [&](auto flux_tag)
+           {
+               return createLimiterTag(solver_cfg.limiter,[&](auto limiter_tag)
+               {
+                   return createReconstructionTag(solver_cfg.reconstructor,[&](auto reconst_tag)
+                   {
+                       return createIntegratorTag(solver_cfg.integrator,[&](auto solver_tag)
+                       {
+                           auto grid_old_ptr = grid_generator(eq_tag,grid_cfg);
+                           auto grid_new_ptr = grid_generator(eq_tag,grid_cfg);
+                           auto grid_dimensions_ptr = grid_dim_generator(eq_tag,grid_cfg);
+                           return simulation_2d::solver_factory(eq_tag,flux_tag,limiter_tag,reconst_tag,solver_tag,
+                           solver_cfg.is_diffusion,*grid_dimensions_ptr,*grid_old_ptr,*grid_new_ptr,solver_cfg.cfl_number);
+                       });
+                   });
+               });
+           });
+       });
+       return sim;
+   }

@@ -1,0 +1,14 @@
+.. _exhale_function_envelope__builder_8hpp_1a689831817079232958d8d6c7bdf5b4f3:
+
+Function envelope::calibrateH
+=============================
+
+- Defined in :ref:`file_include_models_envelope_builder.hpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: envelope::calibrateH(Grid&, const StellarInput&, const Config&, double, double&, int)
+   :project: MPULS

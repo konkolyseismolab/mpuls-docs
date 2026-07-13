@@ -9,6 +9,11 @@ File envelope_builder.hpp
 .. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
 
 
+
+High-level routines for constructing a static stellar envelope. 
+
+
+
 .. contents:: Contents
    :local:
    :backlinks: none
@@ -17,6 +22,27 @@ Definition (``include/models/envelope_builder.hpp``)
 ----------------------------------------------------
 
 
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_include_models_envelope_builder.hpp.rst
+
+
+
+Detailed Description
+--------------------
+
+This module provides:
+
+- A full static envelope builder (buildStaticEnvelope)
+
+- Bisection-based calibration of the outer zone mass (DM_N)
+
+- Bisection-based calibration of the temperature scaling parameter (h)
+
+
+
+The envelope is constructed on a Lagrangian (mass-based) grid produced by grid::build(), and uses the physics configuration stored in :ref:`exhale_struct_structStellarInput` and :ref:`exhale_struct_structConfig`. 
 
 
 
@@ -45,5 +71,9 @@ Functions
 ---------
 
 
-- :ref:`exhale_function_envelope__builder_8hpp_1a717c924bff07df3804ba31d1fc4a36af`
+- :ref:`exhale_function_envelope__builder_8hpp_1a481b59dd715d9d64a0fb26044d062648`
+
+- :ref:`exhale_function_envelope__builder_8hpp_1a2bc306ae2448400964b459725ffdbe22`
+
+- :ref:`exhale_function_envelope__builder_8hpp_1a689831817079232958d8d6c7bdf5b4f3`
 

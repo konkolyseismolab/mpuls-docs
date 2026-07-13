@@ -10,7 +10,7 @@
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
       <link rel="stylesheet" type="text/css" href="../_static/collapsible-lists/css/tree_view.css?v=a885cde7" />
-      <link rel="stylesheet" type="text/css" href="../_static/compact-api.css?v=bfcdbbe1" />
+      <link rel="stylesheet" type="text/css" href="../_static/compact-api.css?v=8b703a59" />
 
   
       <script src="../_static/jquery.js?v=5d32c60e"></script>
@@ -66,6 +66,8 @@
 <li class="toctree-l4 current"><a class="current reference internal" href="#">Namespace io</a></li>
 <li class="toctree-l4"><a class="reference internal" href="namespace_model.html">Namespace model</a></li>
 <li class="toctree-l4"><a class="reference internal" href="namespace_mpuls.html">Namespace mpuls</a></li>
+<li class="toctree-l4"><a class="reference internal" href="namespace_opacity.html">Namespace opacity</a></li>
+<li class="toctree-l4"><a class="reference internal" href="namespace_physics.html">Namespace physics</a></li>
 <li class="toctree-l4"><a class="reference internal" href="namespace_simulation_2d.html">Namespace simulation_2d</a></li>
 <li class="toctree-l4"><a class="reference internal" href="namespace_solver_params.html">Namespace solver_params</a></li>
 <li class="toctree-l4"><a class="reference internal" href="namespace_std.html">Namespace std</a></li>
@@ -112,15 +114,33 @@
 <p class="topic-title">Contents</p>
 <ul class="simple">
 <li><p><a class="reference internal" href="#functions" id="id2">Functions</a></p></li>
+<li><p><a class="reference internal" href="#variables" id="id3">Variables</a></p></li>
 </ul>
 </nav>
 <section id="functions">
 <h2>Functions<a class="headerlink" href="#functions" title="Link to this heading"></a></h2>
 <ul class="simple">
+<li><p><a class="reference internal" href="function_print__console_8hpp_1a0fb04262fba5aecb24550b78c8fb79ed.html#exhale-function-print-console-8hpp-1a0fb04262fba5aecb24550b78c8fb79ed"><span class="std std-ref">Function io::baseName</span></a></p></li>
+<li><p><a class="reference internal" href="function_print__console_8hpp_1a0e31e4a6433331ae273efcd8cbaaf4ab.html#exhale-function-print-console-8hpp-1a0e31e4a6433331ae273efcd8cbaaf4ab"><span class="std std-ref">Function io::error</span></a></p></li>
 <li><p><a class="reference internal" href="function_print__console_8hpp_1a4342d8164f753f333c53321e183903bd.html#exhale-function-print-console-8hpp-1a4342d8164f753f333c53321e183903bd"><span class="std std-ref">Function io::initializeRun</span></a></p></li>
-<li><p><a class="reference internal" href="function_print__console_8hpp_1a7d92cb77870273584c8475f1e6ce7d76.html#exhale-function-print-console-8hpp-1a7d92cb77870273584c8475f1e6ce7d76"><span class="std std-ref">Function io::log_surface_boundary_summary</span></a></p></li>
-<li><p><a class="reference internal" href="function_print__console_8hpp_1a6fb0c84c52a53213fc01bd866221b2a5.html#exhale-function-print-console-8hpp-1a6fb0c84c52a53213fc01bd866221b2a5"><span class="std std-ref">Function io::placeholder_warning</span></a></p></li>
-<li><p><a class="reference internal" href="function_print__console_8hpp_1ae70a37091917cb7b82ac872b190b33a3.html#exhale-function-print-console-8hpp-1ae70a37091917cb7b82ac872b190b33a3"><span class="std std-ref">Function io::unimplemented_warning</span></a></p></li>
+<li><p><a class="reference internal" href="function_print__console_8hpp_1ac0f447179bfe9fbb434f8f177a8569a3.html#exhale-function-print-console-8hpp-1ac0f447179bfe9fbb434f8f177a8569a3"><span class="std std-ref">Function io::logOuterZoneSummary</span></a></p></li>
+<li><p><a class="reference internal" href="function_print__console_8hpp_1a12f5a1d5008a9254053ab719fb6f7889.html#exhale-function-print-console-8hpp-1a12f5a1d5008a9254053ab719fb6f7889"><span class="std std-ref">Function io::logSurfaceBoundarySummary</span></a></p></li>
+<li><p><a class="reference internal" href="function_print__console_8hpp_1a0fb11de12ea20d9427b661e7e5a4e031.html#exhale-function-print-console-8hpp-1a0fb11de12ea20d9427b661e7e5a4e031"><span class="std std-ref">Function io::noteWarning</span></a></p></li>
+<li><p><a class="reference internal" href="function_print__console_8hpp_1ac29b21aa8e3e864a45072ba09e8a0634.html#exhale-function-print-console-8hpp-1ac29b21aa8e3e864a45072ba09e8a0634"><span class="std std-ref">Function io::placeholderWarning</span></a></p></li>
+<li><p><a class="reference internal" href="function_print__console_8hpp_1a3ec0e8348fc8375c0483b69d1071b6e2.html#exhale-function-print-console-8hpp-1a3ec0e8348fc8375c0483b69d1071b6e2"><span class="std std-ref">Function io::printDebugIteration</span></a></p></li>
+<li><p><a class="reference internal" href="function_print__console_8hpp_1afbed3863019eb39993aa1616c3a5c054.html#exhale-function-print-console-8hpp-1afbed3863019eb39993aa1616c3a5c054"><span class="std std-ref">Function io::printFatalEnvelopeError</span></a></p></li>
+<li><p><a class="reference internal" href="function_print__console_8hpp_1aa2dab05686b287357d8484ea90b1a69d.html#exhale-function-print-console-8hpp-1aa2dab05686b287357d8484ea90b1a69d"><span class="std std-ref">Function io::printProgressBox</span></a></p></li>
+<li><p><a class="reference internal" href="function_print__console_8hpp_1a2958efde18412b892caea3cfd104481a.html#exhale-function-print-console-8hpp-1a2958efde18412b892caea3cfd104481a"><span class="std std-ref">Function io::printRunConfiguration</span></a></p></li>
+<li><p><a class="reference internal" href="function_print__console_8hpp_1a30c29bcb5331cdf7d37b7363feb5dda4.html#exhale-function-print-console-8hpp-1a30c29bcb5331cdf7d37b7363feb5dda4"><span class="std std-ref">Function io::printWarningSummary</span></a></p></li>
+<li><p><a class="reference internal" href="function_print__console_8hpp_1a2e5abd2a1c306ab4eb3f88da7b237edd.html#exhale-function-print-console-8hpp-1a2e5abd2a1c306ab4eb3f88da7b237edd"><span class="std std-ref">Function io::printZoneStatus</span></a></p></li>
+<li><p><a class="reference internal" href="function_print__console_8hpp_1a76430f47e189877b8509676b856a1cf5.html#exhale-function-print-console-8hpp-1a76430f47e189877b8509676b856a1cf5"><span class="std std-ref">Function io::todoWarning</span></a></p></li>
+<li><p><a class="reference internal" href="function_print__console_8hpp_1aa238fd58bcb86bebfb856adf1c8cc67b.html#exhale-function-print-console-8hpp-1aa238fd58bcb86bebfb856adf1c8cc67b"><span class="std std-ref">Function io::unimplementedWarning</span></a></p></li>
+</ul>
+</section>
+<section id="variables">
+<h2>Variables<a class="headerlink" href="#variables" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="variable_print__console_8hpp_1ab1553bec8efb109ecf49dd585408ef0a.html#exhale-variable-print-console-8hpp-1ab1553bec8efb109ecf49dd585408ef0a"><span class="std std-ref">Variable io::warning_log</span></a></p></li>
 </ul>
 </section>
 </section>

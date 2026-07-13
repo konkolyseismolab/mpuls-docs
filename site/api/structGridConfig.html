@@ -10,7 +10,7 @@
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
       <link rel="stylesheet" type="text/css" href="../_static/collapsible-lists/css/tree_view.css?v=a885cde7" />
-      <link rel="stylesheet" type="text/css" href="../_static/compact-api.css?v=bfcdbbe1" />
+      <link rel="stylesheet" type="text/css" href="../_static/compact-api.css?v=8b703a59" />
 
   
       <script src="../_static/jquery.js?v=5d32c60e"></script>
@@ -63,10 +63,16 @@
 <li class="toctree-l4"><a class="reference internal" href="structCellCenter.html">Struct CellCenter</a></li>
 <li class="toctree-l4"><a class="reference internal" href="structCellInterface.html">Struct CellInterface</a></li>
 <li class="toctree-l4"><a class="reference internal" href="structConfig.html">Struct Config</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structConvectiveParameters.html">Struct ConvectiveParameters</a></li>
 <li class="toctree-l4"><a class="reference internal" href="structGrid.html">Struct Grid</a></li>
 <li class="toctree-l4"><a class="reference internal" href="structGrid2Dconfig.html">Struct Grid2Dconfig</a></li>
 <li class="toctree-l4 current"><a class="current reference internal" href="#">Struct GridConfig</a></li>
 <li class="toctree-l4"><a class="reference internal" href="structmodel_1_1ModelConfig.html">Struct ModelConfig</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structModelBuilderConfig.html">Struct ModelBuilderConfig</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structopacity_1_1OpacityTable.html">Struct OpacityTable</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structOpacityTable.html">Struct OpacityTable</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structphysics_1_1EosState.html">Struct EosState</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structPhysicsConfig.html">Struct PhysicsConfig</a></li>
 <li class="toctree-l4"><a class="reference internal" href="structQuantityTraits.html">Template Struct QuantityTraits</a></li>
 <li class="toctree-l4"><a class="reference internal" href="structsimulation__2d_1_1always__false.html">Template Struct always_false</a></li>
 <li class="toctree-l4"><a class="reference internal" href="structsimulation__2d_1_1EquationTraits.html">Template Struct EquationTraits</a></li>
@@ -152,28 +158,32 @@
 <dl class="cpp struct">
 <dt class="sig sig-object cpp" id="_CPPv410GridConfig">
 <span id="_CPPv310GridConfig"></span><span id="_CPPv210GridConfig"></span><span id="GridConfig"></span><span class="target" id="structGridConfig"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">GridConfig</span></span></span><a class="headerlink" href="#_CPPv410GridConfig" title="Link to this definition"></a><br /></dt>
-<dd><p><a class="reference internal" href="#structGridConfig"><span class="std std-ref">GridConfig</span></a> of 1D version. </p>
+<dd><p><a class="reference internal" href="structGrid.html#structGrid"><span class="std std-ref">Grid</span></a> configuration for the 1D envelope builder. </p>
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
 <dl class="cpp var">
 <dt class="sig sig-object cpp" id="_CPPv4N10GridConfig20number_of_grid_cellsE">
 <span id="_CPPv3N10GridConfig20number_of_grid_cellsE"></span><span id="_CPPv2N10GridConfig20number_of_grid_cellsE"></span><span id="GridConfig::number_of_grid_cells__i"></span><span class="target" id="structGridConfig_1aa88be72fce29cfd93624e246dfecb4dd"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">number_of_grid_cells</span></span></span><a class="headerlink" href="#_CPPv4N10GridConfig20number_of_grid_cellsE" title="Link to this definition"></a><br /></dt>
-<dd></dd></dl>
+<dd><p>Number of radial grid cells. </p>
+</dd></dl>
 
 <dl class="cpp var">
 <dt class="sig sig-object cpp" id="_CPPv4N10GridConfig10radius_minE">
 <span id="_CPPv3N10GridConfig10radius_minE"></span><span id="_CPPv2N10GridConfig10radius_minE"></span><span id="GridConfig::radius_min__double"></span><span class="target" id="structGridConfig_1a59f2fe018039b29ff364b1b52b697c61"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">radius_min</span></span></span><a class="headerlink" href="#_CPPv4N10GridConfig10radius_minE" title="Link to this definition"></a><br /></dt>
-<dd></dd></dl>
+<dd><p>Inner radius [cm]. </p>
+</dd></dl>
 
 <dl class="cpp var">
 <dt class="sig sig-object cpp" id="_CPPv4N10GridConfig10radius_maxE">
 <span id="_CPPv3N10GridConfig10radius_maxE"></span><span id="_CPPv2N10GridConfig10radius_maxE"></span><span id="GridConfig::radius_max__double"></span><span class="target" id="structGridConfig_1a1158378afdf5e5b4bcfa8ec327e4d1b8"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">radius_max</span></span></span><a class="headerlink" href="#_CPPv4N10GridConfig10radius_maxE" title="Link to this definition"></a><br /></dt>
-<dd></dd></dl>
+<dd><p>Outer radius [cm]. </p>
+</dd></dl>
 
 <dl class="cpp var">
 <dt class="sig sig-object cpp" id="_CPPv4N10GridConfig5scaleE">
 <span id="_CPPv3N10GridConfig5scaleE"></span><span id="_CPPv2N10GridConfig5scaleE"></span><span id="GridConfig::scale__ss"></span><span class="target" id="structGridConfig_1a550a47f465ad3baeb5f35fc7c64e339c"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">scale</span></span></span><a class="headerlink" href="#_CPPv4N10GridConfig5scaleE" title="Link to this definition"></a><br /></dt>
-<dd></dd></dl>
+<dd><p>“linear” or “log” </p>
+</dd></dl>
 
 </div>
 </dd></dl>

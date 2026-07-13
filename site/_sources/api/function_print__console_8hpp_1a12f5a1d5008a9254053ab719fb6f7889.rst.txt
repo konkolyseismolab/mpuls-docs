@@ -1,0 +1,14 @@
+.. _exhale_function_print__console_8hpp_1a12f5a1d5008a9254053ab719fb6f7889:
+
+Function io::logSurfaceBoundarySummary
+======================================
+
+- Defined in :ref:`file_include_io_print_console.hpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: io::logSurfaceBoundarySummary(double, double, double, double, double)
+   :project: MPULS

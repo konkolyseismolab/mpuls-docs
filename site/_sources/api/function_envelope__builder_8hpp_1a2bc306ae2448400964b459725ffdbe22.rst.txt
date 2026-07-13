@@ -1,0 +1,14 @@
+.. _exhale_function_envelope__builder_8hpp_1a2bc306ae2448400964b459725ffdbe22:
+
+Function envelope::calibrateDmN
+===============================
+
+- Defined in :ref:`file_include_models_envelope_builder.hpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: envelope::calibrateDmN(Grid&, const StellarInput&, const Config&, double&, int)
+   :project: MPULS

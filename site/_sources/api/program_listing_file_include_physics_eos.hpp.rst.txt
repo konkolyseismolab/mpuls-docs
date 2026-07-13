@@ -1,0 +1,33 @@
+
+.. _program_listing_file_include_physics_eos.hpp:
+
+Program Listing for File eos.hpp
+================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file_include_physics_eos.hpp>` (``include/physics/eos.hpp``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   #pragma once
+   #include "models/stellar_input.hpp"
+   
+   namespace physics {
+   
+   struct EosState {
+       double density;          
+       double specific_volume;  
+       double gas_pressure;     
+       double rad_pressure;     
+   };
+   
+   EosState eosIdealGas(double p, double T, const StellarInput& input);
+   
+   EosState eosPolytrope(double pressure, const StellarInput& input);
+   
+   EosState calculateEos(double pressure,
+                         double temperature,
+                         const StellarInput& input);
+   
+   } // namespace physics

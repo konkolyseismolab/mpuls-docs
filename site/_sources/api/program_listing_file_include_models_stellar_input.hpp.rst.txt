@@ -1,0 +1,36 @@
+
+.. _program_listing_file_include_models_stellar_input.hpp:
+
+Program Listing for File stellar_input.hpp
+==========================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file_include_models_stellar_input.hpp>` (``include/models/stellar_input.hpp``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   #pragma once
+   #include "core/config_parser.hpp"
+   #include "models/convective_parameters.hpp"
+   
+   struct StellarInput {
+       double mass;                  
+       double mass_in_grams;         
+       double radius;                
+       double luminosity;            
+       double t_eff;                 
+       double metallicity;           
+   
+       GridConfig grid_cfg;          
+   
+       // Model builder parameters
+       double t_anchor;              
+       double t_inner;               
+       int    n_anchor_zones;        
+       double initial_outer_zone_mass; 
+       double inner_mass_ratio_initial; 
+   
+       ConvectiveParameters convective_parameters; 
+       PhysicsConfig physics_cfg;                  
+   };

@@ -10,7 +10,7 @@
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
       <link rel="stylesheet" type="text/css" href="../../_static/collapsible-lists/css/tree_view.css?v=a885cde7" />
-      <link rel="stylesheet" type="text/css" href="../../_static/compact-api.css?v=bfcdbbe1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/compact-api.css?v=8b703a59" />
 
   
       <script src="../../_static/jquery.js?v=5d32c60e"></script>
@@ -20,8 +20,6 @@
       <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
       <script src="../../_static/collapsible-lists/js/CollapsibleLists.compressed.js?v=73120307"></script>
       <script src="../../_static/collapsible-lists/js/apply-collapsible-lists.js?v=660e4f45"></script>
-      <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-      <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -55,14 +53,9 @@
 <li class="toctree-l2"><a class="reference internal" href="../physics/physics.html">Physical background</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="numerics.html">Numerical background</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="fvm_scheme.html">The Finite Volume Method</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">Hyperbolic equation solving</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#method-of-lines">Method of Lines</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#godunov-solver">Godunov-solver</a></li>
-</ul>
-</li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Hyperbolic equation solving</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Reconstruction.html">Solution Reconstruction</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Limiters.html">Limiters</a></li>
-<li class="toctree-l3"><a class="reference internal" href="hyperbolic-filter.html">Solution filtering</a></li>
 <li class="toctree-l3"><a class="reference internal" href="time_integration.html">Time integration</a></li>
 </ul>
 </li>
@@ -102,31 +95,6 @@
              
   <section class="tex2jax_ignore mathjax_ignore" id="hyperbolic-equation-solving">
 <h1>Hyperbolic equation solving<a class="headerlink" href="#hyperbolic-equation-solving" title="Link to this heading"></a></h1>
-<p>In MPULS we follow a Method of Lines Godunov-type approach in solving the hyperbolic part of the equations.</p>
-<section id="method-of-lines">
-<h2>Method of Lines<a class="headerlink" href="#method-of-lines" title="Link to this heading"></a></h2>
-<p>The PDE system in the form of <a class="reference internal" href="../physics/equations.html#equation-generic-pde">(2)</a> can be discretized fully, in which case numerical viscosity will be coupled both to spatial and temporal resolution. This can reduce accuracy at <span class="math notranslate nohighlight">\(\Delta t \rightarrow 0\)</span> which occours at stiff parabolic parts of the PDE. Instead we follow this approcach:</p>
-<ol class="arabic simple">
-<li><p>Discretize hyperbolic and parabolic parts of the equations <strong>only spatially</strong>.</p></li>
-<li><p>Write up the resulting system as <span class="math notranslate nohighlight">\(\partial \boldsymbol q / \partial t = \boldsymbol f (t, \boldsymbol q)\)</span></p></li>
-<li><p>Solve the temporal problem with a Ordenary differential equation solver, such as Runge-Kutta method.</p></li>
-</ol>
-<p>This approach is called <em>method of lines</em>, because we follow the solution trajectories through the lines determined from the spatial grid.</p>
-</section>
-<section id="godunov-solver">
-<h2>Godunov-solver<a class="headerlink" href="#godunov-solver" title="Link to this heading"></a></h2>
-<p>In the finite-volume framework we solve the so-called Riemann-problem at every cell interfaces following this approach:</p>
-<ol class="arabic simple">
-<li><p>From the known cell averages, reconstruct the solution <span class="math notranslate nohighlight">\(q(\xi)\)</span> at the cell interface.</p></li>
-<li><p>Doing this with both cells, we end up with two different states on the two sides of the interface. This formulates a Riemann-problem.</p></li>
-<li><p>The solution of the above problem gives us numerical fluxes, which is time averaged and then the cell averages can be updated.</p></li>
-</ol>
-<p>The last averaging step is omitted in the method of lines approach. This an be done because higher order temporal solution is achieved by the ODE solver, so we can use fluxes directly.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Usually conservative variables are converted to primitive variables to achieve higher numerical stability.</p>
-</div>
-</section>
 </section>
 
 

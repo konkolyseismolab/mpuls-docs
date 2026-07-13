@@ -1,0 +1,14 @@
+.. _exhale_function_print__console_8hpp_1ac0f447179bfe9fbb434f8f177a8569a3:
+
+Function io::logOuterZoneSummary
+================================
+
+- Defined in :ref:`file_include_io_print_console.hpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: io::logOuterZoneSummary(double, double, double, double, double, double, double)
+   :project: MPULS

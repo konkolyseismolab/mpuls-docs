@@ -1,0 +1,49 @@
+
+.. _file_include_models_convective_parameters.hpp:
+
+File convective_parameters.hpp
+==============================
+
+|exhale_lsh| :ref:`Parent directory <dir_include_models>` (``include/models``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``include/models/convective_parameters.hpp``)
+---------------------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_include_models_convective_parameters.hpp.rst
+
+
+
+
+
+
+
+Included By
+-----------
+
+
+- :ref:`file_include_core_config_params.hpp`
+
+- :ref:`file_include_core_config_parser.hpp`
+
+- :ref:`file_include_models_stellar_input.hpp`
+
+
+
+
+Classes
+-------
+
+
+- :ref:`exhale_struct_structConvectiveParameters`
+

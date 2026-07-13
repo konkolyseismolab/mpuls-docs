@@ -3,40 +3,5 @@ Solution filtering
 
 Although the Kurganov-Tadmor scheme is TVD by itself, the use of difference form geometry and 2nd order accurate source calculation create numeric oscillations. Therefore we filter hign wavenumber oscillations of the solutions. For this we use a Nordlund[^1] type filter.
 
-For every quantity of the sate-vector $\boldsymbol q$ we define a hyperdiffusivity as the diffusion:
 
-$$ \left(\frac{\partial q^l}{\partial t}\right)_{\rm diff} = \sum\limits_i^N \frac{\partial}{\partial x_i} 
-   \left[ \nu_i(q^l)) \frac{\partial q^l}{\partial x_i}\right],
-$$ (filtering)
-where $\nu$ is the hyperdiffusive coeeficient described as:
-
-$$
- \nu_i = c_{\rm hyp} \Delta x_i \lambda_{\rm max}(\boldsymbol q) \frac{\underset{3}{\max} \vert \Delta_i^3 q^l \vert}{\underset{3}{\max} \vert \Delta_i^1 q^l \vert},
-$$ (nu-def)
-where the term $\underset{3}{\max} \vert \Delta_i^3 q^l \vert$ is the maximum third-order finite difference on three neigbouring cells. The difference formulae[^2] are
-
-```{math}
-   :label: diff-formulae
- (\Delta_i^3 q^l)_{j+1/2}  = & 3 (q^l_{j+1}-q^l_j)- (q^l_{j+2} - q^l_{j-1}) \\
- (\Delta_i^1 q^l)_{j+1/2}  = & q_{j+1}^l - q_j^l \\
-```
-
-```{admonition} Implementation
-   :collapsible: closed
-   
-   The filtering is directly applied in the {ref}`RightHandSide<exhale_class_classRightHandSide>` class through the {ref}`HyperDiffusion<exhale_class_classHyperDiffusion>` and {ref}`Diffusion2D<exhale_class_classDiffusion2D>` classes. The former ipmlements the hyperdiffusion coeffitient and the latter implements the truncated diffusion operator. The standard {ref}`RightHandSide<exhale_class_classRightHandSide>` not uses the diffusion operator, this
-   is reached by using {ref}`RightHandSideDecorator<exhale_class_classRightHandSideDecorator>`.
-
-```
-
-
-```{note}
-
-   It should be noted, that in this particular case vector-derivatives are not propagated mathematically, i.e., 
-   this is a truncated version of the true diffusion operator, and additional source terms are emitted. Also note,
-   that this type of filtering is applied on **all** variables, and its sole purpose is to supress numerical noise.
-```
-
-
-[^1]: [Stein, R.F., Nordlund, A., 1998. ApJ 499, 914.](https://doi.org/10.1086/305678)
-[^2]: [Vögler, A. et al., 2005. A&A 429, 335.](https://doi.org/10.1051/0004-6361:20041507)
+[^1]: 

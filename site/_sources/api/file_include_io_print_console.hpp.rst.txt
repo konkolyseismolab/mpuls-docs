@@ -9,12 +9,38 @@ File print_console.hpp
 .. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
 
 
+
+Logging utilities for initialization, warnings, TODOs, and envelope diagnostics. 
+
+
+
 .. contents:: Contents
    :local:
    :backlinks: none
 
 Definition (``include/io/print_console.hpp``)
 ---------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_include_io_print_console.hpp.rst
+
+
+
+Detailed Description
+--------------------
+
+This module provides:
+
+- Fatal error reporting
+
+- Development warnings (NOTE, TODO, PLACEHOLDER, UNIMPLEMENTED)
+
+- Summary printing of warnings
+
+- Formatted console output for envelope-building diagnostics 
 
 
 
@@ -29,7 +55,11 @@ Includes
 
 - ``core/version.hpp`` (:ref:`file_include_core_version.hpp`)
 
+- ``grid/grid_builder.hpp`` (:ref:`file_include_grid_grid_builder.hpp`)
+
 - ``iostream``
+
+- ``models/stellar_input.hpp`` (:ref:`file_include_models_stellar_input.hpp`)
 
 - ``string``
 
@@ -51,11 +81,40 @@ Functions
 ---------
 
 
+- :ref:`exhale_function_print__console_8hpp_1a0fb04262fba5aecb24550b78c8fb79ed`
+
+- :ref:`exhale_function_print__console_8hpp_1a0e31e4a6433331ae273efcd8cbaaf4ab`
+
 - :ref:`exhale_function_print__console_8hpp_1a4342d8164f753f333c53321e183903bd`
 
-- :ref:`exhale_function_print__console_8hpp_1a7d92cb77870273584c8475f1e6ce7d76`
+- :ref:`exhale_function_print__console_8hpp_1ac0f447179bfe9fbb434f8f177a8569a3`
 
-- :ref:`exhale_function_print__console_8hpp_1a6fb0c84c52a53213fc01bd866221b2a5`
+- :ref:`exhale_function_print__console_8hpp_1a12f5a1d5008a9254053ab719fb6f7889`
 
-- :ref:`exhale_function_print__console_8hpp_1ae70a37091917cb7b82ac872b190b33a3`
+- :ref:`exhale_function_print__console_8hpp_1a0fb11de12ea20d9427b661e7e5a4e031`
+
+- :ref:`exhale_function_print__console_8hpp_1ac29b21aa8e3e864a45072ba09e8a0634`
+
+- :ref:`exhale_function_print__console_8hpp_1a3ec0e8348fc8375c0483b69d1071b6e2`
+
+- :ref:`exhale_function_print__console_8hpp_1afbed3863019eb39993aa1616c3a5c054`
+
+- :ref:`exhale_function_print__console_8hpp_1aa2dab05686b287357d8484ea90b1a69d`
+
+- :ref:`exhale_function_print__console_8hpp_1a2958efde18412b892caea3cfd104481a`
+
+- :ref:`exhale_function_print__console_8hpp_1a30c29bcb5331cdf7d37b7363feb5dda4`
+
+- :ref:`exhale_function_print__console_8hpp_1a2e5abd2a1c306ab4eb3f88da7b237edd`
+
+- :ref:`exhale_function_print__console_8hpp_1a76430f47e189877b8509676b856a1cf5`
+
+- :ref:`exhale_function_print__console_8hpp_1aa238fd58bcb86bebfb856adf1c8cc67b`
+
+
+Variables
+---------
+
+
+- :ref:`exhale_variable_print__console_8hpp_1ab1553bec8efb109ecf49dd585408ef0a`
 

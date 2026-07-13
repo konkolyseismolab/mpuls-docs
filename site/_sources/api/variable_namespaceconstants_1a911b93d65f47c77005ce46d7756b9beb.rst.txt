@@ -1,0 +1,14 @@
+.. _exhale_variable_namespaceconstants_1a911b93d65f47c77005ce46d7756b9beb:
+
+Variable constants::kMeanMolecularWeight
+========================================
+
+- Defined in :ref:`file_include_core_constants.hpp`
+
+
+Variable Documentation
+----------------------
+
+
+.. doxygenvariable:: constants::kMeanMolecularWeight
+   :project: MPULS

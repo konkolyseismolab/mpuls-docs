@@ -12,14 +12,6 @@ Namespace model
 
 
 
-Detailed Description
---------------------
-
-Configuration parameters of the model problem in 2D. 
-
-
-
-
 
 Classes
 -------
@@ -32,6 +24,6 @@ Enums
 -----
 
 
-- :ref:`exhale_enum_namespacemodel_1a907c446eb5c73e13a7d76edd612fdfef`
+- :ref:`exhale_enum_config__params_8hpp_1a907c446eb5c73e13a7d76edd612fdfef`
 
-- :ref:`exhale_enum_namespacemodel_1a3ae25a4a9f22dccaa99cdecb28ab4e0f`
+- :ref:`exhale_enum_config__params_8hpp_1a3ae25a4a9f22dccaa99cdecb28ab4e0f`

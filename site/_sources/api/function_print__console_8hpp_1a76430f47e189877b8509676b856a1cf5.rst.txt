@@ -1,0 +1,14 @@
+.. _exhale_function_print__console_8hpp_1a76430f47e189877b8509676b856a1cf5:
+
+Function io::todoWarning
+========================
+
+- Defined in :ref:`file_include_io_print_console.hpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: io::todoWarning(const std::string&, const std::string&, const std::string&)
+   :project: MPULS

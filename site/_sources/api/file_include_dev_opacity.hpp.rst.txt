@@ -1,0 +1,58 @@
+
+.. _file_include_dev_opacity.hpp:
+
+File opacity.hpp
+================
+
+|exhale_lsh| :ref:`Parent directory <dir_include_dev>` (``include/dev``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``include/dev/opacity.hpp``)
+----------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_include_dev_opacity.hpp.rst
+
+
+
+
+
+Includes
+--------
+
+
+- ``string``
+
+- ``vector``
+
+
+
+
+
+
+Classes
+-------
+
+
+- :ref:`exhale_struct_structOpacityTable`
+
+
+Functions
+---------
+
+
+- :ref:`exhale_function_opacity_8hpp_1ac6a42f730048cbf4f49e09245df9665e`
+
+- :ref:`exhale_function_opacity_8hpp_1a7c8ee4e6c859120ef694b9b1dc8fb6ef`
+
+- :ref:`exhale_function_opacity_8hpp_1a21cf847ff2b72d223399be87274bf76e`
+

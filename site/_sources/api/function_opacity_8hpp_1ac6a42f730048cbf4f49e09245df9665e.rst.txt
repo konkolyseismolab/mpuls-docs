@@ -1,0 +1,14 @@
+.. _exhale_function_opacity_8hpp_1ac6a42f730048cbf4f49e09245df9665e:
+
+Function loadOpacityTables
+==========================
+
+- Defined in :ref:`file_include_dev_opacity.hpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: loadOpacityTables()
+   :project: MPULS

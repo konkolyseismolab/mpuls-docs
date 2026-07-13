@@ -1,0 +1,63 @@
+
+.. _file_include_physics_eos.hpp:
+
+File eos.hpp
+============
+
+|exhale_lsh| :ref:`Parent directory <dir_include_physics>` (``include/physics``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``include/physics/eos.hpp``)
+----------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_include_physics_eos.hpp.rst
+
+
+
+
+
+Includes
+--------
+
+
+- ``models/stellar_input.hpp`` (:ref:`file_include_models_stellar_input.hpp`)
+
+
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_physics`
+
+
+Classes
+-------
+
+
+- :ref:`exhale_struct_structphysics_1_1EosState`
+
+
+Functions
+---------
+
+
+- :ref:`exhale_function_eos_8hpp_1a14a4d4f88d7de7fdcb5056b7a648f111`
+
+- :ref:`exhale_function_eos_8hpp_1abd49d98ca2386d965d1968eae37032db`
+
+- :ref:`exhale_function_eos_8hpp_1a21c84e5e75fdfd16c148b88136d33cfe`
+

@@ -1,0 +1,37 @@
+
+.. _program_listing_file_include_models_envelope_builder.hpp:
+
+Program Listing for File envelope_builder.hpp
+=============================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file_include_models_envelope_builder.hpp>` (``include/models/envelope_builder.hpp``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   #pragma once
+   
+   #include "grid/grid_builder.hpp"
+   #include "models/stellar_input.hpp"
+   
+   namespace envelope {
+   
+   void buildStaticEnvelope(Grid& grid,
+                            const StellarInput& input,
+                            const Config& cfg);
+   
+   void calibrateDmN(Grid& grid,
+                     const StellarInput& input,
+                     const Config& cfg,
+                     double& dm_N_out,
+                     int i_anchor);
+   
+   void calibrateH(Grid& grid,
+                   const StellarInput& input,
+                   const Config& cfg,
+                   double dm_N,
+                   double& h_out,
+                   int i_anchor);
+   
+   } // namespace envelope

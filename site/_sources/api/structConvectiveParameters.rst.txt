@@ -1,0 +1,18 @@
+.. _exhale_struct_structConvectiveParameters:
+
+Struct ConvectiveParameters
+===========================
+
+- Defined in :ref:`file_include_models_convective_parameters.hpp`
+
+
+Struct Documentation
+--------------------
+
+
+.. doxygenstruct:: ConvectiveParameters
+   :project: MPULS
+   :members:
+   :protected-members:
+   :private-members:
+   :undoc-members:

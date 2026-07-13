@@ -1,0 +1,14 @@
+.. _exhale_function_opacity_8hpp_1a21cf847ff2b72d223399be87274bf76e:
+
+Function testOpacityLoad
+========================
+
+- Defined in :ref:`file_include_dev_opacity.hpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: testOpacityLoad()
+   :project: MPULS

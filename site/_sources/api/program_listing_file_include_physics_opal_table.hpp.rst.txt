@@ -1,0 +1,37 @@
+
+.. _program_listing_file_include_physics_opal_table.hpp:
+
+Program Listing for File opal_table.hpp
+=======================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file_include_physics_opal_table.hpp>` (``include/physics/opal_table.hpp``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   #pragma once
+   
+   #include <string>
+   #include <vector>
+   
+   namespace opacity {
+   
+   enum class TableType {
+       OPAL,       // OPAL (Livermore) high-T tables
+       Ferguson,   // Ferguson et al. low-T tables
+       AESOPUS     // AESOPUS tables
+   };
+   
+   struct OpacityTable {
+       TableType                        type;           // source format
+       std::vector<double>              log_t_axis;     // log10(T) axis
+       std::vector<double>              log_r_axis;     // logR axis
+       std::vector<std::vector<double>> log_kappa_grid; // [T_idx][R_idx]
+   };
+   
+   OpacityTable load(const std::string& filepath, TableType type);
+   
+   double interpolate(const OpacityTable& table, double temperature, double density);
+   
+   } // namespace opacity

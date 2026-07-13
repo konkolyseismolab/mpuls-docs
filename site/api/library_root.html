@@ -10,7 +10,7 @@
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
       <link rel="stylesheet" type="text/css" href="../_static/collapsible-lists/css/tree_view.css?v=a885cde7" />
-      <link rel="stylesheet" type="text/css" href="../_static/compact-api.css?v=bfcdbbe1" />
+      <link rel="stylesheet" type="text/css" href="../_static/compact-api.css?v=8b703a59" />
 
   
       <script src="../_static/jquery.js?v=5d32c60e"></script>
@@ -66,6 +66,8 @@
 <li class="toctree-l4"><a class="reference internal" href="namespace_io.html">Namespace io</a></li>
 <li class="toctree-l4"><a class="reference internal" href="namespace_model.html">Namespace model</a></li>
 <li class="toctree-l4"><a class="reference internal" href="namespace_mpuls.html">Namespace mpuls</a></li>
+<li class="toctree-l4"><a class="reference internal" href="namespace_opacity.html">Namespace opacity</a></li>
+<li class="toctree-l4"><a class="reference internal" href="namespace_physics.html">Namespace physics</a></li>
 <li class="toctree-l4"><a class="reference internal" href="namespace_simulation_2d.html">Namespace simulation_2d</a></li>
 <li class="toctree-l4"><a class="reference internal" href="namespace_solver_params.html">Namespace solver_params</a></li>
 <li class="toctree-l4"><a class="reference internal" href="namespace_std.html">Namespace std</a></li>
@@ -75,10 +77,16 @@
 <li class="toctree-l4"><a class="reference internal" href="structCellCenter.html">Struct CellCenter</a></li>
 <li class="toctree-l4"><a class="reference internal" href="structCellInterface.html">Struct CellInterface</a></li>
 <li class="toctree-l4"><a class="reference internal" href="structConfig.html">Struct Config</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structConvectiveParameters.html">Struct ConvectiveParameters</a></li>
 <li class="toctree-l4"><a class="reference internal" href="structGrid.html">Struct Grid</a></li>
 <li class="toctree-l4"><a class="reference internal" href="structGrid2Dconfig.html">Struct Grid2Dconfig</a></li>
 <li class="toctree-l4"><a class="reference internal" href="structGridConfig.html">Struct GridConfig</a></li>
 <li class="toctree-l4"><a class="reference internal" href="structmodel_1_1ModelConfig.html">Struct ModelConfig</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structModelBuilderConfig.html">Struct ModelBuilderConfig</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structopacity_1_1OpacityTable.html">Struct OpacityTable</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structOpacityTable.html">Struct OpacityTable</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structphysics_1_1EosState.html">Struct EosState</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structPhysicsConfig.html">Struct PhysicsConfig</a></li>
 <li class="toctree-l4"><a class="reference internal" href="structQuantityTraits.html">Template Struct QuantityTraits</a></li>
 <li class="toctree-l4"><a class="reference internal" href="structsimulation__2d_1_1always__false.html">Template Struct always_false</a></li>
 <li class="toctree-l4"><a class="reference internal" href="structsimulation__2d_1_1EquationTraits.html">Template Struct EquationTraits</a></li>
@@ -123,12 +131,13 @@
 <li class="toctree-l3"><a class="reference internal" href="#enums">Enums</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="enum_common_8hpp_1a224b9163917ac32fc95a60d8c1eec3aa.html">Enum Direction</a></li>
 <li class="toctree-l4"><a class="reference internal" href="enum_config__params_8hpp_1a46c8a310cf4c094f8c80e1cb8dc1f911.html">Enum Mode</a></li>
-<li class="toctree-l4"><a class="reference internal" href="enum_namespacemodel_1a907c446eb5c73e13a7d76edd612fdfef.html">Enum Equation</a></li>
-<li class="toctree-l4"><a class="reference internal" href="enum_namespacemodel_1a3ae25a4a9f22dccaa99cdecb28ab4e0f.html">Enum InitialModel</a></li>
-<li class="toctree-l4"><a class="reference internal" href="enum_namespacesolver__params_1a2b577686b8ffe76b030025b230938ef2.html">Enum FluxCalculator</a></li>
-<li class="toctree-l4"><a class="reference internal" href="enum_namespacesolver__params_1ad745adffd0fab83afbaf692ea8165050.html">Enum Integrator</a></li>
-<li class="toctree-l4"><a class="reference internal" href="enum_namespacesolver__params_1a8c444a3981a4189f632deff4104e1165.html">Enum Limiters</a></li>
-<li class="toctree-l4"><a class="reference internal" href="enum_namespacesolver__params_1abd53625bda2fa8124b0f37652e3340d1.html">Enum Reconstructor</a></li>
+<li class="toctree-l4"><a class="reference internal" href="enum_config__params_8hpp_1a907c446eb5c73e13a7d76edd612fdfef.html">Enum Equation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="enum_config__params_8hpp_1a3ae25a4a9f22dccaa99cdecb28ab4e0f.html">Enum InitialModel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="enum_opal__table_8hpp_1acdfee38d79244a50e55b9267e23e9323.html">Enum TableType</a></li>
+<li class="toctree-l4"><a class="reference internal" href="enum_config__params_8hpp_1a2b577686b8ffe76b030025b230938ef2.html">Enum FluxCalculator</a></li>
+<li class="toctree-l4"><a class="reference internal" href="enum_config__params_8hpp_1ad745adffd0fab83afbaf692ea8165050.html">Enum Integrator</a></li>
+<li class="toctree-l4"><a class="reference internal" href="enum_config__params_8hpp_1a8c444a3981a4189f632deff4104e1165.html">Enum Limiters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="enum_config__params_8hpp_1abd53625bda2fa8124b0f37652e3340d1.html">Enum Reconstructor</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#functions">Functions</a><ul>
@@ -137,17 +146,37 @@
 <li class="toctree-l4"><a class="reference internal" href="function_compile__time__dispatcher_8hpp_1af90bda6680729cad82f2e0e9e4850f47.html">Template Function createIntegratorTag</a></li>
 <li class="toctree-l4"><a class="reference internal" href="function_compile__time__dispatcher_8hpp_1a6f98987fd5ae02bb483df5a4869cd98f.html">Template Function createLimiterTag</a></li>
 <li class="toctree-l4"><a class="reference internal" href="function_compile__time__dispatcher_8hpp_1a9978be9ec33b3d779b636e8fe222ade0.html">Template Function createReconstructionTag</a></li>
-<li class="toctree-l4"><a class="reference internal" href="function_envelope__builder_8hpp_1a717c924bff07df3804ba31d1fc4a36af.html">Function envelope::build_static_envelope</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_envelope__builder_8hpp_1a481b59dd715d9d64a0fb26044d062648.html">Function envelope::buildStaticEnvelope</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_envelope__builder_8hpp_1a2bc306ae2448400964b459725ffdbe22.html">Function envelope::calibrateDmN</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_envelope__builder_8hpp_1a689831817079232958d8d6c7bdf5b4f3.html">Function envelope::calibrateH</a></li>
 <li class="toctree-l4"><a class="reference internal" href="function_compile__time__dispatcher_8hpp_1a27a2ed4213b0d1fb6f6e5ca671406f1a.html">Function generateFromConfig</a></li>
 <li class="toctree-l4"><a class="reference internal" href="function_grid__builder_8hpp_1ae486fd2de65542bc1ee22e82a31f7f51.html">Function grid::build</a></li>
 <li class="toctree-l4"><a class="reference internal" href="function_compile__time__dispatcher_8hpp_1a7438b4836635fc284ebf915aceb3ff55.html">Template Function grid_dim_generator</a></li>
 <li class="toctree-l4"><a class="reference internal" href="function_compile__time__dispatcher_8hpp_1acd37447c36d81154e4ad2aeb6795c4f8.html">Template Function grid_generator</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_print__console_8hpp_1a0fb04262fba5aecb24550b78c8fb79ed.html">Function io::baseName</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_print__console_8hpp_1a0e31e4a6433331ae273efcd8cbaaf4ab.html">Function io::error</a></li>
 <li class="toctree-l4"><a class="reference internal" href="function_print__console_8hpp_1a4342d8164f753f333c53321e183903bd.html">Function io::initializeRun</a></li>
-<li class="toctree-l4"><a class="reference internal" href="function_print__console_8hpp_1a7d92cb77870273584c8475f1e6ce7d76.html">Function io::log_surface_boundary_summary</a></li>
-<li class="toctree-l4"><a class="reference internal" href="function_print__console_8hpp_1a6fb0c84c52a53213fc01bd866221b2a5.html">Function io::placeholder_warning</a></li>
-<li class="toctree-l4"><a class="reference internal" href="function_print__console_8hpp_1ae70a37091917cb7b82ac872b190b33a3.html">Function io::unimplemented_warning</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_print__console_8hpp_1ac0f447179bfe9fbb434f8f177a8569a3.html">Function io::logOuterZoneSummary</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_print__console_8hpp_1a12f5a1d5008a9254053ab719fb6f7889.html">Function io::logSurfaceBoundarySummary</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_print__console_8hpp_1a0fb11de12ea20d9427b661e7e5a4e031.html">Function io::noteWarning</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_print__console_8hpp_1ac29b21aa8e3e864a45072ba09e8a0634.html">Function io::placeholderWarning</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_print__console_8hpp_1a3ec0e8348fc8375c0483b69d1071b6e2.html">Function io::printDebugIteration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_print__console_8hpp_1afbed3863019eb39993aa1616c3a5c054.html">Function io::printFatalEnvelopeError</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_print__console_8hpp_1aa2dab05686b287357d8484ea90b1a69d.html">Function io::printProgressBox</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_print__console_8hpp_1a2958efde18412b892caea3cfd104481a.html">Function io::printRunConfiguration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_print__console_8hpp_1a30c29bcb5331cdf7d37b7363feb5dda4.html">Function io::printWarningSummary</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_print__console_8hpp_1a2e5abd2a1c306ab4eb3f88da7b237edd.html">Function io::printZoneStatus</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_print__console_8hpp_1a76430f47e189877b8509676b856a1cf5.html">Function io::todoWarning</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_print__console_8hpp_1aa238fd58bcb86bebfb856adf1c8cc67b.html">Function io::unimplementedWarning</a></li>
 <li class="toctree-l4"><a class="reference internal" href="function_initial__models_8hpp_1ae38657604bb2a021940106bf18eca18d.html">Function KelvinHelmholtzInitialCondition</a></li>
 <li class="toctree-l4"><a class="reference internal" href="function_config__parser_8hpp_1ab2d3612c42f5e2c0ca7d6c3fc24f0614.html">Function loadConfig</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_opacity_8hpp_1ac6a42f730048cbf4f49e09245df9665e.html">Function loadOpacityTables</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_opal__table_8hpp_1a03555a4a4bc11c8ddab9bb752dc35b25.html">Function opacity::interpolate</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_opal__table_8hpp_1a37166debd52472edd254045c68524603.html">Function opacity::load</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_eos_8hpp_1a14a4d4f88d7de7fdcb5056b7a648f111.html">Function physics::calculateEos</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_eos_8hpp_1abd49d98ca2386d965d1968eae37032db.html">Function physics::eosIdealGas</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_eos_8hpp_1a21c84e5e75fdfd16c148b88136d33cfe.html">Function physics::eosPolytrope</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_opacity_8hpp_1a7c8ee4e6c859120ef694b9b1dc8fb6ef.html">Function selectTable</a></li>
 <li class="toctree-l4"><a class="reference internal" href="function_simulation2d_8hpp_1a50087ef639129db722c485e48f7b8f52.html">Template Function simulation_2d::createEquation</a></li>
 <li class="toctree-l4"><a class="reference internal" href="function_simulation2d_8hpp_1add0bbce5253a56fd01b6eaccd26798e4.html">Template Function simulation_2d::createFluxCalculator</a></li>
 <li class="toctree-l4"><a class="reference internal" href="function_simulation2d_8hpp_1ad0c0db2ca932178a8409c41eb8fd41ac.html">Template Function simulation_2d::createLimiter</a></li>
@@ -156,17 +185,26 @@
 <li class="toctree-l4"><a class="reference internal" href="function_simulation2d_8hpp_1add987f6758214e6b394039ef157a6573.html">Template Function simulation_2d::getQfromEq</a></li>
 <li class="toctree-l4"><a class="reference internal" href="function_simulation2d_8hpp_1ad8ed7bbcf51a98c91f1725d21cc2123e.html">Template Function simulation_2d::solver_factory</a></li>
 <li class="toctree-l4"><a class="reference internal" href="function_initial__models_8hpp_1a5e76af92416c0cab11bcea98fe6666e6.html">Function staticModelInitialCondition</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_opacity_8hpp_1a21cf847ff2b72d223399be87274bf76e.html">Function testOpacityLoad</a></li>
 <li class="toctree-l4"><a class="reference internal" href="function_profile__writer_8hpp_1a92e39358f1c190b8a7459afb2fa3f2df.html">Function write2DQuantityProfileToHdf5</a></li>
 <li class="toctree-l4"><a class="reference internal" href="function_profile__writer_8hpp_1a21ce09ebf264d1fdb91135863cec2133.html">Function write2DScalarProfileToHdf5</a></li>
-<li class="toctree-l4"><a class="reference internal" href="function_profile__writer_8hpp_1a9d030f6947c666a5d614e062847b47e7.html">Function writeProfileToHdf5</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_profile__writer_8hpp_1a8d61ea3b78b7717da964a9f714495fae.html">Function writeProfileToHdf5</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#variables">Variables</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="variable_namespaceconstants_1a1c6d84500f73bf80363916f62d47d7b5.html">Variable constants::kBoltzmann</a></li>
+<li class="toctree-l4"><a class="reference internal" href="variable_namespaceconstants_1a6eaefa9c7941348b47971d18b8acb580.html">Variable constants::kCmToRSun</a></li>
 <li class="toctree-l4"><a class="reference internal" href="variable_namespaceconstants_1a27895881bf36c2968dada68de7fff4df.html">Variable constants::kEddingtonFactor</a></li>
+<li class="toctree-l4"><a class="reference internal" href="variable_namespaceconstants_1ad74534a8a307a0847ced79cb5c6db35d.html">Variable constants::kG</a></li>
+<li class="toctree-l4"><a class="reference internal" href="variable_namespaceconstants_1ab2dcf3983638edcc3f8eb0c0bc53b7da.html">Variable constants::kHydrogenMass</a></li>
 <li class="toctree-l4"><a class="reference internal" href="variable_namespaceconstants_1aef6a70bf5e02077c823bda1eba37a769.html">Variable constants::kLSun</a></li>
+<li class="toctree-l4"><a class="reference internal" href="variable_namespaceconstants_1a911b93d65f47c77005ce46d7756b9beb.html">Variable constants::kMeanMolecularWeight</a></li>
 <li class="toctree-l4"><a class="reference internal" href="variable_namespaceconstants_1acc33c8ba80741ed46691ee05503fb81e.html">Variable constants::kMSun</a></li>
 <li class="toctree-l4"><a class="reference internal" href="variable_namespaceconstants_1ac46ad396847a4e15973762f39350eaf0.html">Variable constants::kPi</a></li>
+<li class="toctree-l4"><a class="reference internal" href="variable_namespaceconstants_1a496f65032ce6f2494b13e3a633779433.html">Variable constants::kRadiationConstant</a></li>
+<li class="toctree-l4"><a class="reference internal" href="variable_namespaceconstants_1aaa7f8b6965e251fbcfb0eb28d83d5cee.html">Variable constants::kSpeedOfLight</a></li>
 <li class="toctree-l4"><a class="reference internal" href="variable_namespaceconstants_1a1f9529591ca6dbdc20aaa3b8105da607.html">Variable constants::kStefanBoltzmann</a></li>
+<li class="toctree-l4"><a class="reference internal" href="variable_print__console_8hpp_1ab1553bec8efb109ecf49dd585408ef0a.html">Variable io::warning_log</a></li>
 <li class="toctree-l4"><a class="reference internal" href="variable_common_8hpp_1aa978754ca655ef66eff1586405d394e2.html">Variable is_2D</a></li>
 <li class="toctree-l4"><a class="reference internal" href="variable_common_8hpp_1aeaa45c68beb95f9860a4b00f3491dfe9.html">Variable is_horizontal</a></li>
 <li class="toctree-l4"><a class="reference internal" href="variable_common_8hpp_1a6cc92b784171808c91b212208136e428.html">Variable is_radial</a></li>
@@ -220,7 +258,7 @@
 <ul class="treeView" id="class-treeView">
   <li>
     <ul class="collapsibleList">
-      <li>Namespace <a href="namespace_model.html#namespace-model">model</a><ul><li>Struct <a href="structmodel_1_1ModelConfig.html#exhale-struct-structmodel-1-1ModelConfig">ModelConfig</a></li><li>Enum <a href="enum_namespacemodel_1a907c446eb5c73e13a7d76edd612fdfef.html#exhale-enum-namespacemodel-1a907c446eb5c73e13a7d76edd612fdfef">Equation</a></li><li class="lastChild">Enum <a href="enum_namespacemodel_1a3ae25a4a9f22dccaa99cdecb28ab4e0f.html#exhale-enum-namespacemodel-1a3ae25a4a9f22dccaa99cdecb28ab4e0f">InitialModel</a></li></ul></li><li>Namespace <a href="namespace_simulation_2d.html#namespace-simulation-2d">simulation_2d</a><ul><li>Template Struct <a href="structsimulation__2d_1_1always__false.html#exhale-struct-structsimulation-2d-1-1always-false">always_false</a></li><li>Template Struct <a href="structsimulation__2d_1_1EquationTraits.html#exhale-struct-structsimulation-2d-1-1EquationTraits">EquationTraits</a></li><li>Class <a href="classsimulation__2d_1_1ComponentBase.html#exhale-class-classsimulation-2d-1-1ComponentBase">ComponentBase</a></li><li>Template Class <a href="classsimulation__2d_1_1ComponentWrapper.html#exhale-class-classsimulation-2d-1-1ComponentWrapper">ComponentWrapper</a></li><li>Class <a href="classsimulation__2d_1_1Simulation2d.html#exhale-class-classsimulation-2d-1-1Simulation2d">Simulation2d</a></li><li>Class <a href="classsimulation__2d_1_1SolverBase.html#exhale-class-classsimulation-2d-1-1SolverBase">SolverBase</a></li><li class="lastChild">Template Class <a href="classsimulation__2d_1_1SolverWrapper.html#exhale-class-classsimulation-2d-1-1SolverWrapper">SolverWrapper</a></li></ul></li><li>Namespace <a href="namespace_solver_params.html#namespace-solver-params">solver_params</a><ul><li>Enum <a href="enum_namespacesolver__params_1a2b577686b8ffe76b030025b230938ef2.html#exhale-enum-namespacesolver-params-1a2b577686b8ffe76b030025b230938ef2">FluxCalculator</a></li><li>Enum <a href="enum_namespacesolver__params_1ad745adffd0fab83afbaf692ea8165050.html#exhale-enum-namespacesolver-params-1ad745adffd0fab83afbaf692ea8165050">Integrator</a></li><li>Enum <a href="enum_namespacesolver__params_1a8c444a3981a4189f632deff4104e1165.html#exhale-enum-namespacesolver-params-1a8c444a3981a4189f632deff4104e1165">Limiters</a></li><li class="lastChild">Enum <a href="enum_namespacesolver__params_1abd53625bda2fa8124b0f37652e3340d1.html#exhale-enum-namespacesolver-params-1abd53625bda2fa8124b0f37652e3340d1">Reconstructor</a></li></ul></li><li>Struct <a href="structCellCenter.html#exhale-struct-structCellCenter">CellCenter</a></li><li>Struct <a href="structCellInterface.html#exhale-struct-structCellInterface">CellInterface</a></li><li>Struct <a href="structConfig.html#exhale-struct-structConfig">Config</a></li><li>Struct <a href="structGrid.html#exhale-struct-structGrid">Grid</a></li><li>Struct <a href="structGrid2Dconfig.html#exhale-struct-structGrid2Dconfig">Grid2Dconfig</a></li><li>Struct <a href="structGridConfig.html#exhale-struct-structGridConfig">GridConfig</a></li><li>Template Struct <a href="structQuantityTraits.html#exhale-struct-structQuantityTraits">QuantityTraits</a></li><li>Struct <a href="structSolverConfig.html#exhale-struct-structSolverConfig">SolverConfig</a></li><li>Struct <a href="structStellarInput.html#exhale-struct-structStellarInput">StellarInput</a></li><li>Struct <a href="structStellarParameters.html#exhale-struct-structStellarParameters">StellarParameters</a></li><li>Template Class <a href="classBoundary2DPerHorRigidRad.html#exhale-class-classBoundary2DPerHorRigidRad">Boundary2DPerHorRigidRad</a></li><li>Template Class <a href="classBoundary2DPeriodic.html#exhale-class-classBoundary2DPeriodic">Boundary2DPeriodic</a></li><li>Template Class <a href="classCFL.html#exhale-class-classCFL">CFL</a></li><li>Template Class <a href="classCIRFlux.html#exhale-class-classCIRFlux">CIRFlux</a></li><li>Template Class <a href="classDiffusion2d.html#exhale-class-classDiffusion2d">Diffusion2d</a></li><li>Template Class <a href="classEquationBase.html#exhale-class-classEquationBase">EquationBase</a></li><li>Template Class <a href="classEuler2d.html#exhale-class-classEuler2d">Euler2d</a></li><li>Template Class <a href="classFluxOperator.html#exhale-class-classFluxOperator">FluxOperator</a></li><li>Template Class <a href="classGrid2d.html#exhale-class-classGrid2d">Grid2d</a></li><li>Template Class <a href="classGridDimensions2d.html#exhale-class-classGridDimensions2d">GridDimensions2d</a></li><li>Template Class <a href="classHyperDiffusion.html#exhale-class-classHyperDiffusion">HyperDiffusion</a></li><li>Template Class <a href="classLimiterBase.html#exhale-class-classLimiterBase">LimiterBase</a></li><li>Template Class <a href="classLLFflux.html#exhale-class-classLLFflux">LLFflux</a></li><li>Template Class <a href="classMinMod.html#exhale-class-classMinMod">MinMod</a></li><li>Template Class <a href="classPCM.html#exhale-class-classPCM">PCM</a></li><li>Template Class <a href="classPLM.html#exhale-class-classPLM">PLM</a></li><li>Template Class <a href="classQuantityBase.html#exhale-class-classQuantityBase">QuantityBase</a></li><li>Template Class <a href="classReconstructionBase.html#exhale-class-classReconstructionBase">ReconstructionBase</a></li><li>Template Class <a href="classRightHandSide.html#exhale-class-classRightHandSide">RightHandSide</a></li><li>Template Class <a href="classRightHandSideDecorator.html#exhale-class-classRightHandSideDecorator">RightHandSideDecorator</a></li><li>Template Class <a href="classScalarTransport2d.html#exhale-class-classScalarTransport2d">ScalarTransport2d</a></li><li>Template Class <a href="classSimpleSource.html#exhale-class-classSimpleSource">SimpleSource</a></li><li>Template Class <a href="classSSP__RK2.html#exhale-class-classSSP-RK2">SSP_RK2</a></li><li>Template Class <a href="classSSP__RK3.html#exhale-class-classSSP-RK3">SSP_RK3</a></li><li>Template Class <a href="classSuperbee.html#exhale-class-classSuperbee">Superbee</a></li><li>Template Class <a href="classTimeSolverBase.html#exhale-class-classTimeSolverBase">TimeSolverBase</a></li><li>Class <a href="classUnimplementedError.html#exhale-class-classUnimplementedError">UnimplementedError</a></li><li>Template Class <a href="classVanLeer.html#exhale-class-classVanLeer">VanLeer</a></li><li>Enum <a href="enum_common_8hpp_1a224b9163917ac32fc95a60d8c1eec3aa.html#exhale-enum-common-8hpp-1a224b9163917ac32fc95a60d8c1eec3aa">Direction</a></li><li class="lastChild">Enum <a href="enum_config__params_8hpp_1a46c8a310cf4c094f8c80e1cb8dc1f911.html#exhale-enum-config-params-8hpp-1a46c8a310cf4c094f8c80e1cb8dc1f911">Mode</a></li>
+      <li>Namespace <a href="namespace_model.html#namespace-model">model</a><ul><li>Struct <a href="structmodel_1_1ModelConfig.html#exhale-struct-structmodel-1-1ModelConfig">ModelConfig</a></li><li>Enum <a href="enum_config__params_8hpp_1a907c446eb5c73e13a7d76edd612fdfef.html#exhale-enum-config-params-8hpp-1a907c446eb5c73e13a7d76edd612fdfef">Equation</a></li><li class="lastChild">Enum <a href="enum_config__params_8hpp_1a3ae25a4a9f22dccaa99cdecb28ab4e0f.html#exhale-enum-config-params-8hpp-1a3ae25a4a9f22dccaa99cdecb28ab4e0f">InitialModel</a></li></ul></li><li>Namespace <a href="namespace_opacity.html#namespace-opacity">opacity</a><ul><li>Enum <a href="enum_opal__table_8hpp_1acdfee38d79244a50e55b9267e23e9323.html#exhale-enum-opal-table-8hpp-1acdfee38d79244a50e55b9267e23e9323">TableType</a></li><li class="lastChild">Struct <a href="structopacity_1_1OpacityTable.html#exhale-struct-structopacity-1-1OpacityTable">OpacityTable</a></li></ul></li><li>Namespace <a href="namespace_physics.html#namespace-physics">physics</a><ul><li class="lastChild">Struct <a href="structphysics_1_1EosState.html#exhale-struct-structphysics-1-1EosState">EosState</a></li></ul></li><li>Namespace <a href="namespace_simulation_2d.html#namespace-simulation-2d">simulation_2d</a><ul><li>Template Struct <a href="structsimulation__2d_1_1always__false.html#exhale-struct-structsimulation-2d-1-1always-false">always_false</a></li><li>Template Struct <a href="structsimulation__2d_1_1EquationTraits.html#exhale-struct-structsimulation-2d-1-1EquationTraits">EquationTraits</a></li><li>Class <a href="classsimulation__2d_1_1ComponentBase.html#exhale-class-classsimulation-2d-1-1ComponentBase">ComponentBase</a></li><li>Template Class <a href="classsimulation__2d_1_1ComponentWrapper.html#exhale-class-classsimulation-2d-1-1ComponentWrapper">ComponentWrapper</a></li><li>Class <a href="classsimulation__2d_1_1Simulation2d.html#exhale-class-classsimulation-2d-1-1Simulation2d">Simulation2d</a></li><li>Class <a href="classsimulation__2d_1_1SolverBase.html#exhale-class-classsimulation-2d-1-1SolverBase">SolverBase</a></li><li class="lastChild">Template Class <a href="classsimulation__2d_1_1SolverWrapper.html#exhale-class-classsimulation-2d-1-1SolverWrapper">SolverWrapper</a></li></ul></li><li>Namespace <a href="namespace_solver_params.html#namespace-solver-params">solver_params</a><ul><li>Enum <a href="enum_config__params_8hpp_1a2b577686b8ffe76b030025b230938ef2.html#exhale-enum-config-params-8hpp-1a2b577686b8ffe76b030025b230938ef2">FluxCalculator</a></li><li>Enum <a href="enum_config__params_8hpp_1ad745adffd0fab83afbaf692ea8165050.html#exhale-enum-config-params-8hpp-1ad745adffd0fab83afbaf692ea8165050">Integrator</a></li><li>Enum <a href="enum_config__params_8hpp_1a8c444a3981a4189f632deff4104e1165.html#exhale-enum-config-params-8hpp-1a8c444a3981a4189f632deff4104e1165">Limiters</a></li><li class="lastChild">Enum <a href="enum_config__params_8hpp_1abd53625bda2fa8124b0f37652e3340d1.html#exhale-enum-config-params-8hpp-1abd53625bda2fa8124b0f37652e3340d1">Reconstructor</a></li></ul></li><li>Struct <a href="structCellCenter.html#exhale-struct-structCellCenter">CellCenter</a></li><li>Struct <a href="structCellInterface.html#exhale-struct-structCellInterface">CellInterface</a></li><li>Struct <a href="structConfig.html#exhale-struct-structConfig">Config</a></li><li>Struct <a href="structConvectiveParameters.html#exhale-struct-structConvectiveParameters">ConvectiveParameters</a></li><li>Struct <a href="structGrid.html#exhale-struct-structGrid">Grid</a></li><li>Struct <a href="structGrid2Dconfig.html#exhale-struct-structGrid2Dconfig">Grid2Dconfig</a></li><li>Struct <a href="structGridConfig.html#exhale-struct-structGridConfig">GridConfig</a></li><li>Struct <a href="structModelBuilderConfig.html#exhale-struct-structModelBuilderConfig">ModelBuilderConfig</a></li><li>Struct <a href="structOpacityTable.html#exhale-struct-structOpacityTable">OpacityTable</a></li><li>Struct <a href="structPhysicsConfig.html#exhale-struct-structPhysicsConfig">PhysicsConfig</a></li><li>Template Struct <a href="structQuantityTraits.html#exhale-struct-structQuantityTraits">QuantityTraits</a></li><li>Struct <a href="structSolverConfig.html#exhale-struct-structSolverConfig">SolverConfig</a></li><li>Struct <a href="structStellarInput.html#exhale-struct-structStellarInput">StellarInput</a></li><li>Struct <a href="structStellarParameters.html#exhale-struct-structStellarParameters">StellarParameters</a></li><li>Template Class <a href="classBoundary2DPerHorRigidRad.html#exhale-class-classBoundary2DPerHorRigidRad">Boundary2DPerHorRigidRad</a></li><li>Template Class <a href="classBoundary2DPeriodic.html#exhale-class-classBoundary2DPeriodic">Boundary2DPeriodic</a></li><li>Template Class <a href="classCFL.html#exhale-class-classCFL">CFL</a></li><li>Template Class <a href="classCIRFlux.html#exhale-class-classCIRFlux">CIRFlux</a></li><li>Template Class <a href="classDiffusion2d.html#exhale-class-classDiffusion2d">Diffusion2d</a></li><li>Template Class <a href="classEquationBase.html#exhale-class-classEquationBase">EquationBase</a></li><li>Template Class <a href="classEuler2d.html#exhale-class-classEuler2d">Euler2d</a></li><li>Template Class <a href="classFluxOperator.html#exhale-class-classFluxOperator">FluxOperator</a></li><li>Template Class <a href="classGrid2d.html#exhale-class-classGrid2d">Grid2d</a></li><li>Template Class <a href="classGridDimensions2d.html#exhale-class-classGridDimensions2d">GridDimensions2d</a></li><li>Template Class <a href="classHyperDiffusion.html#exhale-class-classHyperDiffusion">HyperDiffusion</a></li><li>Template Class <a href="classLimiterBase.html#exhale-class-classLimiterBase">LimiterBase</a></li><li>Template Class <a href="classLLFflux.html#exhale-class-classLLFflux">LLFflux</a></li><li>Template Class <a href="classMinMod.html#exhale-class-classMinMod">MinMod</a></li><li>Template Class <a href="classPCM.html#exhale-class-classPCM">PCM</a></li><li>Template Class <a href="classPLM.html#exhale-class-classPLM">PLM</a></li><li>Template Class <a href="classQuantityBase.html#exhale-class-classQuantityBase">QuantityBase</a></li><li>Template Class <a href="classReconstructionBase.html#exhale-class-classReconstructionBase">ReconstructionBase</a></li><li>Template Class <a href="classRightHandSide.html#exhale-class-classRightHandSide">RightHandSide</a></li><li>Template Class <a href="classRightHandSideDecorator.html#exhale-class-classRightHandSideDecorator">RightHandSideDecorator</a></li><li>Template Class <a href="classScalarTransport2d.html#exhale-class-classScalarTransport2d">ScalarTransport2d</a></li><li>Template Class <a href="classSimpleSource.html#exhale-class-classSimpleSource">SimpleSource</a></li><li>Template Class <a href="classSSP__RK2.html#exhale-class-classSSP-RK2">SSP_RK2</a></li><li>Template Class <a href="classSSP__RK3.html#exhale-class-classSSP-RK3">SSP_RK3</a></li><li>Template Class <a href="classSuperbee.html#exhale-class-classSuperbee">Superbee</a></li><li>Template Class <a href="classTimeSolverBase.html#exhale-class-classTimeSolverBase">TimeSolverBase</a></li><li>Class <a href="classUnimplementedError.html#exhale-class-classUnimplementedError">UnimplementedError</a></li><li>Template Class <a href="classVanLeer.html#exhale-class-classVanLeer">VanLeer</a></li><li>Enum <a href="enum_common_8hpp_1a224b9163917ac32fc95a60d8c1eec3aa.html#exhale-enum-common-8hpp-1a224b9163917ac32fc95a60d8c1eec3aa">Direction</a></li><li class="lastChild">Enum <a href="enum_config__params_8hpp_1a46c8a310cf4c094f8c80e1cb8dc1f911.html#exhale-enum-config-params-8hpp-1a46c8a310cf4c094f8c80e1cb8dc1f911">Mode</a></li>
     </ul>
   </li><!-- only tree view element -->
 </ul><!-- /treeView class-treeView --></section>
@@ -229,7 +267,7 @@
 <ul class="treeView" id="file-treeView">
   <li>
     <ul class="collapsibleList">
-      <li class="lastChild">Directory <a href="dir_include.html#dir-include">include</a><ul><li>Directory <a href="dir_include_advection.html#dir-include-advection">advection</a><ul><li>File <a href="file_include_advection_flux_operators.hpp.html#file-include-advection-flux-operators.hpp">flux_operators.hpp</a></li><li class="lastChild">File <a href="file_include_advection_hyperdiffusion.hpp.html#file-include-advection-hyperdiffusion.hpp">hyperdiffusion.hpp</a></li></ul></li><li>Directory <a href="dir_include_core.html#dir-include-core">core</a><ul><li>File <a href="file_include_core_common.hpp.html#file-include-core-common.hpp">common.hpp</a></li><li>File <a href="file_include_core_compile_time_dispatcher.hpp.html#file-include-core-compile-time-dispatcher.hpp">compile_time_dispatcher.hpp</a></li><li>File <a href="file_include_core_config_params.hpp.html#file-include-core-config-params.hpp">config_params.hpp</a></li><li>File <a href="file_include_core_config_parser.hpp.html#file-include-core-config-parser.hpp">config_parser.hpp</a></li><li>File <a href="file_include_core_constants.hpp.html#file-include-core-constants.hpp">constants.hpp</a></li><li>File <a href="file_include_core_custom_exceptions.hpp.html#file-include-core-custom-exceptions.hpp">custom_exceptions.hpp</a></li><li>File <a href="file_include_core_simulation2d.hpp.html#file-include-core-simulation2d.hpp">simulation2d.hpp</a></li><li class="lastChild">File <a href="file_include_core_version.hpp.html#file-include-core-version.hpp">version.hpp</a></li></ul></li><li>Directory <a href="dir_include_equations.html#dir-include-equations">equations</a><ul><li class="lastChild">File <a href="file_include_equations_equations.hpp.html#file-include-equations-equations.hpp">equations.hpp</a></li></ul></li><li>Directory <a href="dir_include_grid.html#dir-include-grid">grid</a><ul><li>File <a href="file_include_grid_cell_center.hpp.html#file-include-grid-cell-center.hpp">cell_center.hpp</a></li><li>File <a href="file_include_grid_cell_interface.hpp.html#file-include-grid-cell-interface.hpp">cell_interface.hpp</a></li><li>File <a href="file_include_grid_grid.hpp.html#file-include-grid-grid.hpp">grid.hpp</a></li><li>File <a href="file_include_grid_grid_builder.hpp.html#file-include-grid-grid-builder.hpp">grid_builder.hpp</a></li><li>File <a href="file_include_grid_grid_state.hpp.html#file-include-grid-grid-state.hpp">grid_state.hpp</a></li><li class="lastChild">File <a href="file_include_grid_quantity.hpp.html#file-include-grid-quantity.hpp">quantity.hpp</a></li></ul></li><li>Directory <a href="dir_include_io.html#dir-include-io">io</a><ul><li>File <a href="file_include_io_print_console.hpp.html#file-include-io-print-console.hpp">print_console.hpp</a></li><li class="lastChild">File <a href="file_include_io_profile_writer.hpp.html#file-include-io-profile-writer.hpp">profile_writer.hpp</a></li></ul></li><li>Directory <a href="dir_include_models.html#dir-include-models">models</a><ul><li>File <a href="file_include_models_envelope_builder.hpp.html#file-include-models-envelope-builder.hpp">envelope_builder.hpp</a></li><li>File <a href="file_include_models_initial_models.hpp.html#file-include-models-initial-models.hpp">initial_models.hpp</a></li><li class="lastChild">File <a href="file_include_models_stellar_input.hpp.html#file-include-models-stellar-input.hpp">stellar_input.hpp</a></li></ul></li><li class="lastChild">Directory <a href="dir_include_time_solver.html#dir-include-time-solver">time_solver</a><ul><li class="lastChild">File <a href="file_include_time_solver_time_solver.hpp.html#file-include-time-solver-time-solver.hpp">time_solver.hpp</a></li></ul></li></ul></li>
+      <li class="lastChild">Directory <a href="dir_include.html#dir-include">include</a><ul><li>Directory <a href="dir_include_advection.html#dir-include-advection">advection</a><ul><li>File <a href="file_include_advection_flux_operators.hpp.html#file-include-advection-flux-operators.hpp">flux_operators.hpp</a></li><li class="lastChild">File <a href="file_include_advection_hyperdiffusion.hpp.html#file-include-advection-hyperdiffusion.hpp">hyperdiffusion.hpp</a></li></ul></li><li>Directory <a href="dir_include_core.html#dir-include-core">core</a><ul><li>File <a href="file_include_core_common.hpp.html#file-include-core-common.hpp">common.hpp</a></li><li>File <a href="file_include_core_compile_time_dispatcher.hpp.html#file-include-core-compile-time-dispatcher.hpp">compile_time_dispatcher.hpp</a></li><li>File <a href="file_include_core_config_params.hpp.html#file-include-core-config-params.hpp">config_params.hpp</a></li><li>File <a href="file_include_core_config_parser.hpp.html#file-include-core-config-parser.hpp">config_parser.hpp</a></li><li>File <a href="file_include_core_constants.hpp.html#file-include-core-constants.hpp">constants.hpp</a></li><li>File <a href="file_include_core_custom_exceptions.hpp.html#file-include-core-custom-exceptions.hpp">custom_exceptions.hpp</a></li><li>File <a href="file_include_core_simulation2d.hpp.html#file-include-core-simulation2d.hpp">simulation2d.hpp</a></li><li class="lastChild">File <a href="file_include_core_version.hpp.html#file-include-core-version.hpp">version.hpp</a></li></ul></li><li>Directory <a href="dir_include_dev.html#dir-include-dev">dev</a><ul><li class="lastChild">File <a href="file_include_dev_opacity.hpp.html#file-include-dev-opacity.hpp">opacity.hpp</a></li></ul></li><li>Directory <a href="dir_include_equations.html#dir-include-equations">equations</a><ul><li class="lastChild">File <a href="file_include_equations_equations.hpp.html#file-include-equations-equations.hpp">equations.hpp</a></li></ul></li><li>Directory <a href="dir_include_grid.html#dir-include-grid">grid</a><ul><li>File <a href="file_include_grid_cell_center.hpp.html#file-include-grid-cell-center.hpp">cell_center.hpp</a></li><li>File <a href="file_include_grid_cell_interface.hpp.html#file-include-grid-cell-interface.hpp">cell_interface.hpp</a></li><li>File <a href="file_include_grid_grid.hpp.html#file-include-grid-grid.hpp">grid.hpp</a></li><li>File <a href="file_include_grid_grid_builder.hpp.html#file-include-grid-grid-builder.hpp">grid_builder.hpp</a></li><li>File <a href="file_include_grid_grid_state.hpp.html#file-include-grid-grid-state.hpp">grid_state.hpp</a></li><li class="lastChild">File <a href="file_include_grid_quantity.hpp.html#file-include-grid-quantity.hpp">quantity.hpp</a></li></ul></li><li>Directory <a href="dir_include_io.html#dir-include-io">io</a><ul><li>File <a href="file_include_io_print_console.hpp.html#file-include-io-print-console.hpp">print_console.hpp</a></li><li class="lastChild">File <a href="file_include_io_profile_writer.hpp.html#file-include-io-profile-writer.hpp">profile_writer.hpp</a></li></ul></li><li>Directory <a href="dir_include_models.html#dir-include-models">models</a><ul><li>File <a href="file_include_models_convective_parameters.hpp.html#file-include-models-convective-parameters.hpp">convective_parameters.hpp</a></li><li>File <a href="file_include_models_envelope_builder.hpp.html#file-include-models-envelope-builder.hpp">envelope_builder.hpp</a></li><li>File <a href="file_include_models_initial_models.hpp.html#file-include-models-initial-models.hpp">initial_models.hpp</a></li><li class="lastChild">File <a href="file_include_models_stellar_input.hpp.html#file-include-models-stellar-input.hpp">stellar_input.hpp</a></li></ul></li><li>Directory <a href="dir_include_physics.html#dir-include-physics">physics</a><ul><li>File <a href="file_include_physics_eos.hpp.html#file-include-physics-eos.hpp">eos.hpp</a></li><li class="lastChild">File <a href="file_include_physics_opal_table.hpp.html#file-include-physics-opal-table.hpp">opal_table.hpp</a></li></ul></li><li class="lastChild">Directory <a href="dir_include_time_solver.html#dir-include-time-solver">time_solver</a><ul><li class="lastChild">File <a href="file_include_time_solver_time_solver.hpp.html#file-include-time-solver-time-solver.hpp">time_solver.hpp</a></li></ul></li></ul></li>
     </ul>
   </li><!-- only tree view element -->
 </ul><!-- /treeView file-treeView --></section>
@@ -273,6 +311,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="namespace_io.html">Namespace io</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="namespace_io.html#functions">Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="namespace_io.html#variables">Variables</a></li>
 </ul>
 </li>
 </ul>
@@ -280,7 +319,6 @@
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="namespace_model.html">Namespace model</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="namespace_model.html#detailed-description">Detailed Description</a></li>
 <li class="toctree-l2"><a class="reference internal" href="namespace_model.html#classes">Classes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="namespace_model.html#enums">Enums</a></li>
 </ul>
@@ -297,6 +335,25 @@
 </div>
 <div class="toctree-wrapper compound">
 <ul>
+<li class="toctree-l1"><a class="reference internal" href="namespace_opacity.html">Namespace opacity</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="namespace_opacity.html#classes">Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="namespace_opacity.html#enums">Enums</a></li>
+<li class="toctree-l2"><a class="reference internal" href="namespace_opacity.html#functions">Functions</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="namespace_physics.html">Namespace physics</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="namespace_physics.html#classes">Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="namespace_physics.html#functions">Functions</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="namespace_simulation_2d.html">Namespace simulation_2d</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="namespace_simulation_2d.html#classes">Classes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="namespace_simulation_2d.html#functions">Functions</a></li>
@@ -307,7 +364,6 @@
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="namespace_solver_params.html">Namespace solver_params</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="namespace_solver_params.html#detailed-description">Detailed Description</a></li>
 <li class="toctree-l2"><a class="reference internal" href="namespace_solver_params.html#enums">Enums</a></li>
 </ul>
 </li>
@@ -329,6 +385,8 @@
 <li class="toctree-l4"><a class="reference internal" href="structCellCenter.html#_CPPv4N10CellCenter11temperatureE"><code class="docutils literal notranslate"><span class="pre">temperature</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="structCellCenter.html#_CPPv4N10CellCenter7densityE"><code class="docutils literal notranslate"><span class="pre">density</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="structCellCenter.html#_CPPv4N10CellCenter8pressureE"><code class="docutils literal notranslate"><span class="pre">pressure</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="structCellCenter.html#_CPPv4N10CellCenter12gas_pressureE"><code class="docutils literal notranslate"><span class="pre">gas_pressure</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="structCellCenter.html#_CPPv4N10CellCenter12rad_pressureE"><code class="docutils literal notranslate"><span class="pre">rad_pressure</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="structCellCenter.html#_CPPv4N10CellCenter15internal_energyE"><code class="docutils literal notranslate"><span class="pre">internal_energy</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="structCellCenter.html#_CPPv4N10CellCenter7opacityE"><code class="docutils literal notranslate"><span class="pre">opacity</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="structCellCenter.html#_CPPv4N10CellCenter13heat_capacityE"><code class="docutils literal notranslate"><span class="pre">heat_capacity</span></code></a></li>
@@ -390,11 +448,33 @@
 <li class="toctree-l4"><a class="reference internal" href="structConfig.html#_CPPv4N6Config6t_initE"><code class="docutils literal notranslate"><span class="pre">t_init</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="structConfig.html#_CPPv4N6Config10dimensionsE"><code class="docutils literal notranslate"><span class="pre">dimensions</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="structConfig.html#_CPPv4N6Config4modeE"><code class="docutils literal notranslate"><span class="pre">mode</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="structConfig.html#_CPPv4N6Config10debug_modeE"><code class="docutils literal notranslate"><span class="pre">debug_mode</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="structConfig.html#_CPPv4N6Config18stellar_parametersE"><code class="docutils literal notranslate"><span class="pre">stellar_parameters</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="structConfig.html#_CPPv4N6Config5modelE"><code class="docutils literal notranslate"><span class="pre">model</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="structConfig.html#_CPPv4N6Config10solver_cfgE"><code class="docutils literal notranslate"><span class="pre">solver_cfg</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="structConfig.html#_CPPv4N6Config8grid_cfgE"><code class="docutils literal notranslate"><span class="pre">grid_cfg</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="structConfig.html#_CPPv4N6Config17model_builder_cfgE"><code class="docutils literal notranslate"><span class="pre">model_builder_cfg</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="structConfig.html#_CPPv4N6Config11grid_2d_cfgE"><code class="docutils literal notranslate"><span class="pre">grid_2d_cfg</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="structConfig.html#_CPPv4N6Config21convective_parametersE"><code class="docutils literal notranslate"><span class="pre">convective_parameters</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="structConfig.html#_CPPv4N6Config11physics_cfgE"><code class="docutils literal notranslate"><span class="pre">physics_cfg</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="structConvectiveParameters.html">Struct ConvectiveParameters</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="structConvectiveParameters.html#struct-documentation">Struct Documentation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="structConvectiveParameters.html#_CPPv420ConvectiveParameters"><code class="docutils literal notranslate"><span class="pre">ConvectiveParameters</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="structConvectiveParameters.html#_CPPv4N20ConvectiveParameters19alpha_mixing_lengthE"><code class="docutils literal notranslate"><span class="pre">alpha_mixing_length</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="structConvectiveParameters.html#_CPPv4N20ConvectiveParameters21alpha_convective_fluxE"><code class="docutils literal notranslate"><span class="pre">alpha_convective_flux</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="structConvectiveParameters.html#_CPPv4N20ConvectiveParameters22alpha_turbulent_energyE"><code class="docutils literal notranslate"><span class="pre">alpha_turbulent_energy</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="structConvectiveParameters.html#_CPPv4N20ConvectiveParameters24alpha_turbulent_pressureE"><code class="docutils literal notranslate"><span class="pre">alpha_turbulent_pressure</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="structConvectiveParameters.html#_CPPv4N20ConvectiveParameters20alpha_turbulent_fluxE"><code class="docutils literal notranslate"><span class="pre">alpha_turbulent_flux</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -479,6 +559,99 @@
 </div>
 <div class="toctree-wrapper compound">
 <ul>
+<li class="toctree-l1"><a class="reference internal" href="structModelBuilderConfig.html">Struct ModelBuilderConfig</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="structModelBuilderConfig.html#struct-documentation">Struct Documentation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="structModelBuilderConfig.html#_CPPv418ModelBuilderConfig"><code class="docutils literal notranslate"><span class="pre">ModelBuilderConfig</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="structModelBuilderConfig.html#_CPPv4N18ModelBuilderConfig8t_anchorE"><code class="docutils literal notranslate"><span class="pre">t_anchor</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="structModelBuilderConfig.html#_CPPv4N18ModelBuilderConfig7t_innerE"><code class="docutils literal notranslate"><span class="pre">t_inner</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="structModelBuilderConfig.html#_CPPv4N18ModelBuilderConfig14n_anchor_zonesE"><code class="docutils literal notranslate"><span class="pre">n_anchor_zones</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="structModelBuilderConfig.html#_CPPv4N18ModelBuilderConfig23initial_outer_zone_massE"><code class="docutils literal notranslate"><span class="pre">initial_outer_zone_mass</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="structopacity_1_1OpacityTable.html">Struct OpacityTable</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="structopacity_1_1OpacityTable.html#struct-documentation">Struct Documentation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="structopacity_1_1OpacityTable.html#_CPPv4N7opacity12OpacityTableE"><code class="docutils literal notranslate"><span class="pre">opacity::OpacityTable</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="structopacity_1_1OpacityTable.html#_CPPv4N7opacity12OpacityTable4typeE"><code class="docutils literal notranslate"><span class="pre">type</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="structopacity_1_1OpacityTable.html#_CPPv4N7opacity12OpacityTable10log_t_axisE"><code class="docutils literal notranslate"><span class="pre">log_t_axis</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="structopacity_1_1OpacityTable.html#_CPPv4N7opacity12OpacityTable10log_r_axisE"><code class="docutils literal notranslate"><span class="pre">log_r_axis</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="structopacity_1_1OpacityTable.html#_CPPv4N7opacity12OpacityTable14log_kappa_gridE"><code class="docutils literal notranslate"><span class="pre">log_kappa_grid</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="structOpacityTable.html">Struct OpacityTable</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="structOpacityTable.html#struct-documentation">Struct Documentation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="structOpacityTable.html#_CPPv412OpacityTable"><code class="docutils literal notranslate"><span class="pre">OpacityTable</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="structOpacityTable.html#_CPPv4NK12OpacityTable8containsEdd"><code class="docutils literal notranslate"><span class="pre">contains()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="structOpacityTable.html#_CPPv4NK12OpacityTable11interpolateEdd"><code class="docutils literal notranslate"><span class="pre">interpolate()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="structOpacityTable.html#_CPPv4N12OpacityTable1XE"><code class="docutils literal notranslate"><span class="pre">X</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="structOpacityTable.html#_CPPv4N12OpacityTable1YE"><code class="docutils literal notranslate"><span class="pre">Y</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="structOpacityTable.html#_CPPv4N12OpacityTable5ZbaseE"><code class="docutils literal notranslate"><span class="pre">Zbase</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="structOpacityTable.html#_CPPv4N12OpacityTable3dXCE"><code class="docutils literal notranslate"><span class="pre">dXC</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="structOpacityTable.html#_CPPv4N12OpacityTable3dXOE"><code class="docutils literal notranslate"><span class="pre">dXO</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="structOpacityTable.html#_CPPv4N12OpacityTable5log_rE"><code class="docutils literal notranslate"><span class="pre">log_r</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="structOpacityTable.html#_CPPv4N12OpacityTable5log_tE"><code class="docutils literal notranslate"><span class="pre">log_t</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="structOpacityTable.html#_CPPv4N12OpacityTable4gridE"><code class="docutils literal notranslate"><span class="pre">grid</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="structphysics_1_1EosState.html">Struct EosState</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="structphysics_1_1EosState.html#struct-documentation">Struct Documentation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="structphysics_1_1EosState.html#_CPPv4N7physics8EosStateE"><code class="docutils literal notranslate"><span class="pre">physics::EosState</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="structphysics_1_1EosState.html#_CPPv4N7physics8EosState7densityE"><code class="docutils literal notranslate"><span class="pre">density</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="structphysics_1_1EosState.html#_CPPv4N7physics8EosState15specific_volumeE"><code class="docutils literal notranslate"><span class="pre">specific_volume</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="structphysics_1_1EosState.html#_CPPv4N7physics8EosState12gas_pressureE"><code class="docutils literal notranslate"><span class="pre">gas_pressure</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="structphysics_1_1EosState.html#_CPPv4N7physics8EosState12rad_pressureE"><code class="docutils literal notranslate"><span class="pre">rad_pressure</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="structPhysicsConfig.html">Struct PhysicsConfig</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="structPhysicsConfig.html#struct-documentation">Struct Documentation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="structPhysicsConfig.html#_CPPv413PhysicsConfig"><code class="docutils literal notranslate"><span class="pre">PhysicsConfig</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="structPhysicsConfig.html#_CPPv4N13PhysicsConfig12opacity_typeE"><code class="docutils literal notranslate"><span class="pre">opacity_type</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="structPhysicsConfig.html#_CPPv4N13PhysicsConfig21mean_molecular_weightE"><code class="docutils literal notranslate"><span class="pre">mean_molecular_weight</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="structPhysicsConfig.html#_CPPv4N13PhysicsConfig26include_radiation_pressureE"><code class="docutils literal notranslate"><span class="pre">include_radiation_pressure</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="structPhysicsConfig.html#_CPPv4N13PhysicsConfig8eos_modeE"><code class="docutils literal notranslate"><span class="pre">eos_mode</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="structPhysicsConfig.html#_CPPv4N13PhysicsConfig15polytrope_indexE"><code class="docutils literal notranslate"><span class="pre">polytrope_index</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="structPhysicsConfig.html#_CPPv4N13PhysicsConfig18polytrope_constantE"><code class="docutils literal notranslate"><span class="pre">polytrope_constant</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="structQuantityTraits.html">Template Struct QuantityTraits</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="structQuantityTraits.html#struct-documentation">Struct Documentation</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="structQuantityTraits.html#_CPPv4I0E14QuantityTraits"><code class="docutils literal notranslate"><span class="pre">QuantityTraits</span></code></a><ul>
@@ -543,11 +716,19 @@
 <li class="toctree-l2"><a class="reference internal" href="structStellarInput.html#struct-documentation">Struct Documentation</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="structStellarInput.html#_CPPv412StellarInput"><code class="docutils literal notranslate"><span class="pre">StellarInput</span></code></a><ul>
 <li class="toctree-l4"><a class="reference internal" href="structStellarInput.html#_CPPv4N12StellarInput4massE"><code class="docutils literal notranslate"><span class="pre">mass</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="structStellarInput.html#_CPPv4N12StellarInput13mass_in_gramsE"><code class="docutils literal notranslate"><span class="pre">mass_in_grams</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="structStellarInput.html#_CPPv4N12StellarInput6radiusE"><code class="docutils literal notranslate"><span class="pre">radius</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="structStellarInput.html#_CPPv4N12StellarInput10luminosityE"><code class="docutils literal notranslate"><span class="pre">luminosity</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="structStellarInput.html#_CPPv4N12StellarInput5t_effE"><code class="docutils literal notranslate"><span class="pre">t_eff</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="structStellarInput.html#_CPPv4N12StellarInput11metallicityE"><code class="docutils literal notranslate"><span class="pre">metallicity</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="structStellarInput.html#_CPPv4N12StellarInput8grid_cfgE"><code class="docutils literal notranslate"><span class="pre">grid_cfg</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="structStellarInput.html#_CPPv4N12StellarInput8t_anchorE"><code class="docutils literal notranslate"><span class="pre">t_anchor</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="structStellarInput.html#_CPPv4N12StellarInput7t_innerE"><code class="docutils literal notranslate"><span class="pre">t_inner</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="structStellarInput.html#_CPPv4N12StellarInput14n_anchor_zonesE"><code class="docutils literal notranslate"><span class="pre">n_anchor_zones</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="structStellarInput.html#_CPPv4N12StellarInput23initial_outer_zone_massE"><code class="docutils literal notranslate"><span class="pre">initial_outer_zone_mass</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="structStellarInput.html#_CPPv4N12StellarInput24inner_mass_ratio_initialE"><code class="docutils literal notranslate"><span class="pre">inner_mass_ratio_initial</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="structStellarInput.html#_CPPv4N12StellarInput21convective_parametersE"><code class="docutils literal notranslate"><span class="pre">convective_parameters</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="structStellarInput.html#_CPPv4N12StellarInput11physics_cfgE"><code class="docutils literal notranslate"><span class="pre">physics_cfg</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -1381,11 +1562,11 @@
 </div>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="enum_namespacemodel_1a907c446eb5c73e13a7d76edd612fdfef.html">Enum Equation</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="enum_namespacemodel_1a907c446eb5c73e13a7d76edd612fdfef.html#enum-documentation">Enum Documentation</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="enum_namespacemodel_1a907c446eb5c73e13a7d76edd612fdfef.html#_CPPv4N5model8EquationE"><code class="docutils literal notranslate"><span class="pre">Equation</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="enum_namespacemodel_1a907c446eb5c73e13a7d76edd612fdfef.html#_CPPv4N5model8Equation9kScalar2dE"><code class="docutils literal notranslate"><span class="pre">kScalar2d</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="enum_namespacemodel_1a907c446eb5c73e13a7d76edd612fdfef.html#_CPPv4N5model8Equation8kEuler2dE"><code class="docutils literal notranslate"><span class="pre">kEuler2d</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="enum_config__params_8hpp_1a907c446eb5c73e13a7d76edd612fdfef.html">Enum Equation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="enum_config__params_8hpp_1a907c446eb5c73e13a7d76edd612fdfef.html#enum-documentation">Enum Documentation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="enum_config__params_8hpp_1a907c446eb5c73e13a7d76edd612fdfef.html#_CPPv4N5model8EquationE"><code class="docutils literal notranslate"><span class="pre">Equation</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="enum_config__params_8hpp_1a907c446eb5c73e13a7d76edd612fdfef.html#_CPPv4N5model8Equation9kScalar2dE"><code class="docutils literal notranslate"><span class="pre">kScalar2d</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enum_config__params_8hpp_1a907c446eb5c73e13a7d76edd612fdfef.html#_CPPv4N5model8Equation8kEuler2dE"><code class="docutils literal notranslate"><span class="pre">kEuler2d</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -1396,11 +1577,11 @@
 </div>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="enum_namespacemodel_1a3ae25a4a9f22dccaa99cdecb28ab4e0f.html">Enum InitialModel</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="enum_namespacemodel_1a3ae25a4a9f22dccaa99cdecb28ab4e0f.html#enum-documentation">Enum Documentation</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="enum_namespacemodel_1a3ae25a4a9f22dccaa99cdecb28ab4e0f.html#_CPPv4N5model12InitialModelE"><code class="docutils literal notranslate"><span class="pre">InitialModel</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="enum_namespacemodel_1a3ae25a4a9f22dccaa99cdecb28ab4e0f.html#_CPPv4N5model12InitialModel16kKelvinHelmholtzE"><code class="docutils literal notranslate"><span class="pre">kKelvinHelmholtz</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="enum_namespacemodel_1a3ae25a4a9f22dccaa99cdecb28ab4e0f.html#_CPPv4N5model12InitialModel9kConstantE"><code class="docutils literal notranslate"><span class="pre">kConstant</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="enum_config__params_8hpp_1a3ae25a4a9f22dccaa99cdecb28ab4e0f.html">Enum InitialModel</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="enum_config__params_8hpp_1a3ae25a4a9f22dccaa99cdecb28ab4e0f.html#enum-documentation">Enum Documentation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="enum_config__params_8hpp_1a3ae25a4a9f22dccaa99cdecb28ab4e0f.html#_CPPv4N5model12InitialModelE"><code class="docutils literal notranslate"><span class="pre">InitialModel</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="enum_config__params_8hpp_1a3ae25a4a9f22dccaa99cdecb28ab4e0f.html#_CPPv4N5model12InitialModel16kKelvinHelmholtzE"><code class="docutils literal notranslate"><span class="pre">kKelvinHelmholtz</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enum_config__params_8hpp_1a3ae25a4a9f22dccaa99cdecb28ab4e0f.html#_CPPv4N5model12InitialModel9kConstantE"><code class="docutils literal notranslate"><span class="pre">kConstant</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -1411,11 +1592,12 @@
 </div>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="enum_namespacesolver__params_1a2b577686b8ffe76b030025b230938ef2.html">Enum FluxCalculator</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="enum_namespacesolver__params_1a2b577686b8ffe76b030025b230938ef2.html#enum-documentation">Enum Documentation</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="enum_namespacesolver__params_1a2b577686b8ffe76b030025b230938ef2.html#_CPPv4N13solver_params14FluxCalculatorE"><code class="docutils literal notranslate"><span class="pre">FluxCalculator</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="enum_namespacesolver__params_1a2b577686b8ffe76b030025b230938ef2.html#_CPPv4N13solver_params14FluxCalculator19kLocalLaxFriedrichsE"><code class="docutils literal notranslate"><span class="pre">kLocalLaxFriedrichs</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="enum_namespacesolver__params_1a2b577686b8ffe76b030025b230938ef2.html#_CPPv4N13solver_params14FluxCalculator7kUpwindE"><code class="docutils literal notranslate"><span class="pre">kUpwind</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="enum_opal__table_8hpp_1acdfee38d79244a50e55b9267e23e9323.html">Enum TableType</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="enum_opal__table_8hpp_1acdfee38d79244a50e55b9267e23e9323.html#enum-documentation">Enum Documentation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="enum_opal__table_8hpp_1acdfee38d79244a50e55b9267e23e9323.html#_CPPv4N7opacity9TableTypeE"><code class="docutils literal notranslate"><span class="pre">TableType</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="enum_opal__table_8hpp_1acdfee38d79244a50e55b9267e23e9323.html#_CPPv4N7opacity9TableType4OPALE"><code class="docutils literal notranslate"><span class="pre">OPAL</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enum_opal__table_8hpp_1acdfee38d79244a50e55b9267e23e9323.html#_CPPv4N7opacity9TableType8FergusonE"><code class="docutils literal notranslate"><span class="pre">Ferguson</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enum_opal__table_8hpp_1acdfee38d79244a50e55b9267e23e9323.html#_CPPv4N7opacity9TableType7AESOPUSE"><code class="docutils literal notranslate"><span class="pre">AESOPUS</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -1426,11 +1608,11 @@
 </div>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="enum_namespacesolver__params_1ad745adffd0fab83afbaf692ea8165050.html">Enum Integrator</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="enum_namespacesolver__params_1ad745adffd0fab83afbaf692ea8165050.html#enum-documentation">Enum Documentation</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="enum_namespacesolver__params_1ad745adffd0fab83afbaf692ea8165050.html#_CPPv4N13solver_params10IntegratorE"><code class="docutils literal notranslate"><span class="pre">Integrator</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="enum_namespacesolver__params_1ad745adffd0fab83afbaf692ea8165050.html#_CPPv4N13solver_params10Integrator15kSspRungeKutta2E"><code class="docutils literal notranslate"><span class="pre">kSspRungeKutta2</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="enum_namespacesolver__params_1ad745adffd0fab83afbaf692ea8165050.html#_CPPv4N13solver_params10Integrator15kSspRungeKutta3E"><code class="docutils literal notranslate"><span class="pre">kSspRungeKutta3</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="enum_config__params_8hpp_1a2b577686b8ffe76b030025b230938ef2.html">Enum FluxCalculator</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="enum_config__params_8hpp_1a2b577686b8ffe76b030025b230938ef2.html#enum-documentation">Enum Documentation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="enum_config__params_8hpp_1a2b577686b8ffe76b030025b230938ef2.html#_CPPv4N13solver_params14FluxCalculatorE"><code class="docutils literal notranslate"><span class="pre">FluxCalculator</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="enum_config__params_8hpp_1a2b577686b8ffe76b030025b230938ef2.html#_CPPv4N13solver_params14FluxCalculator19kLocalLaxFriedrichsE"><code class="docutils literal notranslate"><span class="pre">kLocalLaxFriedrichs</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enum_config__params_8hpp_1a2b577686b8ffe76b030025b230938ef2.html#_CPPv4N13solver_params14FluxCalculator7kUpwindE"><code class="docutils literal notranslate"><span class="pre">kUpwind</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -1441,12 +1623,11 @@
 </div>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="enum_namespacesolver__params_1a8c444a3981a4189f632deff4104e1165.html">Enum Limiters</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="enum_namespacesolver__params_1a8c444a3981a4189f632deff4104e1165.html#enum-documentation">Enum Documentation</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="enum_namespacesolver__params_1a8c444a3981a4189f632deff4104e1165.html#_CPPv4N13solver_params8LimitersE"><code class="docutils literal notranslate"><span class="pre">Limiters</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="enum_namespacesolver__params_1a8c444a3981a4189f632deff4104e1165.html#_CPPv4N13solver_params8Limiters8kVanLeerE"><code class="docutils literal notranslate"><span class="pre">kVanLeer</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="enum_namespacesolver__params_1a8c444a3981a4189f632deff4104e1165.html#_CPPv4N13solver_params8Limiters7kMinModE"><code class="docutils literal notranslate"><span class="pre">kMinMod</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="enum_namespacesolver__params_1a8c444a3981a4189f632deff4104e1165.html#_CPPv4N13solver_params8Limiters9kSuperbeeE"><code class="docutils literal notranslate"><span class="pre">kSuperbee</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="enum_config__params_8hpp_1ad745adffd0fab83afbaf692ea8165050.html">Enum Integrator</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="enum_config__params_8hpp_1ad745adffd0fab83afbaf692ea8165050.html#enum-documentation">Enum Documentation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="enum_config__params_8hpp_1ad745adffd0fab83afbaf692ea8165050.html#_CPPv4N13solver_params10IntegratorE"><code class="docutils literal notranslate"><span class="pre">Integrator</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="enum_config__params_8hpp_1ad745adffd0fab83afbaf692ea8165050.html#_CPPv4N13solver_params10Integrator15kSspRungeKutta2E"><code class="docutils literal notranslate"><span class="pre">kSspRungeKutta2</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enum_config__params_8hpp_1ad745adffd0fab83afbaf692ea8165050.html#_CPPv4N13solver_params10Integrator15kSspRungeKutta3E"><code class="docutils literal notranslate"><span class="pre">kSspRungeKutta3</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -1457,11 +1638,27 @@
 </div>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="enum_namespacesolver__params_1abd53625bda2fa8124b0f37652e3340d1.html">Enum Reconstructor</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="enum_namespacesolver__params_1abd53625bda2fa8124b0f37652e3340d1.html#enum-documentation">Enum Documentation</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="enum_namespacesolver__params_1abd53625bda2fa8124b0f37652e3340d1.html#_CPPv4N13solver_params13ReconstructorE"><code class="docutils literal notranslate"><span class="pre">Reconstructor</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="enum_namespacesolver__params_1abd53625bda2fa8124b0f37652e3340d1.html#_CPPv4N13solver_params13Reconstructor16kPiecewiseLinearE"><code class="docutils literal notranslate"><span class="pre">kPiecewiseLinear</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="enum_namespacesolver__params_1abd53625bda2fa8124b0f37652e3340d1.html#_CPPv4N13solver_params13Reconstructor18kPiecewiseConstantE"><code class="docutils literal notranslate"><span class="pre">kPiecewiseConstant</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="enum_config__params_8hpp_1a8c444a3981a4189f632deff4104e1165.html">Enum Limiters</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="enum_config__params_8hpp_1a8c444a3981a4189f632deff4104e1165.html#enum-documentation">Enum Documentation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="enum_config__params_8hpp_1a8c444a3981a4189f632deff4104e1165.html#_CPPv4N13solver_params8LimitersE"><code class="docutils literal notranslate"><span class="pre">Limiters</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="enum_config__params_8hpp_1a8c444a3981a4189f632deff4104e1165.html#_CPPv4N13solver_params8Limiters8kVanLeerE"><code class="docutils literal notranslate"><span class="pre">kVanLeer</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enum_config__params_8hpp_1a8c444a3981a4189f632deff4104e1165.html#_CPPv4N13solver_params8Limiters7kMinModE"><code class="docutils literal notranslate"><span class="pre">kMinMod</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enum_config__params_8hpp_1a8c444a3981a4189f632deff4104e1165.html#_CPPv4N13solver_params8Limiters9kSuperbeeE"><code class="docutils literal notranslate"><span class="pre">kSuperbee</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="enum_config__params_8hpp_1abd53625bda2fa8124b0f37652e3340d1.html">Enum Reconstructor</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="enum_config__params_8hpp_1abd53625bda2fa8124b0f37652e3340d1.html#enum-documentation">Enum Documentation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="enum_config__params_8hpp_1abd53625bda2fa8124b0f37652e3340d1.html#_CPPv4N13solver_params13ReconstructorE"><code class="docutils literal notranslate"><span class="pre">Reconstructor</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="enum_config__params_8hpp_1abd53625bda2fa8124b0f37652e3340d1.html#_CPPv4N13solver_params13Reconstructor16kPiecewiseLinearE"><code class="docutils literal notranslate"><span class="pre">kPiecewiseLinear</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="enum_config__params_8hpp_1abd53625bda2fa8124b0f37652e3340d1.html#_CPPv4N13solver_params13Reconstructor18kPiecewiseConstantE"><code class="docutils literal notranslate"><span class="pre">kPiecewiseConstant</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -1530,9 +1727,31 @@
 </div>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="function_envelope__builder_8hpp_1a717c924bff07df3804ba31d1fc4a36af.html">Function envelope::build_static_envelope</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="function_envelope__builder_8hpp_1a717c924bff07df3804ba31d1fc4a36af.html#function-documentation">Function Documentation</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="function_envelope__builder_8hpp_1a717c924bff07df3804ba31d1fc4a36af.html#_CPPv4N8envelope21build_static_envelopeER4GridRK12StellarInput"><code class="docutils literal notranslate"><span class="pre">build_static_envelope()</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="function_envelope__builder_8hpp_1a481b59dd715d9d64a0fb26044d062648.html">Function envelope::buildStaticEnvelope</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_envelope__builder_8hpp_1a481b59dd715d9d64a0fb26044d062648.html#function-documentation">Function Documentation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="function_envelope__builder_8hpp_1a481b59dd715d9d64a0fb26044d062648.html#_CPPv4N8envelope19buildStaticEnvelopeER4GridRK12StellarInputRK6Config"><code class="docutils literal notranslate"><span class="pre">buildStaticEnvelope()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_envelope__builder_8hpp_1a2bc306ae2448400964b459725ffdbe22.html">Function envelope::calibrateDmN</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_envelope__builder_8hpp_1a2bc306ae2448400964b459725ffdbe22.html#function-documentation">Function Documentation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="function_envelope__builder_8hpp_1a2bc306ae2448400964b459725ffdbe22.html#_CPPv4N8envelope12calibrateDmNER4GridRK12StellarInputRK6ConfigRdi"><code class="docutils literal notranslate"><span class="pre">calibrateDmN()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_envelope__builder_8hpp_1a689831817079232958d8d6c7bdf5b4f3.html">Function envelope::calibrateH</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_envelope__builder_8hpp_1a689831817079232958d8d6c7bdf5b4f3.html#function-documentation">Function Documentation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="function_envelope__builder_8hpp_1a689831817079232958d8d6c7bdf5b4f3.html#_CPPv4N8envelope10calibrateHER4GridRK12StellarInputRK6ConfigdRdi"><code class="docutils literal notranslate"><span class="pre">calibrateH()</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -1585,6 +1804,28 @@
 </div>
 <div class="toctree-wrapper compound">
 <ul>
+<li class="toctree-l1"><a class="reference internal" href="function_print__console_8hpp_1a0fb04262fba5aecb24550b78c8fb79ed.html">Function io::baseName</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_print__console_8hpp_1a0fb04262fba5aecb24550b78c8fb79ed.html#function-documentation">Function Documentation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="function_print__console_8hpp_1a0fb04262fba5aecb24550b78c8fb79ed.html#_CPPv4N2io8baseNameERKNSt6stringE"><code class="docutils literal notranslate"><span class="pre">baseName()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_print__console_8hpp_1a0e31e4a6433331ae273efcd8cbaaf4ab.html">Function io::error</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_print__console_8hpp_1a0e31e4a6433331ae273efcd8cbaaf4ab.html#function-documentation">Function Documentation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="function_print__console_8hpp_1a0e31e4a6433331ae273efcd8cbaaf4ab.html#_CPPv4N2io5errorERKNSt6stringEPKcPKc"><code class="docutils literal notranslate"><span class="pre">error()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="function_print__console_8hpp_1a4342d8164f753f333c53321e183903bd.html">Function io::initializeRun</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="function_print__console_8hpp_1a4342d8164f753f333c53321e183903bd.html#function-documentation">Function Documentation</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="function_print__console_8hpp_1a4342d8164f753f333c53321e183903bd.html#_CPPv4N2io13initializeRunE6size_t"><code class="docutils literal notranslate"><span class="pre">initializeRun()</span></code></a></li>
@@ -1596,9 +1837,9 @@
 </div>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="function_print__console_8hpp_1a7d92cb77870273584c8475f1e6ce7d76.html">Function io::log_surface_boundary_summary</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="function_print__console_8hpp_1a7d92cb77870273584c8475f1e6ce7d76.html#function-documentation">Function Documentation</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="function_print__console_8hpp_1a7d92cb77870273584c8475f1e6ce7d76.html#_CPPv4N2io28log_surface_boundary_summaryEddddd"><code class="docutils literal notranslate"><span class="pre">log_surface_boundary_summary()</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="function_print__console_8hpp_1ac0f447179bfe9fbb434f8f177a8569a3.html">Function io::logOuterZoneSummary</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_print__console_8hpp_1ac0f447179bfe9fbb434f8f177a8569a3.html#function-documentation">Function Documentation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="function_print__console_8hpp_1ac0f447179bfe9fbb434f8f177a8569a3.html#_CPPv4N2io19logOuterZoneSummaryEddddddd"><code class="docutils literal notranslate"><span class="pre">logOuterZoneSummary()</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -1607,9 +1848,9 @@
 </div>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="function_print__console_8hpp_1a6fb0c84c52a53213fc01bd866221b2a5.html">Function io::placeholder_warning</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="function_print__console_8hpp_1a6fb0c84c52a53213fc01bd866221b2a5.html#function-documentation">Function Documentation</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="function_print__console_8hpp_1a6fb0c84c52a53213fc01bd866221b2a5.html#_CPPv4N2io19placeholder_warningERKNSt6stringERKNSt6stringERKNSt6stringE"><code class="docutils literal notranslate"><span class="pre">placeholder_warning()</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="function_print__console_8hpp_1a12f5a1d5008a9254053ab719fb6f7889.html">Function io::logSurfaceBoundarySummary</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_print__console_8hpp_1a12f5a1d5008a9254053ab719fb6f7889.html#function-documentation">Function Documentation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="function_print__console_8hpp_1a12f5a1d5008a9254053ab719fb6f7889.html#_CPPv4N2io25logSurfaceBoundarySummaryEddddd"><code class="docutils literal notranslate"><span class="pre">logSurfaceBoundarySummary()</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -1618,9 +1859,108 @@
 </div>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="function_print__console_8hpp_1ae70a37091917cb7b82ac872b190b33a3.html">Function io::unimplemented_warning</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="function_print__console_8hpp_1ae70a37091917cb7b82ac872b190b33a3.html#function-documentation">Function Documentation</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="function_print__console_8hpp_1ae70a37091917cb7b82ac872b190b33a3.html#_CPPv4N2io21unimplemented_warningERKNSt6stringERKNSt6stringE"><code class="docutils literal notranslate"><span class="pre">unimplemented_warning()</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="function_print__console_8hpp_1a0fb11de12ea20d9427b661e7e5a4e031.html">Function io::noteWarning</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_print__console_8hpp_1a0fb11de12ea20d9427b661e7e5a4e031.html#function-documentation">Function Documentation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="function_print__console_8hpp_1a0fb11de12ea20d9427b661e7e5a4e031.html#_CPPv4N2io11noteWarningERKNSt6stringERKNSt6stringERKNSt6stringE"><code class="docutils literal notranslate"><span class="pre">noteWarning()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_print__console_8hpp_1ac29b21aa8e3e864a45072ba09e8a0634.html">Function io::placeholderWarning</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_print__console_8hpp_1ac29b21aa8e3e864a45072ba09e8a0634.html#function-documentation">Function Documentation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="function_print__console_8hpp_1ac29b21aa8e3e864a45072ba09e8a0634.html#_CPPv4N2io18placeholderWarningERKNSt6stringERKNSt6stringERKNSt6stringE"><code class="docutils literal notranslate"><span class="pre">placeholderWarning()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_print__console_8hpp_1a3ec0e8348fc8375c0483b69d1071b6e2.html">Function io::printDebugIteration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_print__console_8hpp_1a3ec0e8348fc8375c0483b69d1071b6e2.html#function-documentation">Function Documentation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="function_print__console_8hpp_1a3ec0e8348fc8375c0483b69d1071b6e2.html#_CPPv4N2io19printDebugIterationEid"><code class="docutils literal notranslate"><span class="pre">printDebugIteration()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_print__console_8hpp_1afbed3863019eb39993aa1616c3a5c054.html">Function io::printFatalEnvelopeError</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_print__console_8hpp_1afbed3863019eb39993aa1616c3a5c054.html#function-documentation">Function Documentation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="function_print__console_8hpp_1afbed3863019eb39993aa1616c3a5c054.html#_CPPv4N2io23printFatalEnvelopeErrorEPKciddRK4Grid"><code class="docutils literal notranslate"><span class="pre">printFatalEnvelopeError()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_print__console_8hpp_1aa2dab05686b287357d8484ea90b1a69d.html">Function io::printProgressBox</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_print__console_8hpp_1aa2dab05686b287357d8484ea90b1a69d.html#function-documentation">Function Documentation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="function_print__console_8hpp_1aa2dab05686b287357d8484ea90b1a69d.html#_CPPv4N2io16printProgressBoxEiiddi"><code class="docutils literal notranslate"><span class="pre">printProgressBox()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_print__console_8hpp_1a2958efde18412b892caea3cfd104481a.html">Function io::printRunConfiguration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_print__console_8hpp_1a2958efde18412b892caea3cfd104481a.html#function-documentation">Function Documentation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="function_print__console_8hpp_1a2958efde18412b892caea3cfd104481a.html#_CPPv4N2io21printRunConfigurationERK12StellarInput"><code class="docutils literal notranslate"><span class="pre">printRunConfiguration()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_print__console_8hpp_1a30c29bcb5331cdf7d37b7363feb5dda4.html">Function io::printWarningSummary</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_print__console_8hpp_1a30c29bcb5331cdf7d37b7363feb5dda4.html#function-documentation">Function Documentation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="function_print__console_8hpp_1a30c29bcb5331cdf7d37b7363feb5dda4.html#_CPPv4N2io19printWarningSummaryEv"><code class="docutils literal notranslate"><span class="pre">printWarningSummary()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_print__console_8hpp_1a2e5abd2a1c306ab4eb3f88da7b237edd.html">Function io::printZoneStatus</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_print__console_8hpp_1a2e5abd2a1c306ab4eb3f88da7b237edd.html#function-documentation">Function Documentation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="function_print__console_8hpp_1a2e5abd2a1c306ab4eb3f88da7b237edd.html#_CPPv4N2io15printZoneStatusEiddddd"><code class="docutils literal notranslate"><span class="pre">printZoneStatus()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_print__console_8hpp_1a76430f47e189877b8509676b856a1cf5.html">Function io::todoWarning</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_print__console_8hpp_1a76430f47e189877b8509676b856a1cf5.html#function-documentation">Function Documentation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="function_print__console_8hpp_1a76430f47e189877b8509676b856a1cf5.html#_CPPv4N2io11todoWarningERKNSt6stringERKNSt6stringERKNSt6stringE"><code class="docutils literal notranslate"><span class="pre">todoWarning()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_print__console_8hpp_1aa238fd58bcb86bebfb856adf1c8cc67b.html">Function io::unimplementedWarning</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_print__console_8hpp_1aa238fd58bcb86bebfb856adf1c8cc67b.html#function-documentation">Function Documentation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="function_print__console_8hpp_1aa238fd58bcb86bebfb856adf1c8cc67b.html#_CPPv4N2io20unimplementedWarningERKNSt6stringERKNSt6stringE"><code class="docutils literal notranslate"><span class="pre">unimplementedWarning()</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -1643,6 +1983,83 @@
 <li class="toctree-l1"><a class="reference internal" href="function_config__parser_8hpp_1ab2d3612c42f5e2c0ca7d6c3fc24f0614.html">Function loadConfig</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="function_config__parser_8hpp_1ab2d3612c42f5e2c0ca7d6c3fc24f0614.html#function-documentation">Function Documentation</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="function_config__parser_8hpp_1ab2d3612c42f5e2c0ca7d6c3fc24f0614.html#_CPPv410loadConfigRKNSt6stringE"><code class="docutils literal notranslate"><span class="pre">loadConfig()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_opacity_8hpp_1ac6a42f730048cbf4f49e09245df9665e.html">Function loadOpacityTables</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_opacity_8hpp_1ac6a42f730048cbf4f49e09245df9665e.html#function-documentation">Function Documentation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="function_opacity_8hpp_1ac6a42f730048cbf4f49e09245df9665e.html#_CPPv417loadOpacityTablesv"><code class="docutils literal notranslate"><span class="pre">loadOpacityTables()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_opal__table_8hpp_1a03555a4a4bc11c8ddab9bb752dc35b25.html">Function opacity::interpolate</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_opal__table_8hpp_1a03555a4a4bc11c8ddab9bb752dc35b25.html#function-documentation">Function Documentation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="function_opal__table_8hpp_1a03555a4a4bc11c8ddab9bb752dc35b25.html#_CPPv4N7opacity11interpolateERK12OpacityTabledd"><code class="docutils literal notranslate"><span class="pre">interpolate()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_opal__table_8hpp_1a37166debd52472edd254045c68524603.html">Function opacity::load</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_opal__table_8hpp_1a37166debd52472edd254045c68524603.html#function-documentation">Function Documentation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="function_opal__table_8hpp_1a37166debd52472edd254045c68524603.html#_CPPv4N7opacity4loadERKNSt6stringE9TableType"><code class="docutils literal notranslate"><span class="pre">load()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_eos_8hpp_1a14a4d4f88d7de7fdcb5056b7a648f111.html">Function physics::calculateEos</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_eos_8hpp_1a14a4d4f88d7de7fdcb5056b7a648f111.html#function-documentation">Function Documentation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="function_eos_8hpp_1a14a4d4f88d7de7fdcb5056b7a648f111.html#_CPPv4N7physics12calculateEosEddRK12StellarInput"><code class="docutils literal notranslate"><span class="pre">calculateEos()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_eos_8hpp_1abd49d98ca2386d965d1968eae37032db.html">Function physics::eosIdealGas</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_eos_8hpp_1abd49d98ca2386d965d1968eae37032db.html#function-documentation">Function Documentation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="function_eos_8hpp_1abd49d98ca2386d965d1968eae37032db.html#_CPPv4N7physics11eosIdealGasEddRK12StellarInput"><code class="docutils literal notranslate"><span class="pre">eosIdealGas()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_eos_8hpp_1a21c84e5e75fdfd16c148b88136d33cfe.html">Function physics::eosPolytrope</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_eos_8hpp_1a21c84e5e75fdfd16c148b88136d33cfe.html#function-documentation">Function Documentation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="function_eos_8hpp_1a21c84e5e75fdfd16c148b88136d33cfe.html#_CPPv4N7physics12eosPolytropeEdRK12StellarInput"><code class="docutils literal notranslate"><span class="pre">eosPolytrope()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="function_opacity_8hpp_1a7c8ee4e6c859120ef694b9b1dc8fb6ef.html">Function selectTable</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_opacity_8hpp_1a7c8ee4e6c859120ef694b9b1dc8fb6ef.html#function-documentation">Function Documentation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="function_opacity_8hpp_1a7c8ee4e6c859120ef694b9b1dc8fb6ef.html#_CPPv411selectTableRKNSt6vectorI12OpacityTableEEddddd"><code class="docutils literal notranslate"><span class="pre">selectTable()</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -1739,6 +2156,17 @@
 </div>
 <div class="toctree-wrapper compound">
 <ul>
+<li class="toctree-l1"><a class="reference internal" href="function_opacity_8hpp_1a21cf847ff2b72d223399be87274bf76e.html">Function testOpacityLoad</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_opacity_8hpp_1a21cf847ff2b72d223399be87274bf76e.html#function-documentation">Function Documentation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="function_opacity_8hpp_1a21cf847ff2b72d223399be87274bf76e.html#_CPPv415testOpacityLoadv"><code class="docutils literal notranslate"><span class="pre">testOpacityLoad()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="function_profile__writer_8hpp_1a92e39358f1c190b8a7459afb2fa3f2df.html">Function write2DQuantityProfileToHdf5</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="function_profile__writer_8hpp_1a92e39358f1c190b8a7459afb2fa3f2df.html#function-documentation">Function Documentation</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="function_profile__writer_8hpp_1a92e39358f1c190b8a7459afb2fa3f2df.html#_CPPv428write2DQuantityProfileToHdf5RKNSt6stringERKNSt6vectorIdEERKNSt6vectorIdEERKNSt6vectorIdEEK6size_t"><code class="docutils literal notranslate"><span class="pre">write2DQuantityProfileToHdf5()</span></code></a></li>
@@ -1761,9 +2189,9 @@
 </div>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="function_profile__writer_8hpp_1a9d030f6947c666a5d614e062847b47e7.html">Function writeProfileToHdf5</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="function_profile__writer_8hpp_1a9d030f6947c666a5d614e062847b47e7.html#function-documentation">Function Documentation</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="function_profile__writer_8hpp_1a9d030f6947c666a5d614e062847b47e7.html#_CPPv418writeProfileToHdf5RKNSt6stringERKNSt6vectorIdEERKNSt6vectorIdEERKNSt6vectorIdEERKNSt6vectorIdEE"><code class="docutils literal notranslate"><span class="pre">writeProfileToHdf5()</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="function_profile__writer_8hpp_1a8d61ea3b78b7717da964a9f714495fae.html">Function writeProfileToHdf5</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="function_profile__writer_8hpp_1a8d61ea3b78b7717da964a9f714495fae.html#function-documentation">Function Documentation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="function_profile__writer_8hpp_1a8d61ea3b78b7717da964a9f714495fae.html#_CPPv418writeProfileToHdf5RKNSt6stringERKNSt6vectorIdEERKNSt6vectorIdEERKNSt6vectorIdEERKNSt6vectorIdEE"><code class="docutils literal notranslate"><span class="pre">writeProfileToHdf5()</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -1773,6 +2201,28 @@
 </section>
 <section id="variables">
 <h3>Variables<a class="headerlink" href="#variables" title="Link to this heading"></a></h3>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="variable_namespaceconstants_1a1c6d84500f73bf80363916f62d47d7b5.html">Variable constants::kBoltzmann</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="variable_namespaceconstants_1a1c6d84500f73bf80363916f62d47d7b5.html#variable-documentation">Variable Documentation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="variable_namespaceconstants_1a1c6d84500f73bf80363916f62d47d7b5.html#_CPPv4N9constants10kBoltzmannE"><code class="docutils literal notranslate"><span class="pre">kBoltzmann</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="variable_namespaceconstants_1a6eaefa9c7941348b47971d18b8acb580.html">Variable constants::kCmToRSun</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="variable_namespaceconstants_1a6eaefa9c7941348b47971d18b8acb580.html#variable-documentation">Variable Documentation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="variable_namespaceconstants_1a6eaefa9c7941348b47971d18b8acb580.html#_CPPv4N9constants9kCmToRSunE"><code class="docutils literal notranslate"><span class="pre">kCmToRSun</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="variable_namespaceconstants_1a27895881bf36c2968dada68de7fff4df.html">Variable constants::kEddingtonFactor</a><ul>
@@ -1786,9 +2236,42 @@
 </div>
 <div class="toctree-wrapper compound">
 <ul>
+<li class="toctree-l1"><a class="reference internal" href="variable_namespaceconstants_1ad74534a8a307a0847ced79cb5c6db35d.html">Variable constants::kG</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="variable_namespaceconstants_1ad74534a8a307a0847ced79cb5c6db35d.html#variable-documentation">Variable Documentation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="variable_namespaceconstants_1ad74534a8a307a0847ced79cb5c6db35d.html#_CPPv4N9constants2kGE"><code class="docutils literal notranslate"><span class="pre">kG</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="variable_namespaceconstants_1ab2dcf3983638edcc3f8eb0c0bc53b7da.html">Variable constants::kHydrogenMass</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="variable_namespaceconstants_1ab2dcf3983638edcc3f8eb0c0bc53b7da.html#variable-documentation">Variable Documentation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="variable_namespaceconstants_1ab2dcf3983638edcc3f8eb0c0bc53b7da.html#_CPPv4N9constants13kHydrogenMassE"><code class="docutils literal notranslate"><span class="pre">kHydrogenMass</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="variable_namespaceconstants_1aef6a70bf5e02077c823bda1eba37a769.html">Variable constants::kLSun</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="variable_namespaceconstants_1aef6a70bf5e02077c823bda1eba37a769.html#variable-documentation">Variable Documentation</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="variable_namespaceconstants_1aef6a70bf5e02077c823bda1eba37a769.html#_CPPv4N9constants5kLSunE"><code class="docutils literal notranslate"><span class="pre">kLSun</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="variable_namespaceconstants_1a911b93d65f47c77005ce46d7756b9beb.html">Variable constants::kMeanMolecularWeight</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="variable_namespaceconstants_1a911b93d65f47c77005ce46d7756b9beb.html#variable-documentation">Variable Documentation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="variable_namespaceconstants_1a911b93d65f47c77005ce46d7756b9beb.html#_CPPv4N9constants20kMeanMolecularWeightE"><code class="docutils literal notranslate"><span class="pre">kMeanMolecularWeight</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -1819,9 +2302,42 @@
 </div>
 <div class="toctree-wrapper compound">
 <ul>
+<li class="toctree-l1"><a class="reference internal" href="variable_namespaceconstants_1a496f65032ce6f2494b13e3a633779433.html">Variable constants::kRadiationConstant</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="variable_namespaceconstants_1a496f65032ce6f2494b13e3a633779433.html#variable-documentation">Variable Documentation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="variable_namespaceconstants_1a496f65032ce6f2494b13e3a633779433.html#_CPPv4N9constants18kRadiationConstantE"><code class="docutils literal notranslate"><span class="pre">kRadiationConstant</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="variable_namespaceconstants_1aaa7f8b6965e251fbcfb0eb28d83d5cee.html">Variable constants::kSpeedOfLight</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="variable_namespaceconstants_1aaa7f8b6965e251fbcfb0eb28d83d5cee.html#variable-documentation">Variable Documentation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="variable_namespaceconstants_1aaa7f8b6965e251fbcfb0eb28d83d5cee.html#_CPPv4N9constants13kSpeedOfLightE"><code class="docutils literal notranslate"><span class="pre">kSpeedOfLight</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="variable_namespaceconstants_1a1f9529591ca6dbdc20aaa3b8105da607.html">Variable constants::kStefanBoltzmann</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="variable_namespaceconstants_1a1f9529591ca6dbdc20aaa3b8105da607.html#variable-documentation">Variable Documentation</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="variable_namespaceconstants_1a1f9529591ca6dbdc20aaa3b8105da607.html#_CPPv4N9constants16kStefanBoltzmannE"><code class="docutils literal notranslate"><span class="pre">kStefanBoltzmann</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="variable_print__console_8hpp_1ab1553bec8efb109ecf49dd585408ef0a.html">Variable io::warning_log</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="variable_print__console_8hpp_1ab1553bec8efb109ecf49dd585408ef0a.html#variable-documentation">Variable Documentation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="variable_print__console_8hpp_1ab1553bec8efb109ecf49dd585408ef0a.html#_CPPv4N2io11warning_logE"><code class="docutils literal notranslate"><span class="pre">warning_log</span></code></a></li>
 </ul>
 </li>
 </ul>

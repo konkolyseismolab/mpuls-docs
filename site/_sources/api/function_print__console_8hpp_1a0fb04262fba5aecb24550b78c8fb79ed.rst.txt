@@ -1,0 +1,14 @@
+.. _exhale_function_print__console_8hpp_1a0fb04262fba5aecb24550b78c8fb79ed:
+
+Function io::baseName
+=====================
+
+- Defined in :ref:`file_include_io_print_console.hpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: io::baseName(const std::string&)
+   :project: MPULS

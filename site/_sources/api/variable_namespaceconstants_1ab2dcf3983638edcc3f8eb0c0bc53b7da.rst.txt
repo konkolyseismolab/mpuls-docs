@@ -1,0 +1,14 @@
+.. _exhale_variable_namespaceconstants_1ab2dcf3983638edcc3f8eb0c0bc53b7da:
+
+Variable constants::kHydrogenMass
+=================================
+
+- Defined in :ref:`file_include_core_constants.hpp`
+
+
+Variable Documentation
+----------------------
+
+
+.. doxygenvariable:: constants::kHydrogenMass
+   :project: MPULS

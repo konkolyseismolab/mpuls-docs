@@ -9,6 +9,7 @@
   <title>Namespace simulation_2d &mdash; Modular PULsation Suite  documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=4ae1632d" />
       <link rel="stylesheet" type="text/css" href="../_static/collapsible-lists/css/tree_view.css?v=a885cde7" />
       <link rel="stylesheet" type="text/css" href="../_static/compact-api.css?v=bfcdbbe1" />
 
@@ -61,6 +62,7 @@
 <li class="toctree-l3 current"><a class="reference internal" href="library_root.html#namespaces">Namespaces</a><ul class="current">
 <li class="toctree-l4"><a class="reference internal" href="namespace_component_tags.html">Namespace component_tags</a></li>
 <li class="toctree-l4"><a class="reference internal" href="namespace_constants.html">Namespace constants</a></li>
+<li class="toctree-l4"><a class="reference internal" href="namespace_cuda_backend.html">Namespace cuda_backend</a></li>
 <li class="toctree-l4"><a class="reference internal" href="namespace_envelope.html">Namespace envelope</a></li>
 <li class="toctree-l4"><a class="reference internal" href="namespace_grid.html">Namespace grid</a></li>
 <li class="toctree-l4"><a class="reference internal" href="namespace_io.html">Namespace io</a></li>
@@ -122,23 +124,20 @@
 <ul class="simple">
 <li><p><a class="reference internal" href="structsimulation__2d_1_1always__false.html#exhale-struct-structsimulation-2d-1-1always-false"><span class="std std-ref">Template Struct always_false</span></a></p></li>
 <li><p><a class="reference internal" href="structsimulation__2d_1_1EquationTraits.html#exhale-struct-structsimulation-2d-1-1equationtraits"><span class="std std-ref">Template Struct EquationTraits</span></a></p></li>
-<li><p><a class="reference internal" href="classsimulation__2d_1_1ComponentBase.html#exhale-class-classsimulation-2d-1-1componentbase"><span class="std std-ref">Class ComponentBase</span></a></p></li>
-<li><p><a class="reference internal" href="classsimulation__2d_1_1ComponentWrapper.html#exhale-class-classsimulation-2d-1-1componentwrapper"><span class="std std-ref">Template Class ComponentWrapper</span></a></p></li>
 <li><p><a class="reference internal" href="classsimulation__2d_1_1Simulation2d.html#exhale-class-classsimulation-2d-1-1simulation2d"><span class="std std-ref">Class Simulation2d</span></a></p></li>
-<li><p><a class="reference internal" href="classsimulation__2d_1_1SolverBase.html#exhale-class-classsimulation-2d-1-1solverbase"><span class="std std-ref">Class SolverBase</span></a></p></li>
-<li><p><a class="reference internal" href="classsimulation__2d_1_1SolverWrapper.html#exhale-class-classsimulation-2d-1-1solverwrapper"><span class="std std-ref">Template Class SolverWrapper</span></a></p></li>
 </ul>
 </section>
 <section id="functions">
 <h2>Functions<a class="headerlink" href="#functions" title="Link to this heading"></a></h2>
 <ul class="simple">
-<li><p><a class="reference internal" href="function_simulation2d_8hpp_1a50087ef639129db722c485e48f7b8f52.html#exhale-function-simulation2d-8hpp-1a50087ef639129db722c485e48f7b8f52"><span class="std std-ref">Template Function simulation_2d::createEquation</span></a></p></li>
-<li><p><a class="reference internal" href="function_simulation2d_8hpp_1add0bbce5253a56fd01b6eaccd26798e4.html#exhale-function-simulation2d-8hpp-1add0bbce5253a56fd01b6eaccd26798e4"><span class="std std-ref">Template Function simulation_2d::createFluxCalculator</span></a></p></li>
-<li><p><a class="reference internal" href="function_simulation2d_8hpp_1ad0c0db2ca932178a8409c41eb8fd41ac.html#exhale-function-simulation2d-8hpp-1ad0c0db2ca932178a8409c41eb8fd41ac"><span class="std std-ref">Template Function simulation_2d::createLimiter</span></a></p></li>
-<li><p><a class="reference internal" href="function_simulation2d_8hpp_1a484cc9916a24c5f348ba5c3dc1411803.html#exhale-function-simulation2d-8hpp-1a484cc9916a24c5f348ba5c3dc1411803"><span class="std std-ref">Template Function simulation_2d::createReconstruction</span></a></p></li>
-<li><p><a class="reference internal" href="function_simulation2d_8hpp_1a50879ceb8176df5414e6b6bded61d1c5.html#exhale-function-simulation2d-8hpp-1a50879ceb8176df5414e6b6bded61d1c5"><span class="std std-ref">Template Function simulation_2d::createTimeSolver</span></a></p></li>
-<li><p><a class="reference internal" href="function_simulation2d_8hpp_1add987f6758214e6b394039ef157a6573.html#exhale-function-simulation2d-8hpp-1add987f6758214e6b394039ef157a6573"><span class="std std-ref">Template Function simulation_2d::getQfromEq</span></a></p></li>
-<li><p><a class="reference internal" href="function_simulation2d_8hpp_1ad8ed7bbcf51a98c91f1725d21cc2123e.html#exhale-function-simulation2d-8hpp-1ad8ed7bbcf51a98c91f1725d21cc2123e"><span class="std std-ref">Template Function simulation_2d::solver_factory</span></a></p></li>
+<li><p><a class="reference internal" href="function_simulation__factory_8hpp_1a50087ef639129db722c485e48f7b8f52.html#exhale-function-simulation-factory-8hpp-1a50087ef639129db722c485e48f7b8f52"><span class="std std-ref">Template Function simulation_2d::createEquation</span></a></p></li>
+<li><p><a class="reference internal" href="function_simulation__factory_8hpp_1add0bbce5253a56fd01b6eaccd26798e4.html#exhale-function-simulation-factory-8hpp-1add0bbce5253a56fd01b6eaccd26798e4"><span class="std std-ref">Template Function simulation_2d::createFluxCalculator</span></a></p></li>
+<li><p><a class="reference internal" href="function_simulation__factory_8hpp_1ad0c0db2ca932178a8409c41eb8fd41ac.html#exhale-function-simulation-factory-8hpp-1ad0c0db2ca932178a8409c41eb8fd41ac"><span class="std std-ref">Template Function simulation_2d::createLimiter</span></a></p></li>
+<li><p><a class="reference internal" href="function_simulation__factory_8hpp_1a484cc9916a24c5f348ba5c3dc1411803.html#exhale-function-simulation-factory-8hpp-1a484cc9916a24c5f348ba5c3dc1411803"><span class="std std-ref">Template Function simulation_2d::createReconstruction</span></a></p></li>
+<li><p><a class="reference internal" href="function_simulation__factory_8hpp_1a50879ceb8176df5414e6b6bded61d1c5.html#exhale-function-simulation-factory-8hpp-1a50879ceb8176df5414e6b6bded61d1c5"><span class="std std-ref">Template Function simulation_2d::createTimeSolver</span></a></p></li>
+<li><p><a class="reference internal" href="function_simulation__factory_8hpp_1a5411464c2c87a045c1f5cb4f571bf36c.html#exhale-function-simulation-factory-8hpp-1a5411464c2c87a045c1f5cb4f571bf36c"><span class="std std-ref">Template Function simulation_2d::generateBoundary</span></a></p></li>
+<li><p><a class="reference internal" href="function_simulation__factory_8hpp_1add987f6758214e6b394039ef157a6573.html#exhale-function-simulation-factory-8hpp-1add987f6758214e6b394039ef157a6573"><span class="std std-ref">Template Function simulation_2d::getQfromEq</span></a></p></li>
+<li><p><a class="reference internal" href="function_simulation__factory_8hpp_1aad07bec136bfaf2e319e5f7bd9556caf.html#exhale-function-simulation-factory-8hpp-1aad07bec136bfaf2e319e5f7bd9556caf"><span class="std std-ref">Template Function simulation_2d::solver_factory</span></a></p></li>
 </ul>
 </section>
 </section>

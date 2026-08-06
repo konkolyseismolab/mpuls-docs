@@ -9,6 +9,7 @@
   <title>MPULS &mdash; Modular PULsation Suite  documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="_static/graphviz.css?v=4ae1632d" />
       <link rel="stylesheet" type="text/css" href="_static/collapsible-lists/css/tree_view.css?v=a885cde7" />
       <link rel="stylesheet" type="text/css" href="_static/compact-api.css?v=bfcdbbe1" />
 
@@ -90,6 +91,10 @@ parallel computations on various backends in reasonable calculation times.</p>
 <li><p>Solving of hyperbolic equation systems with a general solver up to 2nd order on 2D spherical grids.</p></li>
 <li><p>The solver is modular, and can be chosen at runtime.</p></li>
 <li><p>Additional hyperbolic filtering can be applied to supress high wavenumber numeric noise.</p></li>
+<li><p>Two available implementation:
++ The reference impelementation gives a baseline single-core CPU method predominantly for testing
++ The high-performance CUDA implementation utilizes modern GPU hardwares.</p></li>
+<li><p>A static model program for generating 1D stellar models with politropic EOS.</p></li>
 </ul>
 </dd>
 </dl>

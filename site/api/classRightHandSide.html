@@ -9,6 +9,7 @@
   <title>Template Class RightHandSide &mdash; Modular PULsation Suite  documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=4ae1632d" />
       <link rel="stylesheet" type="text/css" href="../_static/collapsible-lists/css/tree_view.css?v=a885cde7" />
       <link rel="stylesheet" type="text/css" href="../_static/compact-api.css?v=bfcdbbe1" />
 
@@ -83,12 +84,18 @@
 <li class="toctree-l4"><a class="reference internal" href="structStellarParameters.html">Struct StellarParameters</a></li>
 <li class="toctree-l4"><a class="reference internal" href="classBoundary2DPerHorRigidRad.html">Template Class Boundary2DPerHorRigidRad</a></li>
 <li class="toctree-l4"><a class="reference internal" href="classBoundary2DPeriodic.html">Template Class Boundary2DPeriodic</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classBoundaryCond2d.html">Template Class BoundaryCond2d</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classBoundaryCondBase.html">Template Class BoundaryCondBase</a></li>
 <li class="toctree-l4"><a class="reference internal" href="classCFL.html">Template Class CFL</a></li>
 <li class="toctree-l4"><a class="reference internal" href="classCIRFlux.html">Template Class CIRFlux</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classComponentBase.html">Class ComponentBase</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classComponentWrapper.html">Template Class ComponentWrapper</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classcuda__backend_1_1CudaSimulation2d.html">Class CudaSimulation2d</a></li>
 <li class="toctree-l4"><a class="reference internal" href="classDiffusion2d.html">Template Class Diffusion2d</a></li>
 <li class="toctree-l4"><a class="reference internal" href="classEquationBase.html">Template Class EquationBase</a></li>
 <li class="toctree-l4"><a class="reference internal" href="classEuler2d.html">Template Class Euler2d</a></li>
 <li class="toctree-l4"><a class="reference internal" href="classFluxOperator.html">Template Class FluxOperator</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classFreeSlipBoundary.html">Template Class FreeSlipBoundary</a></li>
 <li class="toctree-l4"><a class="reference internal" href="classGrid2d.html">Template Class Grid2d</a></li>
 <li class="toctree-l4"><a class="reference internal" href="classGridDimensions2d.html">Template Class GridDimensions2d</a></li>
 <li class="toctree-l4"><a class="reference internal" href="classHyperDiffusion.html">Template Class HyperDiffusion</a></li>
@@ -96,23 +103,25 @@
 <li class="toctree-l4"><a class="reference internal" href="classLLFflux.html">Template Class LLFflux</a></li>
 <li class="toctree-l4"><a class="reference internal" href="classMinMod.html">Template Class MinMod</a></li>
 <li class="toctree-l4"><a class="reference internal" href="classPCM.html">Template Class PCM</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classPeriodicBoundary.html">Template Class PeriodicBoundary</a></li>
 <li class="toctree-l4"><a class="reference internal" href="classPLM.html">Template Class PLM</a></li>
 <li class="toctree-l4"><a class="reference internal" href="classQuantityBase.html">Template Class QuantityBase</a></li>
 <li class="toctree-l4"><a class="reference internal" href="classReconstructionBase.html">Template Class ReconstructionBase</a></li>
 <li class="toctree-l4 current"><a class="current reference internal" href="#">Template Class RightHandSide</a></li>
 <li class="toctree-l4"><a class="reference internal" href="classRightHandSideDecorator.html">Template Class RightHandSideDecorator</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classRigidBoundary.html">Template Class RigidBoundary</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classRigidBoundary_3_01QuantityBase_3_01D_00_014_01_4_01_4.html">Template Class RigidBoundary&lt; QuantityBase&lt; D, 4 &gt; &gt;</a></li>
 <li class="toctree-l4"><a class="reference internal" href="classScalarTransport2d.html">Template Class ScalarTransport2d</a></li>
 <li class="toctree-l4"><a class="reference internal" href="classSimpleSource.html">Template Class SimpleSource</a></li>
-<li class="toctree-l4"><a class="reference internal" href="classsimulation__2d_1_1ComponentBase.html">Class ComponentBase</a></li>
-<li class="toctree-l4"><a class="reference internal" href="classsimulation__2d_1_1ComponentWrapper.html">Template Class ComponentWrapper</a></li>
 <li class="toctree-l4"><a class="reference internal" href="classsimulation__2d_1_1Simulation2d.html">Class Simulation2d</a></li>
-<li class="toctree-l4"><a class="reference internal" href="classsimulation__2d_1_1SolverBase.html">Class SolverBase</a></li>
-<li class="toctree-l4"><a class="reference internal" href="classsimulation__2d_1_1SolverWrapper.html">Template Class SolverWrapper</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classSolverBase.html">Class SolverBase</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classSolverWrapper.html">Template Class SolverWrapper</a></li>
 <li class="toctree-l4"><a class="reference internal" href="classSSP__RK2.html">Template Class SSP_RK2</a></li>
 <li class="toctree-l4"><a class="reference internal" href="classSSP__RK3.html">Template Class SSP_RK3</a></li>
 <li class="toctree-l4"><a class="reference internal" href="classSuperbee.html">Template Class Superbee</a></li>
 <li class="toctree-l4"><a class="reference internal" href="classTimeSolverBase.html">Template Class TimeSolverBase</a></li>
 <li class="toctree-l4"><a class="reference internal" href="classUnimplementedError.html">Class UnimplementedError</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classUnsupportedError.html">Class UnsupportedError</a></li>
 <li class="toctree-l4"><a class="reference internal" href="classVanLeer.html">Template Class VanLeer</a></li>
 </ul>
 </li>
@@ -160,7 +169,19 @@
 <dl class="cpp class">
 <dt class="sig sig-object cpp" id="_CPPv4I_12QuantityType000_12EquationTypeI1QEE13RightHandSide">
 <span id="_CPPv3I_12QuantityType000_12EquationTypeI1QEE13RightHandSide"></span><span id="_CPPv2I_12QuantityType000_12EquationTypeI1QEE13RightHandSide"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">QuantityType</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Q</span></span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">FluxOperatorTypeRad</span></span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">FluxOperatorTypeHor</span></span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">SourceType</span></span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">EquationType</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4I_12QuantityType000_12EquationTypeI1QEE13RightHandSide" title="RightHandSide::Q"><span class="n"><span class="pre">Q</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Equation</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="classRightHandSide"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">RightHandSide</span></span></span><a class="headerlink" href="#_CPPv4I_12QuantityType000_12EquationTypeI1QEE13RightHandSide" title="Link to this definition"></a><br /></dt>
-<dd><p>The basic two-dimensional semi-difference operator of the right-hand-side of the PDE. </p>
+<dd><p>Collaboration diagram for RightHandSide:</p>
+<figure class="align-default">
+<div align="center" class="align-center"><div class="graphviz"><img src="../_images/graphviz-51fe324378812c45e03b2373ac0d3e96230de925.png" alt="digraph {
+    graph [bgcolor=&quot;#00000000&quot;]
+    node [shape=rectangle style=filled fillcolor=&quot;#FFFFFF&quot; font=Helvetica padding=2]
+    edge [color=&quot;#1414CE&quot;]
+    &quot;2&quot; [label=&quot;Equation&quot; tooltip=&quot;Equation&quot;]
+    &quot;1&quot; [label=&quot;RightHandSide&lt; Q, FluxOperatorTypeRad, FluxOperatorTypeHor, SourceType, Equation &gt;&quot; tooltip=&quot;RightHandSide&lt; Q, FluxOperatorTypeRad, FluxOperatorTypeHor, SourceType, Equation &gt;&quot; fillcolor=&quot;#BFBFBF&quot;]
+    &quot;1&quot; -&gt; &quot;2&quot; [dir=forward tooltip=&quot;usage&quot;]
+}" class="graphviz" /></div>
+</div>
+</figure>
+<p>The basic two-dimensional semi-difference operator of the right-hand-side of the PDE. </p>
 <p>The twod-imensional advection problem in spherical coordinates consists of three operator:<ul class="simple">
 <li><p>vertical advection <span class="math notranslate nohighlight">\(\mathcal F\)</span></p></li>
 <li><p>horizontal advection &#64;f\mathcal G <span class="math notranslate nohighlight">\(

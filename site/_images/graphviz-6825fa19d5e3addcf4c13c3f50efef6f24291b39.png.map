@@ -1,0 +1,5 @@
+<map id="%3" name="%3">
+<area shape="rect" id="node1" title="CIRFlux&lt; Q, Dir, Eq &gt;" alt="" coords="5,5,240,53"/>
+<area shape="rect" id="node2" title="Eq" alt="" coords="87,101,159,149"/>
+<area shape="poly" id="edge1" title="usage" alt="" coords="125,54,125,88,120,88,120,54"/>
+</map>

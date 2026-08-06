@@ -7,3 +7,4 @@ Here we go through all the physics concepts that are related to MPULS.
    :maxdepth: 1
 
    equations
+   boundary

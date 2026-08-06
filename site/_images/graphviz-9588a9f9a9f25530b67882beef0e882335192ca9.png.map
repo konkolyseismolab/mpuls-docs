@@ -1,0 +1,46 @@
+<map id="%3" name="%3">
+<area shape="rect" id="node1" title="ComponentBase" alt="" coords="2026,389,2203,437"/>
+<area shape="rect" id="node2" title="Config" alt="" coords="947,197,1029,245"/>
+<area shape="rect" id="node3" title="ConvectiveParameters" alt="" coords="5,293,243,341"/>
+<area shape="poly" id="edge8" title="usage" alt="" coords="947,228,661,251,463,271,256,296,256,290,462,266,661,246,946,223"/>
+<area shape="rect" id="node5" title="Grid2Dconfig" alt="" coords="266,293,414,341"/>
+<area shape="poly" id="edge7" title="usage" alt="" coords="947,229,729,251,581,271,428,296,427,291,580,265,728,246,946,223"/>
+<area shape="rect" id="node6" title="GridConfig" alt="" coords="439,293,564,341"/>
+<area shape="poly" id="edge5" title="usage" alt="" coords="947,231,788,255,578,296,577,291,787,249,946,225"/>
+<area shape="rect" id="node7" title="ModelBuilderConfig" alt="" coords="589,293,801,341"/>
+<area shape="poly" id="edge6" title="usage" alt="" coords="947,238,780,292,778,287,946,233"/>
+<area shape="rect" id="node8" title="PhysicsConfig" alt="" coords="824,293,979,341"/>
+<area shape="poly" id="edge9" title="usage" alt="" coords="969,248,934,285,930,281,965,244"/>
+<area shape="rect" id="node10" title="SolverConfig" alt="" coords="1003,293,1147,341"/>
+<area shape="poly" id="edge4" title="usage" alt="" coords="1011,244,1046,281,1042,285,1007,248"/>
+<area shape="rect" id="node11" title="StellarParameters" alt="" coords="1171,293,1367,341"/>
+<area shape="poly" id="edge2" title="usage" alt="" coords="1030,234,1189,286,1187,292,1029,239"/>
+<area shape="rect" id="node13" title="model::ModelConfig" alt="" coords="1442,293,1654,341"/>
+<area shape="poly" id="edge3" title="usage" alt="" coords="1030,226,1424,291,1429,291,1428,297,1424,296,1029,232"/>
+<area shape="rect" id="node16" title="std::string" alt="" coords="841,389,962,437"/>
+<area shape="poly" id="edge1" title="usage" alt="" coords="1030,219,1148,222,1218,227,1286,236,1343,251,1366,261,1384,273,1395,287,1399,304,1395,322,1381,343,1353,364,1312,380,1261,392,1204,401,1083,412,976,415,976,410,1083,406,1203,396,1260,387,1310,375,1350,359,1377,339,1390,320,1394,304,1390,289,1380,277,1364,266,1342,256,1285,241,1218,232,1148,227,1029,225"/>
+<area shape="rect" id="node4" title="Equation" alt="" coords="1286,389,1394,437"/>
+<area shape="poly" id="edge10" title="usage" alt="" coords="565,336,577,339,709,370,828,395,827,400,708,375,575,344,564,341"/>
+<area shape="poly" id="edge11" title="usage" alt="" coords="904,342,904,376,899,376,899,342"/>
+<area shape="rect" id="node9" title="SolverBase" alt="" coords="1678,293,1807,341"/>
+<area shape="rect" id="node12" title="cuda_backend::CudaSimulation2d" alt="" coords="1722,5,2065,53"/>
+<area shape="rect" id="node14" title="simulation_2d::Simulation2d" alt="" coords="1654,101,1949,149"/>
+<area shape="poly" id="edge12" title="public&#45;inheritance" alt="" coords="1872,56,1835,93,1831,90,1869,52"/>
+<area shape="rect" id="node21" title="std::vector&lt; std::unique_ptr&lt; ComponentBase &gt; &gt;" alt="" coords="1859,197,2371,245"/>
+<area shape="poly" id="edge13" title="usage" alt="" coords="1922,51,2079,186,2075,190,1918,56"/>
+<area shape="poly" id="edge14" title="usage" alt="" coords="1498,344,1404,386,1402,381,1496,339"/>
+<area shape="rect" id="node19" title="std::vector&lt; Boundary &gt;" alt="" coords="1418,389,1678,437"/>
+<area shape="poly" id="edge16" title="usage" alt="" coords="1551,342,1551,376,1545,376,1545,342"/>
+<area shape="rect" id="node20" title="std::vector&lt; double &gt;" alt="" coords="1703,389,1935,437"/>
+<area shape="poly" id="edge15" title="usage" alt="" coords="1615,339,1741,382,1739,387,1613,344"/>
+<area shape="poly" id="edge19" title="usage" alt="" coords="1654,146,1044,216,1043,211,1653,141"/>
+<area shape="rect" id="node18" title="std::unique_ptr&lt; SolverBase &gt;" alt="" coords="1515,197,1834,245"/>
+<area shape="poly" id="edge18" title="usage" alt="" coords="1772,152,1718,191,1715,187,1768,148"/>
+<area shape="poly" id="edge17" title="usage" alt="" coords="1878,147,2026,191,2024,196,1877,152"/>
+<area shape="rect" id="node15" title="std::basic_string&lt; Char &gt;" alt="" coords="767,485,1036,533"/>
+<area shape="poly" id="edge20" title="public&#45;inheritance" alt="" coords="904,438,904,472,899,472,899,438"/>
+<area shape="rect" id="node17" title="std::unique_ptr&lt; ComponentBase &gt;" alt="" coords="1931,293,2298,341"/>
+<area shape="poly" id="edge21" title="usage" alt="" coords="2117,342,2117,376,2112,376,2112,342"/>
+<area shape="poly" id="edge22" title="usage" alt="" coords="1694,244,1720,281,1716,284,1689,247"/>
+<area shape="poly" id="edge23" title="usage" alt="" coords="2117,246,2117,280,2112,280,2112,246"/>
+</map>

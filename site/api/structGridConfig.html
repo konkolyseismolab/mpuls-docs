@@ -9,6 +9,7 @@
   <title>Struct GridConfig &mdash; Modular PULsation Suite  documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=4ae1632d" />
       <link rel="stylesheet" type="text/css" href="../_static/collapsible-lists/css/tree_view.css?v=a885cde7" />
       <link rel="stylesheet" type="text/css" href="../_static/compact-api.css?v=bfcdbbe1" />
 
@@ -81,12 +82,18 @@
 <li class="toctree-l4"><a class="reference internal" href="structStellarParameters.html">Struct StellarParameters</a></li>
 <li class="toctree-l4"><a class="reference internal" href="classBoundary2DPerHorRigidRad.html">Template Class Boundary2DPerHorRigidRad</a></li>
 <li class="toctree-l4"><a class="reference internal" href="classBoundary2DPeriodic.html">Template Class Boundary2DPeriodic</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classBoundaryCond2d.html">Template Class BoundaryCond2d</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classBoundaryCondBase.html">Template Class BoundaryCondBase</a></li>
 <li class="toctree-l4"><a class="reference internal" href="classCFL.html">Template Class CFL</a></li>
 <li class="toctree-l4"><a class="reference internal" href="classCIRFlux.html">Template Class CIRFlux</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classComponentBase.html">Class ComponentBase</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classComponentWrapper.html">Template Class ComponentWrapper</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classcuda__backend_1_1CudaSimulation2d.html">Class CudaSimulation2d</a></li>
 <li class="toctree-l4"><a class="reference internal" href="classDiffusion2d.html">Template Class Diffusion2d</a></li>
 <li class="toctree-l4"><a class="reference internal" href="classEquationBase.html">Template Class EquationBase</a></li>
 <li class="toctree-l4"><a class="reference internal" href="classEuler2d.html">Template Class Euler2d</a></li>
 <li class="toctree-l4"><a class="reference internal" href="classFluxOperator.html">Template Class FluxOperator</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classFreeSlipBoundary.html">Template Class FreeSlipBoundary</a></li>
 <li class="toctree-l4"><a class="reference internal" href="classGrid2d.html">Template Class Grid2d</a></li>
 <li class="toctree-l4"><a class="reference internal" href="classGridDimensions2d.html">Template Class GridDimensions2d</a></li>
 <li class="toctree-l4"><a class="reference internal" href="classHyperDiffusion.html">Template Class HyperDiffusion</a></li>
@@ -94,23 +101,25 @@
 <li class="toctree-l4"><a class="reference internal" href="classLLFflux.html">Template Class LLFflux</a></li>
 <li class="toctree-l4"><a class="reference internal" href="classMinMod.html">Template Class MinMod</a></li>
 <li class="toctree-l4"><a class="reference internal" href="classPCM.html">Template Class PCM</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classPeriodicBoundary.html">Template Class PeriodicBoundary</a></li>
 <li class="toctree-l4"><a class="reference internal" href="classPLM.html">Template Class PLM</a></li>
 <li class="toctree-l4"><a class="reference internal" href="classQuantityBase.html">Template Class QuantityBase</a></li>
 <li class="toctree-l4"><a class="reference internal" href="classReconstructionBase.html">Template Class ReconstructionBase</a></li>
 <li class="toctree-l4"><a class="reference internal" href="classRightHandSide.html">Template Class RightHandSide</a></li>
 <li class="toctree-l4"><a class="reference internal" href="classRightHandSideDecorator.html">Template Class RightHandSideDecorator</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classRigidBoundary.html">Template Class RigidBoundary</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classRigidBoundary_3_01QuantityBase_3_01D_00_014_01_4_01_4.html">Template Class RigidBoundary&lt; QuantityBase&lt; D, 4 &gt; &gt;</a></li>
 <li class="toctree-l4"><a class="reference internal" href="classScalarTransport2d.html">Template Class ScalarTransport2d</a></li>
 <li class="toctree-l4"><a class="reference internal" href="classSimpleSource.html">Template Class SimpleSource</a></li>
-<li class="toctree-l4"><a class="reference internal" href="classsimulation__2d_1_1ComponentBase.html">Class ComponentBase</a></li>
-<li class="toctree-l4"><a class="reference internal" href="classsimulation__2d_1_1ComponentWrapper.html">Template Class ComponentWrapper</a></li>
 <li class="toctree-l4"><a class="reference internal" href="classsimulation__2d_1_1Simulation2d.html">Class Simulation2d</a></li>
-<li class="toctree-l4"><a class="reference internal" href="classsimulation__2d_1_1SolverBase.html">Class SolverBase</a></li>
-<li class="toctree-l4"><a class="reference internal" href="classsimulation__2d_1_1SolverWrapper.html">Template Class SolverWrapper</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classSolverBase.html">Class SolverBase</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classSolverWrapper.html">Template Class SolverWrapper</a></li>
 <li class="toctree-l4"><a class="reference internal" href="classSSP__RK2.html">Template Class SSP_RK2</a></li>
 <li class="toctree-l4"><a class="reference internal" href="classSSP__RK3.html">Template Class SSP_RK3</a></li>
 <li class="toctree-l4"><a class="reference internal" href="classSuperbee.html">Template Class Superbee</a></li>
 <li class="toctree-l4"><a class="reference internal" href="classTimeSolverBase.html">Template Class TimeSolverBase</a></li>
 <li class="toctree-l4"><a class="reference internal" href="classUnimplementedError.html">Class UnimplementedError</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classUnsupportedError.html">Class UnsupportedError</a></li>
 <li class="toctree-l4"><a class="reference internal" href="classVanLeer.html">Template Class VanLeer</a></li>
 </ul>
 </li>
@@ -158,7 +167,21 @@
 <dl class="cpp struct">
 <dt class="sig sig-object cpp" id="_CPPv410GridConfig">
 <span id="_CPPv310GridConfig"></span><span id="_CPPv210GridConfig"></span><span id="GridConfig"></span><span class="target" id="structGridConfig"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">GridConfig</span></span></span><a class="headerlink" href="#_CPPv410GridConfig" title="Link to this definition"></a><br /></dt>
-<dd><p><a class="reference internal" href="structGrid.html#structGrid"><span class="std std-ref">Grid</span></a> configuration for the 1D envelope builder. </p>
+<dd><p>Collaboration diagram for GridConfig:</p>
+<figure class="align-default">
+<div align="center" class="align-center"><div class="graphviz"><img src="../_images/graphviz-8ec62f139c6c072bc3f10602e27a2c74a356a090.png" alt="digraph {
+    graph [bgcolor=&quot;#00000000&quot;]
+    node [shape=rectangle style=filled fillcolor=&quot;#FFFFFF&quot; font=Helvetica padding=2]
+    edge [color=&quot;#1414CE&quot;]
+    &quot;1&quot; [label=&quot;GridConfig&quot; tooltip=&quot;GridConfig&quot; fillcolor=&quot;#BFBFBF&quot;]
+    &quot;3&quot; [label=&quot;std::basic_string&lt; Char &gt;&quot; tooltip=&quot;std::basic_string&lt; Char &gt;&quot;]
+    &quot;2&quot; [label=&quot;std::string&quot; tooltip=&quot;std::string&quot;]
+    &quot;1&quot; -&gt; &quot;2&quot; [dir=forward tooltip=&quot;usage&quot;]
+    &quot;2&quot; -&gt; &quot;3&quot; [dir=forward tooltip=&quot;public-inheritance&quot;]
+}" class="graphviz" /></div>
+</div>
+</figure>
+<p><a class="reference internal" href="structGrid.html#structGrid"><span class="std std-ref">Grid</span></a> configuration for the 1D envelope builder. </p>
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
 <dl class="cpp var">

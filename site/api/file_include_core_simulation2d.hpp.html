@@ -9,6 +9,7 @@
   <title>File simulation2d.hpp &mdash; Modular PULsation Suite  documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=4ae1632d" />
       <link rel="stylesheet" type="text/css" href="../_static/collapsible-lists/css/tree_view.css?v=a885cde7" />
       <link rel="stylesheet" type="text/css" href="../_static/compact-api.css?v=bfcdbbe1" />
 
@@ -89,7 +90,6 @@
 <li><p><a class="reference internal" href="#included-by" id="id3">Included By</a></p></li>
 <li><p><a class="reference internal" href="#namespaces" id="id4">Namespaces</a></p></li>
 <li><p><a class="reference internal" href="#classes" id="id5">Classes</a></p></li>
-<li><p><a class="reference internal" href="#functions" id="id6">Functions</a></p></li>
 </ul>
 </nav>
 <section id="definition-include-core-simulation2d-hpp">
@@ -98,13 +98,9 @@
 <section id="includes">
 <h2>Includes<a class="headerlink" href="#includes" title="Link to this heading"></a></h2>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">advection/flux_operators.hpp</span></code> (<a class="reference internal" href="file_include_advection_flux_operators.hpp.html#file-include-advection-flux-operators-hpp"><span class="std std-ref">File flux_operators.hpp</span></a>)</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">advection/hyperdiffusion.hpp</span></code> (<a class="reference internal" href="file_include_advection_hyperdiffusion.hpp.html#file-include-advection-hyperdiffusion-hpp"><span class="std std-ref">File hyperdiffusion.hpp</span></a>)</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">config_params.hpp</span></code> (<a class="reference internal" href="file_include_core_config_params.hpp.html#file-include-core-config-params-hpp"><span class="std std-ref">File config_params.hpp</span></a>)</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">equations/equations.hpp</span></code> (<a class="reference internal" href="file_include_equations_equations.hpp.html#file-include-equations-equations-hpp"><span class="std std-ref">File equations.hpp</span></a>)</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">grid/quantity.hpp</span></code> (<a class="reference internal" href="file_include_grid_quantity.hpp.html#file-include-grid-quantity-hpp"><span class="std std-ref">File quantity.hpp</span></a>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">core/wrappers.hpp</span></code> (<a class="reference internal" href="file_include_core_wrappers.hpp.html#file-include-core-wrappers-hpp"><span class="std std-ref">File wrappers.hpp</span></a>)</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">memory</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">time_solver/time_solver.hpp</span></code> (<a class="reference internal" href="file_include_time_solver_time_solver.hpp.html#file-include-time-solver-time-solver-hpp"><span class="std std-ref">File time_solver.hpp</span></a>)</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">type_traits</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">vector</span></code></p></li>
 </ul>
@@ -113,6 +109,8 @@
 <h2>Included By<a class="headerlink" href="#included-by" title="Link to this heading"></a></h2>
 <ul class="simple">
 <li><p><a class="reference internal" href="file_include_core_compile_time_dispatcher.hpp.html#file-include-core-compile-time-dispatcher-hpp"><span class="std std-ref">File compile_time_dispatcher.hpp</span></a></p></li>
+<li><p><a class="reference internal" href="file_include_core_simulation2d_cuda.hpp.html#file-include-core-simulation2d-cuda-hpp"><span class="std std-ref">File simulation2d_cuda.hpp</span></a></p></li>
+<li><p><a class="reference internal" href="file_include_core_simulation_factory.hpp.html#file-include-core-simulation-factory-hpp"><span class="std std-ref">File simulation_factory.hpp</span></a></p></li>
 </ul>
 </section>
 <section id="namespaces">
@@ -125,25 +123,7 @@
 <section id="classes">
 <h2>Classes<a class="headerlink" href="#classes" title="Link to this heading"></a></h2>
 <ul class="simple">
-<li><p><a class="reference internal" href="structsimulation__2d_1_1always__false.html#exhale-struct-structsimulation-2d-1-1always-false"><span class="std std-ref">Template Struct always_false</span></a></p></li>
-<li><p><a class="reference internal" href="structsimulation__2d_1_1EquationTraits.html#exhale-struct-structsimulation-2d-1-1equationtraits"><span class="std std-ref">Template Struct EquationTraits</span></a></p></li>
-<li><p><a class="reference internal" href="classsimulation__2d_1_1ComponentBase.html#exhale-class-classsimulation-2d-1-1componentbase"><span class="std std-ref">Class ComponentBase</span></a></p></li>
-<li><p><a class="reference internal" href="classsimulation__2d_1_1ComponentWrapper.html#exhale-class-classsimulation-2d-1-1componentwrapper"><span class="std std-ref">Template Class ComponentWrapper</span></a></p></li>
 <li><p><a class="reference internal" href="classsimulation__2d_1_1Simulation2d.html#exhale-class-classsimulation-2d-1-1simulation2d"><span class="std std-ref">Class Simulation2d</span></a></p></li>
-<li><p><a class="reference internal" href="classsimulation__2d_1_1SolverBase.html#exhale-class-classsimulation-2d-1-1solverbase"><span class="std std-ref">Class SolverBase</span></a></p></li>
-<li><p><a class="reference internal" href="classsimulation__2d_1_1SolverWrapper.html#exhale-class-classsimulation-2d-1-1solverwrapper"><span class="std std-ref">Template Class SolverWrapper</span></a></p></li>
-</ul>
-</section>
-<section id="functions">
-<h2>Functions<a class="headerlink" href="#functions" title="Link to this heading"></a></h2>
-<ul class="simple">
-<li><p><a class="reference internal" href="function_simulation2d_8hpp_1a50087ef639129db722c485e48f7b8f52.html#exhale-function-simulation2d-8hpp-1a50087ef639129db722c485e48f7b8f52"><span class="std std-ref">Template Function simulation_2d::createEquation</span></a></p></li>
-<li><p><a class="reference internal" href="function_simulation2d_8hpp_1add0bbce5253a56fd01b6eaccd26798e4.html#exhale-function-simulation2d-8hpp-1add0bbce5253a56fd01b6eaccd26798e4"><span class="std std-ref">Template Function simulation_2d::createFluxCalculator</span></a></p></li>
-<li><p><a class="reference internal" href="function_simulation2d_8hpp_1ad0c0db2ca932178a8409c41eb8fd41ac.html#exhale-function-simulation2d-8hpp-1ad0c0db2ca932178a8409c41eb8fd41ac"><span class="std std-ref">Template Function simulation_2d::createLimiter</span></a></p></li>
-<li><p><a class="reference internal" href="function_simulation2d_8hpp_1a484cc9916a24c5f348ba5c3dc1411803.html#exhale-function-simulation2d-8hpp-1a484cc9916a24c5f348ba5c3dc1411803"><span class="std std-ref">Template Function simulation_2d::createReconstruction</span></a></p></li>
-<li><p><a class="reference internal" href="function_simulation2d_8hpp_1a50879ceb8176df5414e6b6bded61d1c5.html#exhale-function-simulation2d-8hpp-1a50879ceb8176df5414e6b6bded61d1c5"><span class="std std-ref">Template Function simulation_2d::createTimeSolver</span></a></p></li>
-<li><p><a class="reference internal" href="function_simulation2d_8hpp_1add987f6758214e6b394039ef157a6573.html#exhale-function-simulation2d-8hpp-1add987f6758214e6b394039ef157a6573"><span class="std std-ref">Template Function simulation_2d::getQfromEq</span></a></p></li>
-<li><p><a class="reference internal" href="function_simulation2d_8hpp_1ad8ed7bbcf51a98c91f1725d21cc2123e.html#exhale-function-simulation2d-8hpp-1ad8ed7bbcf51a98c91f1725d21cc2123e"><span class="std std-ref">Template Function simulation_2d::solver_factory</span></a></p></li>
 </ul>
 </section>
 </section>

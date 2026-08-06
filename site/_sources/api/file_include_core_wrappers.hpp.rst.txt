@@ -1,0 +1,54 @@
+
+.. _file_include_core_wrappers.hpp:
+
+File wrappers.hpp
+=================
+
+|exhale_lsh| :ref:`Parent directory <dir_include_core>` (``include/core``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``include/core/wrappers.hpp``)
+------------------------------------------
+
+
+
+
+
+
+Includes
+--------
+
+
+- ``core/common.hpp`` (:ref:`file_include_core_common.hpp`)
+
+- ``io/print_console.hpp`` (:ref:`file_include_io_print_console.hpp`)
+
+
+
+Included By
+-----------
+
+
+- :ref:`file_include_core_simulation2d.hpp`
+
+
+
+
+Classes
+-------
+
+
+- :ref:`exhale_class_classComponentBase`
+
+- :ref:`exhale_class_classComponentWrapper`
+
+- :ref:`exhale_class_classSolverBase`
+
+- :ref:`exhale_class_classSolverWrapper`
+

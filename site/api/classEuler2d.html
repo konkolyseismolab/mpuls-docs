@@ -9,6 +9,7 @@
   <title>Template Class Euler2d &mdash; Modular PULsation Suite  documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=4ae1632d" />
       <link rel="stylesheet" type="text/css" href="../_static/collapsible-lists/css/tree_view.css?v=a885cde7" />
       <link rel="stylesheet" type="text/css" href="../_static/compact-api.css?v=bfcdbbe1" />
 
@@ -83,12 +84,18 @@
 <li class="toctree-l4"><a class="reference internal" href="structStellarParameters.html">Struct StellarParameters</a></li>
 <li class="toctree-l4"><a class="reference internal" href="classBoundary2DPerHorRigidRad.html">Template Class Boundary2DPerHorRigidRad</a></li>
 <li class="toctree-l4"><a class="reference internal" href="classBoundary2DPeriodic.html">Template Class Boundary2DPeriodic</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classBoundaryCond2d.html">Template Class BoundaryCond2d</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classBoundaryCondBase.html">Template Class BoundaryCondBase</a></li>
 <li class="toctree-l4"><a class="reference internal" href="classCFL.html">Template Class CFL</a></li>
 <li class="toctree-l4"><a class="reference internal" href="classCIRFlux.html">Template Class CIRFlux</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classComponentBase.html">Class ComponentBase</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classComponentWrapper.html">Template Class ComponentWrapper</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classcuda__backend_1_1CudaSimulation2d.html">Class CudaSimulation2d</a></li>
 <li class="toctree-l4"><a class="reference internal" href="classDiffusion2d.html">Template Class Diffusion2d</a></li>
 <li class="toctree-l4"><a class="reference internal" href="classEquationBase.html">Template Class EquationBase</a></li>
 <li class="toctree-l4 current"><a class="current reference internal" href="#">Template Class Euler2d</a></li>
 <li class="toctree-l4"><a class="reference internal" href="classFluxOperator.html">Template Class FluxOperator</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classFreeSlipBoundary.html">Template Class FreeSlipBoundary</a></li>
 <li class="toctree-l4"><a class="reference internal" href="classGrid2d.html">Template Class Grid2d</a></li>
 <li class="toctree-l4"><a class="reference internal" href="classGridDimensions2d.html">Template Class GridDimensions2d</a></li>
 <li class="toctree-l4"><a class="reference internal" href="classHyperDiffusion.html">Template Class HyperDiffusion</a></li>
@@ -96,23 +103,25 @@
 <li class="toctree-l4"><a class="reference internal" href="classLLFflux.html">Template Class LLFflux</a></li>
 <li class="toctree-l4"><a class="reference internal" href="classMinMod.html">Template Class MinMod</a></li>
 <li class="toctree-l4"><a class="reference internal" href="classPCM.html">Template Class PCM</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classPeriodicBoundary.html">Template Class PeriodicBoundary</a></li>
 <li class="toctree-l4"><a class="reference internal" href="classPLM.html">Template Class PLM</a></li>
 <li class="toctree-l4"><a class="reference internal" href="classQuantityBase.html">Template Class QuantityBase</a></li>
 <li class="toctree-l4"><a class="reference internal" href="classReconstructionBase.html">Template Class ReconstructionBase</a></li>
 <li class="toctree-l4"><a class="reference internal" href="classRightHandSide.html">Template Class RightHandSide</a></li>
 <li class="toctree-l4"><a class="reference internal" href="classRightHandSideDecorator.html">Template Class RightHandSideDecorator</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classRigidBoundary.html">Template Class RigidBoundary</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classRigidBoundary_3_01QuantityBase_3_01D_00_014_01_4_01_4.html">Template Class RigidBoundary&lt; QuantityBase&lt; D, 4 &gt; &gt;</a></li>
 <li class="toctree-l4"><a class="reference internal" href="classScalarTransport2d.html">Template Class ScalarTransport2d</a></li>
 <li class="toctree-l4"><a class="reference internal" href="classSimpleSource.html">Template Class SimpleSource</a></li>
-<li class="toctree-l4"><a class="reference internal" href="classsimulation__2d_1_1ComponentBase.html">Class ComponentBase</a></li>
-<li class="toctree-l4"><a class="reference internal" href="classsimulation__2d_1_1ComponentWrapper.html">Template Class ComponentWrapper</a></li>
 <li class="toctree-l4"><a class="reference internal" href="classsimulation__2d_1_1Simulation2d.html">Class Simulation2d</a></li>
-<li class="toctree-l4"><a class="reference internal" href="classsimulation__2d_1_1SolverBase.html">Class SolverBase</a></li>
-<li class="toctree-l4"><a class="reference internal" href="classsimulation__2d_1_1SolverWrapper.html">Template Class SolverWrapper</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classSolverBase.html">Class SolverBase</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classSolverWrapper.html">Template Class SolverWrapper</a></li>
 <li class="toctree-l4"><a class="reference internal" href="classSSP__RK2.html">Template Class SSP_RK2</a></li>
 <li class="toctree-l4"><a class="reference internal" href="classSSP__RK3.html">Template Class SSP_RK3</a></li>
 <li class="toctree-l4"><a class="reference internal" href="classSuperbee.html">Template Class Superbee</a></li>
 <li class="toctree-l4"><a class="reference internal" href="classTimeSolverBase.html">Template Class TimeSolverBase</a></li>
 <li class="toctree-l4"><a class="reference internal" href="classUnimplementedError.html">Class UnimplementedError</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classUnsupportedError.html">Class UnsupportedError</a></li>
 <li class="toctree-l4"><a class="reference internal" href="classVanLeer.html">Template Class VanLeer</a></li>
 </ul>
 </li>
@@ -169,7 +178,31 @@
 <dl class="cpp class">
 <dt class="sig sig-object cpp" id="_CPPv4I_14TwoDimensional_12QuantityTypeE7Euler2d">
 <span id="_CPPv3I_14TwoDimensional_12QuantityTypeE7Euler2d"></span><span id="_CPPv2I_14TwoDimensional_12QuantityTypeE7Euler2d"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">TwoDimensional</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">T</span></span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">QuantityType</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Q</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="classEuler2d"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Euler2d</span></span></span><span class="w"> </span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="k"><span class="pre">public</span></span><span class="w"> </span><a class="reference internal" href="classEquationBase.html#_CPPv4I_12QuantityTypeE12EquationBase" title="EquationBase"><span class="n"><span class="pre">EquationBase</span></span></a><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4I_14TwoDimensional_12QuantityTypeE7Euler2d" title="Euler2d::Q"><span class="n"><span class="pre">Q</span></span></a><span class="p"><span class="pre">&gt;</span></span><a class="headerlink" href="#_CPPv4I_14TwoDimensional_12QuantityTypeE7Euler2d" title="Link to this definition"></a><br /></dt>
-<dd><div class="breathe-sectiondef docutils container">
+<dd><p>Inheritance diagram for Euler2d:</p>
+<figure class="align-default">
+<div align="center" class="align-center"><div class="graphviz"><img src="../_images/graphviz-e60278af41912f988ec71815d386b8ffac8601e2.png" alt="digraph {
+    graph [bgcolor=&quot;#00000000&quot;]
+    node [shape=rectangle style=filled fillcolor=&quot;#FFFFFF&quot; font=Helvetica padding=2]
+    edge [color=&quot;#1414CE&quot;]
+    &quot;2&quot; [label=&quot;EquationBase&lt; Q &gt;&quot; tooltip=&quot;EquationBase&lt; Q &gt;&quot;]
+    &quot;1&quot; [label=&quot;Euler2d&lt; T, Q &gt;&quot; tooltip=&quot;Euler2d&lt; T, Q &gt;&quot; fillcolor=&quot;#BFBFBF&quot;]
+    &quot;1&quot; -&gt; &quot;2&quot; [dir=forward tooltip=&quot;public-inheritance&quot;]
+}" class="graphviz" /></div>
+</div>
+</figure>
+<p>Collaboration diagram for Euler2d:</p>
+<figure class="align-default">
+<div align="center" class="align-center"><div class="graphviz"><img src="../_images/graphviz-e60278af41912f988ec71815d386b8ffac8601e2.png" alt="digraph {
+    graph [bgcolor=&quot;#00000000&quot;]
+    node [shape=rectangle style=filled fillcolor=&quot;#FFFFFF&quot; font=Helvetica padding=2]
+    edge [color=&quot;#1414CE&quot;]
+    &quot;2&quot; [label=&quot;EquationBase&lt; Q &gt;&quot; tooltip=&quot;EquationBase&lt; Q &gt;&quot;]
+    &quot;1&quot; [label=&quot;Euler2d&lt; T, Q &gt;&quot; tooltip=&quot;Euler2d&lt; T, Q &gt;&quot; fillcolor=&quot;#BFBFBF&quot;]
+    &quot;1&quot; -&gt; &quot;2&quot; [dir=forward tooltip=&quot;public-inheritance&quot;]
+}" class="graphviz" /></div>
+</div>
+</figure>
+<div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N7Euler2d7Euler2dEv">
@@ -185,6 +218,46 @@
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N7Euler2d8setGammaE1D">
 <span id="_CPPv3N7Euler2d8setGammaE1D"></span><span id="_CPPv2N7Euler2d8setGammaE1D"></span><span id="Euler2d::setGamma__D"></span><span class="target" id="classEuler2d_1a0b11f21adf8ac4178f9f42808627d8ea"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setGamma</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N7Euler2d1DE" title="Euler2d::D"><span class="n"><span class="pre">D</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">vel</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7Euler2d8setGammaE1D" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK7Euler2d7getRminEv">
+<span id="_CPPv3NK7Euler2d7getRminEv"></span><span id="_CPPv2NK7Euler2d7getRminEv"></span><span id="Euler2d::getRminC"></span><span class="target" id="classEuler2d_1a570bd8db124e6b3296cd2d36f0f22fb8"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N7Euler2d1DE" title="Euler2d::D"><span class="n"><span class="pre">D</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getRmin</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK7Euler2d7getRminEv" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N7Euler2d7setRminE1D">
+<span id="_CPPv3N7Euler2d7setRminE1D"></span><span id="_CPPv2N7Euler2d7setRminE1D"></span><span id="Euler2d::setRmin__D"></span><span class="target" id="classEuler2d_1afbefd4e2bcbaaf7d3b76801da24017d3"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setRmin</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N7Euler2d1DE" title="Euler2d::D"><span class="n"><span class="pre">D</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">r</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7Euler2d7setRminE1D" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK7Euler2d7getRmaxEv">
+<span id="_CPPv3NK7Euler2d7getRmaxEv"></span><span id="_CPPv2NK7Euler2d7getRmaxEv"></span><span id="Euler2d::getRmaxC"></span><span class="target" id="classEuler2d_1a30cdaf792c9d0a702dcdaee3121a80bd"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N7Euler2d1DE" title="Euler2d::D"><span class="n"><span class="pre">D</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getRmax</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK7Euler2d7getRmaxEv" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N7Euler2d7setRmaxE1D">
+<span id="_CPPv3N7Euler2d7setRmaxE1D"></span><span id="_CPPv2N7Euler2d7setRmaxE1D"></span><span id="Euler2d::setRmax__D"></span><span class="target" id="classEuler2d_1a795bb328a3b52395109673286a3110b9"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setRmax</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N7Euler2d1DE" title="Euler2d::D"><span class="n"><span class="pre">D</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">r</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7Euler2d7setRmaxE1D" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK7Euler2d13getDeltaRelaxEv">
+<span id="_CPPv3NK7Euler2d13getDeltaRelaxEv"></span><span id="_CPPv2NK7Euler2d13getDeltaRelaxEv"></span><span id="Euler2d::getDeltaRelaxC"></span><span class="target" id="classEuler2d_1ad39851251926f47843352c1a99be142d"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N7Euler2d1DE" title="Euler2d::D"><span class="n"><span class="pre">D</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getDeltaRelax</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK7Euler2d13getDeltaRelaxEv" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N7Euler2d13setDeltaRelaxE1D">
+<span id="_CPPv3N7Euler2d13setDeltaRelaxE1D"></span><span id="_CPPv2N7Euler2d13setDeltaRelaxE1D"></span><span id="Euler2d::setDeltaRelax__D"></span><span class="target" id="classEuler2d_1ac48e2b65b2c0ca1ac4c4df869916eeb5"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setDeltaRelax</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N7Euler2d1DE" title="Euler2d::D"><span class="n"><span class="pre">D</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">dr</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7Euler2d13setDeltaRelaxE1D" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK7Euler2d8getCdampEv">
+<span id="_CPPv3NK7Euler2d8getCdampEv"></span><span id="_CPPv2NK7Euler2d8getCdampEv"></span><span id="Euler2d::getCdampC"></span><span class="target" id="classEuler2d_1a243699d640a539c3ef76a4145a888056"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N7Euler2d1DE" title="Euler2d::D"><span class="n"><span class="pre">D</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getCdamp</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK7Euler2d8getCdampEv" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N7Euler2d8setCdampE1D">
+<span id="_CPPv3N7Euler2d8setCdampE1D"></span><span id="_CPPv2N7Euler2d8setCdampE1D"></span><span id="Euler2d::setCdamp__D"></span><span class="target" id="classEuler2d_1a9a41e7635912bbeed17222b419b28c50"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setCdamp</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N7Euler2d1DE" title="Euler2d::D"><span class="n"><span class="pre">D</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">cd</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7Euler2d8setCdampE1D" title="Link to this definition"></a><br /></dt>
 <dd></dd></dl>
 
 <dl class="cpp function">
@@ -204,6 +277,11 @@
 </dd>
 </dl>
 </dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK7Euler2d13getSoundSpeedERK1Q9DirectionNSt4spanIK1DEE">
+<span id="_CPPv3NK7Euler2d13getSoundSpeedERK1Q9DirectionNSt4spanIK1DEE"></span><span id="_CPPv2NK7Euler2d13getSoundSpeedERK1Q9DirectionNSt4spanIK1DEE"></span><span id="Euler2d::getSoundSpeed__QCR.Direction.std::span:DC:C"></span><span class="target" id="classEuler2d_1ad7f11fe18062aea4e7bfbbe44615b469"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N7Euler2d1DE" title="Euler2d::D"><span class="n"><span class="pre">D</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getSoundSpeed</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4I_14TwoDimensional_12QuantityTypeE7Euler2d" title="Euler2d::Q"><span class="n"><span class="pre">Q</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">quantity</span></span>, <a class="reference internal" href="enum_common_8hpp_1a224b9163917ac32fc95a60d8c1eec3aa.html#_CPPv49Direction" title="Direction"><span class="n"><span class="pre">Direction</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">dir</span></span>, <span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">span</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N7Euler2d1DE" title="Euler2d::D"><span class="n"><span class="pre">D</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">coords</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK7Euler2d13getSoundSpeedERK1Q9DirectionNSt4spanIK1DEE" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4NK7Euler2d14getMaxVelocityERK1Q9DirectionNSt4spanIK1DEE">
@@ -293,6 +371,26 @@ p = e (\gamma-1)\rho
 \]</div>
 </p>
 </dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N7Euler2d4rminE">
+<span id="_CPPv3N7Euler2d4rminE"></span><span id="_CPPv2N7Euler2d4rminE"></span><span id="Euler2d::rmin__D"></span><span class="target" id="classEuler2d_1ad2a6fb4dbc7bbf741b17d95c6567dba2"></span><a class="reference internal" href="#_CPPv4N7Euler2d1DE" title="Euler2d::D"><span class="n"><span class="pre">D</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">rmin</span></span></span><a class="headerlink" href="#_CPPv4N7Euler2d4rminE" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N7Euler2d4rmaxE">
+<span id="_CPPv3N7Euler2d4rmaxE"></span><span id="_CPPv2N7Euler2d4rmaxE"></span><span id="Euler2d::rmax__D"></span><span class="target" id="classEuler2d_1a87ac9ca52b338ea73de678235972fe97"></span><a class="reference internal" href="#_CPPv4N7Euler2d1DE" title="Euler2d::D"><span class="n"><span class="pre">D</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">rmax</span></span></span><a class="headerlink" href="#_CPPv4N7Euler2d4rmaxE" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N7Euler2d11delta_relaxE">
+<span id="_CPPv3N7Euler2d11delta_relaxE"></span><span id="_CPPv2N7Euler2d11delta_relaxE"></span><span id="Euler2d::delta_relax__D"></span><span class="target" id="classEuler2d_1ae2df89b1ca205f2ef2847f1530207ae6"></span><a class="reference internal" href="#_CPPv4N7Euler2d1DE" title="Euler2d::D"><span class="n"><span class="pre">D</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">delta_relax</span></span></span><a class="headerlink" href="#_CPPv4N7Euler2d11delta_relaxE" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N7Euler2d6C_dampE">
+<span id="_CPPv3N7Euler2d6C_dampE"></span><span id="_CPPv2N7Euler2d6C_dampE"></span><span id="Euler2d::C_damp__D"></span><span class="target" id="classEuler2d_1a37f95c42e5d6d6ebf24c0a37c29b8f8b"></span><a class="reference internal" href="#_CPPv4N7Euler2d1DE" title="Euler2d::D"><span class="n"><span class="pre">D</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">C_damp</span></span></span><a class="headerlink" href="#_CPPv4N7Euler2d6C_dampE" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
 
 </div>
 </dd></dl>

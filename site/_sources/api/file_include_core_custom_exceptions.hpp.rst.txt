@@ -37,6 +37,12 @@ Includes
 
 
 
+Included By
+-----------
+
+
+- :ref:`file_include_core_simulation_factory.hpp`
+
 
 
 
@@ -45,4 +51,6 @@ Classes
 
 
 - :ref:`exhale_class_classUnimplementedError`
+
+- :ref:`exhale_class_classUnsupportedError`
 

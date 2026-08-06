@@ -1,0 +1,352 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Class CudaSimulation2d &mdash; Modular PULsation Suite  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=4ae1632d" />
+      <link rel="stylesheet" type="text/css" href="../_static/collapsible-lists/css/tree_view.css?v=a885cde7" />
+      <link rel="stylesheet" type="text/css" href="../_static/compact-api.css?v=bfcdbbe1" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script src="../_static/collapsible-lists/js/CollapsibleLists.compressed.js?v=73120307"></script>
+      <script src="../_static/collapsible-lists/js/apply-collapsible-lists.js?v=660e4f45"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Template Class Diffusion2d" href="classDiffusion2d.html" />
+    <link rel="prev" title="Template Class ComponentWrapper" href="classComponentWrapper.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Modular PULsation Suite
+              <img src="../_static/logo-mpuls.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../guide/index.html">MPULS User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../manual/index.html">MPULS User Manual</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference Manual</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="library_root.html">MPULS API reference</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="library_root.html#page-hierarchy">Page Hierarchy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="library_root.html#class-hierarchy">Class Hierarchy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="library_root.html#file-hierarchy">File Hierarchy</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="library_root.html#full-api">Full API</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="library_root.html#namespaces">Namespaces</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="library_root.html#classes-and-structs">Classes and Structs</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="structCellCenter.html">Struct CellCenter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structCellInterface.html">Struct CellInterface</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structConfig.html">Struct Config</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structConvectiveParameters.html">Struct ConvectiveParameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structGrid.html">Struct Grid</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structGrid2Dconfig.html">Struct Grid2Dconfig</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structGridConfig.html">Struct GridConfig</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structmodel_1_1ModelConfig.html">Struct ModelConfig</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structModelBuilderConfig.html">Struct ModelBuilderConfig</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structopacity_1_1OpacityTable.html">Struct OpacityTable</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structOpacityTable.html">Struct OpacityTable</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structphysics_1_1EosState.html">Struct EosState</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structPhysicsConfig.html">Struct PhysicsConfig</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structQuantityTraits.html">Template Struct QuantityTraits</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structsimulation__2d_1_1always__false.html">Template Struct always_false</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structsimulation__2d_1_1EquationTraits.html">Template Struct EquationTraits</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structSolverConfig.html">Struct SolverConfig</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structStellarInput.html">Struct StellarInput</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structStellarParameters.html">Struct StellarParameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classBoundary2DPerHorRigidRad.html">Template Class Boundary2DPerHorRigidRad</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classBoundary2DPeriodic.html">Template Class Boundary2DPeriodic</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classBoundaryCond2d.html">Template Class BoundaryCond2d</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classBoundaryCondBase.html">Template Class BoundaryCondBase</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classCFL.html">Template Class CFL</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classCIRFlux.html">Template Class CIRFlux</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classComponentBase.html">Class ComponentBase</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classComponentWrapper.html">Template Class ComponentWrapper</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Class CudaSimulation2d</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classDiffusion2d.html">Template Class Diffusion2d</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classEquationBase.html">Template Class EquationBase</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classEuler2d.html">Template Class Euler2d</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classFluxOperator.html">Template Class FluxOperator</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classFreeSlipBoundary.html">Template Class FreeSlipBoundary</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classGrid2d.html">Template Class Grid2d</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classGridDimensions2d.html">Template Class GridDimensions2d</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classHyperDiffusion.html">Template Class HyperDiffusion</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classLimiterBase.html">Template Class LimiterBase</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classLLFflux.html">Template Class LLFflux</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classMinMod.html">Template Class MinMod</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classPCM.html">Template Class PCM</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classPeriodicBoundary.html">Template Class PeriodicBoundary</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classPLM.html">Template Class PLM</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classQuantityBase.html">Template Class QuantityBase</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classReconstructionBase.html">Template Class ReconstructionBase</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classRightHandSide.html">Template Class RightHandSide</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classRightHandSideDecorator.html">Template Class RightHandSideDecorator</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classRigidBoundary.html">Template Class RigidBoundary</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classRigidBoundary_3_01QuantityBase_3_01D_00_014_01_4_01_4.html">Template Class RigidBoundary&lt; QuantityBase&lt; D, 4 &gt; &gt;</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classScalarTransport2d.html">Template Class ScalarTransport2d</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classSimpleSource.html">Template Class SimpleSource</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classsimulation__2d_1_1Simulation2d.html">Class Simulation2d</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classSolverBase.html">Class SolverBase</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classSolverWrapper.html">Template Class SolverWrapper</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classSSP__RK2.html">Template Class SSP_RK2</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classSSP__RK3.html">Template Class SSP_RK3</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classSuperbee.html">Template Class Superbee</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classTimeSolverBase.html">Template Class TimeSolverBase</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classUnimplementedError.html">Class UnimplementedError</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classUnsupportedError.html">Class UnsupportedError</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classVanLeer.html">Template Class VanLeer</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="library_root.html#enums">Enums</a></li>
+<li class="toctree-l3"><a class="reference internal" href="library_root.html#functions">Functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="library_root.html#variables">Variables</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Modular PULsation Suite</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="library_root.html">MPULS API reference</a></li>
+      <li class="breadcrumb-item active">Class CudaSimulation2d</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/api/classcuda__backend_1_1CudaSimulation2d.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="class-cudasimulation2d">
+<span id="exhale-class-classcuda-backend-1-1cudasimulation2d"></span><h1>Class CudaSimulation2d<a class="headerlink" href="#class-cudasimulation2d" title="Link to this heading"></a></h1>
+<ul class="simple">
+<li><p>Defined in <a class="reference internal" href="file_include_core_simulation2d_cuda.hpp.html#file-include-core-simulation2d-cuda-hpp"><span class="std std-ref">File simulation2d_cuda.hpp</span></a></p></li>
+</ul>
+<section id="inheritance-relationships">
+<h2>Inheritance Relationships<a class="headerlink" href="#inheritance-relationships" title="Link to this heading"></a></h2>
+<section id="base-type">
+<h3>Base Type<a class="headerlink" href="#base-type" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">public</span> <span class="pre">simulation_2d::Simulation2d</span></code> (<a class="reference internal" href="classsimulation__2d_1_1Simulation2d.html#exhale-class-classsimulation-2d-1-1simulation2d"><span class="std std-ref">Class Simulation2d</span></a>)</p></li>
+</ul>
+</section>
+</section>
+<section id="class-documentation">
+<h2>Class Documentation<a class="headerlink" href="#class-documentation" title="Link to this heading"></a></h2>
+<dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv4N12cuda_backend16CudaSimulation2dE">
+<span id="_CPPv3N12cuda_backend16CudaSimulation2dE"></span><span id="_CPPv2N12cuda_backend16CudaSimulation2dE"></span><span id="cuda_backend::CudaSimulation2d"></span><span class="target" id="classcuda__backend_1_1CudaSimulation2d"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CudaSimulation2d</span></span></span><span class="w"> </span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="k"><span class="pre">public</span></span><span class="w"> </span><span class="n"><span class="pre">simulation_2d</span></span><span class="p"><span class="pre">::</span></span><a class="reference internal" href="classsimulation__2d_1_1Simulation2d.html#_CPPv4N13simulation_2d12Simulation2dE" title="simulation_2d::Simulation2d"><span class="n"><span class="pre">Simulation2d</span></span></a><a class="headerlink" href="#_CPPv4N12cuda_backend16CudaSimulation2dE" title="Link to this definition"></a><br /></dt>
+<dd><p>Inheritance diagram for cuda_backend::CudaSimulation2d:</p>
+<figure class="align-default">
+<div align="center" class="align-center"><div class="graphviz"><img src="../_images/graphviz-741e31db990f77d41cda4cdc8ed112b2fc1ddf87.png" alt="digraph {
+    graph [bgcolor=&quot;#00000000&quot;]
+    node [shape=rectangle style=filled fillcolor=&quot;#FFFFFF&quot; font=Helvetica padding=2]
+    edge [color=&quot;#1414CE&quot;]
+    &quot;1&quot; [label=&quot;cuda_backend::CudaSimulation2d&quot; tooltip=&quot;cuda_backend::CudaSimulation2d&quot; fillcolor=&quot;#BFBFBF&quot;]
+    &quot;2&quot; [label=&quot;simulation_2d::Simulation2d&quot; tooltip=&quot;simulation_2d::Simulation2d&quot;]
+    &quot;1&quot; -&gt; &quot;2&quot; [dir=forward tooltip=&quot;public-inheritance&quot;]
+}" class="graphviz" /></div>
+</div>
+</figure>
+<p>Collaboration diagram for cuda_backend::CudaSimulation2d:</p>
+<figure class="align-default">
+<div align="center" class="align-center"><div class="graphviz"><img src="../_images/graphviz-9588a9f9a9f25530b67882beef0e882335192ca9.png" alt="digraph {
+    graph [bgcolor=&quot;#00000000&quot;]
+    node [shape=rectangle style=filled fillcolor=&quot;#FFFFFF&quot; font=Helvetica padding=2]
+    edge [color=&quot;#1414CE&quot;]
+    &quot;5&quot; [label=&quot;ComponentBase&quot; tooltip=&quot;ComponentBase&quot;]
+    &quot;8&quot; [label=&quot;Config&quot; tooltip=&quot;Config&quot;]
+    &quot;20&quot; [label=&quot;ConvectiveParameters&quot; tooltip=&quot;ConvectiveParameters&quot;]
+    &quot;13&quot; [label=&quot;Equation&quot; tooltip=&quot;Equation&quot;]
+    &quot;19&quot; [label=&quot;Grid2Dconfig&quot; tooltip=&quot;Grid2Dconfig&quot;]
+    &quot;17&quot; [label=&quot;GridConfig&quot; tooltip=&quot;GridConfig&quot;]
+    &quot;18&quot; [label=&quot;ModelBuilderConfig&quot; tooltip=&quot;ModelBuilderConfig&quot;]
+    &quot;21&quot; [label=&quot;PhysicsConfig&quot; tooltip=&quot;PhysicsConfig&quot;]
+    &quot;7&quot; [label=&quot;SolverBase&quot; tooltip=&quot;SolverBase&quot;]
+    &quot;16&quot; [label=&quot;SolverConfig&quot; tooltip=&quot;SolverConfig&quot;]
+    &quot;11&quot; [label=&quot;StellarParameters&quot; tooltip=&quot;StellarParameters&quot;]
+    &quot;1&quot; [label=&quot;cuda_backend::CudaSimulation2d&quot; tooltip=&quot;cuda_backend::CudaSimulation2d&quot; fillcolor=&quot;#BFBFBF&quot;]
+    &quot;12&quot; [label=&quot;model::ModelConfig&quot; tooltip=&quot;model::ModelConfig&quot;]
+    &quot;2&quot; [label=&quot;simulation_2d::Simulation2d&quot; tooltip=&quot;simulation_2d::Simulation2d&quot;]
+    &quot;10&quot; [label=&quot;std::basic_string&lt; Char &gt;&quot; tooltip=&quot;std::basic_string&lt; Char &gt;&quot;]
+    &quot;9&quot; [label=&quot;std::string&quot; tooltip=&quot;std::string&quot;]
+    &quot;4&quot; [label=&quot;std::unique_ptr&lt; ComponentBase &gt;&quot; tooltip=&quot;std::unique_ptr&lt; ComponentBase &gt;&quot;]
+    &quot;6&quot; [label=&quot;std::unique_ptr&lt; SolverBase &gt;&quot; tooltip=&quot;std::unique_ptr&lt; SolverBase &gt;&quot;]
+    &quot;15&quot; [label=&quot;std::vector&lt; Boundary &gt;&quot; tooltip=&quot;std::vector&lt; Boundary &gt;&quot;]
+    &quot;14&quot; [label=&quot;std::vector&lt; double &gt;&quot; tooltip=&quot;std::vector&lt; double &gt;&quot;]
+    &quot;3&quot; [label=&quot;std::vector&lt; std::unique_ptr&lt; ComponentBase &gt; &gt;&quot; tooltip=&quot;std::vector&lt; std::unique_ptr&lt; ComponentBase &gt; &gt;&quot;]
+    &quot;8&quot; -&gt; &quot;9&quot; [dir=forward tooltip=&quot;usage&quot;]
+    &quot;8&quot; -&gt; &quot;11&quot; [dir=forward tooltip=&quot;usage&quot;]
+    &quot;8&quot; -&gt; &quot;12&quot; [dir=forward tooltip=&quot;usage&quot;]
+    &quot;8&quot; -&gt; &quot;16&quot; [dir=forward tooltip=&quot;usage&quot;]
+    &quot;8&quot; -&gt; &quot;17&quot; [dir=forward tooltip=&quot;usage&quot;]
+    &quot;8&quot; -&gt; &quot;18&quot; [dir=forward tooltip=&quot;usage&quot;]
+    &quot;8&quot; -&gt; &quot;19&quot; [dir=forward tooltip=&quot;usage&quot;]
+    &quot;8&quot; -&gt; &quot;20&quot; [dir=forward tooltip=&quot;usage&quot;]
+    &quot;8&quot; -&gt; &quot;21&quot; [dir=forward tooltip=&quot;usage&quot;]
+    &quot;17&quot; -&gt; &quot;9&quot; [dir=forward tooltip=&quot;usage&quot;]
+    &quot;21&quot; -&gt; &quot;9&quot; [dir=forward tooltip=&quot;usage&quot;]
+    &quot;1&quot; -&gt; &quot;2&quot; [dir=forward tooltip=&quot;public-inheritance&quot;]
+    &quot;1&quot; -&gt; &quot;3&quot; [dir=forward tooltip=&quot;usage&quot;]
+    &quot;12&quot; -&gt; &quot;13&quot; [dir=forward tooltip=&quot;usage&quot;]
+    &quot;12&quot; -&gt; &quot;14&quot; [dir=forward tooltip=&quot;usage&quot;]
+    &quot;12&quot; -&gt; &quot;15&quot; [dir=forward tooltip=&quot;usage&quot;]
+    &quot;2&quot; -&gt; &quot;3&quot; [dir=forward tooltip=&quot;usage&quot;]
+    &quot;2&quot; -&gt; &quot;6&quot; [dir=forward tooltip=&quot;usage&quot;]
+    &quot;2&quot; -&gt; &quot;8&quot; [dir=forward tooltip=&quot;usage&quot;]
+    &quot;9&quot; -&gt; &quot;10&quot; [dir=forward tooltip=&quot;public-inheritance&quot;]
+    &quot;4&quot; -&gt; &quot;5&quot; [dir=forward tooltip=&quot;usage&quot;]
+    &quot;6&quot; -&gt; &quot;7&quot; [dir=forward tooltip=&quot;usage&quot;]
+    &quot;3&quot; -&gt; &quot;4&quot; [dir=forward tooltip=&quot;usage&quot;]
+}" class="graphviz" /></div>
+</div>
+</figure>
+<p>Simulation pipeline of the cuda backend. </p>
+<p>It stores an additional vector for the components on the device. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N12cuda_backend16CudaSimulation2d15startSimulationEv">
+<span id="_CPPv3N12cuda_backend16CudaSimulation2d15startSimulationEv"></span><span id="_CPPv2N12cuda_backend16CudaSimulation2d15startSimulationEv"></span><span id="cuda_backend::CudaSimulation2d::startSimulation"></span><span class="target" id="classcuda__backend_1_1CudaSimulation2d_1a5a62a734384e7324fdc5ed1593ac4aac"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">startSimulation</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">override</span></span><a class="headerlink" href="#_CPPv4N12cuda_backend16CudaSimulation2d15startSimulationEv" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N12cuda_backend16CudaSimulation2dD0Ev">
+<span id="_CPPv3N12cuda_backend16CudaSimulation2dD0Ev"></span><span id="_CPPv2N12cuda_backend16CudaSimulation2dD0Ev"></span><span id="cuda_backend::CudaSimulation2d::~CudaSimulation2d"></span><span class="target" id="classcuda__backend_1_1CudaSimulation2d_1add374d0a115ff73ef8d0f3d21eae143e"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">~CudaSimulation2d</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N12cuda_backend16CudaSimulation2dD0Ev" title="Link to this definition"></a><br /></dt>
+<dd><p>Destructors should be defaulted due to the danger that CUDA context is removed before constructor is called. Call <a class="reference internal" href="#classcuda__backend_1_1CudaSimulation2d_1a7e9a9ea871f7a1179abf6a4f60ae1a10"><span class="std std-ref">cleanup()</span></a> in main instead! </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N12cuda_backend16CudaSimulation2d7cleanupEv">
+<span id="_CPPv3N12cuda_backend16CudaSimulation2d7cleanupEv"></span><span id="_CPPv2N12cuda_backend16CudaSimulation2d7cleanupEv"></span><span id="cuda_backend::CudaSimulation2d::cleanup"></span><span class="target" id="classcuda__backend_1_1CudaSimulation2d_1a7e9a9ea871f7a1179abf6a4f60ae1a10"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">cleanup</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N12cuda_backend16CudaSimulation2d7cleanupEv" title="Link to this definition"></a><br /></dt>
+<dd><p>Frees up the CUDA memory, allowing the destruction of the pipeline. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4I0EN12cuda_backend16CudaSimulation2d18addDeviceComponentEvP1T">
+<span id="_CPPv3I0EN12cuda_backend16CudaSimulation2d18addDeviceComponentEP1T"></span><span id="_CPPv2I0EN12cuda_backend16CudaSimulation2d18addDeviceComponentEP1T"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">typename</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">T</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="classcuda__backend_1_1CudaSimulation2d_1abc1f7f3a742e2c33b83aa374373ea2df"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">addDeviceComponent</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I0EN12cuda_backend16CudaSimulation2d18addDeviceComponentEvP1T" title="cuda_backend::CudaSimulation2d::addDeviceComponent::T"><span class="n"><span class="pre">T</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">component</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4I0EN12cuda_backend16CudaSimulation2d18addDeviceComponentEvP1T" title="Link to this definition"></a><br /></dt>
+<dd><p>Adds a device component to the device_components vector. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4I0EN12cuda_backend16CudaSimulation2d14addInternalPtrEvP1T">
+<span id="_CPPv3I0EN12cuda_backend16CudaSimulation2d14addInternalPtrEP1T"></span><span id="_CPPv2I0EN12cuda_backend16CudaSimulation2d14addInternalPtrEP1T"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">typename</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">T</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="classcuda__backend_1_1CudaSimulation2d_1a0084456e69f7c00c5beb42ee154948ca"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">addInternalPtr</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I0EN12cuda_backend16CudaSimulation2d14addInternalPtrEvP1T" title="cuda_backend::CudaSimulation2d::addInternalPtr::T"><span class="n"><span class="pre">T</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">component</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4I0EN12cuda_backend16CudaSimulation2d14addInternalPtrEvP1T" title="Link to this definition"></a><br /></dt>
+<dd><p>Adds an internal data pointer to the device_internal_pointers vector. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4I0EN12cuda_backend16CudaSimulation2d21getDeviceComponentPtrEP16ComponentWrapperI1TE6size_t">
+<span id="_CPPv3I0EN12cuda_backend16CudaSimulation2d21getDeviceComponentPtrE6size_t"></span><span id="_CPPv2I0EN12cuda_backend16CudaSimulation2d21getDeviceComponentPtrE6size_t"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">typename</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">T</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="classcuda__backend_1_1CudaSimulation2d_1a4eea34528b2fa4bca5ac561e4e66b880"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><a class="reference internal" href="classComponentWrapper.html#_CPPv4I0E16ComponentWrapper" title="ComponentWrapper"><span class="n"><span class="pre">ComponentWrapper</span></span></a><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4I0EN12cuda_backend16CudaSimulation2d21getDeviceComponentPtrEP16ComponentWrapperI1TE6size_t" title="cuda_backend::CudaSimulation2d::getDeviceComponentPtr::T"><span class="n"><span class="pre">T</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">getDeviceComponentPtr</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">i</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4I0EN12cuda_backend16CudaSimulation2d21getDeviceComponentPtrEP16ComponentWrapperI1TE6size_t" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4I0EN12cuda_backend16CudaSimulation2d15getInternaltPtrEP16ComponentWrapperI1TE6size_t">
+<span id="_CPPv3I0EN12cuda_backend16CudaSimulation2d15getInternaltPtrE6size_t"></span><span id="_CPPv2I0EN12cuda_backend16CudaSimulation2d15getInternaltPtrE6size_t"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">typename</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">T</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="classcuda__backend_1_1CudaSimulation2d_1a2740163522b251bf08af264ac993c666"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><a class="reference internal" href="classComponentWrapper.html#_CPPv4I0E16ComponentWrapper" title="ComponentWrapper"><span class="n"><span class="pre">ComponentWrapper</span></span></a><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4I0EN12cuda_backend16CudaSimulation2d15getInternaltPtrEP16ComponentWrapperI1TE6size_t" title="cuda_backend::CudaSimulation2d::getInternaltPtr::T"><span class="n"><span class="pre">T</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">getInternaltPtr</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">i</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4I0EN12cuda_backend16CudaSimulation2d15getInternaltPtrEP16ComponentWrapperI1TE6size_t" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4I0EN12cuda_backend16CudaSimulation2d18getDeviceComponentER1T6size_t">
+<span id="_CPPv3I0EN12cuda_backend16CudaSimulation2d18getDeviceComponentE6size_t"></span><span id="_CPPv2I0EN12cuda_backend16CudaSimulation2d18getDeviceComponentE6size_t"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">typename</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">T</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="classcuda__backend_1_1CudaSimulation2d_1a7f0c29d496c84d8ce54ded9748a8c382"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4I0EN12cuda_backend16CudaSimulation2d18getDeviceComponentER1T6size_t" title="cuda_backend::CudaSimulation2d::getDeviceComponent::T"><span class="n"><span class="pre">T</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">getDeviceComponent</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">i</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4I0EN12cuda_backend16CudaSimulation2d18getDeviceComponentER1T6size_t" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-static-functions">Public Static Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N12cuda_backend16CudaSimulation2d29InitializeNewCudaSimulation2DE6Config">
+<span id="_CPPv3N12cuda_backend16CudaSimulation2d29InitializeNewCudaSimulation2DE6Config"></span><span id="_CPPv2N12cuda_backend16CudaSimulation2d29InitializeNewCudaSimulation2DE6Config"></span><span id="cuda_backend::CudaSimulation2d::InitializeNewCudaSimulation2D__Config"></span><span class="target" id="classcuda__backend_1_1CudaSimulation2d_1a19ffc37fd5d2d8c950d3ecd6b76b12a9"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="n"><span class="pre">simulation_2d</span></span><span class="p"><span class="pre">::</span></span><a class="reference internal" href="classsimulation__2d_1_1Simulation2d.html#_CPPv4N13simulation_2d12Simulation2dE" title="simulation_2d::Simulation2d"><span class="n"><span class="pre">Simulation2d</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">InitializeNewCudaSimulation2D</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="structConfig.html#_CPPv46Config" title="Config"><span class="n"><span class="pre">Config</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">new_cfg</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N12cuda_backend16CudaSimulation2d29InitializeNewCudaSimulation2DE6Config" title="Link to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-private-members">Private Members</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N12cuda_backend16CudaSimulation2d17device_componentsE">
+<span id="_CPPv3N12cuda_backend16CudaSimulation2d17device_componentsE"></span><span id="_CPPv2N12cuda_backend16CudaSimulation2d17device_componentsE"></span><span id="cuda_backend::CudaSimulation2d::device_components__std::vector:std::unique_ptr:ComponentBase::"></span><span class="target" id="classcuda__backend_1_1CudaSimulation2d_1abbee166f0140bf6cf1dfbceae4071f6c"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">unique_ptr</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="classComponentBase.html#_CPPv413ComponentBase" title="ComponentBase"><span class="n"><span class="pre">ComponentBase</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">device_components</span></span></span><a class="headerlink" href="#_CPPv4N12cuda_backend16CudaSimulation2d17device_componentsE" title="Link to this definition"></a><br /></dt>
+<dd><p>Internal vector holding pointers to device components. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N12cuda_backend16CudaSimulation2d24device_internal_pointersE">
+<span id="_CPPv3N12cuda_backend16CudaSimulation2d24device_internal_pointersE"></span><span id="_CPPv2N12cuda_backend16CudaSimulation2d24device_internal_pointersE"></span><span id="cuda_backend::CudaSimulation2d::device_internal_pointers__std::vector:std::unique_ptr:ComponentBase::"></span><span class="target" id="classcuda__backend_1_1CudaSimulation2d_1a8954846462541a66b4bcf5260dba892b"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">unique_ptr</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="classComponentBase.html#_CPPv413ComponentBase" title="ComponentBase"><span class="n"><span class="pre">ComponentBase</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">device_internal_pointers</span></span></span><a class="headerlink" href="#_CPPv4N12cuda_backend16CudaSimulation2d24device_internal_pointersE" title="Link to this definition"></a><br /></dt>
+<dd><p>Vector holding pointers to device data. </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="classComponentWrapper.html" class="btn btn-neutral float-left" title="Template Class ComponentWrapper" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="classDiffusion2d.html" class="btn btn-neutral float-right" title="Template Class Diffusion2d" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright .</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

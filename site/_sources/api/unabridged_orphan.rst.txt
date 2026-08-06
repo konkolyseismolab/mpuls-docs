@@ -185,6 +185,16 @@ Files
 .. toctree::
    :maxdepth: 5
 
+   file_include_core_simulation2d_cuda.hpp.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_include_core_simulation_factory.hpp.rst
+
+.. toctree::
+   :maxdepth: 5
+
    file_include_models_stellar_input.hpp.rst
 
 .. toctree::
@@ -196,6 +206,11 @@ Files
    :maxdepth: 5
 
    file_include_core_version.hpp.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_include_core_wrappers.hpp.rst
 
 Pages
 *****

@@ -9,6 +9,7 @@
   <title>Time integration &mdash; Modular PULsation Suite  documentation</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css?v=4ae1632d" />
       <link rel="stylesheet" type="text/css" href="../../_static/collapsible-lists/css/tree_view.css?v=a885cde7" />
       <link rel="stylesheet" type="text/css" href="../../_static/compact-api.css?v=bfcdbbe1" />
 
@@ -60,8 +61,9 @@
 <li class="toctree-l3"><a class="reference internal" href="Limiters.html">Limiters</a></li>
 <li class="toctree-l3"><a class="reference internal" href="hyperbolic-filter.html">Solution filtering</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">Time integration</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#heun-s-method">Heun’s method</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#ssp-rk3">SSP-RK3</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv4I_12QuantityTypeE14TimeSolverBase"><code class="docutils literal notranslate"><span class="pre">TimeSolverBase</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv4I_12QuantityType000E7SSP_RK2"><code class="docutils literal notranslate"><span class="pre">SSP_RK2</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv4I_12QuantityType000E7SSP_RK3"><code class="docutils literal notranslate"><span class="pre">SSP_RK3</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -105,70 +107,86 @@
 <p>Using the method of lines (MOL) aprroach, the semi-difference flux formulas
 convert the PDE system into a system of ordenary differential equations for
 each grid points. Therefore the whole system for the <span class="math notranslate nohighlight">\(i,j,k\)</span> gridpoint gives:</p>
-<div class="math notranslate nohighlight" id="equation-ode-eq">
-<span class="eqno">(1)<a class="headerlink" href="#equation-ode-eq" title="Link to this equation"></a></span>\[ \frac{\partial \boldsymbol q_{i,j,k}}{\partial t} = \boldsymbol f (\boldsymbol q_{i,j,k}, \boldsymbol r_{i,j,k}, t) \]</div>
-<p>which is an ordenary differential equation system (ODE). This type of systems can be solved by any ODE solver, such as Runge-Kutta schemes, Crank-Nicholson schemes, etc. MPULS currently implements two widely used schemes for time integration:</p>
-<ul class="simple">
-<li><p>Heun’s method (2nd order strong stability preserving Runge-Kutta method, SSP-RK2)<a class="footnote-reference brackets" href="#id4" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></li>
-<li><p>3rd order strong stability preserving Runge-Kutta method (SSP-RK3)<a class="footnote-reference brackets" href="#id4" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></li>
+<div class="math notranslate nohighlight">
+\[ \frac{\partial \boldsymbol q_{i,j,k}}{\partial t} = \boldsymbol f (\boldsymbol q_{i,j,k}, \boldsymbol r_{i,j,k}, t) \]</div>
+<dl>
+<dt class="sig sig-object cpp">
+<span class="target" id="group__TimeSolvers"></span><em><span class="pre">group</span></em> <span class="sig-name descname"><span class="pre">TimeSolvers</span></span></dt>
+<dd><p>The time solvers have a common virtual interface defined in <a class="reference internal" href="#classTimeSolverBase"><span class="std std-ref">TimeSolverBase</span></a>. They implement various Strong Stability Preserving Runge-Kutta schemes (SSP-RK) for temporal integration in the method of lines framework.</p>
+<p>The TimeSolverType concept enforces that only concrete implementations (not the base) can be instantiated, preventing improper use of the abstract interface. </p>
+<dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv4I_12QuantityTypeE14TimeSolverBase">
+<span id="_CPPv3I_12QuantityTypeE14TimeSolverBase"></span><span id="_CPPv2I_12QuantityTypeE14TimeSolverBase"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">QuantityType</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Q</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="classTimeSolverBase"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">TimeSolverBase</span></span></span><br /></dt>
+<dd><div class="docutils container">
+<em>#include &lt;time_solver/time_solver.hpp&gt;</em></div>
+<p>The abstract interface for time solvers. </p>
+<p>Defines the common virtual interface that all concrete time integration schemes must implement. This includes methods for time stepping control and the main solve routine.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Template Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>Q</strong> – Type of the state vector quantity </p>
+</dd>
+</dl>
+<p>Subclassed by <a class="reference internal" href="#classSSP__RK2"><span class="std std-ref">SSP_RK2&lt; Q, RHS, CFL, Boundary &gt;</span></a>, <a class="reference internal" href="#classSSP__RK3"><span class="std std-ref">SSP_RK3&lt; Q, RHS, CFL, Boundary &gt;</span></a></p>
+</dd></dl>
+
+<dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv4I_12QuantityType000E7SSP_RK2">
+<span id="_CPPv3I_12QuantityType000E7SSP_RK2"></span><span id="_CPPv2I_12QuantityType000E7SSP_RK2"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">QuantityType</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Q</span></span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">RHS</span></span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CFL</span></span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Boundary</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="classSSP__RK2"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">SSP_RK2</span></span></span><span class="w"> </span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="k"><span class="pre">public</span></span><span class="w"> </span><a class="reference internal" href="../../api/classTimeSolverBase.html#_CPPv4I_12QuantityTypeE14TimeSolverBase" title="TimeSolverBase"><span class="n"><span class="pre">TimeSolverBase</span></span></a><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="../../api/classSSP__RK2.html#_CPPv4I_12QuantityType000E7SSP_RK2" title="SSP_RK2::Q"><span class="n"><span class="pre">Q</span></span></a><span class="p"><span class="pre">&gt;</span></span><br /></dt>
+<dd><div class="docutils container">
+<em>#include &lt;time_solver/time_solver.hpp&gt;</em></div>
+<p>Strong Stability Preseving Runge Kutta 2nd order. </p>
+<p>This solver implements the SSP-RK2 method, also known as Heun method for ordinary differential equations, in the method of lines sense. The method is described in 2 steps. Giving the following formula:  <div class="math notranslate nohighlight">
+\[\begin{split} 
+     \begin{array}{c}
+     \displaystyle \boldsymbol{k}_1 = h \boldsymbol{f}(\boldsymbol{q}^n) \\
+     \displaystyle \boldsymbol{k}_2 = h \boldsymbol{f}(\boldsymbol{q}^n + k_1) \\
+     \displaystyle \boldsymbol{q}^{n+1} = \boldsymbol{q}^n + \frac 1 2 (\boldsymbol k_1 + \boldsymbol k_2)
+     \end{array}
+\end{split}\]</div>
+</p>
+<dl class="field-list simple">
+<dt class="field-odd">Template Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>Q</strong> – The structure of the State vector </p></li>
+<li><p><strong>RHS</strong> – The right hand side of the equation <span class="math notranslate nohighlight">\(\boldsymbol{f}(\boldsymbol{q}, t)\)</span></p></li>
+<li><p><strong>CFL</strong> – The Adaptive timestep generator class </p></li>
+<li><p><strong>Boundary</strong> – The boundary condition implementation. </p></li>
 </ul>
-<details class="admonition-implementation admonition" open="open">
-<summary class="admonition-title">Implementation</summary>
-<p>The ODE is implemented through the <a class="reference internal" href="../../api/classRightHandSide.html#exhale-class-classrighthandside"><span class="std std-ref">Template Class RightHandSide</span></a>
-class and its variants, gathering all relevant operators for the given
-problem. Its’ simplest form only consists of the advection part of the
-equation system, while the <a class="reference internal" href="../../api/classRightHandSideDecorator.html#exhale-class-classrighthandsidedecorator"><span class="std std-ref">Template Class RightHandSideDecorator</span></a>
-struct implements additional features, such as diffusion, or solution
-filtering.</p>
-<p>Time integration is implemented via the common interface of the
-<a class="reference internal" href="../../api/classTimeSolverBase.html#exhale-class-classtimesolverbase"><span class="std std-ref">Template Class TimeSolverBase</span></a> class.</p>
-<p>In a structure perspective, the time integrator class is the top level caller
-of the system. (Configuration and memory management is implemented through the
-top level simulation classes.)</p>
-</details>
-<section id="heun-s-method">
-<h2>Heun’s method<a class="headerlink" href="#heun-s-method" title="Link to this heading"></a></h2>
-<p>The second order strong-stability preserving Runge-Kutta method, or Heun’s method consists of the following Butcher table:</p>
-<div class="math notranslate nohighlight" id="equation-heun-butcher">
-<span class="eqno">(2)<a class="headerlink" href="#equation-heun-butcher" title="Link to this equation"></a></span>\[\begin{split}
-\begin{array}{c|cc}
-0 &amp; &amp; \\
-1 &amp; 1 &amp; \\
-\hline
-&amp; 1/2 &amp; 1/2
-\end{array}
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv4I_12QuantityType000E7SSP_RK3">
+<span id="_CPPv3I_12QuantityType000E7SSP_RK3"></span><span id="_CPPv2I_12QuantityType000E7SSP_RK3"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">QuantityType</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Q</span></span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">RHS</span></span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CFL</span></span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Boundary</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="classSSP__RK3"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">SSP_RK3</span></span></span><span class="w"> </span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="k"><span class="pre">public</span></span><span class="w"> </span><a class="reference internal" href="../../api/classTimeSolverBase.html#_CPPv4I_12QuantityTypeE14TimeSolverBase" title="TimeSolverBase"><span class="n"><span class="pre">TimeSolverBase</span></span></a><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="../../api/classSSP__RK3.html#_CPPv4I_12QuantityType000E7SSP_RK3" title="SSP_RK3::Q"><span class="n"><span class="pre">Q</span></span></a><span class="p"><span class="pre">&gt;</span></span><br /></dt>
+<dd><div class="docutils container">
+<em>#include &lt;time_solver/time_solver.hpp&gt;</em></div>
+<p>Strong Stability Preseving Runge Kutta 3rd order. </p>
+<p>This solver implements the SSP-RK3 method for ordinary differential equations, in the method of lines sense. The method is described in three steps. Giving the following formula:  <div class="math notranslate nohighlight">
+\[\begin{split} 
+     \begin{array}{c}
+     \displaystyle \boldsymbol{k}_1 = h \boldsymbol{f}(\boldsymbol{q}^n) \\
+     \displaystyle \boldsymbol{k}_2 = h \boldsymbol{f}(\boldsymbol{q}^n + k_1) \\
+     \displaystyle \boldsymbol{k}_3 = h \boldsymbol{f}(\boldsymbol{q}^n + \frac 1 4 (\boldsymbol k_1 +\boldsymbol k_2 )) \\
+     \displaystyle \boldsymbol{q}^{n+1} = \boldsymbol{q}^n + \frac 1 6 (\boldsymbol k_1 + \boldsymbol k_2) + \frac 2 3 \boldsymbol k_3
+     \end{array}
 \end{split}\]</div>
-<p>The method provides second order accuracy, but it is explicit; therefore, we have CFL criterion limiting based on the reconstruction scheme and additional operators. (Stiff source and parabolic terms can reduce timesteps severely.) It preserves the stability of <span class="math notranslate nohighlight">\(\boldsymbol f \)</span>, but it is not TVD by itself. TVD property should be enforced in the advection and filtering operators.</p>
-<p>This time integration is the fastest choice in MPULS. It is implemented by the <a class="reference internal" href="../../api/classSSP__RK2.html#exhale-class-classssp-rk2"><span class="std std-ref">SSP_RK2</span></a> class.</p>
+</p>
+<dl class="field-list simple">
+<dt class="field-odd">Template Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>Q</strong> – The structure of the State vector </p></li>
+<li><p><strong>RHS</strong> – The right hand side of the equation <span class="math notranslate nohighlight">\(\boldsymbol{f}(\boldsymbol{q}, t)\)</span></p></li>
+<li><p><strong>CFL</strong> – The Adaptive timestep generator class </p></li>
+<li><p><strong>Boundary</strong> – The boundary condition implementation. </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
 </section>
-<section id="ssp-rk3">
-<h2>SSP-RK3<a class="headerlink" href="#ssp-rk3" title="Link to this heading"></a></h2>
-<p>Third order explicit scheme, the de-facto default choice of WENO scheme implementations. It shares the SSP property of the Heun’s method. This three-step scheme has the following Butcher-tablou:</p>
-<div class="math notranslate nohighlight" id="equation-ssprk3-butcher">
-<span class="eqno">(3)<a class="headerlink" href="#equation-ssprk3-butcher" title="Link to this equation"></a></span>\[\begin{split}
-\begin{array}{c|ccc}
-0 &amp; &amp; \\
-1 &amp; 1 &amp; \\
-1/2 &amp; 1/4 &amp; 1/4 &amp; \\
-\hline
-&amp; 1/6 &amp; 1/6 &amp; 2/3
-\end{array}
-\end{split}\]</div>
-<p>This method also have the same limitations for stiff operators as the Heun’s method, but provides higher accuracy without too much increase in computational time. It is the base integration scheme for the ANTARES code<a class="footnote-reference brackets" href="#id5" id="id3" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a>, which also shows its versability. In MPULS it is implemented in the <a class="reference internal" href="../../api/classSSP__RK3.html#exhale-class-classssp-rk3"><span class="std std-ref">SSP_RK3</span></a> class.</p>
-</section>
-</section>
-<hr class="footnotes docutils" />
-<aside class="footnote-list brackets">
-<aside class="footnote brackets" id="id4" role="doc-footnote">
-<span class="label"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></span>
-<span class="backrefs">(<a role="doc-backlink" href="#id1">1</a>,<a role="doc-backlink" href="#id2">2</a>)</span>
-<p>See also: <em>Efficient Implementation of Essentially Non-Oscillatory Schock-Capturing Schemes II</em> by <a class="reference external" href="https://doi.org/10.1016/0021-9991(89)90222-2">Usher &amp; Shu, 1989, Journal of Comp. Phys. 83,32-78 </a></p>
-</aside>
-<aside class="footnote brackets" id="id5" role="doc-footnote">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id3">2</a><span class="fn-bracket">]</span></span>
-<p><a class="reference external" href="http://dx.doi.org/10.1016/j.newast.2009.12.005">Muthsam et al., 2010, New Astron. 15, 460-475</a></p>
-</aside>
-</aside>
 
 
            </div>

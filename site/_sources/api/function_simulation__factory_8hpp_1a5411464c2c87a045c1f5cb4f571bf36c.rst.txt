@@ -1,0 +1,14 @@
+.. _exhale_function_simulation__factory_8hpp_1a5411464c2c87a045c1f5cb4f571bf36c:
+
+Template Function simulation_2d::generateBoundary
+=================================================
+
+- Defined in :ref:`file_include_core_simulation_factory.hpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: simulation_2d::generateBoundary(std::vector<model::Boundary>)
+   :project: MPULS

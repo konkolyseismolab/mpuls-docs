@@ -1,0 +1,5 @@
+<map id="%3" name="%3">
+<area shape="rect" id="node1" title="cuda_backend::CudaSimulation2d" alt="" coords="5,5,348,53"/>
+<area shape="rect" id="node2" title="simulation_2d::Simulation2d" alt="" coords="29,101,324,149"/>
+<area shape="poly" id="edge1" title="public&#45;inheritance" alt="" coords="179,54,179,88,174,88,174,54"/>
+</map>

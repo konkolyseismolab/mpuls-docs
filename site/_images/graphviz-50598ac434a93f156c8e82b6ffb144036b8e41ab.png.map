@@ -1,0 +1,5 @@
+<map id="%3" name="%3">
+<area shape="rect" id="node1" title="LimiterBase&lt; Q &gt;" alt="" coords="5,101,203,149"/>
+<area shape="rect" id="node2" title="VanLeer&lt; Q &gt;" alt="" coords="25,5,183,53"/>
+<area shape="poly" id="edge1" title="public&#45;inheritance" alt="" coords="107,54,107,88,101,88,101,54"/>
+</map>

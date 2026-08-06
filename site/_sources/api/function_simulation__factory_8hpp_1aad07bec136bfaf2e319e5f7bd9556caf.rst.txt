@@ -1,0 +1,14 @@
+.. _exhale_function_simulation__factory_8hpp_1aad07bec136bfaf2e319e5f7bd9556caf:
+
+Template Function simulation_2d::solver_factory
+===============================================
+
+- Defined in :ref:`file_include_core_simulation_factory.hpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: simulation_2d::solver_factory(EqTag, flux, limiter, reconst, solver, bool, GridDimensions2d<D>&, Grid2d<Q>&, Grid2d<Q>&, D, std::vector<model::Boundary>)
+   :project: MPULS

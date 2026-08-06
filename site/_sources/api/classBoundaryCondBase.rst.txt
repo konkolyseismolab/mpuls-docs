@@ -1,0 +1,28 @@
+.. _exhale_class_classBoundaryCondBase:
+
+Template Class BoundaryCondBase
+===============================
+
+- Defined in :ref:`file_include_grid_grid.hpp`
+
+
+Inheritance Relationships
+-------------------------
+
+Derived Type
+************
+
+- ``public BoundaryCond2d< Q, BoundVer, BoundHor >`` (:ref:`exhale_class_classBoundaryCond2d`)
+
+
+Class Documentation
+-------------------
+
+
+.. doxygenclass:: BoundaryCondBase
+   :project: MPULS
+   :members:
+   :allow-dot-graphs:
+   :protected-members:
+   :private-members:
+   :undoc-members:

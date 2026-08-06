@@ -13,6 +13,7 @@ Struct Documentation
 .. doxygenstruct:: CellCenter
    :project: MPULS
    :members:
+   :allow-dot-graphs:
    :protected-members:
    :private-members:
    :undoc-members:

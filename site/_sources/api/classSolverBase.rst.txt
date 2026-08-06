@@ -1,0 +1,28 @@
+.. _exhale_class_classSolverBase:
+
+Class SolverBase
+================
+
+- Defined in :ref:`file_include_core_wrappers.hpp`
+
+
+Inheritance Relationships
+-------------------------
+
+Derived Type
+************
+
+- ``public SolverWrapper< T >`` (:ref:`exhale_class_classSolverWrapper`)
+
+
+Class Documentation
+-------------------
+
+
+.. doxygenclass:: SolverBase
+   :project: MPULS
+   :members:
+   :allow-dot-graphs:
+   :protected-members:
+   :private-members:
+   :undoc-members:

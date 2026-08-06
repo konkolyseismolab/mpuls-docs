@@ -1,0 +1,19 @@
+.. _exhale_class_classPeriodicBoundary:
+
+Template Class PeriodicBoundary
+===============================
+
+- Defined in :ref:`file_include_grid_grid.hpp`
+
+
+Class Documentation
+-------------------
+
+
+.. doxygenclass:: PeriodicBoundary
+   :project: MPULS
+   :members:
+   :allow-dot-graphs:
+   :protected-members:
+   :private-members:
+   :undoc-members:

@@ -3,7 +3,7 @@
 Template Struct EquationTraits
 ==============================
 
-- Defined in :ref:`file_include_core_simulation2d.hpp`
+- Defined in :ref:`file_include_core_simulation_factory.hpp`
 
 
 Struct Documentation
@@ -13,6 +13,7 @@ Struct Documentation
 .. doxygenstruct:: simulation_2d::EquationTraits
    :project: MPULS
    :members:
+   :allow-dot-graphs:
    :protected-members:
    :private-members:
    :undoc-members:

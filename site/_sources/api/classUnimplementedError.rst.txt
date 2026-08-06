@@ -22,6 +22,7 @@ Class Documentation
 .. doxygenclass:: UnimplementedError
    :project: MPULS
    :members:
+   :allow-dot-graphs:
    :protected-members:
    :private-members:
    :undoc-members:

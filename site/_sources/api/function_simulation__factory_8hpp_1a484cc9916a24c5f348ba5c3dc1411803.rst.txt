@@ -1,0 +1,14 @@
+.. _exhale_function_simulation__factory_8hpp_1a484cc9916a24c5f348ba5c3dc1411803:
+
+Template Function simulation_2d::createReconstruction
+=====================================================
+
+- Defined in :ref:`file_include_core_simulation_factory.hpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: simulation_2d::createReconstruction(reconstTag, Limiter<Q>&, GridDimensions2d<typename QuantityTraits<Q>::D>&)
+   :project: MPULS

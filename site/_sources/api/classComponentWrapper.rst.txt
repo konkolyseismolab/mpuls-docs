@@ -1,0 +1,28 @@
+.. _exhale_class_classComponentWrapper:
+
+Template Class ComponentWrapper
+===============================
+
+- Defined in :ref:`file_include_core_wrappers.hpp`
+
+
+Inheritance Relationships
+-------------------------
+
+Base Type
+*********
+
+- ``public ComponentBase`` (:ref:`exhale_class_classComponentBase`)
+
+
+Class Documentation
+-------------------
+
+
+.. doxygenclass:: ComponentWrapper
+   :project: MPULS
+   :members:
+   :allow-dot-graphs:
+   :protected-members:
+   :private-members:
+   :undoc-members:

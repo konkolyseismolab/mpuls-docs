@@ -13,6 +13,7 @@ Class Documentation
 .. doxygenclass:: QuantityBase
    :project: MPULS
    :members:
+   :allow-dot-graphs:
    :protected-members:
    :private-members:
    :undoc-members:

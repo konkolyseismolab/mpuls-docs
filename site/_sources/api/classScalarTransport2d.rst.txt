@@ -22,6 +22,7 @@ Class Documentation
 .. doxygenclass:: ScalarTransport2d
    :project: MPULS
    :members:
+   :allow-dot-graphs:
    :protected-members:
    :private-members:
    :undoc-members:

@@ -1,0 +1,49 @@
+
+.. _file_include_core_simulation2d_cuda.hpp:
+
+File simulation2d_cuda.hpp
+==========================
+
+|exhale_lsh| :ref:`Parent directory <dir_include_core>` (``include/core``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``include/core/simulation2d_cuda.hpp``)
+---------------------------------------------------
+
+
+
+
+
+
+Includes
+--------
+
+
+- ``core/simulation2d.hpp`` (:ref:`file_include_core_simulation2d.hpp`)
+
+- ``vector``
+
+
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_cuda_backend`
+
+
+Classes
+-------
+
+
+- :ref:`exhale_class_classcuda__backend_1_1CudaSimulation2d`
+

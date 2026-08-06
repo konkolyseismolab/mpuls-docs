@@ -23,6 +23,9 @@ Files
 - :ref:`file_include_core_constants.hpp`
 - :ref:`file_include_core_custom_exceptions.hpp`
 - :ref:`file_include_core_simulation2d.hpp`
+- :ref:`file_include_core_simulation2d_cuda.hpp`
+- :ref:`file_include_core_simulation_factory.hpp`
 - :ref:`file_include_core_version.hpp`
+- :ref:`file_include_core_wrappers.hpp`
 
 

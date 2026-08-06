@@ -1,0 +1,28 @@
+.. _exhale_class_classcuda__backend_1_1CudaSimulation2d:
+
+Class CudaSimulation2d
+======================
+
+- Defined in :ref:`file_include_core_simulation2d_cuda.hpp`
+
+
+Inheritance Relationships
+-------------------------
+
+Base Type
+*********
+
+- ``public simulation_2d::Simulation2d`` (:ref:`exhale_class_classsimulation__2d_1_1Simulation2d`)
+
+
+Class Documentation
+-------------------
+
+
+.. doxygenclass:: cuda_backend::CudaSimulation2d
+   :project: MPULS
+   :members:
+   :allow-dot-graphs:
+   :protected-members:
+   :private-members:
+   :undoc-members:

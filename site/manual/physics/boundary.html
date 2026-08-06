@@ -1,0 +1,211 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Boundary conditions &mdash; Modular PULsation Suite  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css?v=4ae1632d" />
+      <link rel="stylesheet" type="text/css" href="../../_static/collapsible-lists/css/tree_view.css?v=a885cde7" />
+      <link rel="stylesheet" type="text/css" href="../../_static/compact-api.css?v=bfcdbbe1" />
+
+  
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script src="../../_static/collapsible-lists/js/CollapsibleLists.compressed.js?v=73120307"></script>
+      <script src="../../_static/collapsible-lists/js/apply-collapsible-lists.js?v=660e4f45"></script>
+      <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+      <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Numerical background" href="../numerics/numerics.html" />
+    <link rel="prev" title="PDE Systems" href="equations.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Modular PULsation Suite
+              <img src="../../_static/logo-mpuls.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../guide/index.html">MPULS User Guide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">MPULS User Manual</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="physics.html">Physical background</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="equations.html">PDE Systems</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Boundary conditions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#available-boundary-conditions-in-mpuls">Available boundary conditions in MPULS</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#usage-and-implementation">Usage and implementation</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../numerics/numerics.html">Numerical background</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference Manual</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../api/library_root.html">MPULS API reference</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Modular PULsation Suite</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">MPULS User Manual</a></li>
+          <li class="breadcrumb-item"><a href="physics.html">Physical background</a></li>
+      <li class="breadcrumb-item active">Boundary conditions</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/manual/physics/boundary.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="boundary-conditions">
+<h1>Boundary conditions<a class="headerlink" href="#boundary-conditions" title="Link to this heading"></a></h1>
+<p>A PDE (or ODE) system usually needs initial and boundary conditions, which can provide the particular solution
+of the system we are looking for. In the case of MPULS, we use initial conditions to provide the temporal
+solution and provide the boundary conditions which determine the spatial structure of the simulation.</p>
+<p>In general: the boundary conditions are used to determine the behavior of the system near the edge of the
+simulation domain.</p>
+<section id="available-boundary-conditions-in-mpuls">
+<h2>Available boundary conditions in MPULS<a class="headerlink" href="#available-boundary-conditions-in-mpuls" title="Link to this heading"></a></h2>
+<p>Currently three different type of boundary conditions are implemented into MPULS:
+- Free-slip boundary (Neumann type boundary)
+- Reflexive boundary (Neumann type boundary)
+- Periodic boundary</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>All boundary conditions are implemented in the ghost cell approach. That is, instead of directly modifying the
+solver behavior near the boundaries (such as overwriting fluxes), additional cells are put after the edge of the
+grid, that are constructed in a way to reproduce the wanted behavior.</p>
+</div>
+<section id="free-slip-boundary-conditions">
+<h3>Free-slip boundary conditions<a class="headerlink" href="#free-slip-boundary-conditions" title="Link to this heading"></a></h3>
+<p>In the free-slip boundary condition we set the ghost cell values equal to the ones of the outermost cell, which provide
+exactly zero derivatives at the edges. Thus, at the <span class="math notranslate nohighlight">\(i=N\)</span> index the <span class="math notranslate nohighlight">\(N+j\)</span>, or the <span class="math notranslate nohighlight">\(j\)</span> th ghost cell will have
+the state vector exatly as:</p>
+<div class="math notranslate nohighlight" id="equation-free-slip-boundary">
+<span class="eqno">(1)<a class="headerlink" href="#equation-free-slip-boundary" title="Link to this equation"></a></span>\[\boldsymbol q_{N+j} = \boldsymbol q_{N}\]</div>
+</section>
+<section id="reflexive-boundary-conditions">
+<h3>Reflexive boundary conditions<a class="headerlink" href="#reflexive-boundary-conditions" title="Link to this heading"></a></h3>
+<p>This boundary condition is used to precisely reflect inoming soundwaves. It uses zero derivatives for every state vector
+element except the velocity perpendicular to the boundary. There <span class="math notranslate nohighlight">\(\partial \ln q / \partial x = -2\)</span>. Using ghost
+cells this results in</p>
+<div class="math notranslate nohighlight" id="equation-reflexive-boundary">
+<span class="eqno">(2)<a class="headerlink" href="#equation-reflexive-boundary" title="Link to this equation"></a></span>\[\begin{split}q_{N+j}^l = \left\lbrace\begin{array}{lr}
+q_{N}^l &amp; {\rm for\ } l \neq l_{\rm velocity} \\
+-q_{N}^l &amp; {\rm otherwise} \\
+\end{array} \right.\end{split}\]</div>
+<p>where <span class="math notranslate nohighlight">\(l\)</span> is the index of the state element.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Both reflexive and free-slip boundaries are a member of the Neumann-type boundary condition family. These boundary
+conditions determine the first-order spatial derivatives at the edges of the simulation domain:</p>
+<div class="math notranslate nohighlight">
+\[\left.\frac{\partial \boldsymbol q}{\partial x}\right|_{x=x_{\rm edge}} = \boldsymbol g(t)\]</div>
+</div>
+</section>
+<section id="periodic-boundary-condition">
+<h3>Periodic boundary condition<a class="headerlink" href="#periodic-boundary-condition" title="Link to this heading"></a></h3>
+<p>The quantities leaving on one side return on the other side of the simulation domain. This can be eeasily achieved by
+the following ghost cell formula:</p>
+<div class="math notranslate nohighlight" id="equation-periodic-conditions">
+<span class="eqno">(3)<a class="headerlink" href="#equation-periodic-conditions" title="Link to this equation"></a></span>\[\begin{split}\boldsymbol q_j = \boldsymbol q_{N+1+j} &amp;\qquad {\rm for}\ j=-1,-2,\dots \\
+\boldsymbol q_N+j = \boldsymbol q_j &amp;\qquad  {\rm for}\ j=1,2,\dots\end{split}\]</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Current implementation only permits periodic boundaries pairwise in the same direction.</p>
+</div>
+</section>
+</section>
+<section id="usage-and-implementation">
+<h2>Usage and implementation<a class="headerlink" href="#usage-and-implementation" title="Link to this heading"></a></h2>
+<p>All boundary conditions can be used in all directions, but they are applied pairwise. This also means that MPULS
+itself let the user use a periodic boundary on the radial direction of a spherical grid, while that is not physically
+consistent. Meantime this can be used for quasi-cartesian grids (i.e. <cite>Rin &gt;&gt; 1</cite>).</p>
+<p>Later versions will include
+boundary conditions that can differ on the two edges of the same direction. For numerical tests,
+using free-slip boundary can be straightforward.</p>
+<details class="admonition-implementation admonition">
+<summary class="admonition-title">Implementation</summary>
+<p>Boundary conditions are used in a polyformic class: the <a class="reference internal" href="../../api/classBoundaryCondBase.html#exhale-class-classboundarycondbase"><span class="std std-ref">BoundaryCondBase</span></a>
+provides an interface for the different sets of boundary conditions, while the
+<a class="reference internal" href="../../api/classBoundaryCond2d.html#exhale-class-classboundarycond2d"><span class="std std-ref">BoundaryCond2d</span></a> is a templated derived class used to specify the different
+directions. Thus the <a class="reference internal" href="../../api/classBoundaryCondBase.html#exhale-class-classboundarycondbase"><span class="std std-ref">BoundaryCondBase</span></a> is used by the solver, which
+creates a <cite>vptr</cite> overhead. This overhead is small though, because it is only called per time substeps. This method
+provides us a versatile boundary condition handling, without a too large compile time, that would be caused by the
+3×3 versions on boundary condittions on top of the templated solver.</p>
+</details>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="equations.html" class="btn btn-neutral float-left" title="PDE Systems" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../numerics/numerics.html" class="btn btn-neutral float-right" title="Numerical background" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright .</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

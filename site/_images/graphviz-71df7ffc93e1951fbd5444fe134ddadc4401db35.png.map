@@ -1,0 +1,9 @@
+<map id="%3" name="%3">
+<area shape="rect" id="node1" title="LimiterBase&lt; Q &gt;" alt="" coords="177,101,375,149"/>
+<area shape="rect" id="node2" title="MinMod&lt; Q &gt;" alt="" coords="5,5,165,53"/>
+<area shape="poly" id="edge1" title="public&#45;inheritance" alt="" coords="133,51,218,93,216,98,131,56"/>
+<area shape="rect" id="node3" title="Superbee&lt; Q &gt;" alt="" coords="190,5,362,53"/>
+<area shape="poly" id="edge2" title="public&#45;inheritance" alt="" coords="279,54,279,88,273,88,273,54"/>
+<area shape="rect" id="node4" title="VanLeer&lt; Q &gt;" alt="" coords="386,5,545,53"/>
+<area shape="poly" id="edge3" title="public&#45;inheritance" alt="" coords="420,56,336,98,333,93,418,51"/>
+</map>

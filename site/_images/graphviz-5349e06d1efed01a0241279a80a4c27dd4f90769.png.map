@@ -1,0 +1,14 @@
+<map id="%3" name="%3">
+<area shape="rect" id="node1" title="ConvectiveParameters" alt="" coords="5,101,243,149"/>
+<area shape="rect" id="node2" title="GridConfig" alt="" coords="267,101,392,149"/>
+<area shape="rect" id="node6" title="std::string" alt="" coords="350,197,471,245"/>
+<area shape="poly" id="edge1" title="usage" alt="" coords="351,148,384,185,380,189,347,151"/>
+<area shape="rect" id="node3" title="PhysicsConfig" alt="" coords="416,101,571,149"/>
+<area shape="poly" id="edge2" title="usage" alt="" coords="475,152,442,189,438,185,471,148"/>
+<area shape="rect" id="node4" title="StellarInput" alt="" coords="261,5,398,53"/>
+<area shape="poly" id="edge4" title="usage" alt="" coords="280,56,188,98,185,93,278,51"/>
+<area shape="poly" id="edge3" title="usage" alt="" coords="332,54,332,88,327,88,327,54"/>
+<area shape="poly" id="edge5" title="usage" alt="" coords="371,51,443,92,440,97,368,56"/>
+<area shape="rect" id="node5" title="std::basic_string&lt; Char &gt;" alt="" coords="276,293,545,341"/>
+<area shape="poly" id="edge6" title="public&#45;inheritance" alt="" coords="413,246,413,280,408,280,408,246"/>
+</map>

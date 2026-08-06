@@ -65,7 +65,7 @@ Included By
 -----------
 
 
-- :ref:`file_include_core_simulation2d.hpp`
+- :ref:`file_include_core_simulation_factory.hpp`
 
 
 

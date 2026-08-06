@@ -31,6 +31,8 @@ Included By
 
 - :ref:`file_include_advection_hyperdiffusion.hpp`
 
+- :ref:`file_include_core_wrappers.hpp`
+
 - :ref:`file_include_equations_equations.hpp`
 
 
@@ -46,8 +48,6 @@ Enums
 Variables
 ---------
 
-
-- :ref:`exhale_variable_common_8hpp_1aa978754ca655ef66eff1586405d394e2`
 
 - :ref:`exhale_variable_common_8hpp_1aeaa45c68beb95f9860a4b00f3491dfe9`
 

@@ -49,7 +49,7 @@ Included By
 
 - :ref:`file_include_advection_hyperdiffusion.hpp`
 
-- :ref:`file_include_core_compile_time_dispatcher.hpp`
+- :ref:`file_include_core_simulation_factory.hpp`
 
 - :ref:`file_include_models_initial_models.hpp`
 
@@ -66,7 +66,19 @@ Classes
 
 - :ref:`exhale_class_classBoundary2DPeriodic`
 
+- :ref:`exhale_class_classBoundaryCond2d`
+
+- :ref:`exhale_class_classBoundaryCondBase`
+
+- :ref:`exhale_class_classFreeSlipBoundary`
+
 - :ref:`exhale_class_classGrid2d`
 
 - :ref:`exhale_class_classGridDimensions2d`
+
+- :ref:`exhale_class_classPeriodicBoundary`
+
+- :ref:`exhale_class_classRigidBoundary`
+
+- :ref:`exhale_class_classRigidBoundary_3_01QuantityBase_3_01D_00_014_01_4_01_4`
 

@@ -1,0 +1,7 @@
+<map id="%3" name="%3">
+<area shape="rect" id="node1" title="CFL&lt; Q, Equation &gt;" alt="" coords="5,101,223,149"/>
+<area shape="rect" id="node2" title="SSP_RK2&lt; Q, RHS, CFL, Boundary &gt;" alt="" coords="51,5,427,53"/>
+<area shape="poly" id="edge2" title="usage" alt="" coords="210,56,157,95,154,91,207,52"/>
+<area shape="rect" id="node3" title="TimeSolverBase&lt; Q &gt;" alt="" coords="247,101,482,149"/>
+<area shape="poly" id="edge1" title="public&#45;inheritance" alt="" coords="272,52,325,91,322,95,269,56"/>
+</map>

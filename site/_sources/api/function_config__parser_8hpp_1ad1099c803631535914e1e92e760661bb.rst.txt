@@ -1,0 +1,14 @@
+.. _exhale_function_config__parser_8hpp_1ad1099c803631535914e1e92e760661bb:
+
+Function boundaryConditionSelector
+==================================
+
+- Defined in :ref:`file_include_core_config_parser.hpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: boundaryConditionSelector(const std::string&)
+   :project: MPULS

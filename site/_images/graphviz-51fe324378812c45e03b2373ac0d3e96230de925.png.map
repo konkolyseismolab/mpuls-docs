@@ -1,0 +1,5 @@
+<map id="%3" name="%3">
+<area shape="rect" id="node1" title="Equation" alt="" coords="397,101,505,149"/>
+<area shape="rect" id="node2" title="RightHandSide&lt; Q, FluxOperatorTypeRad, FluxOperatorTypeHor, SourceType, Equation &gt;" alt="" coords="5,5,896,53"/>
+<area shape="poly" id="edge1" title="usage" alt="" coords="453,54,453,88,448,88,448,54"/>
+</map>

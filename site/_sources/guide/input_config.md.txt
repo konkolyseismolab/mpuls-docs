@@ -59,32 +59,49 @@ has to be solved. The block look like this:
 ```yaml
 
 model:
-  system_type: "Euler"
+  system_type:
+    name: "Euler"
+    params: [1.4, 0, 0.1]
   initial_conditions:
     name: "Kelvin-Helmholtz"
-    params: [1.4, -0.5, 0.5, 2., 1., 2.5, 0.01, 3.]
+    params: [1.4, -0.5, 0.5, 2., 1., 2.5, 0.01, 3., 0]
     # --- Some Example for Boundaries ---
   boundary_conditions:
     inner_boundary: "damping"                        # Some...
     outer_boundary: "reflexive"                      # ... example
+    theta_boundary: "periodic"
+    vertical_boundary: "reflexive"
 ```
 
 ### System type
 
-The line
+The block
 ```yaml
-system_type: "Euler"
+system_type:
+  name: "Euler"
+  params: [1.4, 0, 0.1]
 ```
-Describes the equation system we want to solve. Currently implemented versions are `Euler` and `Scalar2D`.
+Describes the equation system we want to solve. Currently implemented versions are `Euler` and `Scalar2D`. In the `params`
+option the parameters of the equation system can be set. In the Euler case these are the:
+ - $\gamma$ adiabatic exponent
+ - $C_{\rm damp}$ a vertical damping parameter
+ - $\Delta R$ The damping region in the vertical direction
+
+ The latter two can be used for damping sound waves for vertical reflexive boundary problems.
 
 ### Intial conditions
 
 ```yaml
  initial_conditions:
     name: "Kelvin-Helmholtz"
-    params: [1.4, -0.5, 0.5, 2., 1., 2.5, 0.01, 3.]
+    params: [1.4, -0.5, 0.5, 2., 1., 2.5, 0.01, 3., 0]
 ```
 The block describes the initial model (`name`), and the starting parameters `params` given as an array.
+
+Currently three mode are supported:
+- `Kelvin-Helmholtz`: Initialize the Kelvin-Helmholtz instability problem. (see parameter description {ref}`here<exhale_function_initial__models_8hpp_1a28c4f40873ee040a2c6b6274af33d262>`)
+- `constant`: A fully static system with constant pressure and density. (see parameter description {ref}`here<exhale_function_initial__models_8hpp_1aa76daa6d8ea284bd7701d529b97fdecc>`)
+- `Sod-Explosion`: Single interface problems such as the Sod-Shock tube problem. (see parameter description {ref}`here<exhale_function_initial__models_8hpp_1a5e76af92416c0cab11bcea98fe6666e6>`)
 
 
 Simulation settings

@@ -1,0 +1,35 @@
+
+.. _namespace_cuda_backend:
+
+Namespace cuda_backend
+======================
+
+
+CUDA implementation backend namespace. 
+
+
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+
+
+
+Detailed Description
+--------------------
+
+The CUDA backend is implemented through this namespace. Most of the structs are using the same names as the reference backend, therefore the backend files are compiled seperately in their seperate source and header files.
+
+Due to avoid repetition, we do not provide full documentation to the CUDA backends classes as they are using the same or at least similar interfaces as the reference backend. Main differences will be documented later seperately. 
+
+
+
+
+
+Classes
+-------
+
+
+- :ref:`exhale_class_classcuda__backend_1_1CudaSimulation2d`

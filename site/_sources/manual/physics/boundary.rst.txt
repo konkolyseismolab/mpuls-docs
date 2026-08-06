@@ -1,0 +1,102 @@
+Boundary conditions
+===================
+
+A PDE (or ODE) system usually needs initial and boundary conditions, which can provide the particular solution
+of the system we are looking for. In the case of MPULS, we use initial conditions to provide the temporal
+solution and provide the boundary conditions which determine the spatial structure of the simulation. 
+
+In general: the boundary conditions are used to determine the behavior of the system near the edge of the
+simulation domain.
+
+Available boundary conditions in MPULS
+--------------------------------------
+
+Currently three different type of boundary conditions are implemented into MPULS:
+- Free-slip boundary (Neumann type boundary)
+- Reflexive boundary (Neumann type boundary)
+- Periodic boundary
+
+.. note::
+
+  All boundary conditions are implemented in the ghost cell approach. That is, instead of directly modifying the
+  solver behavior near the boundaries (such as overwriting fluxes), additional cells are put after the edge of the
+  grid, that are constructed in a way to reproduce the wanted behavior.
+
+Free-slip boundary conditions
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+In the free-slip boundary condition we set the ghost cell values equal to the ones of the outermost cell, which provide
+exactly zero derivatives at the edges. Thus, at the :math:`i=N` index the :math:`N+j`, or the :math:`j` th ghost cell will have
+the state vector exatly as:
+
+.. math::
+   :label: free-slip-boundary
+
+   \boldsymbol q_{N+j} = \boldsymbol q_{N} 
+
+Reflexive boundary conditions
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+This boundary condition is used to precisely reflect inoming soundwaves. It uses zero derivatives for every state vector
+element except the velocity perpendicular to the boundary. There :math:`\partial \ln q / \partial x = -2`. Using ghost
+cells this results in
+
+.. math::
+   :label: reflexive-boundary
+   
+   q_{N+j}^l = \left\lbrace\begin{array}{lr}
+   q_{N}^l & {\rm for\ } l \neq l_{\rm velocity} \\
+   -q_{N}^l & {\rm otherwise} \\
+   \end{array} \right.
+
+
+where :math:`l` is the index of the state element.
+   
+.. note::
+
+   Both reflexive and free-slip boundaries are a member of the Neumann-type boundary condition family. These boundary
+   conditions determine the first-order spatial derivatives at the edges of the simulation domain:
+
+   .. math::
+
+      \left.\frac{\partial \boldsymbol q}{\partial x}\right|_{x=x_{\rm edge}} = \boldsymbol g(t)
+      
+   
+Periodic boundary condition
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The quantities leaving on one side return on the other side of the simulation domain. This can be eeasily achieved by
+the following ghost cell formula:
+
+.. math::
+   :label: periodic-conditions
+
+   \boldsymbol q_j = \boldsymbol q_{N+1+j} &\qquad {\rm for}\ j=-1,-2,\dots \\
+   \boldsymbol q_N+j = \boldsymbol q_j &\qquad  {\rm for}\ j=1,2,\dots
+
+.. important::   
+
+   Current implementation only permits periodic boundaries pairwise in the same direction.
+
+Usage and implementation
+------------------------
+
+All boundary conditions can be used in all directions, but they are applied pairwise. This also means that MPULS
+itself let the user use a periodic boundary on the radial direction of a spherical grid, while that is not physically
+consistent. Meantime this can be used for quasi-cartesian grids (i.e. `Rin >> 1`).
+
+Later versions will include
+boundary conditions that can differ on the two edges of the same direction. For numerical tests,
+using free-slip boundary can be straightforward.
+
+
+.. admonition:: Implementation
+   :collapsible: closed
+
+   Boundary conditions are used in a polyformic class: the :ref:`BoundaryCondBase<exhale_class_classBoundaryCondBase>`
+   provides an interface for the different sets of boundary conditions, while the
+   :ref:`BoundaryCond2d<exhale_class_classBoundaryCond2d>` is a templated derived class used to specify the different
+   directions. Thus the :ref:`BoundaryCondBase<exhale_class_classBoundaryCondBase>` is used by the solver, which
+   creates a `vptr` overhead. This overhead is small though, because it is only called per time substeps. This method
+   provides us a versatile boundary condition handling, without a too large compile time, that would be caused by the
+   3×3 versions on boundary condittions on top of the templated solver.

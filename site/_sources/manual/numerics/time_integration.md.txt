@@ -5,71 +5,8 @@ Using the method of lines (MOL) aprroach, the semi-difference flux formulas
 convert the PDE system into a system of ordenary differential equations for
 each grid points. Therefore the whole system for the $i,j,k$ gridpoint gives:
 
-$$ \frac{\partial \boldsymbol q_{i,j,k}}{\partial t} = \boldsymbol f (\boldsymbol q_{i,j,k}, \boldsymbol r_{i,j,k}, t) $$ (ode-eq)
+$$ \frac{\partial \boldsymbol q_{i,j,k}}{\partial t} = \boldsymbol f (\boldsymbol q_{i,j,k}, \boldsymbol r_{i,j,k}, t) $$
 
-which is an ordenary differential equation system (ODE). This type of systems can be solved by any ODE solver, such as Runge-Kutta schemes, Crank-Nicholson schemes, etc. MPULS currently implements two widely used schemes for time integration:
-
- - Heun's method (2nd order strong stability preserving Runge-Kutta method, SSP-RK2)[^1]
- - 3rd order strong stability preserving Runge-Kutta method (SSP-RK3)[^1]
-
-
-```{admonition} Implementation
-   :collapsible:
-
-   The ODE is implemented through the {ref}`exhale_class_classRightHandSide`
-   class and its variants, gathering all relevant operators for the given
-   problem. Its' simplest form only consists of the advection part of the
-   equation system, while the {ref}`exhale_class_classRightHandSideDecorator`
-   struct implements additional features, such as diffusion, or solution
-   filtering.
-
-   Time integration is implemented via the common interface of the
-   {ref}`exhale_class_classTimeSolverBase` class. 
-
-   In a structure perspective, the time integrator class is the top level caller
-   of the system. (Configuration and memory management is implemented through the
-   top level simulation classes.) 
-   
-   
+```{doxygengroup} TimeSolvers
+   :project: MPULS
 ```
-
-Heun's method
--------------
-
-The second order strong-stability preserving Runge-Kutta method, or Heun's method consists of the following Butcher table:
-
-$$
-\begin{array}{c|cc}
-0 & & \\
-1 & 1 & \\
-\hline
-& 1/2 & 1/2
-\end{array}
-$$ (heun-butcher)
-
-The method provides second order accuracy, but it is explicit; therefore, we have CFL criterion limiting based on the reconstruction scheme and additional operators. (Stiff source and parabolic terms can reduce timesteps severely.) It preserves the stability of $\boldsymbol f $, but it is not TVD by itself. TVD property should be enforced in the advection and filtering operators.
-
-This time integration is the fastest choice in MPULS. It is implemented by the {ref}`SSP_RK2<exhale_class_classSSP__RK2>` class.
-
-SSP-RK3
--------
-
-Third order explicit scheme, the de-facto default choice of WENO scheme implementations. It shares the SSP property of the Heun's method. This three-step scheme has the following Butcher-tablou:
-
-$$
-\begin{array}{c|ccc}
-0 & & \\
-1 & 1 & \\
-1/2 & 1/4 & 1/4 & \\
-\hline
-& 1/6 & 1/6 & 2/3
-\end{array}
-$$ (ssprk3-butcher)
-
-This method also have the same limitations for stiff operators as the Heun's method, but provides higher accuracy without too much increase in computational time. It is the base integration scheme for the ANTARES code[^2], which also shows its versability. In MPULS it is implemented in the {ref}`SSP_RK3<exhale_class_classSSP__RK3>` class.
-
-
-
-
-[^1]: See also: *Efficient Implementation of Essentially Non-Oscillatory Schock-Capturing Schemes II* by [Usher & Shu, 1989, Journal of Comp. Phys. 83,32-78 ](https://doi.org/10.1016/0021-9991(89)90222-2)
-[^2]: [Muthsam et al., 2010, New Astron. 15, 460-475](http://dx.doi.org/10.1016/j.newast.2009.12.005)

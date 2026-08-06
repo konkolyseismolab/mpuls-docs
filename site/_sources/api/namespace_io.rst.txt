@@ -21,6 +21,8 @@ Functions
 
 - :ref:`exhale_function_print__console_8hpp_1a0e31e4a6433331ae273efcd8cbaaf4ab`
 
+- :ref:`exhale_function_print__console_8hpp_1acd51f31935522bca46a78dc9cb2a15b1`
+
 - :ref:`exhale_function_print__console_8hpp_1a4342d8164f753f333c53321e183903bd`
 
 - :ref:`exhale_function_print__console_8hpp_1ac0f447179bfe9fbb434f8f177a8569a3`

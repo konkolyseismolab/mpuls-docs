@@ -1,0 +1,19 @@
+.. _exhale_class_classFreeSlipBoundary:
+
+Template Class FreeSlipBoundary
+===============================
+
+- Defined in :ref:`file_include_grid_grid.hpp`
+
+
+Class Documentation
+-------------------
+
+
+.. doxygenclass:: FreeSlipBoundary
+   :project: MPULS
+   :members:
+   :allow-dot-graphs:
+   :protected-members:
+   :private-members:
+   :undoc-members:

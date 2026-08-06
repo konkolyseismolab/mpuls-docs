@@ -1,0 +1,14 @@
+.. _exhale_enum_config__params_8hpp_1a92949c64543207616205eaab0a4bcb8c:
+
+Enum Backend
+============
+
+- Defined in :ref:`file_include_core_config_params.hpp`
+
+
+Enum Documentation
+------------------
+
+
+.. doxygenenum:: solver_params::Backend
+   :project: MPULS

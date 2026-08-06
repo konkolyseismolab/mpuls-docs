@@ -1,0 +1,7 @@
+<map id="%3" name="%3">
+<area shape="rect" id="node1" title="Limiter" alt="" coords="5,101,97,149"/>
+<area shape="rect" id="node2" title="PLM&lt; Q, Dir, Limiter &gt;" alt="" coords="31,5,277,53"/>
+<area shape="poly" id="edge2" title="usage" alt="" coords="130,56,88,94,85,90,127,52"/>
+<area shape="rect" id="node3" title="ReconstructionBase&lt; Q &gt;" alt="" coords="121,101,392,149"/>
+<area shape="poly" id="edge1" title="public&#45;inheritance" alt="" coords="181,52,223,90,220,94,178,56"/>
+</map>

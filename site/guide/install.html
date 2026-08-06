@@ -9,6 +9,7 @@
   <title>Installation &mdash; Modular PULsation Suite  documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=4ae1632d" />
       <link rel="stylesheet" type="text/css" href="../_static/collapsible-lists/css/tree_view.css?v=a885cde7" />
       <link rel="stylesheet" type="text/css" href="../_static/compact-api.css?v=bfcdbbe1" />
 
@@ -127,7 +128,7 @@ The core dependencies are:</p>
 <ul class="simple">
 <li><p>C++20 standard capable compiler (e.g. GCC 11.0 or Clang 13.0)</p></li>
 <li><p>nvcc 12.0  - for CUDA support (part of the CUDA-toolkit)</p></li>
-<li><p>Cmake 3.12 or higher</p></li>
+<li><p>Cmake 3.15 or higher</p></li>
 </ul>
 <p>This project requires the HDF5 C++ library (<code class="docutils literal notranslate"><span class="pre">H5Cpp.h</span></code>, <code class="docutils literal notranslate"><span class="pre">libhdf5_cpp.so</span></code>) to compile and run.</p>
 </section>
@@ -240,14 +241,19 @@ cmake<span class="w"> </span>-S<span class="w"> </span>.<span class="w"> </span>
 <li><p>release <code class="docutils literal notranslate"><span class="pre">-DCMAKE_BUILD_TYPE=Release</span></code></p></li>
 <li><p>sanitized <code class="docutils literal notranslate"><span class="pre">-DCMAKE_BUILD_TYPE=DebugSanit</span></code></p></li>
 </ul>
-<p>In debug mode the <code class="docutils literal notranslate"><span class="pre">-g</span></code> compilation flag is set with no optimizations, ideal for attaching a debugger.
-The release version uses <code class="docutils literal notranslate"><span class="pre">-O2</span></code> for optimization (roughly a factor of 10 in speed).
+<p>In debug mode the <code class="docutils literal notranslate"><span class="pre">-g</span></code> (and <code class="docutils literal notranslate"><span class="pre">-G</span></code> for <code class="docutils literal notranslate"><span class="pre">nvcc</span></code>) compilation flag is set with no optimizations, ideal for attaching a debugger.
+The release version uses <code class="docutils literal notranslate"><span class="pre">-O2</span></code> (<code class="docutils literal notranslate"><span class="pre">-O3</span></code> for <code class="docutils literal notranslate"><span class="pre">nvcc</span></code>) for optimization (roughly a factor of 10 in speed).
 Sanitized mode is a special debug mode, which cheks against memory leaks, index errors.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>For the sanitization to work, you need to install the ASAN library for your compiler.</p>
 </div>
 <p>Unit tests can be run by the <code class="docutils literal notranslate"><span class="pre">-DBUILD_TESTING=ON</span></code> flag, and the <code class="docutils literal notranslate"><span class="pre">ctest</span></code> command can be run from the build directory.</p>
+<section id="cuda-support">
+<h4>CUDA support<a class="headerlink" href="#cuda-support" title="Link to this heading"></a></h4>
+<p>The CUDA backend is automatically searched by the CMake configuration test. If the host system does not support a CUDA capable device (or CUDA driver is not installed), the CUDA compilation would not happen. If you have CUDA capable driver but you still want to disable CUDA features, use the <code class="docutils literal notranslate"><span class="pre">-DCUDA_DISABLED=ON</span></code> flag.</p>
+<p>If you are a developer, and want to compile the CUDA implementation for porifling it with Nsight Systems or Nsight Compute, use the <code class="docutils literal notranslate"><span class="pre">-DCUDA_PROFILING=On</span></code> flag with the release version.</p>
+</section>
 </section>
 <section id="build-process">
 <h3>Build process<a class="headerlink" href="#build-process" title="Link to this heading"></a></h3>

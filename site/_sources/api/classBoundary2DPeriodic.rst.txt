@@ -13,6 +13,7 @@ Class Documentation
 .. doxygenclass:: Boundary2DPeriodic
    :project: MPULS
    :members:
+   :allow-dot-graphs:
    :protected-members:
    :private-members:
    :undoc-members:

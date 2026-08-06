@@ -86,9 +86,13 @@ Enums
 
 - :ref:`exhale_enum_config__params_8hpp_1a46c8a310cf4c094f8c80e1cb8dc1f911`
 
+- :ref:`exhale_enum_config__params_8hpp_1aa975c741d228a25ecb10a399d75ff88c`
+
 - :ref:`exhale_enum_config__params_8hpp_1a907c446eb5c73e13a7d76edd612fdfef`
 
 - :ref:`exhale_enum_config__params_8hpp_1a3ae25a4a9f22dccaa99cdecb28ab4e0f`
+
+- :ref:`exhale_enum_config__params_8hpp_1a92949c64543207616205eaab0a4bcb8c`
 
 - :ref:`exhale_enum_config__params_8hpp_1a2b577686b8ffe76b030025b230938ef2`
 

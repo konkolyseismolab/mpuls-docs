@@ -1,0 +1,14 @@
+.. _exhale_function_initial__models_8hpp_1aa76daa6d8ea284bd7701d529b97fdecc:
+
+Function singleInterfaceShock
+=============================
+
+- Defined in :ref:`file_include_models_initial_models.hpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: singleInterfaceShock(Grid2d<QuantityBase<double, 4>>&, GridDimensions2d<double>, double, double, double, double, double, double, double, int)
+   :project: MPULS

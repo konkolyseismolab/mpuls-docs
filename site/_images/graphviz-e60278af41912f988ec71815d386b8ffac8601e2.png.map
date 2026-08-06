@@ -1,0 +1,5 @@
+<map id="%3" name="%3">
+<area shape="rect" id="node1" title="EquationBase&lt; Q &gt;" alt="" coords="5,101,219,149"/>
+<area shape="rect" id="node2" title="Euler2d&lt; T, Q &gt;" alt="" coords="23,5,201,53"/>
+<area shape="poly" id="edge1" title="public&#45;inheritance" alt="" coords="115,54,115,88,109,88,109,54"/>
+</map>

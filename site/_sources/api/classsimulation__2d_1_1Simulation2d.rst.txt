@@ -6,6 +6,15 @@ Class Simulation2d
 - Defined in :ref:`file_include_core_simulation2d.hpp`
 
 
+Inheritance Relationships
+-------------------------
+
+Derived Type
+************
+
+- ``public cuda_backend::CudaSimulation2d`` (:ref:`exhale_class_classcuda__backend_1_1CudaSimulation2d`)
+
+
 Class Documentation
 -------------------
 
@@ -13,6 +22,7 @@ Class Documentation
 .. doxygenclass:: simulation_2d::Simulation2d
    :project: MPULS
    :members:
+   :allow-dot-graphs:
    :protected-members:
    :private-members:
    :undoc-members:

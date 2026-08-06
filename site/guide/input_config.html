@@ -9,6 +9,7 @@
   <title>Input configuration &mdash; Modular PULsation Suite  documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=4ae1632d" />
       <link rel="stylesheet" type="text/css" href="../_static/collapsible-lists/css/tree_view.css?v=a885cde7" />
       <link rel="stylesheet" type="text/css" href="../_static/compact-api.css?v=bfcdbbe1" />
 
@@ -20,6 +21,8 @@
       <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
       <script src="../_static/collapsible-lists/js/CollapsibleLists.compressed.js?v=73120307"></script>
       <script src="../_static/collapsible-lists/js/apply-collapsible-lists.js?v=660e4f45"></script>
+      <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+      <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -147,32 +150,51 @@ Other planned backends (can be): <code class="docutils literal notranslate"><spa
 <p>This section describes what physical problem we want to solve, and what equation system (i.e. the model),
 has to be solved. The block look like this:</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">model</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">system_type</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Euler&quot;</span>
+<span class="w">  </span><span class="nt">system_type</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Euler&quot;</span>
+<span class="w">    </span><span class="nt">params</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">1.4</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">0</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">0.1</span><span class="p p-Indicator">]</span>
 <span class="w">  </span><span class="nt">initial_conditions</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Kelvin-Helmholtz&quot;</span>
-<span class="w">    </span><span class="nt">params</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">1.4</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">-0.5</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">0.5</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">2.</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">1.</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">2.5</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">0.01</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">3.</span><span class="p p-Indicator">]</span>
+<span class="w">    </span><span class="nt">params</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">1.4</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">-0.5</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">0.5</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">2.</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">1.</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">2.5</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">0.01</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">3.</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">0</span><span class="p p-Indicator">]</span>
 <span class="w">    </span><span class="c1"># --- Some Example for Boundaries ---</span>
 <span class="w">  </span><span class="nt">boundary_conditions</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">inner_boundary</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;damping&quot;</span><span class="w">                        </span><span class="c1"># Some...</span>
 <span class="w">    </span><span class="nt">outer_boundary</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;reflexive&quot;</span><span class="w">                      </span><span class="c1"># ... example</span>
+<span class="w">    </span><span class="nt">theta_boundary</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;periodic&quot;</span>
+<span class="w">    </span><span class="nt">vertical_boundary</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;reflexive&quot;</span>
 </pre></div>
 </div>
 <section id="system-type">
 <h3>System type<a class="headerlink" href="#system-type" title="Link to this heading"></a></h3>
-<p>The line</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">system_type</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Euler&quot;</span>
+<p>The block</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">system_type</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Euler&quot;</span>
+<span class="w">  </span><span class="nt">params</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">1.4</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">0</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">0.1</span><span class="p p-Indicator">]</span>
 </pre></div>
 </div>
-<p>Describes the equation system we want to solve. Currently implemented versions are <code class="docutils literal notranslate"><span class="pre">Euler</span></code> and <code class="docutils literal notranslate"><span class="pre">Scalar2D</span></code>.</p>
+<p>Describes the equation system we want to solve. Currently implemented versions are <code class="docutils literal notranslate"><span class="pre">Euler</span></code> and <code class="docutils literal notranslate"><span class="pre">Scalar2D</span></code>. In the <code class="docutils literal notranslate"><span class="pre">params</span></code>
+option the parameters of the equation system can be set. In the Euler case these are the:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\gamma\)</span> adiabatic exponent</p></li>
+<li><p><span class="math notranslate nohighlight">\(C_{\rm damp}\)</span> a vertical damping parameter</p></li>
+<li><p><span class="math notranslate nohighlight">\(\Delta R\)</span> The damping region in the vertical direction</p></li>
+</ul>
+<p>The latter two can be used for damping sound waves for vertical reflexive boundary problems.</p>
 </section>
 <section id="intial-conditions">
 <h3>Intial conditions<a class="headerlink" href="#intial-conditions" title="Link to this heading"></a></h3>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="w"> </span><span class="nt">initial_conditions</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Kelvin-Helmholtz&quot;</span>
-<span class="w">    </span><span class="nt">params</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">1.4</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">-0.5</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">0.5</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">2.</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">1.</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">2.5</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">0.01</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">3.</span><span class="p p-Indicator">]</span>
+<span class="w">    </span><span class="nt">params</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">1.4</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">-0.5</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">0.5</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">2.</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">1.</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">2.5</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">0.01</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">3.</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">0</span><span class="p p-Indicator">]</span>
 </pre></div>
 </div>
 <p>The block describes the initial model (<code class="docutils literal notranslate"><span class="pre">name</span></code>), and the starting parameters <code class="docutils literal notranslate"><span class="pre">params</span></code> given as an array.</p>
+<p>Currently three mode are supported:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Kelvin-Helmholtz</span></code>: Initialize the Kelvin-Helmholtz instability problem. (see parameter description <a class="reference internal" href="../api/function_initial__models_8hpp_1a28c4f40873ee040a2c6b6274af33d262.html#exhale-function-initial-models-8hpp-1a28c4f40873ee040a2c6b6274af33d262"><span class="std std-ref">here</span></a>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">constant</span></code>: A fully static system with constant pressure and density. (see parameter description <a class="reference internal" href="../api/function_initial__models_8hpp_1aa76daa6d8ea284bd7701d529b97fdecc.html#exhale-function-initial-models-8hpp-1aa76daa6d8ea284bd7701d529b97fdecc"><span class="std std-ref">here</span></a>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Sod-Explosion</span></code>: Single interface problems such as the Sod-Shock tube problem. (see parameter description <a class="reference internal" href="../api/function_initial__models_8hpp_1a5e76af92416c0cab11bcea98fe6666e6.html#exhale-function-initial-models-8hpp-1a5e76af92416c0cab11bcea98fe6666e6"><span class="std std-ref">here</span></a>)</p></li>
+</ul>
 </section>
 </section>
 <section id="simulation-settings">

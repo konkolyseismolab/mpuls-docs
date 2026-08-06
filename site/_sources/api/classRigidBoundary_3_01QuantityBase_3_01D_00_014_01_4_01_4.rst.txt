@@ -1,0 +1,19 @@
+.. _exhale_class_classRigidBoundary_3_01QuantityBase_3_01D_00_014_01_4_01_4:
+
+Template Class RigidBoundary< QuantityBase< D, 4 > >
+====================================================
+
+- Defined in :ref:`file_include_grid_grid.hpp`
+
+
+Class Documentation
+-------------------
+
+
+.. doxygenclass:: RigidBoundary< QuantityBase< D, 4 > >
+   :project: MPULS
+   :members:
+   :allow-dot-graphs:
+   :protected-members:
+   :private-members:
+   :undoc-members:

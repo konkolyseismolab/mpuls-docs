@@ -161,7 +161,7 @@ has to be solved. The block look like this:</p>
 <span class="w">    </span><span class="nt">inner_boundary</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;damping&quot;</span><span class="w">                        </span><span class="c1"># Some...</span>
 <span class="w">    </span><span class="nt">outer_boundary</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;reflexive&quot;</span><span class="w">                      </span><span class="c1"># ... example</span>
 <span class="w">    </span><span class="nt">theta_boundary</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;periodic&quot;</span>
-<span class="w">    </span><span class="nt">vertical_boundary</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;reflexive&quot;</span>
+<span class="w">    </span><span class="nt">radial_boundary</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;reflexive&quot;</span>
 </pre></div>
 </div>
 <section id="system-type">
@@ -304,7 +304,7 @@ artificial viscosity.</p>
 </ul>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>The number of necessary ghost cells are determined by the different solvers. E.g., :class:PLM needs 2</p>
+<p>The number of necessary ghost cells are determined by the different solvers. E.g., PLM reconstruction needs 2</p>
 </div>
 </section>
 </section>

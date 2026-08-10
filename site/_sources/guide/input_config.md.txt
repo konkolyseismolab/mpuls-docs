@@ -70,7 +70,7 @@ model:
     inner_boundary: "damping"                        # Some...
     outer_boundary: "reflexive"                      # ... example
     theta_boundary: "periodic"
-    vertical_boundary: "reflexive"
+    radial_boundary: "reflexive"
 ```
 
 ### System type
@@ -212,5 +212,5 @@ The main 2D parameters are the following:
  - `size_of_phi_grid`: N/A
 
 ```{note}
-The number of necessary ghost cells are determined by the different solvers. E.g., :class:PLM needs 2
+The number of necessary ghost cells are determined by the different solvers. E.g., PLM reconstruction needs 2
 ```
